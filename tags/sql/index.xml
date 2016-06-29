@@ -3,7 +3,7 @@
   <channel>
       <title>Sql on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/sql/</link>
+    <link>https://brianp.github.io/tags/sql/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <link>https://brianp.github.io/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <guid>https://brianp.github.io/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
       <description>
 
 &lt;p&gt;Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the &lt;code&gt;includes&lt;/code&gt; method. The &lt;code&gt;includes&lt;/code&gt; method being the suggested best practice for the problem now. &lt;code&gt;includes&lt;/code&gt; will be mentioned at the bottom of the post.&lt;/p&gt;

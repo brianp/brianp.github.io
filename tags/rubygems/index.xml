@@ -3,7 +3,7 @@
   <channel>
       <title>Rubygems on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/rubygems/</link>
+    <link>https://brianp.github.io/tags/rubygems/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <link>https://brianp.github.io/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
       <pubDate>Fri, 01 Feb 2013 16:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <guid>https://brianp.github.io/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>&lt;p&gt;Today I was trying to generate a Rails 3.1.0 project (for testing
 purposes). I simply called &lt;code&gt;rails new rollback&lt;/code&gt; which generated a rails
 3.2.11 project and proceeded to change

@@ -3,7 +3,7 @@
   <channel>
       <title>Asset Pipeline on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/categories/asset-pipeline/</link>
+    <link>https://brianp.github.io/categories/asset-pipeline/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <link>https://brianp.github.io/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
       <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <guid>https://brianp.github.io/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;
 I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.

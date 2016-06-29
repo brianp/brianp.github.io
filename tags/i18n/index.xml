@@ -3,7 +3,7 @@
   <channel>
       <title>I18n on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/i18n/</link>
+    <link>https://brianp.github.io/tags/i18n/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>https://brianp.github.io/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>https://brianp.github.io/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>
 
 &lt;p&gt;Last week during my main work contract I had been tasked with doing some
@@ -78,7 +78,7 @@ very easy with the inclusion of the &lt;a href=&#34;http://guides.rubyonrails.or
 Following a simple structure to manage each pages copy we created a single folder for
 each page and placed each language file within the folder:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
 structure for the internationaliztion files&#39; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This worked simple enough and meant a handful of pages in this section

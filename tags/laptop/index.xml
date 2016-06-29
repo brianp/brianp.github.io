@@ -3,7 +3,7 @@
   <channel>
       <title>Laptop on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/laptop/</link>
+    <link>https://brianp.github.io/tags/laptop/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>MacBook Air (Mid 2013) Wifi Issues</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
+      <link>https://brianp.github.io/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
       <pubDate>Tue, 17 Sep 2013 20:20:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
+      <guid>https://brianp.github.io/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
       <description>
 
 &lt;p&gt;As soon as the MacBook Air (Mid 2013) started shipping; reports began
@@ -25,7 +25,7 @@ experinced the same issues everyone else was claiming to run into.
 Apple denied the issue at first (as they always do) but later released
 a software update for the issue.&lt;sup&gt;&lt;a href=&#39;#ref-2&#39;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
 (mid 2013)&#39; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Not soon after the software update I began experiencing the

@@ -3,7 +3,7 @@
   <channel>
       <title>Systems on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/systems/</link>
+    <link>https://brianp.github.io/tags/systems/</link>
     <language>en-us</language>
     
     
@@ -11,14 +11,14 @@
     
     <item>
       <title>Cascadia Ruby 2013: Ruby Systems Programming</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-systems-programming/</link>
+      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-ruby-systems-programming/</link>
       <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-systems-programming/</guid>
+      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-ruby-systems-programming/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;&lt;/p&gt;
 

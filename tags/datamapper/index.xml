@@ -3,7 +3,7 @@
   <channel>
       <title>Datamapper on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/datamapper/</link>
+    <link>https://brianp.github.io/tags/datamapper/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>https://brianp.github.io/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>https://brianp.github.io/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
 what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
 debugging when getting unexpected results or trying to increase query

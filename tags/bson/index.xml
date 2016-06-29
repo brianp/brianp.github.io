@@ -3,7 +3,7 @@
   <channel>
       <title>Bson on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/bson/</link>
+    <link>https://brianp.github.io/tags/bson/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>bson keys must be strings or symbols</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <link>https://brianp.github.io/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
       <pubDate>Wed, 09 Feb 2011 00:16:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <guid>https://brianp.github.io/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>&lt;p&gt;While setting up a new Rails development environment I ran into the
 error &lt;code&gt;bson keys must be strings or symbols&lt;/code&gt;. After some googling I
 found the following method to fix it:&lt;/p&gt;

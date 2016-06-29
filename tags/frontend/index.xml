@@ -3,7 +3,7 @@
   <channel>
       <title>Frontend on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/frontend/</link>
+    <link>https://brianp.github.io/tags/frontend/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>HTML Anchors with ids</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/09/03/html-anchors-with-ids/</link>
+      <link>https://brianp.github.io/2013/09/03/html-anchors-with-ids/</link>
       <pubDate>Tue, 03 Sep 2013 10:42:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/09/03/html-anchors-with-ids/</guid>
+      <guid>https://brianp.github.io/2013/09/03/html-anchors-with-ids/</guid>
       <description>&lt;p&gt;Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.&lt;/p&gt;
 
 &lt;p&gt;When adding anchors on a page for the purpose of in-page links my typical method for years

@@ -3,7 +3,7 @@
   <channel>
       <title>Deploy on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/deploy/</link>
+    <link>https://brianp.github.io/tags/deploy/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Nginx 413 Request Entity Too Large</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/02/02/nginx-413-request-entity-too-large/</link>
+      <link>https://brianp.github.io/2013/02/02/nginx-413-request-entity-too-large/</link>
       <pubDate>Sat, 02 Feb 2013 10:24:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/02/02/nginx-413-request-entity-too-large/</guid>
+      <guid>https://brianp.github.io/2013/02/02/nginx-413-request-entity-too-large/</guid>
       <description>&lt;p&gt;Using: nginx version: nginx/1.2.4&lt;/p&gt;
 
 &lt;p&gt;I manage a few Linode instances as client servers but I would far from

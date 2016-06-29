@@ -3,7 +3,7 @@
   <channel>
       <title>Robotos on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/robotos/</link>
+    <link>https://brianp.github.io/tags/robotos/</link>
     <language>en-us</language>
     
     
@@ -11,14 +11,14 @@
     
     <item>
       <title>Cascadia Ruby 2013: Ruby Robotics</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-ruby-robotics/</link>
+      <link>https://brianp.github.io/2013/10/21/cascadia-ruby-ruby-robotics/</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-ruby-robotics/</guid>
+      <guid>https://brianp.github.io/2013/10/21/cascadia-ruby-ruby-robotics/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/knewter&#34;&gt;Josh Adams&lt;/a&gt; and &lt;a href=&#34;http://twitter.com/robby_clements&#34;&gt;Robby Clements&lt;/a&gt;&lt;/p&gt;
 

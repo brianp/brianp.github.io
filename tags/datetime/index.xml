@@ -3,7 +3,7 @@
   <channel>
       <title>Datetime on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/datetime/</link>
+    <link>https://brianp.github.io/tags/datetime/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>https://brianp.github.io/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>https://brianp.github.io/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
@@ -22,7 +22,7 @@ related issues within one of the applications I contract on. This is a just a
 list of notable behaviours I expereinced whilst working with Ruby,
 Rails, Dates &amp;amp; TimeZones.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
 to go alone! Take this.&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Note: DST is in effect at the time of writing.&lt;/p&gt;

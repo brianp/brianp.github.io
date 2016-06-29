@@ -3,7 +3,7 @@
   <channel>
       <title>Hash on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/hash/</link>
+    <link>https://brianp.github.io/tags/hash/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Hash Defaults in Ruby</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2012/06/15/hash-defaults-in-ruby/</link>
+      <link>https://brianp.github.io/2012/06/15/hash-defaults-in-ruby/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2012/06/15/hash-defaults-in-ruby/</guid>
+      <guid>https://brianp.github.io/2012/06/15/hash-defaults-in-ruby/</guid>
       <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
 community system and needed to set a default value for anything that
 the old system didn&amp;rsquo;t have. I was using hashs and thought to myself
@@ -63,10 +63,10 @@ h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;ba
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <link>https://brianp.github.io/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <guid>https://brianp.github.io/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>
 
 &lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.

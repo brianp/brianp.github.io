@@ -3,7 +3,7 @@
   <channel>
       <title>Homebrew on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/homebrew/</link>
+    <link>https://brianp.github.io/tags/homebrew/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <link>https://brianp.github.io/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
       <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <guid>https://brianp.github.io/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
       <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
 against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...

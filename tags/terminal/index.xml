@@ -3,7 +3,7 @@
   <channel>
       <title>Terminal on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/alwayscoding.ca/tags/terminal/</link>
+    <link>https://brianp.github.io/tags/terminal/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Killing all Ruby Processes</title>
-      <link>https://brianp.github.io/alwayscoding.ca/2013/09/24/killing-all-ruby-processes/</link>
+      <link>https://brianp.github.io/2013/09/24/killing-all-ruby-processes/</link>
       <pubDate>Tue, 24 Sep 2013 11:30:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/alwayscoding.ca/2013/09/24/killing-all-ruby-processes/</guid>
+      <guid>https://brianp.github.io/2013/09/24/killing-all-ruby-processes/</guid>
       <description>&lt;p&gt;I was running some commands that I later found out had left me with many
 orphaned ruby processes. Too many to kill one by one. I needed to just
 get rid of them all and quickly so killing all ruby processes was the

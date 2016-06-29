@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Conferences on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/categories/conferences/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 11 Aug 2014 09:26:37 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2014 - Day One</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2014/08/11/cascadia-ruby-2014-day-one/</link>
+      <pubDate>Mon, 11 Aug 2014 09:26:37 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2014/08/11/cascadia-ruby-2014-day-one/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2014/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;br /&gt;
+Be Awesome By Being Boring&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;“standard is better then better”&lt;/li&gt;
+&lt;li&gt;Nobody know how it works yet.&lt;/li&gt;
+&lt;li&gt;Docker apis changed.&lt;/li&gt;
+&lt;li&gt;No standard uusage pattern.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Security wild card.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Protocol Buffer version of your performance critical endpoints.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SRV Records.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;&lt;br /&gt;
+The Science of Success&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jarvis March (Gift wrapping Algorithm.)&lt;/li&gt;
+&lt;li&gt;Monotone Algorithm.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;benchmark/ips&lt;/code&gt; Runs iterations per second.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;benchmark-bigo&lt;/code&gt; Benchmarks big o notation algorithms.&lt;/li&gt;
+&lt;li&gt;geojson.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://tinyurl.com/cog-shorts-cascadia&#34;&gt;Cognitive Shortcuts: Models, Visualizations, Metaphors, and Other Lies&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Programming is hard. Due to abstractions.&lt;/li&gt;
+&lt;li&gt;Visual/Spatial Reasoning
+
+&lt;ul&gt;
+&lt;li&gt;The Squint Test: Stand back and try to discern identifiable parts of the
+code. Heavily margined, columns.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Linguistic/Social Reasoning:
+
+&lt;ul&gt;
+&lt;li&gt;Rubber Ducking.&lt;/li&gt;
+&lt;li&gt;Start writing an email describing the problem.&lt;/li&gt;
+&lt;li&gt;Please Mr. Gear what is your ratio?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Practical Object Oriented Design in Ruby - Sandi Metz.&lt;/li&gt;
+&lt;li&gt;Body Syntonic Reasoning.&lt;/li&gt;
+&lt;li&gt;Saccades.&lt;/li&gt;
+&lt;li&gt;Pac Man Smell solution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/hondanhon&#34;&gt;Dan Hon&lt;/a&gt;&lt;br /&gt;
+Designing for Empathy&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GOV.UK: Shows only the next holiday.&lt;/li&gt;
+&lt;li&gt;Zappos CS will send you to competitors if it helps you.&lt;/li&gt;
+&lt;li&gt;Dropbox setup user friendly opt-out while telecoms require mail sent to a PO
+box.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jxxf&#34;&gt;John Feminella&lt;/a&gt;&lt;br /&gt;
+Why We Can&amp;rsquo;t Have Nice Things: Unicode, Dates, and Names&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;As humans our assumptions make it in to our code.&lt;/li&gt;
+&lt;li&gt;Marriage license database had man and woman id. This fails in states with
+same sex marriages.&lt;/li&gt;
+&lt;li&gt;Time.advance can cuase errors when moving over months with 28 days.&lt;/li&gt;
+&lt;li&gt;Scunthorpe problem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/StarrHorne&#34;&gt;Starr Horne&lt;/a&gt;&lt;br /&gt;
+Biggish Data With Rails and Postgresql&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Vitures of a programmer
+
+&lt;ul&gt;
+&lt;li&gt;Laziness&lt;/li&gt;
+&lt;li&gt;Impatience&lt;/li&gt;
+&lt;li&gt;Hubris&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Use real computers to work with your database.&lt;/li&gt;
+&lt;li&gt;Use explain.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Common problems&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Slooow cache misses.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-pgtune&#34;&gt;http://bit.ly/biggish-pgtune&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Slooow disk I/O
+
+&lt;ul&gt;
+&lt;li&gt;blockdev &amp;ndash;setra 2048 /dev/sda&lt;/li&gt;
+&lt;li&gt;Read ahead cache&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Slooow Vacuums
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-vacuum&#34;&gt;http://bit.ly/biggish-vacuum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Too Mandy DB Connections
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-pool&#34;&gt;http://bit.ly/biggish-pool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;My locks have locked my locks
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-locks&#34;&gt;http://bit.ly/biggish-locks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;but I have to run a report full of slow queries!
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-replication&#34;&gt;http://bit.ly/biggish-replication&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;I can&amp;rsquo;t delete these old rows!
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-partition&#34;&gt;http://bit.ly/biggish-partition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Backups take forever
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-wal-e&#34;&gt;http://bit.ly/biggish-wal-e&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/MilesForrest&#34;&gt;Miles Forrest&lt;/a&gt;&lt;br /&gt;
+Cloning the Seattle Ruby Brigade&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t always enforce the problem areas.&lt;/li&gt;
+&lt;li&gt;Enforce the areas that you need to protect.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt;&lt;br /&gt;
+N design patterns you might actually use (where N is &amp;lt; 10)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Template:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Outline for a similar task.&lt;/li&gt;
+&lt;li&gt;ETL: Extract Transfer Load.&lt;/li&gt;
+&lt;li&gt;Share common code.&lt;/li&gt;
+&lt;li&gt;Advantages
+
+&lt;ul&gt;
+&lt;li&gt;Isolate difference.&lt;/li&gt;
+&lt;li&gt;Easy to add new versions.&lt;/li&gt;
+&lt;li&gt;Force common algorithm.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Disadvantages
+
+&lt;ul&gt;
+&lt;li&gt;Read multiple files&lt;/li&gt;
+&lt;li&gt;Inheirtance * 2&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Storage Strategy&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Composite&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Let consumers ignore quantity.&lt;/li&gt;
+&lt;li&gt;Trees of arbitrary depth.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Decorator&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Command&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/tenderlove&#34;&gt;Aaron Patterson&lt;/a&gt;&lt;br /&gt;
+Speed up Rails, Speed up Your Code&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Markov Chains.&lt;/li&gt;
+&lt;li&gt;Binary Heap to pick random children.&lt;/li&gt;
+&lt;li&gt;ruby -d&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;benchmark-ips&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stackprof&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;allocation_tracer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tracepoint&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fewer types =/= faster/easier code.&lt;/li&gt;
+&lt;li&gt;Freeze strings if performance requires it.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Not Created Equal: The History and Discernment of Plastics in Product Design</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-not-created-equal-the-history-and-discernment-of-plastics-in-product-design/</link>
+      <pubDate>Tue, 22 Oct 2013 17:00:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-not-created-equal-the-history-and-discernment-of-plastics-in-product-design/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/CarlAlviani&#34;&gt;Carl Alviani&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;How recyclable are the following products. (Due to processing methods):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Glass — 34%&lt;/li&gt;
+&lt;li&gt;paper — 60%&lt;/li&gt;
+&lt;li&gt;Polymer — 90%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1962 — Parkseine was developed to replace Ivory as the elephants were dying off.&lt;br /&gt;
+1894 — Rayon developed to replace Silk.&lt;br /&gt;
+1909 — Bakelite developed to replace Shalak. Used for things like telephones, appliances, &amp;amp; pencil sharpeners.&lt;/p&gt;
+
+&lt;p&gt;1933 — PVC &amp;amp; Acrylic&lt;br /&gt;
+1939 — Polythylene &amp;amp; Nylon&lt;br /&gt;
+1941 — PET &amp;amp; ABS&lt;/p&gt;
+
+&lt;p&gt;Real silicone is identifiable by bending it and verifying there is no visible
+difference with it.&lt;/p&gt;
+
+&lt;p&gt;#7 Recycling symbol “Other” is not recyclable.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.core77.com&#34;&gt;core77.com&lt;/a&gt; &amp;amp; Search: “Not created Equal: A Long (Loving) Plastics Primer”&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: The Client is Always Right {But Sometimes They Need a Little Help}</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-the-client-is-always-right-but-sometimes-they-need-a-little-help/</link>
+      <pubDate>Tue, 22 Oct 2013 15:22:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-the-client-is-always-right-but-sometimes-they-need-a-little-help/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;who&#34;&gt;Who?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Who is the intended user group?&lt;/li&gt;
+&lt;li&gt;What are their usability needs?&lt;/li&gt;
+&lt;li&gt;Who will we test our product with before release?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How do we determine the best platform?&lt;/li&gt;
+&lt;li&gt;Is this a major change or a change in usage?&lt;/li&gt;
+&lt;li&gt;How is this product going to best be used?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what&#34;&gt;What?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What are the key features of this product?&lt;/li&gt;
+&lt;li&gt;How do we maintain our usability?&lt;/li&gt;
+&lt;li&gt;What do we build to keep our products story consistent with our core vision?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Lightning Talks</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-lightning-talks/</link>
+      <pubDate>Tue, 22 Oct 2013 13:47:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-lightning-talks/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Apologies if I misspelled anyones names below.&lt;/p&gt;
+
+&lt;h2 id=&#34;rex-lexer-generator&#34;&gt;Rex lexer generator&lt;/h2&gt;
+
+&lt;p&gt;by: Ryan Davis&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ruby_parser lexer - Unmaintainable.&lt;/li&gt;
+&lt;li&gt;Oedipus Lex - “This is not your fathers lexer.”&lt;/li&gt;
+&lt;li&gt;Massive extensions.&lt;/li&gt;
+&lt;li&gt;Self-bootstrapping.&lt;/li&gt;
+&lt;li&gt;Uses ruby more directly.&lt;/li&gt;
+&lt;li&gt;Predicate methods.&lt;/li&gt;
+&lt;li&gt;Action methods.&lt;/li&gt;
+&lt;li&gt;Clean state changes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;focus-on-the-custard&#34;&gt;Focus on the Custard&lt;/h2&gt;
+
+&lt;p&gt;by: Bethany Rentz&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Put the customer first in the designs.&lt;/li&gt;
+&lt;li&gt;You != Your customer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-surfers-rule&#34;&gt;The Surfers Rule&lt;/h2&gt;
+
+&lt;p&gt;by: Milan Loveless&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Have Passion.&lt;/li&gt;
+&lt;li&gt;No Dare / No Flair. Try things and be innovative.&lt;/li&gt;
+&lt;li&gt;Always look outside. Look where you can learn.&lt;/li&gt;
+&lt;li&gt;Move before it moves you.&lt;/li&gt;
+&lt;li&gt;Never turn your back on the ocean.&lt;/li&gt;
+&lt;li&gt;Expect to wipe out.&lt;/li&gt;
+&lt;li&gt;Never surf alone.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;speed-up-your-tests-with-rspec-set&#34;&gt;Speed up your tests with rspec-set&lt;/h2&gt;
+
+&lt;p&gt;by: Philippe Creux&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FactoryGirl is sloooow.&lt;/li&gt;
+&lt;li&gt;rspec-set creates records in the db prior to running transactions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;seattle-rb&#34;&gt;Seattle.rb&lt;/h2&gt;
+
+&lt;p&gt;by: Pete Higgins&lt;/p&gt;
+
+&lt;p&gt;First Tuesday of every month. Presentation oriented social occasion with “Show and tell.”&lt;br /&gt;
+All other Tuesdays are hack nights.&lt;br /&gt;
+seattlerb.org&lt;/p&gt;
+
+&lt;h2 id=&#34;regional-conferences&#34;&gt;Regional Conferences&lt;/h2&gt;
+
+&lt;p&gt;by: Koby Ranquest&lt;/p&gt;
+
+&lt;h3 id=&#34;los-angelos-ruby-conference&#34;&gt;Los Angelos Ruby Conference&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Feb 8th.&lt;/li&gt;
+&lt;li&gt;Very newbie friendly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ruby-on-ales-2014&#34;&gt;Ruby on Ales 2014&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bend Oregon.&lt;/li&gt;
+&lt;li&gt;The tower theatre.&lt;/li&gt;
+&lt;li&gt;March 6th - 7th.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;a-cautionary-tale&#34;&gt;A Cautionary Tale&lt;/h2&gt;
+
+&lt;p&gt;by: Jason Clark&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Forks not alaways an exact copy.&lt;/li&gt;
+&lt;li&gt;Only the thread that calls fork goes to the new thread.&lt;/li&gt;
+&lt;li&gt;Locks cause problems.&lt;/li&gt;
+&lt;li&gt;Lock doesn&amp;rsquo;t always release on child process.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pdx-rb&#34;&gt;pdx.rb&lt;/h2&gt;
+
+&lt;p&gt;by: Audrie Eschright&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Calagator for pdx meetups.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;epdx.org&#34;&gt;ePDX.org&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;PDX employer graph.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;woodshop&#34;&gt;Woodshop&lt;/h2&gt;
+
+&lt;p&gt;by: Scott Windsor&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Build your own Code Climate inside vim.&lt;/li&gt;
+&lt;li&gt;Flog inside vim.&lt;/li&gt;
+&lt;li&gt;Simplecov inside vim.&lt;/li&gt;
+&lt;li&gt;Hack your tools.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sentientmonkey/vimfiles&#34;&gt;https://github.com/sentientmonkey/vimfiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ruby-is-broken&#34;&gt;Ruby is Broken&lt;/h2&gt;
+
+&lt;p&gt;by: Nathan Zook&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No one is perfect.&lt;/li&gt;
+&lt;li&gt;Should not be able to not use namespaces.&lt;/li&gt;
+&lt;li&gt;Method resolution order.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2-talks-omitted-i-missed-them&#34;&gt;2 Talks omitted (I missed them)&lt;/h2&gt;
+
+&lt;h2 id=&#34;a-game-in-ruby&#34;&gt;A Game in ruby&lt;/h2&gt;
+
+&lt;p&gt;by: Robby Clements&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jlnr/gosu&#34;&gt;Gosu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chungu?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;centralized-logging&#34;&gt;Centralized Logging&lt;/h2&gt;
+
+&lt;p&gt;by: Ashlegh Baumgardner&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logstash.&lt;/li&gt;
+&lt;li&gt;Logstash sleeps and retrys causes problems.&lt;/li&gt;
+&lt;li&gt;Sparsify.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ruby-testing&#34;&gt;Ruby Testing&lt;/h2&gt;
+
+&lt;p&gt;by: Amiel Martin&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Testing notifications via led lights.&lt;/li&gt;
+&lt;li&gt;DigiSpark.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Advanced Multithreading in Ruby</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-advanced-multithreading-in-ruby/</link>
+      <pubDate>Tue, 22 Oct 2013 11:44:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-advanced-multithreading-in-ruby/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/jerrydantonio&#34;&gt;Jerry D&amp;rsquo;Antonio&lt;/a&gt; &lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby-presentation&#34;&gt;code&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Blocking IO is one of the first reasons to use concurrency.&lt;/li&gt;
+&lt;li&gt;Shared muteable data is bad.&lt;/li&gt;
+&lt;li&gt;Future represents actions that take effect at a future time and return a specific value.&lt;/li&gt;
+&lt;li&gt;mutex.sychronize.&lt;/li&gt;
+&lt;li&gt;Do not block the reactor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby&#34;&gt;Concurrent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/harukizaemon/hamster&#34;&gt;Hamster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threadsafe&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/eventmachine/eventmachine&#34;&gt;Eventmachine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruby-amqp/amqp&#34;&gt;AMQP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/celluloid/celluloid&#34;&gt;Celluloid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Fluent Refactoring</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-fluent-refactoring/</link>
+      <pubDate>Tue, 22 Oct 2013 11:44:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-fluent-refactoring/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;, &lt;a href=&#34;http://www.slideshare.net/geeksam/fluent-refactoring-cascadia-ruby-conf-2013-1021&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Refactoring contains a lot of jargon.&lt;/p&gt;
+
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;h3 id=&#34;refactoring&#34;&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;A language that describes ways to make your code suck less.&lt;/p&gt;
+
+&lt;h3 id=&#34;fluency&#34;&gt;Fluency&lt;/h3&gt;
+
+&lt;p&gt;What you can say when you are woken up in the middle of the night with
+a flashlight in your face.&lt;/p&gt;
+
+&lt;p&gt;Levels of Proficiency&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Level 1; Tarzan at a Party; “Beer!” “Good party.”&lt;/li&gt;
+&lt;li&gt;Level 2; Going to the party; “Where is the party?” “How do I get to the
+party”&lt;/li&gt;
+&lt;li&gt;Level 3; Discussing the party; “What happened at the party last night?”&lt;/li&gt;
+&lt;li&gt;Level 4; Charlie Rose; “Should parties be illegal?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;patterns&#34;&gt;Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Guard Clause; Best practices in small talk.&lt;/li&gt;
+&lt;li&gt;Flatten Nested Conditionals.&lt;/li&gt;
+&lt;li&gt;SRP (Single Responsibility Prinicpal).&lt;/li&gt;
+&lt;li&gt;Replace Conditional With Polymorphism.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Practical Object-Oriented Ruby&lt;/li&gt;
+&lt;li&gt;Refactoring&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Gambling for Rubyists</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-gambling-for-rubyists/</link>
+      <pubDate>Tue, 22 Oct 2013 10:45:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-gambling-for-rubyists/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/kerrizor&#34;&gt;Kerri Miller&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Every decision is a compromise. We pick postgres over mysql because we feel we are getting a benefeit.&lt;/p&gt;
+
+&lt;p&gt;“You are the best” + Be Humble&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Ruby Systems Programming</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-systems-programming/</link>
+      <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-systems-programming/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-kernal&#34;&gt;The kernal&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs in kernal mode.&lt;/li&gt;
+&lt;li&gt;Not your code.&lt;/li&gt;
+&lt;li&gt;Can do anything and everything.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;your-code&#34;&gt;Your Code&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs in user mode.&lt;/li&gt;
+&lt;li&gt;Math.&lt;/li&gt;
+&lt;li&gt;Access memory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;system-calls&#34;&gt;System calls&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ask the kernal nicely to do things.&lt;/li&gt;
+&lt;li&gt;Api to kenal mode.&lt;/li&gt;
+&lt;li&gt;If it is not in the syscall_table you can not call it.&lt;/li&gt;
+&lt;li&gt;Unix has 261 syscalls implemented.&lt;/li&gt;
+&lt;li&gt;Windows has thousands listed (implemented/unimplemented).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux System Programming by Robert Love&lt;/li&gt;
+&lt;li&gt;Unix Network Programming by Richard Stevens&lt;/li&gt;
+&lt;li&gt;Advanced Programming in the UNIX Environment by Richard Stevens&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Ruby as Art; Ruby as Science; Ruby as Craft</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-as-art-ruby-as-science-ruby-as-craft/</link>
+      <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-as-art-ruby-as-science-ruby-as-craft/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Analyses and study of algorithms.&lt;/li&gt;
+&lt;li&gt;Algorithm: A set of instructions that will solve a particular problem.&lt;/li&gt;
+&lt;li&gt;Fuctional programming in ruby.&lt;/li&gt;
+&lt;li&gt;The best code is no code. The best code is code that already exists.&lt;/li&gt;
+&lt;li&gt;There is a difference between being correct and being right.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Real craftsmen (can) create their own tools</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-real-craftsmen-can-create-their-own-tools/</link>
+      <pubDate>Mon, 21 Oct 2013 17:00:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-real-craftsmen-can-create-their-own-tools/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/the_zenspider&#34;&gt;Ryan Davis&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;90% software engineering is a lie.&lt;br /&gt;
+Websites/devops is not engineering.&lt;br /&gt;
+We write software but it is not close to engineering.&lt;/p&gt;
+
+&lt;p&gt;We are craftsman. We craft software.&lt;/p&gt;
+
+&lt;p&gt;Use the right tool for the job. Custom tools. Do not always write custom tools.&lt;/p&gt;
+
+&lt;p&gt;Algol-based languages are no grood. It is &lt;em&gt;static&lt;/em&gt; &amp;amp; &lt;em&gt;opaque&lt;/em&gt;, not
+introspective and can not reason about its own code.&lt;/p&gt;
+
+&lt;p&gt;Tool-Making is for the elite.&lt;/p&gt;
+
+&lt;p&gt;Do you write tools to help you code? Why not?&lt;/p&gt;
+
+&lt;h2 id=&#34;language-tools&#34;&gt;Language Tools&lt;/h2&gt;
+
+&lt;h3 id=&#34;flog-and-flay&#34;&gt;Flog and Flay&lt;/h3&gt;
+
+&lt;p&gt;Flog analyzes complexity on methods.&lt;/p&gt;
+
+&lt;p&gt;Flay reports structually similar code. Fuzzily Similar code.&lt;/p&gt;
+
+&lt;p&gt;Tools need to know how to build and walk a language.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Coding and The Mozart Effect</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-coding-and-the-mozart-effect/</link>
+      <pubDate>Mon, 21 Oct 2013 15:45:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-coding-and-the-mozart-effect/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/aspleenic&#34;&gt;PJ Hagerty&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;8-10 iq points higher when listening to Mozart over ocean sounds or similar “calming music.”&lt;/p&gt;
+
+&lt;p&gt;Measuring cognitive ability.&lt;/p&gt;
+
+&lt;p&gt;The Mozart effect:
+A set of research results indicating that listening to Mozart&amp;rsquo;s music may induce
+a short-term improvement on the performance of certain kinds of mental tasks
+known as &amp;ldquo;spatial-temporal reasoning;&amp;rdquo; Popularized versions of the hypothesis,
+which suggest that &amp;ldquo;listening to Mozart makes you smarter&amp;rdquo;, or that early
+childhood exposure to classical music has a beneficial effect on mental development;&lt;/p&gt;
+
+&lt;p&gt;Most studies used the exact same peice of Mozart. They decided to test how far away
+from that song and receive the same effect. They tested with Justin Bieber and found
+a benefeit was still present but barely. The further away you get from the sound
+of Mozart the smaller the effect will be.
+Find something that is similar and within the same genre but must be a little different.
+You must be finding new music. Jazz/Old Blues.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s all Ephemeral. If you listen to the same thing too often it will become less effective.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Tell Us Another Story, Grandpa: Lessons Learned Over 16 Years as a Developer</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-tell-us-another-story-grandpa/</link>
+      <pubDate>Mon, 21 Oct 2013 14:28:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-tell-us-another-story-grandpa/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/mandoescamilla&#34;&gt;Mando Escamilla&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;“A bosses job is to protect and insulate employees.”&lt;/p&gt;
+
+&lt;p&gt;“Do what you like as much as you can.”&lt;/p&gt;
+
+&lt;p&gt;“Good employees are like gold.”&lt;/p&gt;
+
+&lt;p&gt;“Find a mentor.”&lt;/p&gt;
+
+&lt;p&gt;“Apply engineering principals to family and every day life.”&lt;/p&gt;
+
+&lt;p&gt;“The worst reason to do something today is because you did it yesterday.”&lt;/p&gt;
+
+&lt;p&gt;“Work towards your priority.”&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Sentiment Analysis</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-sentiment-analysis/</link>
+      <pubDate>Mon, 21 Oct 2013 14:02:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-sentiment-analysis/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/mjkirk&#34;&gt;Matt Kirk&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;big-data-languages&#34;&gt;Big Data Languages&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;R&lt;/li&gt;
+&lt;li&gt;Julia&lt;/li&gt;
+&lt;li&gt;Clojure&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#39;https://twitter.com/sarablackthorne/status/392379743045054464/photo/1&#39;&gt;
+  &lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
+ &lt;/a&gt;
+Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-collect-data&#34;&gt;Step 1: Collect Data&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/jperla/sentiment-data&#34;&gt;github.com/jperla/sentiment-data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Linear regression has a curse: The curse of dimensionality&lt;/p&gt;
+
+&lt;p&gt;Play with it &lt;a href=&#34;http://sentiment-analyzer.heroku.com&#34;&gt;sentiment-analyzer.heroku.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features-of-text&#34;&gt;Features of Text&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Character count.&lt;/li&gt;
+&lt;li&gt;Frequency of words.&lt;/li&gt;
+&lt;li&gt;Words.&lt;/li&gt;
+&lt;li&gt;Stems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: We&#39;re sorry but something went wrong</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-were-sorry-but-something-went-wrong/</link>
+      <pubDate>Mon, 21 Oct 2013 11:45:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-were-sorry-but-something-went-wrong/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt; (&lt;a href=&#34;http://www.thagomizer.com/files/something_went_wrong.pdf&#34;&gt;slide deck&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+
+&lt;h3 id=&#34;step-0-known-state&#34;&gt;Step 0: Known State&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Not nessecarley a good state but be able to always get back to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-1-identify-a-problem&#34;&gt;Step 1: Identify A Problem&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write down steps.&lt;/li&gt;
+&lt;li&gt;Write a test.&lt;/li&gt;
+&lt;li&gt;Failing Integration test is usually to big debug.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-2-make-hypothese&#34;&gt;Step 2: Make Hypothese&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avoid Conjunction.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-3-test-hypothese&#34;&gt;Step 3: Test Hypothese&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;5 minutes. You should have an understanding in 5 minutes.&lt;/li&gt;
+&lt;li&gt;One thing at a time.&lt;/li&gt;
+&lt;li&gt;Stop refactoring while debugging (Red/Green/Refactor).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-4-is-it-fixed&#34;&gt;Step 4: Is it fixed?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use guard.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-5-refactor&#34;&gt;Step 5: Refactor&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only once it is fixed can you begin refactoring.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-6a-next-failure&#34;&gt;Step 6a: Next Failure&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Re-run your tests and find out if it is still broken.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Git Bisect.&lt;/li&gt;
+&lt;li&gt;People.&lt;/li&gt;
+&lt;li&gt;Rubber ducking (Talk it out even if it is an inanimite object).&lt;/li&gt;
+&lt;li&gt;Labradoing (Rubber Ducking).&lt;/li&gt;
+&lt;li&gt;Ask for help.&lt;/li&gt;
+&lt;li&gt;Read the Docs.&lt;/li&gt;
+&lt;li&gt;Issue &amp;amp; Bug trackers.&lt;/li&gt;
+&lt;li&gt;Mailing Lists.&lt;/li&gt;
+&lt;li&gt;Set a time Limit. (30min)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bug-writing&#34;&gt;Bug writing:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What I did&lt;/li&gt;
+&lt;li&gt;What happened&lt;/li&gt;
+&lt;li&gt;What I expected&lt;/li&gt;
+&lt;li&gt;Notes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;be-nice&#34;&gt;Be nice&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No generalizations.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t write bugs with words: always/never/everyone. It comes off as condesending.&lt;/li&gt;
+&lt;li&gt;Be Objective.&lt;/li&gt;
+&lt;li&gt;“If it was obvious it would be there.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;provide-a-patch&#34;&gt;Provide a patch&lt;/h2&gt;
+
+&lt;p&gt;Just do it. People may not accept your patch but do not take it personally.&lt;/p&gt;
+
+&lt;h2 id=&#34;do-not-panic&#34;&gt;Do not Panic&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Recognize the &lt;em&gt;real&lt;/em&gt; problem.&lt;/li&gt;
+&lt;li&gt;Come to a consensus (including non-tech folk.)&lt;/li&gt;
+&lt;li&gt;Triage. The &amp;ldquo;loudest&amp;rdquo; problem may not be the most important.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;stop-the-bleeding&#34;&gt;Stop the bleeding&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rollback.&lt;/li&gt;
+&lt;li&gt;Does it stil work?&lt;/li&gt;
+&lt;li&gt;Feature Switch. To turn features off.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;fix-the-issue&#34;&gt;Fix the issue&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Coordinate with your team.&lt;/li&gt;
+&lt;li&gt;Write a test.&lt;/li&gt;
+&lt;li&gt;Set expectations with everyone.&lt;/li&gt;
+&lt;li&gt;Be pridictable.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;reflect&#34;&gt;Reflect&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Solo (by yourself).&lt;/li&gt;
+&lt;li&gt;With your team. Ask the 5 W.&lt;/li&gt;
+&lt;li&gt;Fact based (no blame).&lt;/li&gt;
+&lt;li&gt;Future focused.&lt;/li&gt;
+&lt;li&gt;Do not add a process. Process usually means bad communication.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: The hackers guide to usability testing</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-the-hackers-guide-to-usability-testing/</link>
+      <pubDate>Mon, 21 Oct 2013 10:53:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-the-hackers-guide-to-usability-testing/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/StarrHorne&#34;&gt;Starr Horne&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Design can have bugs.&lt;/li&gt;
+&lt;li&gt;Programmers are not your users.&lt;/li&gt;
+&lt;li&gt;Designes are not your users.&lt;/li&gt;
+&lt;li&gt;You clients may not be your users.&lt;/li&gt;
+&lt;li&gt;Form make them feel dumb due to terminology.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;“Usability testing: you don&amp;rsquo;t need microphones and video cameras and two-way
+mirrors and guys in lab coats.”
+ - You don&amp;rsquo;t need a lab or a team. Just sit someone infront of a computer and
+ have a clip board ready.&lt;/p&gt;
+
+&lt;p&gt;Two tests:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;What is it test?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Have them look at something and just ask them what it is?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Please do this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Give someone a particular task.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Read: Steve Krug - Rocket Surgery Made Easy&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

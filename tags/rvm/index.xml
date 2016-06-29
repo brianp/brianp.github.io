@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Rvm on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/rvm/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 09 Feb 2011 00:16:00 UTC</updated>
+    
+    <item>
+      <title>bson keys must be strings or symbols</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <pubDate>Wed, 09 Feb 2011 00:16:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <description>&lt;p&gt;While setting up a new Rails development environment I ran into the
+error &lt;code&gt;bson keys must be strings or symbols&lt;/code&gt;. After some googling I
+found the following method to fix it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #000000; background-color: #fff0ff&#34;&gt;/gems/&lt;/span&gt;bson&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;bson&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;bson_c&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`serialize&amp;#39;: keys must be strings or symbols (TypeError)&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;rvm gemset empty&lt;/span&gt;
+
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;bundle install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;/fixed&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

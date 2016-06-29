@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Gambling on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/gambling/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 22 Oct 2013 10:45:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Gambling for Rubyists</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-gambling-for-rubyists/</link>
+      <pubDate>Tue, 22 Oct 2013 10:45:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-gambling-for-rubyists/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/kerrizor&#34;&gt;Kerri Miller&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Every decision is a compromise. We pick postgres over mysql because we feel we are getting a benefeit.&lt;/p&gt;
+
+&lt;p&gt;“You are the best” + Be Humble&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

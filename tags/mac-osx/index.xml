@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Mac Osx on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/mac-osx/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 12 Mar 2013 00:42:00 UTC</updated>
+    
+    <item>
+      <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
+against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...
+-&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz
+Installing ruby-2.0.0-p0...
+
+BUILD FAILED
+
+Inspect or clean up the working tree at
+/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615
+Results logged to
+/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log
+
+Last &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;10&lt;/span&gt; log lines:
+installing default gems:
+/Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;build_info,
+cache, doc, gems, specifications&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+                              bigdecimal 1.2.0
+                              io-console 0.4.2
+                              json 1.7.7
+                              minitest 4.3.2
+                              psych 2.0.0
+                              rake 0.9.6
+                              rdoc 4.0.0
+                              test-unit 2.0.0.0
+The Ruby openssl extension was not compiled. Missing the OpenSSL lib?
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After some googling I found out Mac OS 10.8 ships with a broken OpenSSL
+install. I first needed to install OpenSSL via homebrew&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;brew install openssl&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After openssl installs successfully we can re-try installing Ruby 2 with
+new options flags&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;RUBY_CONFIGURE_OPTS&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`&amp;quot;&lt;/span&gt; rbenv install 2.0.0-p0
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we&amp;rsquo;re ready to go!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;ruby -v
+ruby 2.0.0p0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;2013-02-24 revision 39474&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;x86_64-darwin12.2.0&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

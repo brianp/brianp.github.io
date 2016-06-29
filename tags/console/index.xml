@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Console on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/console/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sun, 09 Jun 2013 13:37:00 UTC</updated>
+    
+    <item>
+      <title>DataMapper SQL Queries in Rails Console</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
+what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
+debugging when getting unexpected results or trying to increase query
+performance.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DataMapper::Logger.new($stdout, :debug)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Enter that at anytime while running in &lt;code&gt;rails c&lt;/code&gt; and you should start
+seeing the output immediatley.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;
+If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity
+map. In which case a new query isn&amp;rsquo;t actually being performed. Try a
+query that you haven&amp;rsquo;t done yet and verify the results are output. Or
+Simply restart the console.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

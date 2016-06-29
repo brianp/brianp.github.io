@@ -1,0 +1,144 @@
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> bson keys must be strings or symbols &middot; { always: &#39;coding&#39; } </title>
+    
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io/alwayscoding.ca/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io/alwayscoding.ca/css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://brianp.github.io/alwayscoding.ca/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://brianp.github.io/alwayscoding.ca/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="{ always: &#39;coding&#39; }" />
+    
+    <script src="https://brianp.github.io/alwayscoding.ca/js/jquery.min.js"></script>
+    <script src="https://brianp.github.io/alwayscoding.ca/js/main.min.js">
+    </script>
+</head>
+
+    <body>
+        <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+            panel-cover panel-cover--collapsed
+        "  style="background-image: url(/images/side-column-bg.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="https://brianp.github.io/alwayscoding.ca/" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="https://brianp.github.io/alwayscoding.ca/"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  Brian Pearce  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://brianp.github.io/alwayscoding.ca#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li>
+                            <li class="navigation__item"><a href="https://brianp.github.io/alwayscoding.caposts" title="The blog archive" class="blog-button">Archive</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/side-column-bg.jpg)">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <a href="https://brianp.github.io/alwayscoding.ca/" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="https://brianp.github.io/alwayscoding.ca/"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  Brian Pearce  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="https://brianp.github.io/alwayscoding.ca/#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <div class="post">
+                    <h1>bson keys must be strings or symbols</h1>
+                    <span class="post-date">Wed, Feb 9, 2011</span>
+                    <p>While setting up a new Rails development environment I ran into the
+error <code>bson keys must be strings or symbols</code>. After some googling I
+found the following method to fix it:</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #000000; background-color: #fff0ff">/gems/</span>bson<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">.</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">.</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">/</span>lib<span style="color: #333333">/</span>bson<span style="color: #333333">/</span>bson_c<span style="color: #333333">.</span>rb:<span style="color: #0000DD; font-weight: bold">24</span><span style="color: #AA6600">:in</span> <span style="background-color: #fff0f0">`serialize&#39;: keys must be strings or symbols (TypeError)</span>
+
+<span style="background-color: #fff0f0">rvm gemset empty</span>
+
+<span style="background-color: #fff0f0">bundle install</span>
+</pre></div>
+
+<p>/fixed</p>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

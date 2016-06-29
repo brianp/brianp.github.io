@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Systems on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/systems/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 22 Oct 2013 09:18:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Ruby Systems Programming</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-systems-programming/</link>
+      <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-systems-programming/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-kernal&#34;&gt;The kernal&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs in kernal mode.&lt;/li&gt;
+&lt;li&gt;Not your code.&lt;/li&gt;
+&lt;li&gt;Can do anything and everything.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;your-code&#34;&gt;Your Code&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs in user mode.&lt;/li&gt;
+&lt;li&gt;Math.&lt;/li&gt;
+&lt;li&gt;Access memory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;system-calls&#34;&gt;System calls&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ask the kernal nicely to do things.&lt;/li&gt;
+&lt;li&gt;Api to kenal mode.&lt;/li&gt;
+&lt;li&gt;If it is not in the syscall_table you can not call it.&lt;/li&gt;
+&lt;li&gt;Unix has 261 syscalls implemented.&lt;/li&gt;
+&lt;li&gt;Windows has thousands listed (implemented/unimplemented).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux System Programming by Robert Love&lt;/li&gt;
+&lt;li&gt;Unix Network Programming by Richard Stevens&lt;/li&gt;
+&lt;li&gt;Advanced Programming in the UNIX Environment by Richard Stevens&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

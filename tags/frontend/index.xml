@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Frontend on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/frontend/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 03 Sep 2013 10:42:00 UTC</updated>
+    
+    <item>
+      <title>HTML Anchors with ids</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/09/03/html-anchors-with-ids/</link>
+      <pubDate>Tue, 03 Sep 2013 10:42:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/09/03/html-anchors-with-ids/</guid>
+      <description>&lt;p&gt;Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.&lt;/p&gt;
+
+&lt;p&gt;When adding anchors on a page for the purpose of in-page links my typical method for years
+has been to add a link with the anchor name in the &lt;code&gt;href&lt;/code&gt; and an anchor tag with a
+&lt;code&gt;name&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+Some page content…
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Just the other day &lt;a href=&#34;http://www.twitter.com/ry5n&#34;&gt;@ry5n&lt;/a&gt; informed me that a link that corresponds to an elements &lt;code&gt;id&lt;/code&gt; will work just the
+same and there&amp;rsquo;s no need to add an additional anchor with a &lt;code&gt;name&lt;/code&gt;. This
+allows you to use any element as the anchor. I find this avoids
+additional un-nessecary markup and overall is more convenient.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+Some page content…
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;According to &lt;a href=&#34;http://www.w3.org/TR/html401/struct/links.html#anchors-with-id&#34;&gt;the
+docs&lt;/a&gt;:
+&lt;blockquote&gt;
+  &lt;p&gt;
+The id and name attributes share the same name space. This means that they cannot both define an anchor with the same name in the same document. It is permissible to use both attributes to specify an element&#39;s unique identifier for the following elements: A, APPLET, FORM, FRAME, IFRAME, IMG, and MAP. When both attributes are used on a single element, their values must be identical.
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;&lt;/strong&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Mathmatics on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/mathmatics/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 22 Oct 2013 09:18:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Ruby as Art; Ruby as Science; Ruby as Craft</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-as-art-ruby-as-science-ruby-as-craft/</link>
+      <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-ruby-as-art-ruby-as-science-ruby-as-craft/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Analyses and study of algorithms.&lt;/li&gt;
+&lt;li&gt;Algorithm: A set of instructions that will solve a particular problem.&lt;/li&gt;
+&lt;li&gt;Fuctional programming in ruby.&lt;/li&gt;
+&lt;li&gt;The best code is no code. The best code is code that already exists.&lt;/li&gt;
+&lt;li&gt;There is a difference between being correct and being right.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

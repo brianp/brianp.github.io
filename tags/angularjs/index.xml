@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Angularjs on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/angularjs/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 09 Oct 2013 19:54:00 UTC</updated>
+    
+    <item>
+      <title>Angular and Liquid expressions in Jekyll</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <description>&lt;p&gt;I started writing an Angular application to intereact with an API I have
+produced recently. The Angular app is compiled as a static site
+with Jekyll. I immediately ran into an issue with Angular.
+ None of my expressions were showing up. I
+realized it was because Liquid which is included with Jekyll uses the
+same expression tags as Angular: &lt;code&gt;{{ myVariable }}&lt;/code&gt;. This meant the
+Angular expressions were not making it as raw text into the final template
+as they were being caught by Liquid.&lt;/p&gt;
+
+&lt;p&gt;I started by looking to see if there was an easy way to deactivate Liquid
+inside Jekyll as I had no intention of using it. Without monkey patching the rendering process
+it seemed like I was stuck with the Liquid processing.&lt;/p&gt;
+
+&lt;p&gt;All is not lost though. A quick search returned an option to change the
+expression symbols for Angular:&lt;/p&gt;
+
+&lt;p&gt;Coffeescript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@myApp = &lt;/span&gt;angular.module(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;, [])
+
+@myApp.config [&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;$interpolateProvider&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;($interpolateProvider)-&amp;gt;&lt;/span&gt;
+  $interpolateProvider.startSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{(&amp;#39;&lt;/span&gt;).endSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;)}&amp;#39;&lt;/span&gt;)
+]
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Javascript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; myapp;
+myApp &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; angular.module(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;, []);
+
+myApp.config([
+  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;$interpolateProvider&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;($interpolateProvider) {
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; $interpolateProvider.startSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{(&amp;#39;&lt;/span&gt;).endSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;)}&amp;#39;&lt;/span&gt;);
+  }
+]);
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This allowed me to now use &lt;code&gt;{( myVariable )}&lt;/code&gt; for Anuglar expressions and it
+does not get caught in the liquid filters.&lt;/p&gt;
+
+&lt;aside&gt;
+**Aside:** While writing Liquid examples in Octopress; 
+`{{ myVariable }}`
+actually gets caught in the Liquid filter as an expression. I had to use 
+the Liquid `raw` &amp; `endraw` tags to be able to show the expression above. 
+Also note in newer versions of Jekyll and Liquid `raw` has been
+deprecated in favour of the `verbatim` tag.
+&lt;/aside&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

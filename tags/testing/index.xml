@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Testing on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/testing/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 21 Oct 2013 17:00:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Real craftsmen (can) create their own tools</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-real-craftsmen-can-create-their-own-tools/</link>
+      <pubDate>Mon, 21 Oct 2013 17:00:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-real-craftsmen-can-create-their-own-tools/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/the_zenspider&#34;&gt;Ryan Davis&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;90% software engineering is a lie.&lt;br /&gt;
+Websites/devops is not engineering.&lt;br /&gt;
+We write software but it is not close to engineering.&lt;/p&gt;
+
+&lt;p&gt;We are craftsman. We craft software.&lt;/p&gt;
+
+&lt;p&gt;Use the right tool for the job. Custom tools. Do not always write custom tools.&lt;/p&gt;
+
+&lt;p&gt;Algol-based languages are no grood. It is &lt;em&gt;static&lt;/em&gt; &amp;amp; &lt;em&gt;opaque&lt;/em&gt;, not
+introspective and can not reason about its own code.&lt;/p&gt;
+
+&lt;p&gt;Tool-Making is for the elite.&lt;/p&gt;
+
+&lt;p&gt;Do you write tools to help you code? Why not?&lt;/p&gt;
+
+&lt;h2 id=&#34;language-tools&#34;&gt;Language Tools&lt;/h2&gt;
+
+&lt;h3 id=&#34;flog-and-flay&#34;&gt;Flog and Flay&lt;/h3&gt;
+
+&lt;p&gt;Flog analyzes complexity on methods.&lt;/p&gt;
+
+&lt;p&gt;Flay reports structually similar code. Fuzzily Similar code.&lt;/p&gt;
+
+&lt;p&gt;Tools need to know how to build and walk a language.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013: We&#39;re sorry but something went wrong</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-were-sorry-but-something-went-wrong/</link>
+      <pubDate>Mon, 21 Oct 2013 11:45:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-were-sorry-but-something-went-wrong/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt; (&lt;a href=&#34;http://www.thagomizer.com/files/something_went_wrong.pdf&#34;&gt;slide deck&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+
+&lt;h3 id=&#34;step-0-known-state&#34;&gt;Step 0: Known State&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Not nessecarley a good state but be able to always get back to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-1-identify-a-problem&#34;&gt;Step 1: Identify A Problem&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write down steps.&lt;/li&gt;
+&lt;li&gt;Write a test.&lt;/li&gt;
+&lt;li&gt;Failing Integration test is usually to big debug.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-2-make-hypothese&#34;&gt;Step 2: Make Hypothese&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Avoid Conjunction.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-3-test-hypothese&#34;&gt;Step 3: Test Hypothese&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;5 minutes. You should have an understanding in 5 minutes.&lt;/li&gt;
+&lt;li&gt;One thing at a time.&lt;/li&gt;
+&lt;li&gt;Stop refactoring while debugging (Red/Green/Refactor).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-4-is-it-fixed&#34;&gt;Step 4: Is it fixed?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use guard.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-5-refactor&#34;&gt;Step 5: Refactor&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only once it is fixed can you begin refactoring.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-6a-next-failure&#34;&gt;Step 6a: Next Failure&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Re-run your tests and find out if it is still broken.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Git Bisect.&lt;/li&gt;
+&lt;li&gt;People.&lt;/li&gt;
+&lt;li&gt;Rubber ducking (Talk it out even if it is an inanimite object).&lt;/li&gt;
+&lt;li&gt;Labradoing (Rubber Ducking).&lt;/li&gt;
+&lt;li&gt;Ask for help.&lt;/li&gt;
+&lt;li&gt;Read the Docs.&lt;/li&gt;
+&lt;li&gt;Issue &amp;amp; Bug trackers.&lt;/li&gt;
+&lt;li&gt;Mailing Lists.&lt;/li&gt;
+&lt;li&gt;Set a time Limit. (30min)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bug-writing&#34;&gt;Bug writing:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What I did&lt;/li&gt;
+&lt;li&gt;What happened&lt;/li&gt;
+&lt;li&gt;What I expected&lt;/li&gt;
+&lt;li&gt;Notes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;be-nice&#34;&gt;Be nice&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No generalizations.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t write bugs with words: always/never/everyone. It comes off as condesending.&lt;/li&gt;
+&lt;li&gt;Be Objective.&lt;/li&gt;
+&lt;li&gt;“If it was obvious it would be there.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;provide-a-patch&#34;&gt;Provide a patch&lt;/h2&gt;
+
+&lt;p&gt;Just do it. People may not accept your patch but do not take it personally.&lt;/p&gt;
+
+&lt;h2 id=&#34;do-not-panic&#34;&gt;Do not Panic&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Recognize the &lt;em&gt;real&lt;/em&gt; problem.&lt;/li&gt;
+&lt;li&gt;Come to a consensus (including non-tech folk.)&lt;/li&gt;
+&lt;li&gt;Triage. The &amp;ldquo;loudest&amp;rdquo; problem may not be the most important.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;stop-the-bleeding&#34;&gt;Stop the bleeding&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rollback.&lt;/li&gt;
+&lt;li&gt;Does it stil work?&lt;/li&gt;
+&lt;li&gt;Feature Switch. To turn features off.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;fix-the-issue&#34;&gt;Fix the issue&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Coordinate with your team.&lt;/li&gt;
+&lt;li&gt;Write a test.&lt;/li&gt;
+&lt;li&gt;Set expectations with everyone.&lt;/li&gt;
+&lt;li&gt;Be pridictable.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;reflect&#34;&gt;Reflect&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Solo (by yourself).&lt;/li&gt;
+&lt;li&gt;With your team. Ask the 5 W.&lt;/li&gt;
+&lt;li&gt;Fact based (no blame).&lt;/li&gt;
+&lt;li&gt;Future focused.&lt;/li&gt;
+&lt;li&gt;Do not add a process. Process usually means bad communication.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

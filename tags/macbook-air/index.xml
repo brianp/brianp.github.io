@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Macbook Air on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/macbook-air/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 17 Sep 2013 20:20:00 UTC</updated>
+    
+    <item>
+      <title>MacBook Air (Mid 2013) Wifi Issues</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
+      <description>
+
+&lt;p&gt;As soon as the MacBook Air (Mid 2013) started shipping; reports began
+flooding in about intermittant wifi connectivity
+problems.&lt;sup&gt;&lt;a href=&#39;#ref-1&#39;&gt;[1]&lt;/a&gt;&lt;/sup&gt; The day after it was
+released I ordered it. I can&amp;rsquo;t say I
+experinced the same issues everyone else was claiming to run into.
+Apple denied the issue at first (as they always do) but later released
+a software update for the issue.&lt;sup&gt;&lt;a href=&#39;#ref-2&#39;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
+(mid 2013)&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Not soon after the software update I began experiencing the
+wifi connectivity issues. When the laptop is woken from sleep it
+will connect to the first network available. After this connection it will
+no longer show any available network. I will have to proceed by turning the wifi off and
+back on again. It will search for all the networks and then let me finally
+connect to my own. This process repeats anytime the laptop goes to
+sleep.&lt;/p&gt;
+
+&lt;h2 id=&#34;other-issues&#34;&gt;Other Issues&lt;/h2&gt;
+
+&lt;p&gt;Aside from the aforementioned wireless issue the laptop now suffers from sleep/wake
+problems. When woken from sleep I can use the laptop like normal for
+five to ten seconds before it will put itself back to sleep. Waking it a
+second time requires multiple trackpad/keyboard presses before it
+responds.&lt;/p&gt;
+
+&lt;p&gt;After some searching it seems like the sleep/wake issue might be related to a new standby mode.&lt;sup&gt;&lt;a href=&#39;#ref-3&#39;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;{% blockquote Jason D. O&amp;rsquo;Grady, &lt;a href=&#34;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&#34;&gt;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&lt;/a&gt; %}
+…the reason for the delay is Apple&amp;rsquo;s new standby mode which is built into OS X to achieve longer battery life when MacBook Pros and Airs are sleeping…
+{% endblockquote %}&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;1.
+  * &lt;a id=&#39;ref-1&#39; href=&#39;http://9to5mac.com/2013/06/24/apple-investigating-new-macbook-air-wifi-issues-some-customers-receiving-replacements/&#39;&gt;Apple investigating new MacBook Air Wi-Fi issues, customers
+   receiving replacements&lt;/a&gt;
+  * &lt;a href=&#34;http://www.macrumors.com/2013/06/29/apple-testing-software-update-to-address-2013-macbook-air-wi-fi-issues/&#34;&gt;Apple Testing Software Update to Address 2013 MacBook Air Wi-Fi
+    Issues&lt;/a&gt;
+  * &lt;a href=&#34;http://www.engadget.com/2013/06/24/apple-allegedly-looking-into-macbook-air-wifi-issue-replacing-m/&#34;&gt;Apple allegedly looking into MacBook Air WiFi issue, replacing
+    machines&lt;/a&gt;
+2.
+  &lt;a id=&#39;ref-2&#39; href=&#39;http://support.apple.com/kb/DL1672&#39;&gt;MacBook Air (Mid 2013) Software Update 1.0&lt;/a&gt;
+3.
+  &lt;a id=&#39;ref-3&#39;
+    href=&#39;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&#39;&gt;Faster
+wake from sleep on MacBooks&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

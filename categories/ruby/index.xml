@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Ruby on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/categories/ruby/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 25 Feb 2014 15:08:38 UTC</updated>
+    
+    <item>
+      <title>Handling code duplication with Sass @imports in the asset pipeline</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;
+I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;@brian_pearce&lt;/strong&gt;
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.&lt;/p&gt;
+
+&lt;p&gt;Head on over to the &lt;a href=&#34;http://inside.unbounce.com/product-dev/handling-code-duplication/&#34;&gt;Inside Unbounce&lt;/a&gt; blog to check out the full post.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

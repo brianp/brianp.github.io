@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Datetime on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/datetime/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Thu, 15 Aug 2013 11:21:00 UTC</updated>
+    
+    <item>
+      <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
+related issues within one of the applications I contract on. This is a just a
+list of notable behaviours I expereinced whilst working with Ruby,
+Rails, Dates &amp;amp; TimeZones.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
+to go alone! Take this.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: DST is in effect at the time of writing.&lt;/p&gt;
+
+&lt;h2 id=&#34;inconsistent-handling-of-dst&#34;&gt;Inconsistent Handling of DST&lt;/h2&gt;
+
+&lt;p&gt;In the code below we instantiate an &lt;code&gt;ActiveSupport::TimeZone&lt;/code&gt; object. I would love to
+think that this instance would know everything about that Time Zone. Its
+offset inside and outside of DST. I would expect the method
+&lt;code&gt;TimeZone#formatted_offset&lt;/code&gt; to account for DST and return the offset
+accordingly. It doesn&amp;rsquo;t. It outputs the offset for Standard time only. Ideally I&amp;rsquo;d like to see more concise method
+naming. &lt;code&gt;standard_offset&lt;/code&gt; vs &lt;code&gt;daylight_offset&lt;/code&gt; or &lt;code&gt;dst_offset&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alas, after we have the zone object we can pass that zone into a &lt;code&gt;in_time_zone&lt;/code&gt; method to calculate a time in a
+particular zone based off an existing time. This method does in fact take
+DST into consideration.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-08:00&amp;quot;&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-07:00&amp;quot;&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Wed&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;36&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PDT&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;07&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be problematic. Different methods were utilized in
+different sections of the app in turn DST and Time Zone offsets were being
+calculated differently.&lt;/p&gt;
+
+&lt;p&gt;You could do the following to acheive the same
+conversion using the helpful &lt;code&gt;new_offset&lt;/code&gt; method and passing in the
+offset but it would result in a Standard time conversion:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-08:00&amp;quot;&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new_offset(zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Wed&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;20&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;36&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0800&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The above gives you exactly what you ask it for. A time with a specific
+offset. The downside to this is the offset being fetched above is again
+a method that does not take DST into consideration and would throw off
+your result.&lt;/p&gt;
+
+&lt;h2 id=&#34;converting-to-different-time-formats-to-utilize-certain-methods&#34;&gt;Converting to different Time formats to utilize certain methods&lt;/h2&gt;
+
+&lt;p&gt;Another issue was the requirement to flip flop between types to
+utilize specific methods. I&amp;rsquo;d have to call &lt;code&gt;to_datetime&lt;/code&gt; to utilize
+changing offsets without adjusting the current point in time. Then
+follow it with &lt;code&gt;to_time&lt;/code&gt; to pass it into a &lt;code&gt;Timecop&lt;/code&gt; method.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Time&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+&lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-03:00&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#Atlantic Time (Canada)&lt;/span&gt;
+zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;beginning_of_day &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;seconds)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;UTC&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Time&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0700&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_time
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mon&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;26&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;07&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeWithZone&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Another annoyance here is the 8th &amp;amp; 12th line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t re-assign time to the new &lt;code&gt;DateTime&lt;/code&gt; instance (line #12) the
+&lt;code&gt;Time&lt;/code&gt; instance will not throw an error when calling the &lt;code&gt;change&lt;/code&gt;
+method. It also won&amp;rsquo;t do anything else including producing the desired result.
+Which will leave you pulling hair while wondering why you&amp;rsquo;re not landing
+in the time with the zone you want.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeWithZone&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#oops forgot to re-assign&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There we have it. No error and no time zone adjustment.&lt;/p&gt;
+
+&lt;p&gt;This is because the Rails &lt;code&gt;Time&lt;/code&gt; class adds a change method but it only
+responds to a hash with the following keys: &lt;code&gt;:year, :month, :day, :hour, :min, :sec, :usec&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Aside Rant:
+&lt;code&gt;Time&lt;/code&gt; has a date. If it was just time then it should
+have no date. Much like &lt;code&gt;Date&lt;/code&gt; has no time. If &lt;code&gt;Time&lt;/code&gt; has a date what
+separates it from &lt;code&gt;DateTime&lt;/code&gt; or &lt;code&gt;TimeWithZone&lt;/code&gt;? If &lt;code&gt;TimeWithZone&lt;/code&gt; has a
+date shouldn&amp;rsquo;t it be &lt;code&gt;DateTimeWithZone&lt;/code&gt;. For that matter &lt;code&gt;DateTime&lt;/code&gt; already
+has a zone so why have a second &lt;code&gt;DateTimeWithZone&lt;/code&gt; class for the same thing? (I actually
+ended up looking into this more. &lt;a href=&#39;#timevsdatetime&#39;&gt;See below: The State of Time vs DateTime&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;storing-in-utc-isn-t-a-be-all-end-all-solution&#34;&gt;Storing in UTC isn&amp;rsquo;t a be all end all solution&lt;/h2&gt;
+
+&lt;p&gt;Anytime I mentioned I was working with Time Zones people just said
+&amp;ldquo;Store it in UTC&amp;rdquo;. As if that was the solution to all woes. The problem
+here is that the dates and times being stored (in UTC) were not being
+converted to or from UTC to the desired time in zone. String formatted dates sans time &amp;amp; offset
+were being passed and created as UTC time stamps.
+This makes those timestamps wrong as &lt;code&gt;2013-08-25&lt;/code&gt; passed in will be saved
+as &lt;code&gt;2013-08-25 00:00:00 UTC&lt;/code&gt; and is not the same as
+&lt;code&gt;2013-08-25 00:00:00 PST&lt;/code&gt; (They have a +7 hour difference). So when doing
+comparisons to the stored dates you could end up with inaccurate results when just comparing
+against string values. If the desired offset was high or low enough the UTC
+date could actually be a different day then what&amp;rsquo;s expected.&lt;/p&gt;
+
+&lt;p&gt;The times were not being
+converted on their way into the database as the timezone field was independent of each
+particular time or date fields in related records. If the user changed the
+Time Zone field callbacks would have to trigger a re-calculation on every time
+related field on every related record. I&amp;rsquo;m not going to get into any
+more specifics but our current method was the most desired way to
+handle the process as we dind&amp;rsquo;t want to constantly be re-caluclating
+times in the databse if a user switched the zone. It&amp;rsquo;s just that some steps were missed in our
+comparing of the non adjusted dates.&lt;/p&gt;
+
+&lt;h2 id=&#34;testing-time-zone-differences&#34;&gt;Testing Time Zone differences&lt;/h2&gt;
+
+&lt;p&gt;As the Dependecy Injection (DPI) band wagon rolled around using tools like
+&lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; became
+&amp;ldquo;unnessecary.&amp;rdquo; I did my best to keep DPI in mind while working with Time
+related methods. Which made unit testing them significantly easier. Here&amp;rsquo;s a quick
+run down on why DPI helps with time related methods:&lt;/p&gt;
+
+&lt;p&gt;Consider the following code without DPI.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# app/models/milestone.rb&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;effective_or_nearest&lt;/span&gt;
+  date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; effective_on(date)
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date ? first : last &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
+  milestone
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The code above checks to see if we&amp;rsquo;re within a milestone date range
+currently. If we&amp;rsquo;re before or after the range then assign the closest
+milestone (first or last.)&lt;/p&gt;
+
+&lt;p&gt;The problem here is trying to test that the last milestone would get
+returned in the event we are past the milestone range because
+DateTime.now in this case is before the milestone end times.
+Instead we can just use DPI and feed in whatever date we
+want. We can also assign it a smart default as the current time.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# app/models/milestone.rb&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;effective_or_nearest&lt;/span&gt;(date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now)
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; effective_on(date)
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date ? first : last &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
+  milestone
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we can control the comparitor date we can pass in anything
+we&amp;rsquo;de like while testing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# spec/models/milestone_spec.rb&lt;/span&gt;
+it &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;assigns the last milestone as the date is after the requirement&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+  date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;days&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;from_now
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;effective_or_nearest(date)
+  milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;should equal &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Keeping DPI in mind while writing your code can definietly make writing
+your tests easier. This is is just a single benefeit to DPI. I encourage
+you to check out other examples.&lt;/p&gt;
+
+&lt;p&gt;This doesn&amp;rsquo;t mean that I don&amp;rsquo;t feel there&amp;rsquo;s a place for
+&lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; in my life. The unit
+tests ran quick and I was happy with them. The area was sensitive though
+and I wanted to really ensure we always got the results we wanted. I
+wanted to write some full stack tests that
+started manipulating data as a user from other time zones.&lt;/p&gt;
+
+&lt;p&gt;In this case I had the user registering for an activity that was
+setup in the Atlantic time zone (Atlantic Time (Canada)). The
+start and end times for milestones would be based off the AST timezone.
+This test let me move the context of the user exactly 2 seconds before the end of the first milestone
+in AST. Which would be +4 hours PST. Register the user at that time and
+ensure I recieve the desired results.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;zoned_time&lt;/span&gt;(date_time)
+  zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date_time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; event&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;time_zone_offset)
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_time
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+it &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;assigns the first milestone&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; zoned_time(time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;beginning_of_day &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;seconds)
+  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Timecop&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;travel(&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt;) &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+    visit &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/register&amp;#39;&lt;/span&gt;
+    signup &lt;span style=&#34;color: #888888&#34;&gt;#fills out a form and submits&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;should eq &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;first
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Using &lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; like this
+helped ensure users in different time zones would
+have all time related constraints met properly. This was more satisfying
+then just createing a time and injecting it directly into my method.
+Using DPI left me less wiggle room in creating circumstanes to reveal
+other possible scenarios under which the time constraints might be
+calculated improperly under different zones.&lt;/p&gt;
+
+&lt;h2 id=&#34;some-notes-on-the-different-ruby-rails-date-time-classes&#34;&gt;Some notes on the different Ruby/Rails Date &amp;amp; Time classes.&lt;/h2&gt;
+
+&lt;p&gt;A quick map of where different Date and Time classes and modules live:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Date.html&#34;&gt;Date 1.9.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Time.html&#34;&gt;Time 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/core-2.0/Time.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Ruby Standard Library
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html&#34;&gt;Date 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Time.html&#34;&gt;Time 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Time.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html&#34;&gt;DateTime 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/DateTime.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Rails
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/Date.html&#34;&gt;Date&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/Time.html&#34;&gt;Time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/DateTime.html&#34;&gt;DateTime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html&#34;&gt;ActiveSupport::TimeZone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html&#34;&gt;ActiveSupport::TimeWithZone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TZInfo (included gem)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tzinfo.rubyforge.org/doc/TZInfo/Timezone.html&#34;&gt;TZInfo::Timezone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The rails &lt;code&gt;Date&lt;/code&gt; and &lt;code&gt;Time&lt;/code&gt; classes bring lots of the fancy niceties
+that we like to use. Methods such as &lt;code&gt;from_now&lt;/code&gt; in lines like
+&lt;code&gt;2.days.from_now&lt;/code&gt;. They extend this functionality to the base ruby
+classes for use anywhere.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TZInfo&lt;/code&gt; is a ruby library used to &amp;ldquo;provide daylight savings aware
+transformations between times in different timezones.&amp;rdquo;
+&lt;code&gt;ActiveSupport::TimeZone&lt;/code&gt; and &lt;code&gt;ActiveSupport::TimeWithZone&lt;/code&gt; are
+essentially wrappers for TZInfo interaction.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-would-i-use-datetime-over-the-time-class&#34;&gt;Why would I use &lt;code&gt;DateTime&lt;/code&gt; over the &lt;code&gt;Time&lt;/code&gt; class?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/10957717/what-is-the-point-of-the-datetime-class&#34;&gt;This Stackoverflow Question&lt;/a&gt; seems to sum up the original reason for it:
+{% blockquote %}
+DateTime had an advantage over Time on 32 bit machines in Rubies &amp;lt; 1.9.2 - Time was a victim of the Y2K38 problem and limited to a 32 bit range. This problem is solved either on 64 bit machines and/or in recent Ruby versions. You still may need to use DateTime if for example 1.8 compatibility is a must or you rely on using methods from its API which often deviates from that of Time.
+{% endblockquote %}&lt;/p&gt;
+
+&lt;h3 id=&#34;span-id-timevsdatetime-the-state-of-time-vs-datetime-a&#34;&gt;&lt;span id=&#39;timevsdatetime&#39;&gt;The state of Time vs DateTime&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;After reading through &lt;a href=&#34;http://danilenko.org/2012/7/6/rails_timezones/&#34;&gt;this additional blog
+post&lt;/a&gt; the differences
+between &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/code&gt; seem to be getting smaller since Ruby 1.9.2 hit and you could really pick
+either with some subtle nuances. Our app deals with many
+different time zones at any one time so the suggested practice there
+doesn&amp;rsquo;t really solve our internal issues. It seems like a decent
+practice to pickup though. That way if your app does become Time Zone dependent
+at some point you&amp;rsquo;ve already taken away a lot of headache.&lt;/p&gt;
+
+&lt;h2 id=&#34;reflection&#34;&gt;Reflection&lt;/h2&gt;
+
+&lt;p&gt;Overall I wish there were less public facing Date &amp;amp; Time related entities. I
+don&amp;rsquo;t doubt all of these classes serve a purpose but I don&amp;rsquo;t think they
+should all have a public interface and I don&amp;rsquo;t want to have anything
+returned that&amp;rsquo;s not a &lt;code&gt;Date&lt;/code&gt;, &lt;code&gt;Time&lt;/code&gt; or &lt;code&gt;DateTime&lt;/code&gt; instance. After
+learning how close &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/code&gt; have become I&amp;rsquo;d even propose to
+eliminate &lt;code&gt;DateTime&lt;/code&gt; once the remaining gaps have been bridged. I&amp;rsquo;d wager &lt;code&gt;Date&lt;/code&gt; being
+moved from Ruby core to the stdlib is a sign that the &lt;code&gt;Time&lt;/code&gt; class seems
+to be seeing more usage.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

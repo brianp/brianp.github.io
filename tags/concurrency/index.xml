@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Concurrency on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/concurrency/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 22 Oct 2013 11:44:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Advanced Multithreading in Ruby</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-advanced-multithreading-in-ruby/</link>
+      <pubDate>Tue, 22 Oct 2013 11:44:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-advanced-multithreading-in-ruby/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/jerrydantonio&#34;&gt;Jerry D&amp;rsquo;Antonio&lt;/a&gt; &lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby-presentation&#34;&gt;code&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Blocking IO is one of the first reasons to use concurrency.&lt;/li&gt;
+&lt;li&gt;Shared muteable data is bad.&lt;/li&gt;
+&lt;li&gt;Future represents actions that take effect at a future time and return a specific value.&lt;/li&gt;
+&lt;li&gt;mutex.sychronize.&lt;/li&gt;
+&lt;li&gt;Do not block the reactor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby&#34;&gt;Concurrent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/harukizaemon/hamster&#34;&gt;Hamster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threadsafe&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/eventmachine/eventmachine&#34;&gt;Eventmachine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruby-amqp/amqp&#34;&gt;AMQP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/celluloid/celluloid&#34;&gt;Celluloid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

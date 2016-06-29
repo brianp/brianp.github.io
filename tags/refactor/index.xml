@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Refactor on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/refactor/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 22 Oct 2013 11:44:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Fluent Refactoring</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-fluent-refactoring/</link>
+      <pubDate>Tue, 22 Oct 2013 11:44:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/22/cascadia-ruby-fluent-refactoring/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;, &lt;a href=&#34;http://www.slideshare.net/geeksam/fluent-refactoring-cascadia-ruby-conf-2013-1021&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Refactoring contains a lot of jargon.&lt;/p&gt;
+
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;h3 id=&#34;refactoring&#34;&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;A language that describes ways to make your code suck less.&lt;/p&gt;
+
+&lt;h3 id=&#34;fluency&#34;&gt;Fluency&lt;/h3&gt;
+
+&lt;p&gt;What you can say when you are woken up in the middle of the night with
+a flashlight in your face.&lt;/p&gt;
+
+&lt;p&gt;Levels of Proficiency&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Level 1; Tarzan at a Party; “Beer!” “Good party.”&lt;/li&gt;
+&lt;li&gt;Level 2; Going to the party; “Where is the party?” “How do I get to the
+party”&lt;/li&gt;
+&lt;li&gt;Level 3; Discussing the party; “What happened at the party last night?”&lt;/li&gt;
+&lt;li&gt;Level 4; Charlie Rose; “Should parties be illegal?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;patterns&#34;&gt;Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Guard Clause; Best practices in small talk.&lt;/li&gt;
+&lt;li&gt;Flatten Nested Conditionals.&lt;/li&gt;
+&lt;li&gt;SRP (Single Responsibility Prinicpal).&lt;/li&gt;
+&lt;li&gt;Replace Conditional With Polymorphism.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Practical Object-Oriented Ruby&lt;/li&gt;
+&lt;li&gt;Refactoring&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Rubygems on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/rubygems/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Fri, 01 Feb 2013 16:00:00 UTC</updated>
+    
+    <item>
+      <title>Calling a Specific Gem Version In The Console</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <pubDate>Fri, 01 Feb 2013 16:00:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <description>&lt;p&gt;Today I was trying to generate a Rails 3.1.0 project (for testing
+purposes). I simply called &lt;code&gt;rails new rollback&lt;/code&gt; which generated a rails
+3.2.11 project and proceeded to change
+the gemfile version to 3.1.0. This resulted in numerous application errors.
+The simple solution was to generate the project with the Rails version
+3.1.0. To do this call the gem with the version number as such:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ rails _3.1.0_ new rollback
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You also must already have this version of the gem installed on your
+system for it to work.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

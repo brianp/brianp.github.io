@@ -1,0 +1,179 @@
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Angular and Liquid expressions in Jekyll &middot; { always: &#39;coding&#39; } </title>
+    
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io/alwayscoding.ca/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io/alwayscoding.ca/css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://brianp.github.io/alwayscoding.ca/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://brianp.github.io/alwayscoding.ca/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="{ always: &#39;coding&#39; }" />
+    
+    <script src="https://brianp.github.io/alwayscoding.ca/js/jquery.min.js"></script>
+    <script src="https://brianp.github.io/alwayscoding.ca/js/main.min.js">
+    </script>
+</head>
+
+    <body>
+        <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+            panel-cover panel-cover--collapsed
+        "  style="background-image: url(/images/side-column-bg.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="https://brianp.github.io/alwayscoding.ca/" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="https://brianp.github.io/alwayscoding.ca/"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  Brian Pearce  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://brianp.github.io/alwayscoding.ca#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li>
+                            <li class="navigation__item"><a href="https://brianp.github.io/alwayscoding.caposts" title="The blog archive" class="blog-button">Archive</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/side-column-bg.jpg)">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <a href="https://brianp.github.io/alwayscoding.ca/" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="https://brianp.github.io/alwayscoding.ca/"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  Brian Pearce  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="https://brianp.github.io/alwayscoding.ca/#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <div class="post">
+                    <h1>Angular and Liquid expressions in Jekyll</h1>
+                    <span class="post-date">Wed, Oct 9, 2013</span>
+                    <p>I started writing an Angular application to intereact with an API I have
+produced recently. The Angular app is compiled as a static site
+with Jekyll. I immediately ran into an issue with Angular.
+ None of my expressions were showing up. I
+realized it was because Liquid which is included with Jekyll uses the
+same expression tags as Angular: <code>{{ myVariable }}</code>. This meant the
+Angular expressions were not making it as raw text into the final template
+as they were being caught by Liquid.</p>
+
+<p>I started by looking to see if there was an easy way to deactivate Liquid
+inside Jekyll as I had no intention of using it. Without monkey patching the rendering process
+it seemed like I was stuck with the Liquid processing.</p>
+
+<p>All is not lost though. A quick search returned an option to change the
+expression symbols for Angular:</p>
+
+<p>Coffeescript:</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #3333BB">@myApp = </span>angular.module(<span style="background-color: #fff0f0">&#39;myApp&#39;</span>, [])
+
+@myApp.config [<span style="background-color: #fff0f0">&#39;$interpolateProvider&#39;</span>, <span style="color: #0066BB; font-weight: bold">($interpolateProvider)-&gt;</span>
+  $interpolateProvider.startSymbol(<span style="background-color: #fff0f0">&#39;{(&#39;</span>).endSymbol(<span style="background-color: #fff0f0">&#39;)}&#39;</span>)
+]
+</pre></div>
+
+<p>Javascript:</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">var</span> myapp;
+myApp <span style="color: #333333">=</span> angular.module(<span style="background-color: #fff0f0">&#39;myApp&#39;</span>, []);
+
+myApp.config([
+  <span style="background-color: #fff0f0">&#39;$interpolateProvider&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>($interpolateProvider) {
+    <span style="color: #008800; font-weight: bold">return</span> $interpolateProvider.startSymbol(<span style="background-color: #fff0f0">&#39;{(&#39;</span>).endSymbol(<span style="background-color: #fff0f0">&#39;)}&#39;</span>);
+  }
+]);
+</pre></div>
+
+<p>This allowed me to now use <code>{( myVariable )}</code> for Anuglar expressions and it
+does not get caught in the liquid filters.</p>
+
+<aside>
+**Aside:** While writing Liquid examples in Octopress; 
+`{{ myVariable }}`
+actually gets caught in the Liquid filter as an expression. I had to use 
+the Liquid `raw` & `endraw` tags to be able to show the expression above. 
+Also note in newer versions of Jekyll and Liquid `raw` has been
+deprecated in favour of the `verbatim` tag.
+</aside>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

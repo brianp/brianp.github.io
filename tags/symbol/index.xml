@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Symbol on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/symbol/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Wed, 13 Mar 2013 01:53:00 UTC</updated>
+    
+    <item>
+      <title>More fun with the Ruby Symbol</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
+idea) some silly conversation occured:&lt;/p&gt;
+
+&lt;p&gt;(someone gists some code)&lt;br /&gt;
+sevenseacat: empty array seems the silly thing to have&lt;br /&gt;
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later&lt;br /&gt;
+Tarential: so they&amp;rsquo;re close at hand&lt;br /&gt;
+tagrudev: little kittens die when you define an unused var&lt;br /&gt;
+brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]&lt;br /&gt;
+Tarential: Now that&amp;rsquo;s thinking.&lt;/p&gt;
+
+&lt;p&gt;Then some time passed and I ended up throwing a
+&lt;a href=&#34;http://http://pastie.org/6469138&#34; title=&#34;pastie&#34;&gt;pastie&lt;/a&gt; back into the
+channel with the following code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;to_a&lt;/span&gt;
+    &lt;span style=&#34;color: #3333BB&#34;&gt;@array&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;(val)
+    &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; val
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  alias_method &lt;span style=&#34;color: #AA6600&#34;&gt;:previous_inspect&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:inspect&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;inspect&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_s&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt; 
+      &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;inspect
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt;
+      previous_inspect
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Mostly usless but I did find out one interesting piece of information. The &lt;code&gt;Symbol&lt;/code&gt; has
+no public creation interface other then it&amp;rsquo;s standard definition. I&amp;rsquo;m assuming at this point it drops down to the C
+level but I couldn&amp;rsquo;t leave that stone unturned. I put the word out I was
+in search of the Symbol implementation in Ruby. I asked some friends,
+tweeted about it and poked around on IRC.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;REPL in the Pry runtime environment&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; (who brings you awesome projects
+like &lt;a href=&#34;https://github.com/pry/pry&#34; title=&#34;pry&#34;&gt;Pry&lt;/a&gt;) ended up giving me a nice
+intro to what happens when you put &lt;code&gt;:cats&lt;/code&gt; into a ruby runtime
+environment.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll keep this brief and in laymans terms. People who know much
+more about this feel free to email me with corrections or improvements.
+Keep in mind this information was explained at a very high level so it
+wouldn&amp;rsquo;t all go over my head.&lt;/p&gt;
+
+&lt;p&gt;At a very basic level the runtime is performing a simple REPL (Read,
+Evaluate, Print, Loop.)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;read --&amp;gt; eval --&amp;gt; puts #inspect on eval output --&amp;gt; loop&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The Read simply reads in your input. In our case &lt;code&gt;$ :cats&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The Eval gets significantly deeper. In the case the value entered is a
+Symbol (or other immediates) it is stored directly in the VALUE pointer.
+&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; provided me with the following
+gist to show how the Symbol is stored: &lt;a href=&#34;https://gist.github.com/banister/febb1f0580cc42eb4297&#34; title=&#34;Pry Gist&#34;&gt;pry_gist.rb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(this is only a small piece of the total evalution process.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;VALUE
+&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;rb_obj_id&lt;/span&gt;(VALUE obj)
+{
+    &lt;span style=&#34;color: #888888&#34;&gt;/*&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *                32-bit VALUE space&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *          MSB ------------------------ LSB&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol  ssssssssssssssssssssssss00001110&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;        sizeof(RVALUE))&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *                    object_id space&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *                                       LSB&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;        (S...S = s...s * A + 4)&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;        required&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  where A = sizeof(RVALUE)/4&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  sizeof(RVALUE) is&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  20 if 32-bit, double is 4-byte aligned&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  24 if 32-bit, double is 8-byte aligned&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  40 if 64-bit&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     */&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (TYPE(obj) &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; T_SYMBOL) {
+        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (SYM2ID(obj) &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;sizeof&lt;/span&gt;(RVALUE) &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;)) &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; FIXNUM_FLAG;
+    }
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (SPECIAL_CONST_P(obj)) {
+        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; LONG2NUM((SIGNED_VALUE)obj);
+    }
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (VALUE)((SIGNED_VALUE)obj&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;FIXNUM_FLAG);
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;He added:
+&lt;blockquote&gt;
+  &lt;p&gt;
+a normal object created via Object.new for example are normally allocated on the heap and they go through a proper initialization process.
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;@banister&lt;/strong&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Then the Print runs a simple &lt;code&gt;#inspect&lt;/code&gt; on the &lt;code&gt;Symbol&lt;/code&gt; and returns &lt;code&gt;=&amp;gt; :cats&lt;/code&gt; to you.&lt;/p&gt;
+
+&lt;p&gt;After that we Loop for more input.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So where does this leave us?&lt;/strong&gt;&lt;br /&gt;
+I ended up getting a great introduction to some things going on
+in my every day environment that I simply take for granted. It all came
+out of some late night nonsense and exploration and now I feel like new
+doors have opened and I&amp;rsquo;m going to have to go through.&lt;/p&gt;
+
+&lt;p&gt;I encourage you to poke around. We write code all day long but really
+finding out what&amp;rsquo;s going on can be new and exciting. So open up a Ruby class
+and break something!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <description>
+
+&lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.
+No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar
+JavaScript Object Notation.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.8&lt;/span&gt;
+{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.9&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;On an average day I write equally as much JavaScript as I do Ruby so the
+new 1.9 syntax is an easy swtich for me.&lt;/p&gt;
+
+&lt;p&gt;Do these updates to the syntax mean that we&amp;rsquo;ll be seeing
+the demise of the 1.8 syntax anytime soon? Definitely not.&lt;/p&gt;
+
+&lt;p&gt;The syntax change isn&amp;rsquo;t that simple. There are certain things you simply
+can not do with the new 1.9 syntax.&lt;/p&gt;
+
+&lt;h2 id=&#34;keys-do-not-have-to-be-symbols-or-strings&#34;&gt;Keys do not have to be symbols or strings&lt;/h2&gt;
+
+&lt;p&gt;You can actually use any object in the language as a key in a hash. The
+most common are Symbols and Strings. Less used are Classes, Objects,
+Floats or pretty much anything that is an object in Ruby. Which is
+pretty much everything.&lt;/p&gt;
+
+&lt;p&gt;The catch here is the 1.9 syntax only supports symbols as keys. So if
+you need to use any kind of hyphanated string or special object as a key
+you will need to use the hashrocket syntax. Some examples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cats-meow&amp;#39;&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; syntax error, unexpected &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;}&amp;#39;&lt;/span&gt;, expecting &lt;span style=&#34;color: #dd7700; font-weight: bold&#34;&gt;$end&lt;/span&gt;
+{&lt;span style=&#34;color: #AA6600&#34;&gt;:&amp;#39;cats-meow&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:&amp;#39;cats-meow&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
+
+{&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;}
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Cat&lt;/span&gt;; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+c &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new
+{c &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Cat:0x007fd5512f41c0&amp;gt;=&amp;gt;&amp;quot;meow&amp;quot;}&lt;/span&gt;
+
+{&lt;span style=&#34;color: #007020&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;a string&amp;#39;&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #007020&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;a string&amp;quot;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;two-different-symbols&#34;&gt;Two different Symbols&lt;/h2&gt;
+
+&lt;p&gt;Another catch is that the 1.9 syntax is the only place in ruby where a symbol is
+represented differently. A symbol is normally preppended with a
+colon. ex. &lt;code&gt;:mysymbol&lt;/code&gt;. Only in the 1.9 hash syntax is the symbol
+represented without the preppended colon and then following the JSObject
+Notation has a colon at the end of the symbol defining the key value
+relationship. The inconsistent use of Symbols like this could lead to
+confusion for people new to the language.&lt;/p&gt;
+
+&lt;h2 id=&#34;mixing-the-syntax&#34;&gt;Mixing the syntax&lt;/h2&gt;
+
+&lt;p&gt;You can also mix the JSON and Hashrocket syntax. Although for the sanity if your
+fellow developers please do not.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The 1.9 syntax can also look extremely weird when passing Symbols as
+values:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:meow&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;dog&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:bark&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;owl&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:hoot&lt;/span&gt;}
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:meow&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:bark&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:hoot&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;keys-are-now-unordered&#34;&gt;Keys are now unordered&lt;/h2&gt;
+
+&lt;p&gt;Aside from the syntax change; ruby 1.9 also treats the ordering of the
+key/values differently. In ruby 1.9 the keys are no longer ordered.
+Although after some playing around I found my 1.8.7 REE install was not exactly
+ordering the hash as I was expecting.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;hoot&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.9&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;hoot&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;}
+
+{&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;hoot&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.8.7&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;hoot&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;which-one-should-i-use&#34;&gt;Which one should I use?&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/styleguide/ruby&#34;&gt;Github Ruby Styleguide&lt;/a&gt;
+suggests just to use the hashrocket syntax 100% of the time.&lt;/p&gt;
+
+&lt;p&gt;It really is a personal/team preference on the syntax choice. I think
+consistency is the most important thing. As long as you are doing it the
+same throughout your code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Ruby Symbol is a Memory Leak</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
+      <pubDate>Sat, 04 Dec 2010 00:13:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
+      <description>&lt;p&gt;This is just a quick bit that I learned early in my Ruby career and always found interesting.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Symbols Are Memory Leaks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So is this the end of the world?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;No&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Symbols are a unique thing in ruby. It&amp;rsquo;s immutable, constant and unique. You can re-use the same Symbol over and over without allocating extra memory. As opposed to using a String over and over which will allocate memory with each instance.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So how does that make it a memory leak?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;One key difference between the Symbol and the String is that a Symbol is never garbage-collected. Once the memory is allocated it is never released.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So what&amp;rsquo;s this mean?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Use a Symbol to represent only something you&amp;rsquo;ll use again.&lt;br /&gt;
+Don&amp;rsquo;t generate random dynamic Symbols you&amp;rsquo;ll use only once or infrequently, you&amp;rsquo;ll never get that memory back.&lt;/p&gt;
+
+&lt;p&gt;Want to learn more about the Ruby Symbol have some links:&lt;br /&gt;
+&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Symbol.html&#34; title=&#34;Ruby Docs: Symbol&#34;&gt;http://www.ruby-doc.org/core-1.9.3/Symbol.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://glu.ttono.us/articles/2005/08/19/understanding-ruby-symbols&#34; title=&#34;Understanding Ruby Symbols&#34;&gt;http://glu.ttono.us/articles/2005/08/19/understanding-ruby-symbols&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.tricksonrails.com/2010/06/avoid-memory-leaks-in-ruby-rails-code-and-protect-against-denial-of-service/&#34; title=&#34;Avoid memory leaks in your ruby/rails code and protect you against denial of service&#34;&gt;http://www.tricksonrails.com/2010/06/avoid-memory-leaks-in-ruby-rails-code-and-protect-against-denial-of-service/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.rubytips.org/2008/01/26/what-is-a-ruby-symbol-symbols-explained/&#34; title=&#34;What is a ruby symbol? – symbols explained&#34;&gt;http://www.rubytips.org/2008/01/26/what-is-a-ruby-symbol-symbols-explained/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

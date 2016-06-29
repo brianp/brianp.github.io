@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Big Data on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/big-data/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 21 Oct 2013 14:02:00 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2013: Sentiment Analysis</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-sentiment-analysis/</link>
+      <pubDate>Mon, 21 Oct 2013 14:02:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/10/21/cascadia-ruby-sentiment-analysis/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+See all the notes from &lt;a href=&#34;https://brianp.github.io/alwayscoding.ca/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/mjkirk&#34;&gt;Matt Kirk&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;big-data-languages&#34;&gt;Big Data Languages&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;R&lt;/li&gt;
+&lt;li&gt;Julia&lt;/li&gt;
+&lt;li&gt;Clojure&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#39;https://twitter.com/sarablackthorne/status/392379743045054464/photo/1&#39;&gt;
+  &lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
+ &lt;/a&gt;
+Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-collect-data&#34;&gt;Step 1: Collect Data&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/jperla/sentiment-data&#34;&gt;github.com/jperla/sentiment-data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Linear regression has a curse: The curse of dimensionality&lt;/p&gt;
+
+&lt;p&gt;Play with it &lt;a href=&#34;http://sentiment-analyzer.heroku.com&#34;&gt;sentiment-analyzer.heroku.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features-of-text&#34;&gt;Features of Text&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Character count.&lt;/li&gt;
+&lt;li&gt;Frequency of words.&lt;/li&gt;
+&lt;li&gt;Words.&lt;/li&gt;
+&lt;li&gt;Stems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/alwayscoding.ca/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

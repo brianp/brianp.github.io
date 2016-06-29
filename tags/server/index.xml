@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Server on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>https://brianp.github.io/alwayscoding.ca/tags/server/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sat, 02 Feb 2013 10:24:00 UTC</updated>
+    
+    <item>
+      <title>Nginx 413 Request Entity Too Large</title>
+      <link>https://brianp.github.io/alwayscoding.ca/2013/02/02/nginx-413-request-entity-too-large/</link>
+      <pubDate>Sat, 02 Feb 2013 10:24:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/alwayscoding.ca/2013/02/02/nginx-413-request-entity-too-large/</guid>
+      <description>&lt;p&gt;Using: nginx version: nginx/1.2.4&lt;/p&gt;
+
+&lt;p&gt;I manage a few Linode instances as client servers but I would far from
+consider myself a sysadmin. I received an email from a client regarding
+some uploading issues. After some testing I concluded any combination of files over 1mb would
+raise &lt;code&gt;Nginx 413 Request Entity Too Large&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I upped the file limit within the virtualhost file by changing the
+&lt;code&gt;client_max_body_size&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;upstream app {
+  server unix:/tmp/app.sock fail_timeout=0;
+}
+
+server {
+  listen  80;
+
+  location / {
+    proxy_pass      http://app;
+    proxy_redirect  off;
+
+    client_max_body_size 6m;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This still did not work. After more web browsing I tried moving the
+&lt;code&gt;client_max_body_size&lt;/code&gt; outside the location block.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;upstream app {
+  server unix:/tmp/app.sock fail_timeout=0;
+}
+
+server {
+  listen  80;
+
+  client_max_body_size 6m;
+
+  location / {
+    proxy_pass      http://app;
+    proxy_redirect  off;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This achieved the desired result! After some more testing I could upload
+to the new max limit.&lt;/p&gt;
+
+&lt;p&gt;TLDR: Moved &lt;code&gt;client_max_body_size&lt;/code&gt; outside of the location block into
+the server block.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

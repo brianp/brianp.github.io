@@ -10,17 +10,298 @@
     <updated>Tue, 22 Oct 2013 15:22:00 UTC</updated>
     
     <item>
-      <title>Cascadia Ruby 2013: The Client is Always Right {But Sometimes They Need a Little Help}</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-the-client-is-always-right-but-sometimes-they-need-a-little-help/</link>
+      <title>Cascadia Ruby 2013 - Day Two</title>
+      <link>https://brianp.github.io/momentos/2013/10/22/cascadia-ruby-2013-day-two/</link>
       <pubDate>Tue, 22 Oct 2013 15:22:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-the-client-is-always-right-but-sometimes-they-need-a-little-help/</guid>
+      <guid>https://brianp.github.io/momentos/2013/10/22/cascadia-ruby-2013-day-two/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
 
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;
+Cascadia Ruby 2013: Ruby Systems Programming&lt;/p&gt;
+
+&lt;h2 id=&#34;the-kernal&#34;&gt;The kernal&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs in kernal mode.&lt;/li&gt;
+&lt;li&gt;Not your code.&lt;/li&gt;
+&lt;li&gt;Can do anything and everything.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;your-code&#34;&gt;Your Code&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Runs in user mode.&lt;/li&gt;
+&lt;li&gt;Math.&lt;/li&gt;
+&lt;li&gt;Access memory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;system-calls&#34;&gt;System calls&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ask the kernal nicely to do things.&lt;/li&gt;
+&lt;li&gt;Api to kenal mode.&lt;/li&gt;
+&lt;li&gt;If it is not in the syscall_table you can not call it.&lt;/li&gt;
+&lt;li&gt;Unix has 261 syscalls implemented.&lt;/li&gt;
+&lt;li&gt;Windows has thousands listed (implemented/unimplemented).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux System Programming by Robert Love&lt;/li&gt;
+&lt;li&gt;Unix Network Programming by Richard Stevens&lt;/li&gt;
+&lt;li&gt;Advanced Programming in the UNIX Environment by Richard Stevens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;
+Ruby as Art; Ruby as Science; Ruby as Craft&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Analyses and study of algorithms.&lt;/li&gt;
+&lt;li&gt;Algorithm: A set of instructions that will solve a particular problem.&lt;/li&gt;
+&lt;li&gt;Fuctional programming in ruby.&lt;/li&gt;
+&lt;li&gt;The best code is no code. The best code is code that already exists.&lt;/li&gt;
+&lt;li&gt;There is a difference between being correct and being right.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/kerrizor&#34;&gt;Kerri Miller&lt;/a&gt;
+Cascadia Ruby 2013: Gambling for Rubyists&lt;/p&gt;
+
+&lt;p&gt;Every decision is a compromise. We pick postgres over mysql because we feel we are getting a benefeit.&lt;/p&gt;
+
+&lt;p&gt;“You are the best” + Be Humble&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/jerrydantonio&#34;&gt;Jerry D&amp;rsquo;Antonio&lt;/a&gt; &lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby-presentation&#34;&gt;code&lt;/a&gt;
+Advanced Multithreading in Ruby&lt;/p&gt;
+
+&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Blocking IO is one of the first reasons to use concurrency.&lt;/li&gt;
+&lt;li&gt;Shared muteable data is bad.&lt;/li&gt;
+&lt;li&gt;Future represents actions that take effect at a future time and return a specific value.&lt;/li&gt;
+&lt;li&gt;mutex.sychronize.&lt;/li&gt;
+&lt;li&gt;Do not block the reactor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby&#34;&gt;Concurrent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/harukizaemon/hamster&#34;&gt;Hamster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threadsafe&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/eventmachine/eventmachine&#34;&gt;Eventmachine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruby-amqp/amqp&#34;&gt;AMQP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/celluloid/celluloid&#34;&gt;Celluloid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;, &lt;a href=&#34;http://www.slideshare.net/geeksam/fluent-refactoring-cascadia-ruby-conf-2013-1021&#34;&gt;slides&lt;/a&gt;
+Fluent Refactoring&lt;/p&gt;
+
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;h3 id=&#34;refactoring&#34;&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;A language that describes ways to make your code suck less.&lt;/p&gt;
+
+&lt;h3 id=&#34;fluency&#34;&gt;Fluency&lt;/h3&gt;
+
+&lt;p&gt;What you can say when you are woken up in the middle of the night with
+a flashlight in your face.&lt;/p&gt;
+
+&lt;p&gt;Levels of Proficiency&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Level 1; Tarzan at a Party; “Beer!” “Good party.”&lt;/li&gt;
+&lt;li&gt;Level 2; Going to the party; “Where is the party?” “How do I get to the
+party”&lt;/li&gt;
+&lt;li&gt;Level 3; Discussing the party; “What happened at the party last night?”&lt;/li&gt;
+&lt;li&gt;Level 4; Charlie Rose; “Should parties be illegal?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;patterns&#34;&gt;Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Guard Clause; Best practices in small talk.&lt;/li&gt;
+&lt;li&gt;Flatten Nested Conditionals.&lt;/li&gt;
+&lt;li&gt;SRP (Single Responsibility Prinicpal).&lt;/li&gt;
+&lt;li&gt;Replace Conditional With Polymorphism.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Practical Object-Oriented Ruby&lt;/li&gt;
+&lt;li&gt;Refactoring&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Lightning Talks
+Apologies if I misspelled anyones names below.&lt;/p&gt;
+
+&lt;h2 id=&#34;rex-lexer-generator&#34;&gt;Rex lexer generator&lt;/h2&gt;
+
+&lt;p&gt;by: Ryan Davis&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ruby_parser lexer - Unmaintainable.&lt;/li&gt;
+&lt;li&gt;Oedipus Lex - “This is not your fathers lexer.”&lt;/li&gt;
+&lt;li&gt;Massive extensions.&lt;/li&gt;
+&lt;li&gt;Self-bootstrapping.&lt;/li&gt;
+&lt;li&gt;Uses ruby more directly.&lt;/li&gt;
+&lt;li&gt;Predicate methods.&lt;/li&gt;
+&lt;li&gt;Action methods.&lt;/li&gt;
+&lt;li&gt;Clean state changes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;focus-on-the-custard&#34;&gt;Focus on the Custard&lt;/h2&gt;
+
+&lt;p&gt;by: Bethany Rentz&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Put the customer first in the designs.&lt;/li&gt;
+&lt;li&gt;You != Your customer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-surfers-rule&#34;&gt;The Surfers Rule&lt;/h2&gt;
+
+&lt;p&gt;by: Milan Loveless&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Have Passion.&lt;/li&gt;
+&lt;li&gt;No Dare / No Flair. Try things and be innovative.&lt;/li&gt;
+&lt;li&gt;Always look outside. Look where you can learn.&lt;/li&gt;
+&lt;li&gt;Move before it moves you.&lt;/li&gt;
+&lt;li&gt;Never turn your back on the ocean.&lt;/li&gt;
+&lt;li&gt;Expect to wipe out.&lt;/li&gt;
+&lt;li&gt;Never surf alone.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;speed-up-your-tests-with-rspec-set&#34;&gt;Speed up your tests with rspec-set&lt;/h2&gt;
+
+&lt;p&gt;by: Philippe Creux&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FactoryGirl is sloooow.&lt;/li&gt;
+&lt;li&gt;rspec-set creates records in the db prior to running transactions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;seattle-rb&#34;&gt;Seattle.rb&lt;/h2&gt;
+
+&lt;p&gt;by: Pete Higgins&lt;/p&gt;
+
+&lt;p&gt;First Tuesday of every month. Presentation oriented social occasion with “Show and tell.”&lt;br /&gt;
+All other Tuesdays are hack nights.&lt;br /&gt;
+seattlerb.org&lt;/p&gt;
+
+&lt;h2 id=&#34;regional-conferences&#34;&gt;Regional Conferences&lt;/h2&gt;
+
+&lt;p&gt;by: Koby Ranquest&lt;/p&gt;
+
+&lt;h3 id=&#34;los-angelos-ruby-conference&#34;&gt;Los Angelos Ruby Conference&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Feb 8th.&lt;/li&gt;
+&lt;li&gt;Very newbie friendly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ruby-on-ales-2014&#34;&gt;Ruby on Ales 2014&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bend Oregon.&lt;/li&gt;
+&lt;li&gt;The tower theatre.&lt;/li&gt;
+&lt;li&gt;March 6th - 7th.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;a-cautionary-tale&#34;&gt;A Cautionary Tale&lt;/h2&gt;
+
+&lt;p&gt;by: Jason Clark&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Forks not alaways an exact copy.&lt;/li&gt;
+&lt;li&gt;Only the thread that calls fork goes to the new thread.&lt;/li&gt;
+&lt;li&gt;Locks cause problems.&lt;/li&gt;
+&lt;li&gt;Lock doesn&amp;rsquo;t always release on child process.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pdx-rb&#34;&gt;pdx.rb&lt;/h2&gt;
+
+&lt;p&gt;by: Audrie Eschright&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Calagator for pdx meetups.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;epdx.org&#34;&gt;ePDX.org&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;PDX employer graph.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;woodshop&#34;&gt;Woodshop&lt;/h2&gt;
+
+&lt;p&gt;by: Scott Windsor&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Build your own Code Climate inside vim.&lt;/li&gt;
+&lt;li&gt;Flog inside vim.&lt;/li&gt;
+&lt;li&gt;Simplecov inside vim.&lt;/li&gt;
+&lt;li&gt;Hack your tools.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sentientmonkey/vimfiles&#34;&gt;https://github.com/sentientmonkey/vimfiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ruby-is-broken&#34;&gt;Ruby is Broken&lt;/h2&gt;
+
+&lt;p&gt;by: Nathan Zook&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No one is perfect.&lt;/li&gt;
+&lt;li&gt;Should not be able to not use namespaces.&lt;/li&gt;
+&lt;li&gt;Method resolution order.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2-talks-omitted-i-missed-them&#34;&gt;2 Talks omitted (I missed them)&lt;/h2&gt;
+
+&lt;h2 id=&#34;a-game-in-ruby&#34;&gt;A Game in ruby&lt;/h2&gt;
+
+&lt;p&gt;by: Robby Clements&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jlnr/gosu&#34;&gt;Gosu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chungu?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;centralized-logging&#34;&gt;Centralized Logging&lt;/h2&gt;
+
+&lt;p&gt;by: Ashlegh Baumgardner&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logstash.&lt;/li&gt;
+&lt;li&gt;Logstash sleeps and retrys causes problems.&lt;/li&gt;
+&lt;li&gt;Sparsify.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ruby-testing&#34;&gt;Ruby Testing&lt;/h2&gt;
+
+&lt;p&gt;by: Amiel Martin&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Testing notifications via led lights.&lt;/li&gt;
+&lt;li&gt;DigiSpark.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;
+The Client is Always Right {But Sometimes They Need a Little Help}&lt;/p&gt;
 
 &lt;h2 id=&#34;who&#34;&gt;Who?&lt;/h2&gt;
 
@@ -45,6 +326,34 @@ See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categor
 &lt;li&gt;How do we maintain our usability?&lt;/li&gt;
 &lt;li&gt;What do we build to keep our products story consistent with our core vision?&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/CarlAlviani&#34;&gt;Carl Alviani&lt;/a&gt;
+Not Created Equal: The History and Discernment of Plastics in Product Design&lt;/p&gt;
+
+&lt;p&gt;How recyclable are the following products. (Due to processing methods):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Glass — 34%&lt;/li&gt;
+&lt;li&gt;paper — 60%&lt;/li&gt;
+&lt;li&gt;Polymer — 90%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1962 — Parkseine was developed to replace Ivory as the elephants were dying off.&lt;br /&gt;
+1894 — Rayon developed to replace Silk.&lt;br /&gt;
+1909 — Bakelite developed to replace Shalak. Used for things like telephones, appliances, &amp;amp; pencil sharpeners.&lt;/p&gt;
+
+&lt;p&gt;1933 — PVC &amp;amp; Acrylic&lt;br /&gt;
+1939 — Polythylene &amp;amp; Nylon&lt;br /&gt;
+1941 — PET &amp;amp; ABS&lt;/p&gt;
+
+&lt;p&gt;Real silicone is identifiable by bending it and verifying there is no visible
+difference with it.&lt;/p&gt;
+
+&lt;p&gt;#7 Recycling symbol “Other” is not recyclable.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.core77.com&#34;&gt;core77.com&lt;/a&gt; &amp;amp; Search: “Not created Equal: A Long (Loving) Plastics Primer”&lt;/p&gt;
 </description>
     </item>
     

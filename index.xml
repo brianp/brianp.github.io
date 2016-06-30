@@ -11,12 +11,11 @@
     
     <item>
       <title>Cascadia Ruby 2014 - Day One</title>
-      <link>https://brianp.github.io/2014/08/11/cascadia-ruby-2014-day-one/</link>
+      <link>https://brianp.github.io/momentos/2014/08/11/cascadia-ruby-2014-day-one/</link>
       <pubDate>Mon, 11 Aug 2014 09:26:37 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2014/08/11/cascadia-ruby-2014-day-one/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2014/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://brianp.github.io/momentos/2014/08/11/cascadia-ruby-2014-day-one/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;br /&gt;
 Be Awesome By Being Boring&lt;/p&gt;
@@ -26,12 +25,9 @@ Be Awesome By Being Boring&lt;/p&gt;
 &lt;li&gt;Nobody know how it works yet.&lt;/li&gt;
 &lt;li&gt;Docker apis changed.&lt;/li&gt;
 &lt;li&gt;No standard uusage pattern.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Security wild card.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Protocol Buffer version of your performance critical endpoints.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;SRV Records.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Security wild card.&lt;/li&gt;
+&lt;li&gt;Protocol Buffer version of your performance critical endpoints.&lt;/li&gt;
+&lt;li&gt;SRV Records.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -233,10 +229,10 @@ Speed up Rails, Speed up Your Code&lt;/p&gt;
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
-      <link>https://brianp.github.io/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <link>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
       <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <guid>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;
 I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
@@ -256,92 +252,146 @@ I have used the asset pipeline heavily since its release in Rails 3.1.0 over two
     </item>
     
     <item>
-      <title>Cascadia Ruby 2013: Not Created Equal: The History and Discernment of Plastics in Product Design</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-not-created-equal-the-history-and-discernment-of-plastics-in-product-design/</link>
-      <pubDate>Tue, 22 Oct 2013 17:00:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-not-created-equal-the-history-and-discernment-of-plastics-in-product-design/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/CarlAlviani&#34;&gt;Carl Alviani&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;How recyclable are the following products. (Due to processing methods):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Glass — 34%&lt;/li&gt;
-&lt;li&gt;paper — 60%&lt;/li&gt;
-&lt;li&gt;Polymer — 90%&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1962 — Parkseine was developed to replace Ivory as the elephants were dying off.&lt;br /&gt;
-1894 — Rayon developed to replace Silk.&lt;br /&gt;
-1909 — Bakelite developed to replace Shalak. Used for things like telephones, appliances, &amp;amp; pencil sharpeners.&lt;/p&gt;
-
-&lt;p&gt;1933 — PVC &amp;amp; Acrylic&lt;br /&gt;
-1939 — Polythylene &amp;amp; Nylon&lt;br /&gt;
-1941 — PET &amp;amp; ABS&lt;/p&gt;
-
-&lt;p&gt;Real silicone is identifiable by bending it and verifying there is no visible
-difference with it.&lt;/p&gt;
-
-&lt;p&gt;#7 Recycling symbol “Other” is not recyclable.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.core77.com&#34;&gt;core77.com&lt;/a&gt; &amp;amp; Search: “Not created Equal: A Long (Loving) Plastics Primer”&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: The Client is Always Right {But Sometimes They Need a Little Help}</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-the-client-is-always-right-but-sometimes-they-need-a-little-help/</link>
+      <title>Cascadia Ruby 2013 - Day Two</title>
+      <link>https://brianp.github.io/momentos/2013/10/22/cascadia-ruby-2013-day-two/</link>
       <pubDate>Tue, 22 Oct 2013 15:22:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-the-client-is-always-right-but-sometimes-they-need-a-little-help/</guid>
+      <guid>https://brianp.github.io/momentos/2013/10/22/cascadia-ruby-2013-day-two/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
 
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;
+Cascadia Ruby 2013: Ruby Systems Programming&lt;/p&gt;
 
-&lt;h2 id=&#34;who&#34;&gt;Who?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Who is the intended user group?&lt;/li&gt;
-&lt;li&gt;What are their usability needs?&lt;/li&gt;
-&lt;li&gt;Who will we test our product with before release?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
+&lt;h2 id=&#34;the-kernal&#34;&gt;The kernal&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;How do we determine the best platform?&lt;/li&gt;
-&lt;li&gt;Is this a major change or a change in usage?&lt;/li&gt;
-&lt;li&gt;How is this product going to best be used?&lt;/li&gt;
+&lt;li&gt;Runs in kernal mode.&lt;/li&gt;
+&lt;li&gt;Not your code.&lt;/li&gt;
+&lt;li&gt;Can do anything and everything.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;what&#34;&gt;What?&lt;/h2&gt;
+&lt;h2 id=&#34;your-code&#34;&gt;Your Code&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;What are the key features of this product?&lt;/li&gt;
-&lt;li&gt;How do we maintain our usability?&lt;/li&gt;
-&lt;li&gt;What do we build to keep our products story consistent with our core vision?&lt;/li&gt;
+&lt;li&gt;Runs in user mode.&lt;/li&gt;
+&lt;li&gt;Math.&lt;/li&gt;
+&lt;li&gt;Access memory.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Lightning Talks</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-lightning-talks/</link>
-      <pubDate>Tue, 22 Oct 2013 13:47:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-lightning-talks/</guid>
-      <description>
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;system-calls&#34;&gt;System calls&lt;/h2&gt;
 
-&lt;p&gt;Apologies if I misspelled anyones names below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ask the kernal nicely to do things.&lt;/li&gt;
+&lt;li&gt;Api to kenal mode.&lt;/li&gt;
+&lt;li&gt;If it is not in the syscall_table you can not call it.&lt;/li&gt;
+&lt;li&gt;Unix has 261 syscalls implemented.&lt;/li&gt;
+&lt;li&gt;Windows has thousands listed (implemented/unimplemented).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux System Programming by Robert Love&lt;/li&gt;
+&lt;li&gt;Unix Network Programming by Richard Stevens&lt;/li&gt;
+&lt;li&gt;Advanced Programming in the UNIX Environment by Richard Stevens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;
+Ruby as Art; Ruby as Science; Ruby as Craft&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Analyses and study of algorithms.&lt;/li&gt;
+&lt;li&gt;Algorithm: A set of instructions that will solve a particular problem.&lt;/li&gt;
+&lt;li&gt;Fuctional programming in ruby.&lt;/li&gt;
+&lt;li&gt;The best code is no code. The best code is code that already exists.&lt;/li&gt;
+&lt;li&gt;There is a difference between being correct and being right.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/kerrizor&#34;&gt;Kerri Miller&lt;/a&gt;
+Cascadia Ruby 2013: Gambling for Rubyists&lt;/p&gt;
+
+&lt;p&gt;Every decision is a compromise. We pick postgres over mysql because we feel we are getting a benefeit.&lt;/p&gt;
+
+&lt;p&gt;“You are the best” + Be Humble&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/jerrydantonio&#34;&gt;Jerry D&amp;rsquo;Antonio&lt;/a&gt; &lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby-presentation&#34;&gt;code&lt;/a&gt;
+Advanced Multithreading in Ruby&lt;/p&gt;
+
+&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Blocking IO is one of the first reasons to use concurrency.&lt;/li&gt;
+&lt;li&gt;Shared muteable data is bad.&lt;/li&gt;
+&lt;li&gt;Future represents actions that take effect at a future time and return a specific value.&lt;/li&gt;
+&lt;li&gt;mutex.sychronize.&lt;/li&gt;
+&lt;li&gt;Do not block the reactor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby&#34;&gt;Concurrent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/harukizaemon/hamster&#34;&gt;Hamster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Threadsafe&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/eventmachine/eventmachine&#34;&gt;Eventmachine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruby-amqp/amqp&#34;&gt;AMQP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/celluloid/celluloid&#34;&gt;Celluloid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;, &lt;a href=&#34;http://www.slideshare.net/geeksam/fluent-refactoring-cascadia-ruby-conf-2013-1021&#34;&gt;slides&lt;/a&gt;
+Fluent Refactoring&lt;/p&gt;
+
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;h3 id=&#34;refactoring&#34;&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;A language that describes ways to make your code suck less.&lt;/p&gt;
+
+&lt;h3 id=&#34;fluency&#34;&gt;Fluency&lt;/h3&gt;
+
+&lt;p&gt;What you can say when you are woken up in the middle of the night with
+a flashlight in your face.&lt;/p&gt;
+
+&lt;p&gt;Levels of Proficiency&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Level 1; Tarzan at a Party; “Beer!” “Good party.”&lt;/li&gt;
+&lt;li&gt;Level 2; Going to the party; “Where is the party?” “How do I get to the
+party”&lt;/li&gt;
+&lt;li&gt;Level 3; Discussing the party; “What happened at the party last night?”&lt;/li&gt;
+&lt;li&gt;Level 4; Charlie Rose; “Should parties be illegal?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;patterns&#34;&gt;Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Guard Clause; Best practices in small talk.&lt;/li&gt;
+&lt;li&gt;Flatten Nested Conditionals.&lt;/li&gt;
+&lt;li&gt;SRP (Single Responsibility Prinicpal).&lt;/li&gt;
+&lt;li&gt;Replace Conditional With Polymorphism.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Practical Object-Oriented Ruby&lt;/li&gt;
+&lt;li&gt;Refactoring&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Lightning Talks
+Apologies if I misspelled anyones names below.&lt;/p&gt;
 
 &lt;h2 id=&#34;rex-lexer-generator&#34;&gt;Rex lexer generator&lt;/h2&gt;
 
@@ -489,349 +539,278 @@ seattlerb.org&lt;/p&gt;
 &lt;li&gt;Testing notifications via led lights.&lt;/li&gt;
 &lt;li&gt;DigiSpark.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;
+The Client is Always Right {But Sometimes They Need a Little Help}&lt;/p&gt;
+
+&lt;h2 id=&#34;who&#34;&gt;Who?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Who is the intended user group?&lt;/li&gt;
+&lt;li&gt;What are their usability needs?&lt;/li&gt;
+&lt;li&gt;Who will we test our product with before release?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How do we determine the best platform?&lt;/li&gt;
+&lt;li&gt;Is this a major change or a change in usage?&lt;/li&gt;
+&lt;li&gt;How is this product going to best be used?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what&#34;&gt;What?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What are the key features of this product?&lt;/li&gt;
+&lt;li&gt;How do we maintain our usability?&lt;/li&gt;
+&lt;li&gt;What do we build to keep our products story consistent with our core vision?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/CarlAlviani&#34;&gt;Carl Alviani&lt;/a&gt;
+Not Created Equal: The History and Discernment of Plastics in Product Design&lt;/p&gt;
+
+&lt;p&gt;How recyclable are the following products. (Due to processing methods):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Glass — 34%&lt;/li&gt;
+&lt;li&gt;paper — 60%&lt;/li&gt;
+&lt;li&gt;Polymer — 90%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1962 — Parkseine was developed to replace Ivory as the elephants were dying off.&lt;br /&gt;
+1894 — Rayon developed to replace Silk.&lt;br /&gt;
+1909 — Bakelite developed to replace Shalak. Used for things like telephones, appliances, &amp;amp; pencil sharpeners.&lt;/p&gt;
+
+&lt;p&gt;1933 — PVC &amp;amp; Acrylic&lt;br /&gt;
+1939 — Polythylene &amp;amp; Nylon&lt;br /&gt;
+1941 — PET &amp;amp; ABS&lt;/p&gt;
+
+&lt;p&gt;Real silicone is identifiable by bending it and verifying there is no visible
+difference with it.&lt;/p&gt;
+
+&lt;p&gt;#7 Recycling symbol “Other” is not recyclable.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.core77.com&#34;&gt;core77.com&lt;/a&gt; &amp;amp; Search: “Not created Equal: A Long (Loving) Plastics Primer”&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Cascadia Ruby 2013: Advanced Multithreading in Ruby</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-advanced-multithreading-in-ruby/</link>
-      <pubDate>Tue, 22 Oct 2013 11:44:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-advanced-multithreading-in-ruby/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/jerrydantonio&#34;&gt;Jerry D&amp;rsquo;Antonio&lt;/a&gt; &lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby-presentation&#34;&gt;code&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Blocking IO is one of the first reasons to use concurrency.&lt;/li&gt;
-&lt;li&gt;Shared muteable data is bad.&lt;/li&gt;
-&lt;li&gt;Future represents actions that take effect at a future time and return a specific value.&lt;/li&gt;
-&lt;li&gt;mutex.sychronize.&lt;/li&gt;
-&lt;li&gt;Do not block the reactor.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby&#34;&gt;Concurrent&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/harukizaemon/hamster&#34;&gt;Hamster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Threadsafe&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/eventmachine/eventmachine&#34;&gt;Eventmachine&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ruby-amqp/amqp&#34;&gt;AMQP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/celluloid/celluloid&#34;&gt;Celluloid&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Fluent Refactoring</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-fluent-refactoring/</link>
-      <pubDate>Tue, 22 Oct 2013 11:44:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-fluent-refactoring/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;, &lt;a href=&#34;http://www.slideshare.net/geeksam/fluent-refactoring-cascadia-ruby-conf-2013-1021&#34;&gt;slides&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Refactoring contains a lot of jargon.&lt;/p&gt;
-
-&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
-
-&lt;h3 id=&#34;refactoring&#34;&gt;Refactoring&lt;/h3&gt;
-
-&lt;p&gt;A language that describes ways to make your code suck less.&lt;/p&gt;
-
-&lt;h3 id=&#34;fluency&#34;&gt;Fluency&lt;/h3&gt;
-
-&lt;p&gt;What you can say when you are woken up in the middle of the night with
-a flashlight in your face.&lt;/p&gt;
-
-&lt;p&gt;Levels of Proficiency&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Level 1; Tarzan at a Party; “Beer!” “Good party.”&lt;/li&gt;
-&lt;li&gt;Level 2; Going to the party; “Where is the party?” “How do I get to the
-party”&lt;/li&gt;
-&lt;li&gt;Level 3; Discussing the party; “What happened at the party last night?”&lt;/li&gt;
-&lt;li&gt;Level 4; Charlie Rose; “Should parties be illegal?”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;patterns&#34;&gt;Patterns&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Guard Clause; Best practices in small talk.&lt;/li&gt;
-&lt;li&gt;Flatten Nested Conditionals.&lt;/li&gt;
-&lt;li&gt;SRP (Single Responsibility Prinicpal).&lt;/li&gt;
-&lt;li&gt;Replace Conditional With Polymorphism.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Practical Object-Oriented Ruby&lt;/li&gt;
-&lt;li&gt;Refactoring&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Gambling for Rubyists</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-gambling-for-rubyists/</link>
-      <pubDate>Tue, 22 Oct 2013 10:45:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-gambling-for-rubyists/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/kerrizor&#34;&gt;Kerri Miller&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Every decision is a compromise. We pick postgres over mysql because we feel we are getting a benefeit.&lt;/p&gt;
-
-&lt;p&gt;“You are the best” + Be Humble&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Ruby Systems Programming</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-ruby-systems-programming/</link>
-      <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-ruby-systems-programming/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;the-kernal&#34;&gt;The kernal&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Runs in kernal mode.&lt;/li&gt;
-&lt;li&gt;Not your code.&lt;/li&gt;
-&lt;li&gt;Can do anything and everything.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;your-code&#34;&gt;Your Code&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Runs in user mode.&lt;/li&gt;
-&lt;li&gt;Math.&lt;/li&gt;
-&lt;li&gt;Access memory.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;system-calls&#34;&gt;System calls&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ask the kernal nicely to do things.&lt;/li&gt;
-&lt;li&gt;Api to kenal mode.&lt;/li&gt;
-&lt;li&gt;If it is not in the syscall_table you can not call it.&lt;/li&gt;
-&lt;li&gt;Unix has 261 syscalls implemented.&lt;/li&gt;
-&lt;li&gt;Windows has thousands listed (implemented/unimplemented).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Linux System Programming by Robert Love&lt;/li&gt;
-&lt;li&gt;Unix Network Programming by Richard Stevens&lt;/li&gt;
-&lt;li&gt;Advanced Programming in the UNIX Environment by Richard Stevens&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Ruby as Art; Ruby as Science; Ruby as Craft</title>
-      <link>https://brianp.github.io/2013/10/22/cascadia-ruby-ruby-as-art-ruby-as-science-ruby-as-craft/</link>
-      <pubDate>Tue, 22 Oct 2013 09:18:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/22/cascadia-ruby-ruby-as-art-ruby-as-science-ruby-as-craft/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Analyses and study of algorithms.&lt;/li&gt;
-&lt;li&gt;Algorithm: A set of instructions that will solve a particular problem.&lt;/li&gt;
-&lt;li&gt;Fuctional programming in ruby.&lt;/li&gt;
-&lt;li&gt;The best code is no code. The best code is code that already exists.&lt;/li&gt;
-&lt;li&gt;There is a difference between being correct and being right.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Real craftsmen (can) create their own tools</title>
-      <link>https://brianp.github.io/2013/10/21/cascadia-ruby-real-craftsmen-can-create-their-own-tools/</link>
-      <pubDate>Mon, 21 Oct 2013 17:00:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/21/cascadia-ruby-real-craftsmen-can-create-their-own-tools/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/the_zenspider&#34;&gt;Ryan Davis&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;90% software engineering is a lie.&lt;br /&gt;
-Websites/devops is not engineering.&lt;br /&gt;
-We write software but it is not close to engineering.&lt;/p&gt;
-
-&lt;p&gt;We are craftsman. We craft software.&lt;/p&gt;
-
-&lt;p&gt;Use the right tool for the job. Custom tools. Do not always write custom tools.&lt;/p&gt;
-
-&lt;p&gt;Algol-based languages are no grood. It is &lt;em&gt;static&lt;/em&gt; &amp;amp; &lt;em&gt;opaque&lt;/em&gt;, not
-introspective and can not reason about its own code.&lt;/p&gt;
-
-&lt;p&gt;Tool-Making is for the elite.&lt;/p&gt;
-
-&lt;p&gt;Do you write tools to help you code? Why not?&lt;/p&gt;
-
-&lt;h2 id=&#34;language-tools&#34;&gt;Language Tools&lt;/h2&gt;
-
-&lt;h3 id=&#34;flog-and-flay&#34;&gt;Flog and Flay&lt;/h3&gt;
-
-&lt;p&gt;Flog analyzes complexity on methods.&lt;/p&gt;
-
-&lt;p&gt;Flay reports structually similar code. Fuzzily Similar code.&lt;/p&gt;
-
-&lt;p&gt;Tools need to know how to build and walk a language.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Coding and The Mozart Effect</title>
-      <link>https://brianp.github.io/2013/10/21/cascadia-ruby-coding-and-the-mozart-effect/</link>
+      <title>Cascadia Ruby 2013 - Day One</title>
+      <link>https://brianp.github.io/momentos/2013/10/21/cascadia-ruby-2013-day-one/</link>
       <pubDate>Mon, 21 Oct 2013 15:45:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/10/21/cascadia-ruby-coding-and-the-mozart-effect/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/aspleenic&#34;&gt;PJ Hagerty&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;8-10 iq points higher when listening to Mozart over ocean sounds or similar “calming music.”&lt;/p&gt;
-
-&lt;p&gt;Measuring cognitive ability.&lt;/p&gt;
-
-&lt;p&gt;The Mozart effect:
-A set of research results indicating that listening to Mozart&amp;rsquo;s music may induce
-a short-term improvement on the performance of certain kinds of mental tasks
-known as &amp;ldquo;spatial-temporal reasoning;&amp;rdquo; Popularized versions of the hypothesis,
-which suggest that &amp;ldquo;listening to Mozart makes you smarter&amp;rdquo;, or that early
-childhood exposure to classical music has a beneficial effect on mental development;&lt;/p&gt;
-
-&lt;p&gt;Most studies used the exact same peice of Mozart. They decided to test how far away
-from that song and receive the same effect. They tested with Justin Bieber and found
-a benefeit was still present but barely. The further away you get from the sound
-of Mozart the smaller the effect will be.
-Find something that is similar and within the same genre but must be a little different.
-You must be finding new music. Jazz/Old Blues.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s all Ephemeral. If you listen to the same thing too often it will become less effective.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Tell Us Another Story, Grandpa: Lessons Learned Over 16 Years as a Developer</title>
-      <link>https://brianp.github.io/2013/10/21/cascadia-ruby-tell-us-another-story-grandpa/</link>
-      <pubDate>Mon, 21 Oct 2013 14:28:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/21/cascadia-ruby-tell-us-another-story-grandpa/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/mandoescamilla&#34;&gt;Mando Escamilla&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;“A bosses job is to protect and insulate employees.”&lt;/p&gt;
-
-&lt;p&gt;“Do what you like as much as you can.”&lt;/p&gt;
-
-&lt;p&gt;“Good employees are like gold.”&lt;/p&gt;
-
-&lt;p&gt;“Find a mentor.”&lt;/p&gt;
-
-&lt;p&gt;“Apply engineering principals to family and every day life.”&lt;/p&gt;
-
-&lt;p&gt;“The worst reason to do something today is because you did it yesterday.”&lt;/p&gt;
-
-&lt;p&gt;“Work towards your priority.”&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: Sentiment Analysis</title>
-      <link>https://brianp.github.io/2013/10/21/cascadia-ruby-sentiment-analysis/</link>
-      <pubDate>Mon, 21 Oct 2013 14:02:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/21/cascadia-ruby-sentiment-analysis/</guid>
+      <guid>https://brianp.github.io/momentos/2013/10/21/cascadia-ruby-2013-day-one/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
 
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/mjkirk&#34;&gt;Matt Kirk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/knewter&#34;&gt;Josh Adams&lt;/a&gt; and &lt;a href=&#34;http://twitter.com/robby_clements&#34;&gt;Robby Clements&lt;/a&gt;
+Ruby Robotics&lt;/p&gt;
 
-&lt;h2 id=&#34;big-data-languages&#34;&gt;Big Data Languages&lt;/h2&gt;
+&lt;h2 id=&#34;where-to-start&#34;&gt;Where to start&lt;/h2&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Java&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;R&lt;/li&gt;
-&lt;li&gt;Julia&lt;/li&gt;
-&lt;li&gt;Clojure&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#39;https://twitter.com/sarablackthorne/status/392379743045054464/photo/1&#39;&gt;
-  &lt;img src=&#39;https://brianp.github.io/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
- &lt;/a&gt;
-Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;step-1-collect-data&#34;&gt;Step 1: Collect Data&lt;/h2&gt;
+&lt;h3 id=&#34;sphero-130-00&#34;&gt;Sphero - $130.00&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/jperla/sentiment-data&#34;&gt;github.com/jperla/sentiment-data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bluetooth enabled ball.&lt;/li&gt;
+&lt;li&gt;Drives itself around.&lt;/li&gt;
+&lt;li&gt;Best dog toy ever.&lt;/li&gt;
+&lt;li&gt;Waterproof.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Linear regression has a curse: The curse of dimensionality&lt;/p&gt;
-
-&lt;p&gt;Play with it &lt;a href=&#34;http://sentiment-analyzer.heroku.com&#34;&gt;sentiment-analyzer.heroku.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;features-of-text&#34;&gt;Features of Text&lt;/h2&gt;
+&lt;h3 id=&#34;parrot-ar-droid-150-00&#34;&gt;Parrot AR Droid - $150.00&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Character count.&lt;/li&gt;
-&lt;li&gt;Frequency of words.&lt;/li&gt;
-&lt;li&gt;Words.&lt;/li&gt;
-&lt;li&gt;Stems.&lt;/li&gt;
+&lt;li&gt;Acts as its own wifi AP.&lt;/li&gt;
+&lt;li&gt;Connect over wifi.&lt;/li&gt;
+&lt;li&gt;UDP packers.&lt;/li&gt;
+&lt;li&gt;Stream video from 2 cameras.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cascadia Ruby 2013: We&#39;re sorry but something went wrong</title>
-      <link>https://brianp.github.io/2013/10/21/cascadia-ruby-were-sorry-but-something-went-wrong/</link>
-      <pubDate>Mon, 21 Oct 2013 11:45:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2013/10/21/cascadia-ruby-were-sorry-but-something-went-wrong/</guid>
-      <description>
+&lt;h2 id=&#34;rolling-your-own&#34;&gt;Rolling your own&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
-See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categories/cascadiaruby2013/&#34;&gt;this conference&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Beaglebone Black.&lt;/li&gt;
+&lt;li&gt;PCDuino.&lt;/li&gt;
+&lt;li&gt;Arduino.&lt;/li&gt;
+&lt;li&gt;Raspberry Pi.&lt;/li&gt;
+&lt;li&gt;Microncontroller is a small computer.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;talk by: &lt;a href=&#34;http://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt; (&lt;a href=&#34;http://www.thagomizer.com/files/something_went_wrong.pdf&#34;&gt;slide deck&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&#34;pi-setup&#34;&gt;Pi Setup&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install rvm.&lt;/li&gt;
+&lt;li&gt;Ruby.&lt;/li&gt;
+&lt;li&gt;1.9.3 works better.&lt;/li&gt;
+&lt;li&gt;Expect changes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;pi-tips&#34;&gt;Pi Tips&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Be caeful with the PI. Get transistors to protect it.&lt;/li&gt;
+&lt;li&gt;Limited hardwar PWM out.&lt;/li&gt;
+&lt;li&gt;At least 1amp power supply.&lt;/li&gt;
+&lt;li&gt;Pi Cobbler.&lt;/li&gt;
+&lt;li&gt;Cirago wifi $11.00.&lt;/li&gt;
+&lt;li&gt;Case so the PI does not short out.&lt;/li&gt;
+&lt;li&gt;Class 10 SD card. DD is slow on a bad card.&lt;/li&gt;
+&lt;li&gt;Camera module $24.00.&lt;/li&gt;
+&lt;li&gt;Ruby gem: &lt;a href=&#34;https://github.com/jwhitehorn/pi_piper&#34;&gt;Pi-Piper&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ruboto/ruboto&#34;&gt;Ruboto&lt;/a&gt; project for jruby &amp;amp; android.&lt;/li&gt;
+&lt;li&gt;jRuby put the stdlib in the laod path.&lt;/li&gt;
+&lt;li&gt;Pulse Width Modulation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/everydaytype&#34;&gt;Nick Cox&lt;/a&gt;
+We All Make Mistakes: Learning from Gaffes in the Ruby Community&lt;/p&gt;
+
+&lt;p&gt;We all make mistakes.&lt;/p&gt;
+
+&lt;h2 id=&#34;thesis&#34;&gt;Thesis&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Perfection is a goal.&lt;/li&gt;
+&lt;li&gt;Mistakes in software are inevitable.&lt;/li&gt;
+&lt;li&gt;Openly admit mistake.&lt;/li&gt;
+&lt;li&gt;Ecourage openness.&lt;/li&gt;
+&lt;li&gt;Learn from mistakes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;shame-spiral&#34;&gt;Shame spiral&lt;/h2&gt;
+
+&lt;p&gt;When mistakes are made you can fall into a shame spiral.
+Definitiation: When you feel bad about something then you feel bad about feeling bad.&lt;/p&gt;
+
+&lt;h3 id=&#34;software-isn-t-life-or-death&#34;&gt;Software isn&amp;rsquo;t life or death.&lt;/h3&gt;
+
+&lt;h3 id=&#34;software-ability-intelligence&#34;&gt;Software ability != intelligence&lt;/h3&gt;
+
+&lt;h2 id=&#34;think-about-your-own-mistake&#34;&gt;Think about your own mistake&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Does it bring you anxiety.&lt;/li&gt;
+&lt;li&gt;How did you handle it?&lt;/li&gt;
+&lt;li&gt;Did you cover it up with tech jargon so know one knew it happened.&lt;/li&gt;
+&lt;li&gt;Did you bring it up with someone?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;blameless-postmortems&#34;&gt;Blameless Postmortems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What actions did they took at what time?&lt;/li&gt;
+&lt;li&gt;What effects did you observe during the time of crisis? (How was it
+handeled?)&lt;/li&gt;
+&lt;li&gt;Expectations they had?&lt;/li&gt;
+&lt;li&gt;Assumptions they made?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;encourage-team-communication&#34;&gt;Encourage team communication&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dev days or half days.&lt;/li&gt;
+&lt;li&gt;Teamwide postmortems.&lt;/li&gt;
+&lt;li&gt;Lunch &amp;amp; Learn.&lt;/li&gt;
+&lt;li&gt;Consultancy? Write a post about it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conslusion&#34;&gt;Conslusion&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mistakes are inevitable.&lt;/li&gt;
+&lt;li&gt;Change the conversation: Mistakes shoud teach lessons.&lt;/li&gt;
+&lt;li&gt;What are we doing as a culture to encourage transparency?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nick also published a software confessional &lt;a href=&#34;http://softwareconfessional.com/&#34;&gt;http://softwareconfessional.com/&lt;/a&gt;
+if you wanted to make a confession about a major bug you created.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/copiousfreetime&#34;&gt;Jeremy Hinegardner&lt;/a&gt;
+Taking Ruby to the Movies&lt;/p&gt;
+
+&lt;h2 id=&#34;act-1&#34;&gt;Act 1&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amazon Import - Shipping your HD to amazon.&lt;/li&gt;
+&lt;li&gt;Create Manifest.&lt;/li&gt;
+&lt;li&gt;Prpare your device.&lt;/li&gt;
+&lt;li&gt;Send a CreateJob.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Put extra stuff on shipping boxes. FedEx records all of those things.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;act-2&#34;&gt;Act 2&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;S3 torrent file. Add “.torrent” to any url. Only torrents smaller then 5GB in size.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/maxgillett/s3_multipart&#34;&gt;S3 multipart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;act-3&#34;&gt;Act 3&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use FFmpeg.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;act-4&#34;&gt;Act 4&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Firstboot.&lt;/li&gt;
+&lt;li&gt;Init script.&lt;/li&gt;
+&lt;li&gt;rc.local.&lt;/li&gt;
+&lt;li&gt;Amazon User Data. (curl any instance url).&lt;/li&gt;
+&lt;li&gt;:shutdown_behavior =&amp;gt; &amp;lsquo;terminate&amp;rsquo;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/StarrHorne&#34;&gt;Starr Horne&lt;/a&gt;
+The hackers guide to usability testing&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Design can have bugs.&lt;/li&gt;
+&lt;li&gt;Programmers are not your users.&lt;/li&gt;
+&lt;li&gt;Designes are not your users.&lt;/li&gt;
+&lt;li&gt;You clients may not be your users.&lt;/li&gt;
+&lt;li&gt;Form make them feel dumb due to terminology.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;“Usability testing: you don&amp;rsquo;t need microphones and video cameras and two-way
+mirrors and guys in lab coats.”
+ - You don&amp;rsquo;t need a lab or a team. Just sit someone infront of a computer and
+ have a clip board ready.&lt;/p&gt;
+
+&lt;p&gt;Two tests:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;What is it test?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Have them look at something and just ask them what it is?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Please do this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Give someone a particular task.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Read: Steve Krug - Rocket Surgery Made Easy&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt; (&lt;a href=&#34;http://www.thagomizer.com/files/something_went_wrong.pdf&#34;&gt;slide deck&lt;/a&gt;)
+We&amp;rsquo;re sorry but something went wrong&lt;/p&gt;
 
 &lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
 
@@ -951,6 +930,1356 @@ See all the notes from &lt;a href=&#34;https://brianp.github.io/momentos/categor
 &lt;li&gt;Future focused.&lt;/li&gt;
 &lt;li&gt;Do not add a process. Process usually means bad communication.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/mjkirk&#34;&gt;Matt Kirk&lt;/a&gt;
+Sentiment Analysis&lt;/p&gt;
+
+&lt;h2 id=&#34;big-data-languages&#34;&gt;Big Data Languages&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;R&lt;/li&gt;
+&lt;li&gt;Julia&lt;/li&gt;
+&lt;li&gt;Clojure&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#39;https://twitter.com/sarablackthorne/status/392379743045054464/photo/1&#39;&gt;
+  &lt;img src=&#39;https://brianp.github.io/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
+ &lt;/a&gt;
+Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-collect-data&#34;&gt;Step 1: Collect Data&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/jperla/sentiment-data&#34;&gt;github.com/jperla/sentiment-data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Linear regression has a curse: The curse of dimensionality&lt;/p&gt;
+
+&lt;p&gt;Play with it &lt;a href=&#34;http://sentiment-analyzer.heroku.com&#34;&gt;sentiment-analyzer.heroku.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features-of-text&#34;&gt;Features of Text&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Character count.&lt;/li&gt;
+&lt;li&gt;Frequency of words.&lt;/li&gt;
+&lt;li&gt;Words.&lt;/li&gt;
+&lt;li&gt;Stems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/mandoescamilla&#34;&gt;Mando Escamilla&lt;/a&gt;
+Tell Us Another Story, Grandpa: Lessons Learned Over 16 Years as a Developer&lt;/p&gt;
+
+&lt;p&gt;“A bosses job is to protect and insulate employees.”&lt;/p&gt;
+
+&lt;p&gt;“Do what you like as much as you can.”&lt;/p&gt;
+
+&lt;p&gt;“Good employees are like gold.”&lt;/p&gt;
+
+&lt;p&gt;“Find a mentor.”&lt;/p&gt;
+
+&lt;p&gt;“Apply engineering principals to family and every day life.”&lt;/p&gt;
+
+&lt;p&gt;“The worst reason to do something today is because you did it yesterday.”&lt;/p&gt;
+
+&lt;p&gt;“Work towards your priority.”&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/aspleenic&#34;&gt;PJ Hagerty&lt;/a&gt;
+Coding and The Mozart Effect&lt;/p&gt;
+
+&lt;p&gt;8-10 iq points higher when listening to Mozart over ocean sounds or similar “calming music.”&lt;/p&gt;
+
+&lt;p&gt;Measuring cognitive ability.&lt;/p&gt;
+
+&lt;p&gt;The Mozart effect:
+A set of research results indicating that listening to Mozart&amp;rsquo;s music may induce
+a short-term improvement on the performance of certain kinds of mental tasks
+known as &amp;ldquo;spatial-temporal reasoning;&amp;rdquo; Popularized versions of the hypothesis,
+which suggest that &amp;ldquo;listening to Mozart makes you smarter&amp;rdquo;, or that early
+childhood exposure to classical music has a beneficial effect on mental development;&lt;/p&gt;
+
+&lt;p&gt;Most studies used the exact same peice of Mozart. They decided to test how far away
+from that song and receive the same effect. They tested with Justin Bieber and found
+a benefeit was still present but barely. The further away you get from the sound
+of Mozart the smaller the effect will be.
+Find something that is similar and within the same genre but must be a little different.
+You must be finding new music. Jazz/Old Blues.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s all Ephemeral. If you listen to the same thing too often it will become less effective.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/the_zenspider&#34;&gt;Ryan Davis&lt;/a&gt;
+Real craftsmen (can) create their own tools&lt;/p&gt;
+
+&lt;p&gt;90% software engineering is a lie.&lt;br /&gt;
+Websites/devops is not engineering.&lt;br /&gt;
+We write software but it is not close to engineering.&lt;/p&gt;
+
+&lt;p&gt;We are craftsman. We craft software.&lt;/p&gt;
+
+&lt;p&gt;Use the right tool for the job. Custom tools. Do not always write custom tools.&lt;/p&gt;
+
+&lt;p&gt;Algol-based languages are no grood. It is &lt;em&gt;static&lt;/em&gt; &amp;amp; &lt;em&gt;opaque&lt;/em&gt;, not
+introspective and can not reason about its own code.&lt;/p&gt;
+
+&lt;p&gt;Tool-Making is for the elite.&lt;/p&gt;
+
+&lt;p&gt;Do you write tools to help you code? Why not?&lt;/p&gt;
+
+&lt;h2 id=&#34;language-tools&#34;&gt;Language Tools&lt;/h2&gt;
+
+&lt;h3 id=&#34;flog-and-flay&#34;&gt;Flog and Flay&lt;/h3&gt;
+
+&lt;p&gt;Flog analyzes complexity on methods.&lt;/p&gt;
+
+&lt;p&gt;Flay reports structually similar code. Fuzzily Similar code.&lt;/p&gt;
+
+&lt;p&gt;Tools need to know how to build and walk a language.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Angular and Liquid expressions in Jekyll</title>
+      <link>https://brianp.github.io/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <description>&lt;p&gt;I started writing an Angular application to intereact with an API I have
+produced recently. The Angular app is compiled as a static site
+with Jekyll. I immediately ran into an issue with Angular.
+ None of my expressions were showing up. I
+realized it was because Liquid which is included with Jekyll uses the
+same expression tags as Angular: &lt;code&gt;{{ myVariable }}&lt;/code&gt;. This meant the
+Angular expressions were not making it as raw text into the final template
+as they were being caught by Liquid.&lt;/p&gt;
+
+&lt;p&gt;I started by looking to see if there was an easy way to deactivate Liquid
+inside Jekyll as I had no intention of using it. Without monkey patching the rendering process
+it seemed like I was stuck with the Liquid processing.&lt;/p&gt;
+
+&lt;p&gt;All is not lost though. A quick search returned an option to change the
+expression symbols for Angular:&lt;/p&gt;
+
+&lt;p&gt;Coffeescript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@myApp = &lt;/span&gt;angular.module(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;, [])
+
+@myApp.config [&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;$interpolateProvider&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;($interpolateProvider)-&amp;gt;&lt;/span&gt;
+  $interpolateProvider.startSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{(&amp;#39;&lt;/span&gt;).endSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;)}&amp;#39;&lt;/span&gt;)
+]
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Javascript:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; myapp;
+myApp &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; angular.module(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;, []);
+
+myApp.config([
+  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;$interpolateProvider&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;($interpolateProvider) {
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; $interpolateProvider.startSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{(&amp;#39;&lt;/span&gt;).endSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;)}&amp;#39;&lt;/span&gt;);
+  }
+]);
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This allowed me to now use &lt;code&gt;{( myVariable )}&lt;/code&gt; for Anuglar expressions and it
+does not get caught in the liquid filters.&lt;/p&gt;
+
+&lt;aside&gt;
+**Aside:** While writing Liquid examples in Octopress; 
+`{{ myVariable }}`
+actually gets caught in the Liquid filter as an expression. I had to use 
+the Liquid `raw` &amp; `endraw` tags to be able to show the expression above. 
+Also note in newer versions of Jekyll and Liquid `raw` has been
+deprecated in favour of the `verbatim` tag.
+&lt;/aside&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Killing all Ruby Processes</title>
+      <link>https://brianp.github.io/momentos/2013/09/24/killing-all-ruby-processes/</link>
+      <pubDate>Tue, 24 Sep 2013 11:30:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/09/24/killing-all-ruby-processes/</guid>
+      <description>&lt;p&gt;I was running some commands that I later found out had left me with many
+orphaned ruby processes. Too many to kill one by one. I needed to just
+get rid of them all and quickly so killing all ruby processes was the
+best way to go.&lt;br /&gt;
+Here is a short list of convenient and inconvenient ways
+to do that:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; each in &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`&lt;/span&gt;ps -eo pid,command | grep ruby | grep -v grep | awk &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`&lt;/span&gt;; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt; -9 &lt;span style=&#34;color: #996633&#34;&gt;$each&lt;/span&gt;;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;
+killall −9 ruby
+pkill -9 ruby
+pidof ruby | xargs &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt; -9
+ps aux | grep sidekiq | awk &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt; | xargs &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The easiest commands and best suggestions were brought to my attention
+by &lt;a href=&#34;https://twitter.com/AlanBailward&#34;&gt;Alan Bailward&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/halkeye&#34;&gt;Gavin
+Mogan&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MacBook Air (Mid 2013) Wifi Issues</title>
+      <link>https://brianp.github.io/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
+      <description>
+
+&lt;p&gt;As soon as the MacBook Air (Mid 2013) started shipping; reports began
+flooding in about intermittant wifi connectivity
+problems.&lt;sup&gt;&lt;a href=&#39;#ref-1&#39;&gt;[1]&lt;/a&gt;&lt;/sup&gt; The day after it was
+released I ordered it. I can&amp;rsquo;t say I
+experinced the same issues everyone else was claiming to run into.
+Apple denied the issue at first (as they always do) but later released
+a software update for the issue.&lt;sup&gt;&lt;a href=&#39;#ref-2&#39;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
+(mid 2013)&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Not soon after the software update I began experiencing the
+wifi connectivity issues. When the laptop is woken from sleep it
+will connect to the first network available. After this connection it will
+no longer show any available network. I will have to proceed by turning the wifi off and
+back on again. It will search for all the networks and then let me finally
+connect to my own. This process repeats anytime the laptop goes to
+sleep.&lt;/p&gt;
+
+&lt;h2 id=&#34;other-issues&#34;&gt;Other Issues&lt;/h2&gt;
+
+&lt;p&gt;Aside from the aforementioned wireless issue the laptop now suffers from sleep/wake
+problems. When woken from sleep I can use the laptop like normal for
+five to ten seconds before it will put itself back to sleep. Waking it a
+second time requires multiple trackpad/keyboard presses before it
+responds.&lt;/p&gt;
+
+&lt;p&gt;After some searching it seems like the sleep/wake issue might be related to a new standby mode.&lt;sup&gt;&lt;a href=&#39;#ref-3&#39;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;{% blockquote Jason D. O&amp;rsquo;Grady, &lt;a href=&#34;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&#34;&gt;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&lt;/a&gt; %}
+…the reason for the delay is Apple&amp;rsquo;s new standby mode which is built into OS X to achieve longer battery life when MacBook Pros and Airs are sleeping…
+{% endblockquote %}&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;1.
+  * &lt;a id=&#39;ref-1&#39; href=&#39;http://9to5mac.com/2013/06/24/apple-investigating-new-macbook-air-wifi-issues-some-customers-receiving-replacements/&#39;&gt;Apple investigating new MacBook Air Wi-Fi issues, customers
+   receiving replacements&lt;/a&gt;
+  * &lt;a href=&#34;http://www.macrumors.com/2013/06/29/apple-testing-software-update-to-address-2013-macbook-air-wi-fi-issues/&#34;&gt;Apple Testing Software Update to Address 2013 MacBook Air Wi-Fi
+    Issues&lt;/a&gt;
+  * &lt;a href=&#34;http://www.engadget.com/2013/06/24/apple-allegedly-looking-into-macbook-air-wifi-issue-replacing-m/&#34;&gt;Apple allegedly looking into MacBook Air WiFi issue, replacing
+    machines&lt;/a&gt;
+2.
+  &lt;a id=&#39;ref-2&#39; href=&#39;http://support.apple.com/kb/DL1672&#39;&gt;MacBook Air (Mid 2013) Software Update 1.0&lt;/a&gt;
+3.
+  &lt;a id=&#39;ref-3&#39;
+    href=&#39;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&#39;&gt;Faster
+wake from sleep on MacBooks&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Meaning in my work</title>
+      <link>https://brianp.github.io/momentos/2013/09/10/meaning-in-my-work/</link>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/09/10/meaning-in-my-work/</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;
+“If you enjoy what you do you will never work a day in your life.”
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;&lt;/strong&gt;
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;Just recently I was elated when a client contacted us. We have
+been working on an ongoing project with them for over two years. They
+contacted us just to let us know they had used the project as a
+demo and witness. They used the project to help acquire funding for twenty-five full
+scholarships for youth from all
+over the world to attend any educational insitutue of their choosing.
+My project manager read the email to me and I got goosebumps. A
+project that I worked on will actually be making a major difference in twenty-five
+young peoples lives.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HTML Anchors with ids</title>
+      <link>https://brianp.github.io/momentos/2013/09/03/html-anchors-with-ids/</link>
+      <pubDate>Tue, 03 Sep 2013 10:42:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/09/03/html-anchors-with-ids/</guid>
+      <description>&lt;p&gt;Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.&lt;/p&gt;
+
+&lt;p&gt;When adding anchors on a page for the purpose of in-page links my typical method for years
+has been to add a link with the anchor name in the &lt;code&gt;href&lt;/code&gt; and an anchor tag with a
+&lt;code&gt;name&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+Some page content…
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Just the other day &lt;a href=&#34;http://www.twitter.com/ry5n&#34;&gt;@ry5n&lt;/a&gt; informed me that a link that corresponds to an elements &lt;code&gt;id&lt;/code&gt; will work just the
+same and there&amp;rsquo;s no need to add an additional anchor with a &lt;code&gt;name&lt;/code&gt;. This
+allows you to use any element as the anchor. I find this avoids
+additional un-nessecary markup and overall is more convenient.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+Some page content…
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;According to &lt;a href=&#34;http://www.w3.org/TR/html401/struct/links.html#anchors-with-id&#34;&gt;the
+docs&lt;/a&gt;:
+&lt;blockquote&gt;
+  &lt;p&gt;
+The id and name attributes share the same name space. This means that they cannot both define an anchor with the same name in the same document. It is permissible to use both attributes to specify an element&#39;s unique identifier for the following elements: A, APPLET, FORM, FRAME, IFRAME, IMG, and MAP. When both attributes are used on a single element, their values must be identical.
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;&lt;/strong&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
+      <link>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
+related issues within one of the applications I contract on. This is a just a
+list of notable behaviours I expereinced whilst working with Ruby,
+Rails, Dates &amp;amp; TimeZones.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
+to go alone! Take this.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: DST is in effect at the time of writing.&lt;/p&gt;
+
+&lt;h2 id=&#34;inconsistent-handling-of-dst&#34;&gt;Inconsistent Handling of DST&lt;/h2&gt;
+
+&lt;p&gt;In the code below we instantiate an &lt;code&gt;ActiveSupport::TimeZone&lt;/code&gt; object. I would love to
+think that this instance would know everything about that Time Zone. Its
+offset inside and outside of DST. I would expect the method
+&lt;code&gt;TimeZone#formatted_offset&lt;/code&gt; to account for DST and return the offset
+accordingly. It doesn&amp;rsquo;t. It outputs the offset for Standard time only. Ideally I&amp;rsquo;d like to see more concise method
+naming. &lt;code&gt;standard_offset&lt;/code&gt; vs &lt;code&gt;daylight_offset&lt;/code&gt; or &lt;code&gt;dst_offset&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alas, after we have the zone object we can pass that zone into a &lt;code&gt;in_time_zone&lt;/code&gt; method to calculate a time in a
+particular zone based off an existing time. This method does in fact take
+DST into consideration.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-08:00&amp;quot;&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-07:00&amp;quot;&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Wed&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;36&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PDT&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;07&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This can be problematic. Different methods were utilized in
+different sections of the app in turn DST and Time Zone offsets were being
+calculated differently.&lt;/p&gt;
+
+&lt;p&gt;You could do the following to acheive the same
+conversion using the helpful &lt;code&gt;new_offset&lt;/code&gt; method and passing in the
+offset but it would result in a Standard time conversion:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-08:00&amp;quot;&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new_offset(zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Wed&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;20&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;36&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0800&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The above gives you exactly what you ask it for. A time with a specific
+offset. The downside to this is the offset being fetched above is again
+a method that does not take DST into consideration and would throw off
+your result.&lt;/p&gt;
+
+&lt;h2 id=&#34;converting-to-different-time-formats-to-utilize-certain-methods&#34;&gt;Converting to different Time formats to utilize certain methods&lt;/h2&gt;
+
+&lt;p&gt;Another issue was the requirement to flip flop between types to
+utilize specific methods. I&amp;rsquo;d have to call &lt;code&gt;to_datetime&lt;/code&gt; to utilize
+changing offsets without adjusting the current point in time. Then
+follow it with &lt;code&gt;to_time&lt;/code&gt; to pass it into a &lt;code&gt;Timecop&lt;/code&gt; method.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Time&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+&lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-03:00&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#Atlantic Time (Canada)&lt;/span&gt;
+zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;beginning_of_day &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;seconds)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;UTC&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Time&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0700&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_time
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mon&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;26&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;07&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeWithZone&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Another annoyance here is the 8th &amp;amp; 12th line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t re-assign time to the new &lt;code&gt;DateTime&lt;/code&gt; instance (line #12) the
+&lt;code&gt;Time&lt;/code&gt; instance will not throw an error when calling the &lt;code&gt;change&lt;/code&gt;
+method. It also won&amp;rsquo;t do anything else including producing the desired result.
+Which will leave you pulling hair while wondering why you&amp;rsquo;re not landing
+in the time with the zone you want.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeWithZone&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#oops forgot to re-assign&lt;/span&gt;
+time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There we have it. No error and no time zone adjustment.&lt;/p&gt;
+
+&lt;p&gt;This is because the Rails &lt;code&gt;Time&lt;/code&gt; class adds a change method but it only
+responds to a hash with the following keys: &lt;code&gt;:year, :month, :day, :hour, :min, :sec, :usec&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Aside Rant:
+&lt;code&gt;Time&lt;/code&gt; has a date. If it was just time then it should
+have no date. Much like &lt;code&gt;Date&lt;/code&gt; has no time. If &lt;code&gt;Time&lt;/code&gt; has a date what
+separates it from &lt;code&gt;DateTime&lt;/code&gt; or &lt;code&gt;TimeWithZone&lt;/code&gt;? If &lt;code&gt;TimeWithZone&lt;/code&gt; has a
+date shouldn&amp;rsquo;t it be &lt;code&gt;DateTimeWithZone&lt;/code&gt;. For that matter &lt;code&gt;DateTime&lt;/code&gt; already
+has a zone so why have a second &lt;code&gt;DateTimeWithZone&lt;/code&gt; class for the same thing? (I actually
+ended up looking into this more. &lt;a href=&#39;#timevsdatetime&#39;&gt;See below: The State of Time vs DateTime&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;storing-in-utc-isn-t-a-be-all-end-all-solution&#34;&gt;Storing in UTC isn&amp;rsquo;t a be all end all solution&lt;/h2&gt;
+
+&lt;p&gt;Anytime I mentioned I was working with Time Zones people just said
+&amp;ldquo;Store it in UTC&amp;rdquo;. As if that was the solution to all woes. The problem
+here is that the dates and times being stored (in UTC) were not being
+converted to or from UTC to the desired time in zone. String formatted dates sans time &amp;amp; offset
+were being passed and created as UTC time stamps.
+This makes those timestamps wrong as &lt;code&gt;2013-08-25&lt;/code&gt; passed in will be saved
+as &lt;code&gt;2013-08-25 00:00:00 UTC&lt;/code&gt; and is not the same as
+&lt;code&gt;2013-08-25 00:00:00 PST&lt;/code&gt; (They have a +7 hour difference). So when doing
+comparisons to the stored dates you could end up with inaccurate results when just comparing
+against string values. If the desired offset was high or low enough the UTC
+date could actually be a different day then what&amp;rsquo;s expected.&lt;/p&gt;
+
+&lt;p&gt;The times were not being
+converted on their way into the database as the timezone field was independent of each
+particular time or date fields in related records. If the user changed the
+Time Zone field callbacks would have to trigger a re-calculation on every time
+related field on every related record. I&amp;rsquo;m not going to get into any
+more specifics but our current method was the most desired way to
+handle the process as we dind&amp;rsquo;t want to constantly be re-caluclating
+times in the databse if a user switched the zone. It&amp;rsquo;s just that some steps were missed in our
+comparing of the non adjusted dates.&lt;/p&gt;
+
+&lt;h2 id=&#34;testing-time-zone-differences&#34;&gt;Testing Time Zone differences&lt;/h2&gt;
+
+&lt;p&gt;As the Dependecy Injection (DPI) band wagon rolled around using tools like
+&lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; became
+&amp;ldquo;unnessecary.&amp;rdquo; I did my best to keep DPI in mind while working with Time
+related methods. Which made unit testing them significantly easier. Here&amp;rsquo;s a quick
+run down on why DPI helps with time related methods:&lt;/p&gt;
+
+&lt;p&gt;Consider the following code without DPI.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# app/models/milestone.rb&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;effective_or_nearest&lt;/span&gt;
+  date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; effective_on(date)
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date ? first : last &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
+  milestone
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The code above checks to see if we&amp;rsquo;re within a milestone date range
+currently. If we&amp;rsquo;re before or after the range then assign the closest
+milestone (first or last.)&lt;/p&gt;
+
+&lt;p&gt;The problem here is trying to test that the last milestone would get
+returned in the event we are past the milestone range because
+DateTime.now in this case is before the milestone end times.
+Instead we can just use DPI and feed in whatever date we
+want. We can also assign it a smart default as the current time.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# app/models/milestone.rb&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;effective_or_nearest&lt;/span&gt;(date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now)
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; effective_on(date)
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date ? first : last &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
+  milestone
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we can control the comparitor date we can pass in anything
+we&amp;rsquo;de like while testing:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# spec/models/milestone_spec.rb&lt;/span&gt;
+it &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;assigns the last milestone as the date is after the requirement&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+  date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;days&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;from_now
+  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;effective_or_nearest(date)
+  milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;should equal &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Keeping DPI in mind while writing your code can definietly make writing
+your tests easier. This is is just a single benefeit to DPI. I encourage
+you to check out other examples.&lt;/p&gt;
+
+&lt;p&gt;This doesn&amp;rsquo;t mean that I don&amp;rsquo;t feel there&amp;rsquo;s a place for
+&lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; in my life. The unit
+tests ran quick and I was happy with them. The area was sensitive though
+and I wanted to really ensure we always got the results we wanted. I
+wanted to write some full stack tests that
+started manipulating data as a user from other time zones.&lt;/p&gt;
+
+&lt;p&gt;In this case I had the user registering for an activity that was
+setup in the Atlantic time zone (Atlantic Time (Canada)). The
+start and end times for milestones would be based off the AST timezone.
+This test let me move the context of the user exactly 2 seconds before the end of the first milestone
+in AST. Which would be +4 hours PST. Register the user at that time and
+ensure I recieve the desired results.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;zoned_time&lt;/span&gt;(date_time)
+  zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date_time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; event&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;time_zone_offset)
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_time
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+it &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;assigns the first milestone&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date
+  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; zoned_time(time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;beginning_of_day &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;seconds)
+  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Timecop&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;travel(&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt;) &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+    visit &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/register&amp;#39;&lt;/span&gt;
+    signup &lt;span style=&#34;color: #888888&#34;&gt;#fills out a form and submits&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;should eq &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;first
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Using &lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; like this
+helped ensure users in different time zones would
+have all time related constraints met properly. This was more satisfying
+then just createing a time and injecting it directly into my method.
+Using DPI left me less wiggle room in creating circumstanes to reveal
+other possible scenarios under which the time constraints might be
+calculated improperly under different zones.&lt;/p&gt;
+
+&lt;h2 id=&#34;some-notes-on-the-different-ruby-rails-date-time-classes&#34;&gt;Some notes on the different Ruby/Rails Date &amp;amp; Time classes.&lt;/h2&gt;
+
+&lt;p&gt;A quick map of where different Date and Time classes and modules live:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Date.html&#34;&gt;Date 1.9.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Time.html&#34;&gt;Time 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/core-2.0/Time.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Ruby Standard Library
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html&#34;&gt;Date 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Time.html&#34;&gt;Time 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Time.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html&#34;&gt;DateTime 1.9.3&lt;/a&gt; -
+&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/DateTime.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Rails
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/Date.html&#34;&gt;Date&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/Time.html&#34;&gt;Time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/DateTime.html&#34;&gt;DateTime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html&#34;&gt;ActiveSupport::TimeZone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html&#34;&gt;ActiveSupport::TimeWithZone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TZInfo (included gem)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tzinfo.rubyforge.org/doc/TZInfo/Timezone.html&#34;&gt;TZInfo::Timezone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The rails &lt;code&gt;Date&lt;/code&gt; and &lt;code&gt;Time&lt;/code&gt; classes bring lots of the fancy niceties
+that we like to use. Methods such as &lt;code&gt;from_now&lt;/code&gt; in lines like
+&lt;code&gt;2.days.from_now&lt;/code&gt;. They extend this functionality to the base ruby
+classes for use anywhere.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TZInfo&lt;/code&gt; is a ruby library used to &amp;ldquo;provide daylight savings aware
+transformations between times in different timezones.&amp;rdquo;
+&lt;code&gt;ActiveSupport::TimeZone&lt;/code&gt; and &lt;code&gt;ActiveSupport::TimeWithZone&lt;/code&gt; are
+essentially wrappers for TZInfo interaction.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-would-i-use-datetime-over-the-time-class&#34;&gt;Why would I use &lt;code&gt;DateTime&lt;/code&gt; over the &lt;code&gt;Time&lt;/code&gt; class?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/10957717/what-is-the-point-of-the-datetime-class&#34;&gt;This Stackoverflow Question&lt;/a&gt; seems to sum up the original reason for it:
+{% blockquote %}
+DateTime had an advantage over Time on 32 bit machines in Rubies &amp;lt; 1.9.2 - Time was a victim of the Y2K38 problem and limited to a 32 bit range. This problem is solved either on 64 bit machines and/or in recent Ruby versions. You still may need to use DateTime if for example 1.8 compatibility is a must or you rely on using methods from its API which often deviates from that of Time.
+{% endblockquote %}&lt;/p&gt;
+
+&lt;h3 id=&#34;span-id-timevsdatetime-the-state-of-time-vs-datetime-a&#34;&gt;&lt;span id=&#39;timevsdatetime&#39;&gt;The state of Time vs DateTime&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;After reading through &lt;a href=&#34;http://danilenko.org/2012/7/6/rails_timezones/&#34;&gt;this additional blog
+post&lt;/a&gt; the differences
+between &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/code&gt; seem to be getting smaller since Ruby 1.9.2 hit and you could really pick
+either with some subtle nuances. Our app deals with many
+different time zones at any one time so the suggested practice there
+doesn&amp;rsquo;t really solve our internal issues. It seems like a decent
+practice to pickup though. That way if your app does become Time Zone dependent
+at some point you&amp;rsquo;ve already taken away a lot of headache.&lt;/p&gt;
+
+&lt;h2 id=&#34;reflection&#34;&gt;Reflection&lt;/h2&gt;
+
+&lt;p&gt;Overall I wish there were less public facing Date &amp;amp; Time related entities. I
+don&amp;rsquo;t doubt all of these classes serve a purpose but I don&amp;rsquo;t think they
+should all have a public interface and I don&amp;rsquo;t want to have anything
+returned that&amp;rsquo;s not a &lt;code&gt;Date&lt;/code&gt;, &lt;code&gt;Time&lt;/code&gt; or &lt;code&gt;DateTime&lt;/code&gt; instance. After
+learning how close &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/code&gt; have become I&amp;rsquo;d even propose to
+eliminate &lt;code&gt;DateTime&lt;/code&gt; once the remaining gaps have been bridged. I&amp;rsquo;d wager &lt;code&gt;Date&lt;/code&gt; being
+moved from Ruby core to the stdlib is a sign that the &lt;code&gt;Time&lt;/code&gt; class seems
+to be seeing more usage.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Rails I18n translations to solve dynamic content issues</title>
+      <link>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <description>
+
+&lt;p&gt;Last week during my main work contract I had been tasked with doing some
+would-be trivial content updates to a section of a client application.
+Content updates would normally involve hopping into a view changing some
+images or text and re-deploying. This particular section though is a
+little more complex then that and way more complex then it should be.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-setup&#34;&gt;The Setup&lt;/h3&gt;
+
+&lt;p&gt;This particular section of the application has rotating content. Each
+rotation we&amp;rsquo;ll refer to as a &lt;em&gt;Phase&lt;/em&gt;. Each phase is displayed for a
+length of time determined by the client and is switched on demand via an
+admin interface. Some structural changes occur on pages but very few. For the
+most part it&amp;rsquo;s copy that changes. On some pages it could be entire
+blocks of copy on others maybe simple date changes.&lt;br /&gt;
+The phases represent stages of a competition. ex:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Phase 1: Contest closed - References last years contest.&lt;/li&gt;
+&lt;li&gt;Phase 2: Announcing the call for submissions opening date and rules.&lt;/li&gt;
+&lt;li&gt;Phase 3: Call for submissions opened.&lt;/li&gt;
+&lt;li&gt;Phase 4: Submissions closed. Public judging occurs.&lt;/li&gt;
+&lt;li&gt;Phase 5: Public Judging closes. Internal judging occurs.&lt;/li&gt;
+&lt;li&gt;Phase 6: Winners Announced.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
+
+&lt;p&gt;How to offer phase specific copy with out gratuitous amounts of switch or
+else/if logic in views. As well as keeping the copy and app as DRY as possible.&lt;/p&gt;
+
+&lt;h3 id=&#34;failed-attempts&#34;&gt;Failed Attempts&lt;/h3&gt;
+
+&lt;p&gt;The original implemntation setup was to use partials. Have one partial
+with the standard set of copy and then have phase specific partials
+that would be included if a phase specific file exists. This was simple.
+Everyone knows how partials work and the swtiching system was easy
+enough to see and figure out.&lt;/p&gt;
+
+&lt;p&gt;The drawbacks weren&amp;rsquo;t apparent at first. Over time as the client
+required more and more minute details the partials became more
+difficult to manage. Some became less DRY as larger blocks of copy would
+have to be repeated with small differenes such as dates or names. Over time
+the similar content would get out of sync as someone would make a change
+in one phase specific file but not realize the same change was
+required in an earlier or later phase specific file. We ended up having
+numbered phase folders phase1 - phase6 all with similar files
+inside. All of which needed to be changed when layout or copy updates
+occured.&lt;/p&gt;
+
+&lt;p&gt;This became an un-mangable system. Something will always be missed. Copy
+will always be wrong somewhere in any given phase at some point in
+time.&lt;/p&gt;
+
+&lt;h3 id=&#34;introduction-to-i18n&#34;&gt;Introduction to I18n&lt;/h3&gt;
+
+&lt;p&gt;Within the same section of application a few months back the client
+requested certain pages have internationalized content. Rails makes this
+very easy with the inclusion of the &lt;a href=&#34;http://guides.rubyonrails.org/i18n.html&#34;&gt;I18n gem&lt;/a&gt;.
+Following a simple structure to manage each pages copy we created a single folder for
+each page and placed each language file within the folder:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
+structure for the internationaliztion files&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This worked simple enough and meant a handful of pages in this section
+of the app are now using I18n helpers and had copy stored in the
+YAML files.&lt;/p&gt;
+
+&lt;p&gt;Copy stored in YAML translates into a basic key value store.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;en:
+  awards:
+    program:
+      title: The title to the Awards Program page
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With that in our translation files the copy now becomes accessbile
+using the I18n interface.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.program.title&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The title to the Awards Program page&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;a-new-idea&#34;&gt;A new Idea&lt;/h3&gt;
+
+&lt;p&gt;After fighting with phase specific files and more copy issues I
+decided we needed to revisit the problem. I began thinking about the
+process of internationalizing the previous pages. The usage for I18n
+solves almost the exact problem we&amp;rsquo;re having: Same page, different
+copy.&lt;/p&gt;
+
+&lt;p&gt;I decided to try something simple. Add the content in the yaml,
+follow it with the phase specific content and offer it a naming
+convention to match the yaml key + phase. Something along the lines of:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
+  marquee:
+    pane1:
+      title: Audience Voting
+      title_p5: Voting now closed
+      text: An AUDIENCE AWARD...
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I then added a helper method for views:
+&lt;em&gt;note&lt;/em&gt;: The &lt;code&gt;@phase&lt;/code&gt; variable is being set in a before filter within
+this section of the app.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;pt&lt;/span&gt;(string)
+  phase_string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;string&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(phase_string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_sym)
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;What this does:
+Appends the provided key with the phase number (Lets
+assume 5.) Then checks to see if that key is set. If the key is not set use the
+original key to find the default return value. Based on our YAML file above
+we can now call the method with &lt;code&gt;pt(&#39;awards.marquee.pane1.title&#39;)&lt;/code&gt;. If
+the phase happens to be set to 5 our return value will be &lt;code&gt;&amp;quot;Voting now
+closed&amp;quot;&lt;/code&gt; otherwise we will get &lt;code&gt;&amp;quot;Audience Voting&amp;quot;&lt;/code&gt;. YAY! It worked.&lt;/p&gt;
+
+&lt;p&gt;It just doesn&amp;rsquo;t sit right though. I left the code as is for the rest of
+the day and thought about how it would be used and where it could be
+problematic.&lt;/p&gt;
+
+&lt;h3 id=&#34;let-it-stew&#34;&gt;Let it stew&lt;/h3&gt;
+
+&lt;p&gt;The next day I came back to the problem having identified a few
+situations where the format of the YAML file just wouldn&amp;rsquo;t hold up.&lt;/p&gt;
+
+&lt;p&gt;1) What if every field in pane1 needs to be changed per phase. That will
+quickly create a chaotic yaml file. title_p1, title_p2, title_p3, etc.&lt;/p&gt;
+
+&lt;p&gt;2) What if phase 5 and phase 6 are identical. Now I have to make duplicate
+entries for title_p5 and title_p6. That&amp;rsquo;s not very DRY.&lt;/p&gt;
+
+&lt;p&gt;The solution needs to be more flexible I thought. I&amp;rsquo;m on the right track
+but it should be easier and obvious to manage the content.&lt;/p&gt;
+
+&lt;p&gt;Lets look at the YAML for the second problem above:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
+  index:
+    module4:
+      tab1:
+        title: Awards
+        header: Awards Contest
+        text: The Ad...
+        title_p5: Voting Now Closed
+        header_p5: Awards Finalists
+        text_p5: Winners to be...
+        title_p6: Voting Now Closed
+        header_p6: Awards Finalists
+        text_p6: Winners to be...
+
+&lt;span style=&#34;color: #888888&#34;&gt;# At best we could DRY it up a little by using YAML anchors (&amp;amp;) and references (*)&lt;/span&gt;
+    ...
+        title_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt; Voting Now Closed
+        header_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_header&lt;/span&gt; Awards Finalists
+        text_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_text&lt;/span&gt; Winners to be...
+        title_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
+        header_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_header&lt;/span&gt;
+        text_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_text&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We managed to DRY it up a little but it&amp;rsquo;s still hideous. I&amp;rsquo;d have to
+define every single phase specific key even if it&amp;rsquo;s the same content.&lt;br /&gt;
+I don&amp;rsquo;t want to do that. That is the existing problem but
+shuffled to a different spot in the app.&lt;/p&gt;
+
+&lt;p&gt;I thought about it some more.&lt;/p&gt;
+
+&lt;p&gt;What if I could define a phase specific &amp;ldquo;tab1&amp;rdquo; in the yaml. I&amp;rsquo;d still have
+to express each phase but the nesting would allow me to DRY it up pretty
+quick.&lt;/p&gt;
+
+&lt;p&gt;At some point I also decided prepending the phase was better then appending.&lt;/p&gt;
+
+&lt;p&gt;I redefined the YAML file in a manner I&amp;rsquo;d &lt;i&gt;like&lt;/i&gt; to be able to
+manage my content:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
+  index:
+    module4:
+      tab1:
+        title: Awards
+        p2_title: Phase 2 title
+        header: Awards Contest
+        text: The Ad...
+      p5_tab1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt;
+        title: Voting Now Closed
+        header: Awards Finalists
+        text: Winners to be...
+      p6_tab1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This idea was going to let me create phase specific content at any
+nesting level. If I only needed a title change in phase 2. Then simply create a
+phase specific title. If I needed a phase specific area. Define the
+phase the key a level higher and anything nested will be considered copy for that
+area. As shown this also makes replicating entire sections for multiple
+phases a breeze using YAML anchors.&lt;/p&gt;
+
+&lt;p&gt;It sounded like a solid interface for managing the content but now I
+need to make it work. This requires checking for phase specific content
+at any given level of the YAML nesting interface. At the beginning at the end
+and anywhere in between.&lt;/p&gt;
+
+&lt;p&gt;I knew right away I wasn&amp;rsquo;t going to be writing this in a helper method
+so I created a new class and utilized the class from within the helper:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;pt&lt;/span&gt;(string)
+  &lt;span style=&#34;color: #007020&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(string, &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;)
+  &lt;span style=&#34;color: #007020&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;translate
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I started the class off pretty simple. Just replicating the usage I
+already had. This worked with the original YAML files but clearly
+wouldn&amp;rsquo;t work with the new format.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;
+
+  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;attr_accessor&lt;/span&gt; &lt;span style=&#34;color: #AA6600&#34;&gt;:string&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:phase&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;initialize&lt;/span&gt;(string, phase)
+    &lt;span style=&#34;color: #3333BB&#34;&gt;@string&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string
+    &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; phase
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
+    phase_string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;string&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+    &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(phase_string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_sym)
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;translate&lt;/span&gt;
+    find_translation
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In order to find phase specific keys anywhere within the nesting, the next
+thing I had to do was find all possible key combinations.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.index.module4.tab1.title&amp;#39;&lt;/span&gt;
+a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
+  b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
+  b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+  b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p6_awards.index.module4.tab1.title&amp;quot;&lt;/span&gt;,
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.p6_index.module4.tab1.title&amp;quot;&lt;/span&gt;,
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.p6_module4.tab1.title&amp;quot;&lt;/span&gt;,
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.module4.p6_tab1.title&amp;quot;&lt;/span&gt;,
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.module4.tab1.p6_title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Great. Next we need to check to see if any of those keys return a value.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+  possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
+    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
+    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  phrase
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This checks to see if the keys return anything. If not returning a
+default blank string. If &lt;code&gt;phrase&lt;/code&gt; is still blank after we have checked all
+the keys go back to using the unmodified provided key and return
+the phrase. We can&amp;rsquo;t just use the original string as the default anymore
+as the first key miss would then set the &lt;code&gt;phrase&lt;/code&gt; to the original key
+value and we would short-circuit the loop.&lt;/p&gt;
+
+&lt;p&gt;This also worked pretty well but I quickly realized it to was
+problematic. If we actually wanted to pass an empty string as phase
+specific content (blanking out a header?) then we would actually end up
+with the default header. With the following YAML as an example.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
+  title: Awards Header
+  p2_title: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;pt(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.title&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #888888&#34;&gt;# With phase 2&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Awards Header&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This happens becuase we&amp;rsquo;re comparing against blank values and
+considering a blank value a miss. When in this case a blank value is
+exactly what we want returned.&lt;/p&gt;
+
+&lt;p&gt;To fix the problem we stop setting blank values on the initial lookup.
+Lets allow I18n to raise a missing translation exception as that is it&amp;rsquo;s
+normal behaviour without defaults.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
+  extract_possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;begin&lt;/span&gt;
+      phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:raise&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;)
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;rescue&lt;/span&gt;
+      &lt;span style=&#34;color: #888888&#34;&gt;# Let I18n raise a MissingTranslation exception.&lt;/span&gt;
+      &lt;span style=&#34;color: #888888&#34;&gt;# We&amp;#39;ll blank out the value or find the default after.&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
+    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  phrase
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This solves our blank title issue. As shown below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;pt(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.title&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #888888&#34;&gt;# With phase 2&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;wrapping-it-all-up&#34;&gt;Wrapping it all up&lt;/h3&gt;
+
+&lt;p&gt;That pretty much gives us all the functionality we need at the moment.
+Check out the full class:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;
+
+  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;attr_accessor&lt;/span&gt; &lt;span style=&#34;color: #AA6600&#34;&gt;:string&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:phase&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:possibilities&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;initialize&lt;/span&gt;(string, phase)
+    &lt;span style=&#34;color: #3333BB&#34;&gt;@string&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string
+    &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; phase
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;extract_possibilities&lt;/span&gt;
+    a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
+      b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
+      b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+      b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
+    extract_possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;begin&lt;/span&gt;
+        phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:raise&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;)
+        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;rescue&lt;/span&gt;
+        &lt;span style=&#34;color: #888888&#34;&gt;# Let I18n raise a MissingTranslation exception.&lt;/span&gt;
+        &lt;span style=&#34;color: #888888&#34;&gt;# We&amp;#39;ll blank out the value or find the default after.&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
+      phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+    phrase
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;translate&lt;/span&gt;
+    find_translation
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After using translations in this way for a few days the new method
+proved its versatility. Allowing the formatting of the YAML
+files in different but very declarative manners. Just to start:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
+  faq:
+    entry_header: What is the entry deadline?
+    entry_paragraphs:
+      - Call for Sub...
+      - All med...
+      - All med...
+      - Award w...
+    p5_entry_paragraphs: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;entries_closed&lt;/span&gt;
+      - Submissions are...
+    p6_entry_paragraphs: &lt;span style=&#34;color: #996633&#34;&gt;*entries_closed&lt;/span&gt;
+
+  index:
+    module4:
+      tab1:
+        title: Awards
+        p2_title: Phase 2 title
+        header: Awards Contest
+        text: The Ad...
+      p5_tab1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt;
+        title: Voting Now Closed
+        header: Awards Finalists
+        text: Winners to be...
+      p6_tab1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
+
+  marquee:
+    pane1:
+      title: Audience Award Voting
+      text: An AUDIENCE AWA...
+    p5_pane1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_marquee&lt;/span&gt;
+      title: Voting now closed
+      text: Winners of th...
+    p6_pane1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_marquee&lt;/span&gt;
+    pane2:
+      title: Judges
+      text: Meet Ad...
+    pane3:
+      title: Essentials
+      text: The Ad...
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;All in all I found the new soltion to be quickly solving all the copy
+update issues we were previously encountering. As we move the content
+into the translation files slowly we can be removing all the repetitive
+phase specific view files that have cluttered up the view directories.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading through the post. The code is far from perfect but I
+felt like I wanted to share the process anyway. If you have any
+suggestions or corrections to make please send me an email
+or find me on &lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DataMapper SQL Queries in Rails Console</title>
+      <link>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
+what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
+debugging when getting unexpected results or trying to increase query
+performance.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DataMapper::Logger.new($stdout, :debug)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Enter that at anytime while running in &lt;code&gt;rails c&lt;/code&gt; and you should start
+seeing the output immediatley.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;
+If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity
+map. In which case a new query isn&amp;rsquo;t actually being performed. Try a
+query that you haven&amp;rsquo;t done yet and verify the results are output. Or
+Simply restart the console.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Map with Index</title>
+      <link>https://brianp.github.io/momentos/2013/06/07/map-with-index/</link>
+      <pubDate>Fri, 07 Jun 2013 15:32:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/06/07/map-with-index/</guid>
+      <description>&lt;p&gt;Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.&lt;/p&gt;
+
+&lt;p&gt;While working on my main contract today I needed to create a new array
+based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just
+use &lt;code&gt;Enumerable::map&lt;/code&gt; right? Almost immediatley I realized I needed
+to make a reference to an array via the loops index. I first
+checked to see if a &lt;code&gt;map_with_index&lt;/code&gt; existed similar to
+&lt;a href=&#34;http://www.ruby-doc.org/core-2.0/Enumerable.html#method-i-each_with_index&#34;&gt;Enumerable::each_with_index&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It doesn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;I took a quick read through the docs and realized that &lt;code&gt;each_with_index&lt;/code&gt; actually returns an Enumerable.
+This means I can use &lt;code&gt;each_with_index&lt;/code&gt; and &lt;code&gt;map&lt;/code&gt; to achieve the desired
+effect. Here&amp;rsquo;s an example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# Canada eh?&lt;/span&gt;
+new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map { &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;value,index&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;value&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; is at position &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;index&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; }
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The cat is at position 0&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The dog is at position 1&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The moose is at position 2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A closer look at the Enumerable returned by &lt;code&gt;each_with_index&lt;/code&gt; shows us
+exactly what each_with_index returns that lets map play so nicely:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;, &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;, &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;From here the array of arrays will get mapped. I had never thought of
+passing multiple values into a &lt;code&gt;map&lt;/code&gt; block but it works wonders. The
+&lt;code&gt;map&lt;/code&gt; block takes each value of the inner array and offers it as a value
+inside the block.&lt;/p&gt;
+
+&lt;p&gt;The actual reason I needed this code was to parse and alter a string
+into keys with multiple possible matches. I plan to write a more in-depth
+post regarding this topic later but until then here&amp;rsquo;s the snippet I used:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;phase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# Dynamic&lt;/span&gt;
+string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.about.marquee.title&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# A key for a yaml translation&lt;/span&gt;
+
+a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
+  b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
+  b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+  b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p2_awards.about.marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.p2_about.marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.about.p2_marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.about.marquee.p2_title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This output the different possibilites where one of the potential keys
+could be prefixed with &amp;lsquo;p2&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ruby 1.9&lt;/strong&gt;&lt;br /&gt;
+While writing this post and sifting through documentation I also found
+the
+&lt;a href=&#34;http://ruby-doc.org/core-1.9.3/Enumerator.html#method-i-with_index&#34;&gt;Enumberable#with_index&lt;/a&gt;
+method which essentially does the same thing but can make the syntax
+easier to read:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;with_index {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;value,index&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;value&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; is at position &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;index&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; }
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The cat is at position 0&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The dog is at position 1&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The moose is at position 2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So there we have it: Map with index for ruby 1.8 and 1.9.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>More fun with the Ruby Symbol</title>
+      <link>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
+idea) some silly conversation occured:&lt;/p&gt;
+
+&lt;p&gt;(someone gists some code)&lt;br /&gt;
+sevenseacat: empty array seems the silly thing to have&lt;br /&gt;
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later&lt;br /&gt;
+Tarential: so they&amp;rsquo;re close at hand&lt;br /&gt;
+tagrudev: little kittens die when you define an unused var&lt;br /&gt;
+brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]&lt;br /&gt;
+Tarential: Now that&amp;rsquo;s thinking.&lt;/p&gt;
+
+&lt;p&gt;Then some time passed and I ended up throwing a
+&lt;a href=&#34;http://http://pastie.org/6469138&#34; title=&#34;pastie&#34;&gt;pastie&lt;/a&gt; back into the
+channel with the following code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;to_a&lt;/span&gt;
+    &lt;span style=&#34;color: #3333BB&#34;&gt;@array&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;(val)
+    &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; val
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+  alias_method &lt;span style=&#34;color: #AA6600&#34;&gt;:previous_inspect&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:inspect&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;inspect&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_s&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt; 
+      &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;inspect
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt;
+      previous_inspect
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+
+&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Mostly usless but I did find out one interesting piece of information. The &lt;code&gt;Symbol&lt;/code&gt; has
+no public creation interface other then it&amp;rsquo;s standard definition. I&amp;rsquo;m assuming at this point it drops down to the C
+level but I couldn&amp;rsquo;t leave that stone unturned. I put the word out I was
+in search of the Symbol implementation in Ruby. I asked some friends,
+tweeted about it and poked around on IRC.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;REPL in the Pry runtime environment&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; (who brings you awesome projects
+like &lt;a href=&#34;https://github.com/pry/pry&#34; title=&#34;pry&#34;&gt;Pry&lt;/a&gt;) ended up giving me a nice
+intro to what happens when you put &lt;code&gt;:cats&lt;/code&gt; into a ruby runtime
+environment.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll keep this brief and in laymans terms. People who know much
+more about this feel free to email me with corrections or improvements.
+Keep in mind this information was explained at a very high level so it
+wouldn&amp;rsquo;t all go over my head.&lt;/p&gt;
+
+&lt;p&gt;At a very basic level the runtime is performing a simple REPL (Read,
+Evaluate, Print, Loop.)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;read --&amp;gt; eval --&amp;gt; puts #inspect on eval output --&amp;gt; loop&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The Read simply reads in your input. In our case &lt;code&gt;$ :cats&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The Eval gets significantly deeper. In the case the value entered is a
+Symbol (or other immediates) it is stored directly in the VALUE pointer.
+&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; provided me with the following
+gist to show how the Symbol is stored: &lt;a href=&#34;https://gist.github.com/banister/febb1f0580cc42eb4297&#34; title=&#34;Pry Gist&#34;&gt;pry_gist.rb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(this is only a small piece of the total evalution process.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;VALUE
+&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;rb_obj_id&lt;/span&gt;(VALUE obj)
+{
+    &lt;span style=&#34;color: #888888&#34;&gt;/*&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *                32-bit VALUE space&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *          MSB ------------------------ LSB&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol  ssssssssssssssssssssssss00001110&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;        sizeof(RVALUE))&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *                    object_id space&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *                                       LSB&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;        (S...S = s...s * A + 4)&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;        required&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  where A = sizeof(RVALUE)/4&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  sizeof(RVALUE) is&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  20 if 32-bit, double is 4-byte aligned&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  24 if 32-bit, double is 8-byte aligned&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     *  40 if 64-bit&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;     */&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (TYPE(obj) &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; T_SYMBOL) {
+        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (SYM2ID(obj) &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;sizeof&lt;/span&gt;(RVALUE) &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;)) &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; FIXNUM_FLAG;
+    }
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (SPECIAL_CONST_P(obj)) {
+        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; LONG2NUM((SIGNED_VALUE)obj);
+    }
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (VALUE)((SIGNED_VALUE)obj&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;FIXNUM_FLAG);
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;He added:
+&lt;blockquote&gt;
+  &lt;p&gt;
+a normal object created via Object.new for example are normally allocated on the heap and they go through a proper initialization process.
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;@banister&lt;/strong&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Then the Print runs a simple &lt;code&gt;#inspect&lt;/code&gt; on the &lt;code&gt;Symbol&lt;/code&gt; and returns &lt;code&gt;=&amp;gt; :cats&lt;/code&gt; to you.&lt;/p&gt;
+
+&lt;p&gt;After that we Loop for more input.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So where does this leave us?&lt;/strong&gt;&lt;br /&gt;
+I ended up getting a great introduction to some things going on
+in my every day environment that I simply take for granted. It all came
+out of some late night nonsense and exploration and now I feel like new
+doors have opened and I&amp;rsquo;m going to have to go through.&lt;/p&gt;
+
+&lt;p&gt;I encourage you to poke around. We write code all day long but really
+finding out what&amp;rsquo;s going on can be new and exciting. So open up a Ruby class
+and break something!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
+      <link>https://brianp.github.io/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
+against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...
+-&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz
+Installing ruby-2.0.0-p0...
+
+BUILD FAILED
+
+Inspect or clean up the working tree at
+/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615
+Results logged to
+/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log
+
+Last &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;10&lt;/span&gt; log lines:
+installing default gems:
+/Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;build_info,
+cache, doc, gems, specifications&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+                              bigdecimal 1.2.0
+                              io-console 0.4.2
+                              json 1.7.7
+                              minitest 4.3.2
+                              psych 2.0.0
+                              rake 0.9.6
+                              rdoc 4.0.0
+                              test-unit 2.0.0.0
+The Ruby openssl extension was not compiled. Missing the OpenSSL lib?
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After some googling I found out Mac OS 10.8 ships with a broken OpenSSL
+install. I first needed to install OpenSSL via homebrew&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;brew install openssl&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After openssl installs successfully we can re-try installing Ruby 2 with
+new options flags&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;RUBY_CONFIGURE_OPTS&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`&amp;quot;&lt;/span&gt; rbenv install 2.0.0-p0
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we&amp;rsquo;re ready to go!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;ruby -v
+ruby 2.0.0p0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;2013-02-24 revision 39474&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;x86_64-darwin12.2.0&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 </description>
     </item>
     

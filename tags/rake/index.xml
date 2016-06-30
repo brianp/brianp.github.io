@@ -11,10 +11,10 @@
     
     <item>
       <title>Hash Defaults in Ruby</title>
-      <link>https://brianp.github.io/2012/06/15/hash-defaults-in-ruby/</link>
+      <link>https://brianp.github.io/momentos/2012/06/15/hash-defaults-in-ruby/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2012/06/15/hash-defaults-in-ruby/</guid>
+      <guid>https://brianp.github.io/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
       <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
 community system and needed to set a default value for anything that
 the old system didn&amp;rsquo;t have. I was using hashs and thought to myself

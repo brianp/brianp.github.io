@@ -7,14 +7,38 @@
     <language>en-us</language>
     
     
-    <updated>Thu, 15 Aug 2013 11:21:00 UTC</updated>
+    <updated>Tue, 25 Feb 2014 15:08:38 UTC</updated>
+    
+    <item>
+      <title>Handling code duplication with Sass @imports in the asset pipeline</title>
+      <link>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
+      
+      <guid>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;
+I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
+&lt;/p&gt;
+  &lt;footer&gt;&lt;/footer&gt;
+  &lt;strong&gt;@brian_pearce&lt;/strong&gt;
+&lt;/blockquote&gt;
+
+
+&lt;p&gt;I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.&lt;/p&gt;
+
+&lt;p&gt;Head on over to the &lt;a href=&#34;http://inside.unbounce.com/product-dev/handling-code-duplication/&#34;&gt;Inside Unbounce&lt;/a&gt; blog to check out the full post.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
-      <link>https://brianp.github.io/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
@@ -316,10 +340,10 @@ to be seeing more usage.&lt;/p&gt;
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>https://brianp.github.io/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>
 
 &lt;p&gt;Last week during my main work contract I had been tasked with doing some
@@ -740,10 +764,10 @@ or find me on &lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;twitte
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>https://brianp.github.io/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
 what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
 debugging when getting unexpected results or trying to increase query
@@ -764,10 +788,10 @@ Simply restart the console.&lt;/p&gt;
     
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>https://brianp.github.io/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
 idea) some silly conversation occured:&lt;/p&gt;
 
@@ -919,10 +943,10 @@ and break something!&lt;/p&gt;
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
-      <link>https://brianp.github.io/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <link>https://brianp.github.io/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <guid>https://brianp.github.io/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
       <description>
 
 &lt;p&gt;Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the &lt;code&gt;includes&lt;/code&gt; method. The &lt;code&gt;includes&lt;/code&gt; method being the suggested best practice for the problem now. &lt;code&gt;includes&lt;/code&gt; will be mentioned at the bottom of the post.&lt;/p&gt;
@@ -1023,10 +1047,10 @@ ActiveRecord&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Expiring Cache Fragments In The Rails Console</title>
-      <link>https://brianp.github.io/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
+      <link>https://brianp.github.io/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
       <pubDate>Tue, 05 Feb 2013 00:14:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
+      <guid>https://brianp.github.io/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
       <description>&lt;p&gt;One of the much larger Rails applications I work on makes heavy use
 of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t
 auto-expiring at the moment. After doing a deployment I needed to expire
@@ -1059,10 +1083,10 @@ handled differently.&lt;/p&gt;
     
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
-      <link>https://brianp.github.io/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <link>https://brianp.github.io/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
       <pubDate>Fri, 01 Feb 2013 16:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <guid>https://brianp.github.io/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>&lt;p&gt;Today I was trying to generate a Rails 3.1.0 project (for testing
 purposes). I simply called &lt;code&gt;rails new rollback&lt;/code&gt; which generated a rails
 3.2.11 project and proceeded to change
@@ -1079,10 +1103,10 @@ system for it to work.&lt;/p&gt;
     
     <item>
       <title>Hash Defaults in Ruby</title>
-      <link>https://brianp.github.io/2012/06/15/hash-defaults-in-ruby/</link>
+      <link>https://brianp.github.io/momentos/2012/06/15/hash-defaults-in-ruby/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2012/06/15/hash-defaults-in-ruby/</guid>
+      <guid>https://brianp.github.io/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
       <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
 community system and needed to set a default value for anything that
 the old system didn&amp;rsquo;t have. I was using hashs and thought to myself
@@ -1131,10 +1155,10 @@ h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;ba
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
-      <link>https://brianp.github.io/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <link>https://brianp.github.io/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <guid>https://brianp.github.io/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>
 
 &lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.
@@ -1230,10 +1254,10 @@ same throughout your code.&lt;/p&gt;
     
     <item>
       <title>Mongoid and has_secure_password</title>
-      <link>https://brianp.github.io/2012/06/05/mongoid-and-has-secure-password/</link>
+      <link>https://brianp.github.io/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2012/06/05/mongoid-and-has-secure-password/</guid>
+      <guid>https://brianp.github.io/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
       <description>&lt;p&gt;In the apps I&amp;rsquo;ve been working on recently I decided to utilize rails built in authentication &amp;lsquo;has_secure_password&amp;rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&amp;rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp;amp; Mongoid. When trying to use the has_secure_password method I got:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;  undefined local variable &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;method&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`has_secure_password&amp;#39; for User:Class (NameError)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1244,10 +1268,10 @@ same throughout your code.&lt;/p&gt;
     
     <item>
       <title>Transactions and new_record?</title>
-      <link>https://brianp.github.io/2012/06/05/transactions-and-new-record/</link>
+      <link>https://brianp.github.io/momentos/2012/06/05/transactions-and-new-record/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2012/06/05/transactions-and-new-record/</guid>
+      <guid>https://brianp.github.io/momentos/2012/06/05/transactions-and-new-record/</guid>
       <description>&lt;p&gt;While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I
 ran into an odd issue after I had run a few objects through a Transaction. Although the
 transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted
@@ -1296,10 +1320,10 @@ is no longer an issue.&lt;/p&gt;
     
     <item>
       <title>Flash[:notice] vs Flash.now[:notice]</title>
-      <link>https://brianp.github.io/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
+      <link>https://brianp.github.io/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
       <pubDate>Sun, 11 Sep 2011 00:29:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
+      <guid>https://brianp.github.io/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
       <description>&lt;p&gt;While working with my new employer (in 2011) I noticed a minor but recurring issue
 in our application. We had been storing flash[:notice] messages in most
 of our actions but were not using that flash message anywhere. This was
@@ -1330,10 +1354,10 @@ rendering in the current action you want to flash.now.&lt;/p&gt;
     
     <item>
       <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
-      <link>https://brianp.github.io/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <link>https://brianp.github.io/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
       <pubDate>Sat, 12 Feb 2011 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <guid>https://brianp.github.io/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
       <description>&lt;p&gt;TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.&lt;/p&gt;
 
 &lt;p&gt;While writing a Twitter application in Rails I was having an issue saving tweets to the database.&lt;/p&gt;
@@ -1360,10 +1384,10 @@ As per this post by &lt;a href=&#39;http://spin.atomicobject.com/2011/05/19/ruby
     
     <item>
       <title>bson keys must be strings or symbols</title>
-      <link>https://brianp.github.io/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <link>https://brianp.github.io/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
       <pubDate>Wed, 09 Feb 2011 00:16:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <guid>https://brianp.github.io/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>&lt;p&gt;While setting up a new Rails development environment I ran into the
 error &lt;code&gt;bson keys must be strings or symbols&lt;/code&gt;. After some googling I
 found the following method to fix it:&lt;/p&gt;
@@ -1375,39 +1399,6 @@ found the following method to fix it:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;/fixed&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Ruby Symbol is a Memory Leak</title>
-      <link>https://brianp.github.io/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
-      <pubDate>Sat, 04 Dec 2010 00:13:00 UTC</pubDate>
-      
-      <guid>https://brianp.github.io/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
-      <description>&lt;p&gt;This is just a quick bit that I learned early in my Ruby career and always found interesting.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Symbols Are Memory Leaks&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So is this the end of the world?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;No&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Symbols are a unique thing in ruby. It&amp;rsquo;s immutable, constant and unique. You can re-use the same Symbol over and over without allocating extra memory. As opposed to using a String over and over which will allocate memory with each instance.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So how does that make it a memory leak?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;One key difference between the Symbol and the String is that a Symbol is never garbage-collected. Once the memory is allocated it is never released.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So what&amp;rsquo;s this mean?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Use a Symbol to represent only something you&amp;rsquo;ll use again.&lt;br /&gt;
-Don&amp;rsquo;t generate random dynamic Symbols you&amp;rsquo;ll use only once or infrequently, you&amp;rsquo;ll never get that memory back.&lt;/p&gt;
-
-&lt;p&gt;Want to learn more about the Ruby Symbol have some links:&lt;br /&gt;
-&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Symbol.html&#34; title=&#34;Ruby Docs: Symbol&#34;&gt;http://www.ruby-doc.org/core-1.9.3/Symbol.html&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://glu.ttono.us/articles/2005/08/19/understanding-ruby-symbols&#34; title=&#34;Understanding Ruby Symbols&#34;&gt;http://glu.ttono.us/articles/2005/08/19/understanding-ruby-symbols&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.tricksonrails.com/2010/06/avoid-memory-leaks-in-ruby-rails-code-and-protect-against-denial-of-service/&#34; title=&#34;Avoid memory leaks in your ruby/rails code and protect you against denial of service&#34;&gt;http://www.tricksonrails.com/2010/06/avoid-memory-leaks-in-ruby-rails-code-and-protect-against-denial-of-service/&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.rubytips.org/2008/01/26/what-is-a-ruby-symbol-symbols-explained/&#34; title=&#34;What is a ruby symbol? – symbols explained&#34;&gt;http://www.rubytips.org/2008/01/26/what-is-a-ruby-symbol-symbols-explained/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

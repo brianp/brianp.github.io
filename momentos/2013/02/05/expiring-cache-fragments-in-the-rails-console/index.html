@@ -1,0 +1,160 @@
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Expiring Cache Fragments In The Rails Console &middot; { always: &#39;coding&#39; } </title>
+    
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io//css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io//css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://brianp.github.io/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://brianp.github.io/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="{ always: &#39;coding&#39; }" />
+    
+    <script src="https://brianp.github.io//js/jquery.min.js"></script>
+    <script src="https://brianp.github.io//js/main.min.js">
+    </script>
+</head>
+
+    <body>
+        <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+            panel-cover panel-cover--collapsed
+        "  style="background-image: url(/images/side-column-bg.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="https://brianp.github.io//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="https://brianp.github.io//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  Brian Pearce  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://brianp.github.io/#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li>
+                            <li class="navigation__item"><a href="https://brianp.github.io/posts" title="The blog archive" class="blog-button">Archive</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/side-column-bg.jpg)">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <a href="https://brianp.github.io//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="https://brianp.github.io//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  Brian Pearce  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="https://brianp.github.io//#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <div class="post">
+                    <h1>Expiring Cache Fragments In The Rails Console</h1>
+                    <span class="post-date">Tue, Feb 5, 2013</span>
+                    <p>One of the much larger Rails applications I work on makes heavy use
+of caching for obvious reasons. In some locations the cache isn&rsquo;t
+auto-expiring at the moment. After doing a deployment I needed to expire
+these sections manually via the console for my first time. I grabbed the
+name of the fragment from the view where it was being cached.</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #333333">-</span> cache(<span style="background-color: #fff0f0">&#39;all_category_judges&#39;</span>) <span style="color: #008800; font-weight: bold">do</span>
+  <span style="color: #333333">...</span>
+</pre></div>
+
+<p>I only knew one way to access the cache in the console and attempted clearing
+the cache fragment from there.</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>$ rails c
+&gt; Rails.cache.delete<span style="color: #333333">(</span><span style="background-color: #fff0f0">&#39;all_category_judges&#39;</span><span style="color: #333333">)</span>
+&gt; nil
+</pre></div>
+
+<p>This didn&rsquo;t work. After some reading I found out that Fragment caching
+is stored in a slightly different way and needs to be accessed via the
+controller.</p>
+
+<p>Given the time I&rsquo;ll do some more investigation on why the caching is
+handled differently.</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #333333">&gt;</span> <span style="color: #003366; font-weight: bold">ActionController</span><span style="color: #333333">::</span><span style="color: #003366; font-weight: bold">Base</span><span style="color: #333333">.</span>new<span style="color: #333333">.</span>expire_fragment(<span style="background-color: #fff0f0">&#39;all_category_judges&#39;</span>)
+<span style="color: #333333">&gt;</span> <span style="color: #003388; font-weight: bold">true</span>
+</pre></div>
+
+<p>This gave me access to the fragement and allowed me to clear it.</p>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

@@ -1,0 +1,573 @@
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Cascadia Ruby 2013 - Day One &middot; { always: &#39;coding&#39; } </title>
+    
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io//css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://brianp.github.io//css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://brianp.github.io/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://brianp.github.io/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="{ always: &#39;coding&#39; }" />
+    
+    <script src="https://brianp.github.io//js/jquery.min.js"></script>
+    <script src="https://brianp.github.io//js/main.min.js">
+    </script>
+</head>
+
+    <body>
+        <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+            panel-cover panel-cover--collapsed
+        "  style="background-image: url(/images/side-column-bg.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="https://brianp.github.io//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="https://brianp.github.io//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  Brian Pearce  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://brianp.github.io/#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li>
+                            <li class="navigation__item"><a href="https://brianp.github.io/posts" title="The blog archive" class="blog-button">Archive</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/side-column-bg.jpg)">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <a href="https://brianp.github.io//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="https://brianp.github.io//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  Brian Pearce  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="https://brianp.github.io//#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  </ul>
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <div class="post">
+                    <h1>Cascadia Ruby 2013 - Day One</h1>
+                    <span class="post-date">Mon, Oct 21, 2013</span>
+                    
+
+<p><strong>Note</strong>: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.</p>
+
+<p><a href="http://twitter.com/knewter">Josh Adams</a> and <a href="http://twitter.com/robby_clements">Robby Clements</a>
+Ruby Robotics</p>
+
+<h2 id="where-to-start">Where to start</h2>
+
+<h3 id="sphero-130-00">Sphero - $130.00</h3>
+
+<ul>
+<li>Bluetooth enabled ball.</li>
+<li>Drives itself around.</li>
+<li>Best dog toy ever.</li>
+<li>Waterproof.</li>
+</ul>
+
+<h3 id="parrot-ar-droid-150-00">Parrot AR Droid - $150.00</h3>
+
+<ul>
+<li>Acts as its own wifi AP.</li>
+<li>Connect over wifi.</li>
+<li>UDP packers.</li>
+<li>Stream video from 2 cameras.</li>
+</ul>
+
+<h2 id="rolling-your-own">Rolling your own</h2>
+
+<ul>
+<li>Beaglebone Black.</li>
+<li>PCDuino.</li>
+<li>Arduino.</li>
+<li>Raspberry Pi.</li>
+<li>Microncontroller is a small computer.</li>
+</ul>
+
+<h2 id="pi-setup">Pi Setup</h2>
+
+<ul>
+<li>Install rvm.</li>
+<li>Ruby.</li>
+<li>1.9.3 works better.</li>
+<li>Expect changes.</li>
+</ul>
+
+<h2 id="pi-tips">Pi Tips</h2>
+
+<ul>
+<li>Be caeful with the PI. Get transistors to protect it.</li>
+<li>Limited hardwar PWM out.</li>
+<li>At least 1amp power supply.</li>
+<li>Pi Cobbler.</li>
+<li>Cirago wifi $11.00.</li>
+<li>Case so the PI does not short out.</li>
+<li>Class 10 SD card. DD is slow on a bad card.</li>
+<li>Camera module $24.00.</li>
+<li>Ruby gem: <a href="https://github.com/jwhitehorn/pi_piper">Pi-Piper</a>.</li>
+<li><a href="https://github.com/ruboto/ruboto">Ruboto</a> project for jruby &amp; android.</li>
+<li>jRuby put the stdlib in the laod path.</li>
+<li>Pulse Width Modulation.</li>
+</ul>
+
+<hr />
+
+<p><a href="http://twitter.com/everydaytype">Nick Cox</a>
+We All Make Mistakes: Learning from Gaffes in the Ruby Community</p>
+
+<p>We all make mistakes.</p>
+
+<h2 id="thesis">Thesis</h2>
+
+<ul>
+<li>Perfection is a goal.</li>
+<li>Mistakes in software are inevitable.</li>
+<li>Openly admit mistake.</li>
+<li>Ecourage openness.</li>
+<li>Learn from mistakes.</li>
+</ul>
+
+<h2 id="shame-spiral">Shame spiral</h2>
+
+<p>When mistakes are made you can fall into a shame spiral.
+Definitiation: When you feel bad about something then you feel bad about feeling bad.</p>
+
+<h3 id="software-isn-t-life-or-death">Software isn&rsquo;t life or death.</h3>
+
+<h3 id="software-ability-intelligence">Software ability != intelligence</h3>
+
+<h2 id="think-about-your-own-mistake">Think about your own mistake</h2>
+
+<ul>
+<li>Does it bring you anxiety.</li>
+<li>How did you handle it?</li>
+<li>Did you cover it up with tech jargon so know one knew it happened.</li>
+<li>Did you bring it up with someone?</li>
+</ul>
+
+<h2 id="blameless-postmortems">Blameless Postmortems</h2>
+
+<ul>
+<li>What actions did they took at what time?</li>
+<li>What effects did you observe during the time of crisis? (How was it
+handeled?)</li>
+<li>Expectations they had?</li>
+<li>Assumptions they made?</li>
+</ul>
+
+<h2 id="encourage-team-communication">Encourage team communication</h2>
+
+<ul>
+<li>Dev days or half days.</li>
+<li>Teamwide postmortems.</li>
+<li>Lunch &amp; Learn.</li>
+<li>Consultancy? Write a post about it.</li>
+</ul>
+
+<h2 id="conslusion">Conslusion</h2>
+
+<ul>
+<li>Mistakes are inevitable.</li>
+<li>Change the conversation: Mistakes shoud teach lessons.</li>
+<li>What are we doing as a culture to encourage transparency?</li>
+</ul>
+
+<p>Nick also published a software confessional <a href="http://softwareconfessional.com/">http://softwareconfessional.com/</a>
+if you wanted to make a confession about a major bug you created.</p>
+
+<hr />
+
+<p><a href="http://twitter.com/copiousfreetime">Jeremy Hinegardner</a>
+Taking Ruby to the Movies</p>
+
+<h2 id="act-1">Act 1</h2>
+
+<ul>
+<li>Amazon Import - Shipping your HD to amazon.</li>
+<li>Create Manifest.</li>
+<li>Prpare your device.</li>
+<li>Send a CreateJob.</li>
+<li><strong>Put extra stuff on shipping boxes. FedEx records all of those things.</strong></li>
+</ul>
+
+<h2 id="act-2">Act 2</h2>
+
+<ul>
+<li>S3 torrent file. Add “.torrent” to any url. Only torrents smaller then 5GB in size.</li>
+<li><a href="https://github.com/maxgillett/s3_multipart">S3 multipart</a></li>
+</ul>
+
+<h2 id="act-3">Act 3</h2>
+
+<ul>
+<li>Use FFmpeg.</li>
+</ul>
+
+<h2 id="act-4">Act 4</h2>
+
+<ul>
+<li>Firstboot.</li>
+<li>Init script.</li>
+<li>rc.local.</li>
+<li>Amazon User Data. (curl any instance url).</li>
+<li>:shutdown_behavior =&gt; &lsquo;terminate&rsquo;.</li>
+</ul>
+
+<hr />
+
+<p><a href="http://twitter.com/StarrHorne">Starr Horne</a>
+The hackers guide to usability testing</p>
+
+<ul>
+<li>Design can have bugs.</li>
+<li>Programmers are not your users.</li>
+<li>Designes are not your users.</li>
+<li>You clients may not be your users.</li>
+<li>Form make them feel dumb due to terminology.</li>
+</ul>
+
+<p>“Usability testing: you don&rsquo;t need microphones and video cameras and two-way
+mirrors and guys in lab coats.”
+ - You don&rsquo;t need a lab or a team. Just sit someone infront of a computer and
+ have a clip board ready.</p>
+
+<p>Two tests:</p>
+
+<ul>
+<li><p>What is it test?</p>
+
+<ul>
+<li>Have them look at something and just ask them what it is?</li>
+</ul></li>
+
+<li><p>Please do this:</p>
+
+<ul>
+<li>Give someone a particular task.</li>
+</ul></li>
+</ul>
+
+<p>Read: Steve Krug - Rocket Surgery Made Easy</p>
+
+<hr />
+
+<p><a href="http://twitter.com/thagomizer_rb">Aja Hammerly</a> (<a href="http://www.thagomizer.com/files/something_went_wrong.pdf">slide deck</a>)
+We&rsquo;re sorry but something went wrong</p>
+
+<h2 id="debugging">Debugging</h2>
+
+<h3 id="step-0-known-state">Step 0: Known State</h3>
+
+<ul>
+<li>Not nessecarley a good state but be able to always get back to it.</li>
+</ul>
+
+<h3 id="step-1-identify-a-problem">Step 1: Identify A Problem</h3>
+
+<ul>
+<li>Write down steps.</li>
+<li>Write a test.</li>
+<li>Failing Integration test is usually to big debug.</li>
+</ul>
+
+<h3 id="step-2-make-hypothese">Step 2: Make Hypothese</h3>
+
+<ul>
+<li>Avoid Conjunction.</li>
+</ul>
+
+<h3 id="step-3-test-hypothese">Step 3: Test Hypothese</h3>
+
+<ul>
+<li>5 minutes. You should have an understanding in 5 minutes.</li>
+<li>One thing at a time.</li>
+<li>Stop refactoring while debugging (Red/Green/Refactor).</li>
+</ul>
+
+<h3 id="step-4-is-it-fixed">Step 4: Is it fixed?</h3>
+
+<ul>
+<li>Use guard.</li>
+</ul>
+
+<h3 id="step-5-refactor">Step 5: Refactor</h3>
+
+<ul>
+<li>Only once it is fixed can you begin refactoring.</li>
+</ul>
+
+<h3 id="step-6a-next-failure">Step 6a: Next Failure</h3>
+
+<ul>
+<li>Re-run your tests and find out if it is still broken.</li>
+</ul>
+
+<h2 id="tools">Tools</h2>
+
+<ul>
+<li>Git Bisect.</li>
+<li>People.</li>
+<li>Rubber ducking (Talk it out even if it is an inanimite object).</li>
+<li>Labradoing (Rubber Ducking).</li>
+<li>Ask for help.</li>
+<li>Read the Docs.</li>
+<li>Issue &amp; Bug trackers.</li>
+<li>Mailing Lists.</li>
+<li>Set a time Limit. (30min)</li>
+</ul>
+
+<h2 id="bug-writing">Bug writing:</h2>
+
+<ul>
+<li>What I did</li>
+<li>What happened</li>
+<li>What I expected</li>
+<li>Notes</li>
+</ul>
+
+<h3 id="be-nice">Be nice</h3>
+
+<ul>
+<li>No generalizations.</li>
+<li>Don&rsquo;t write bugs with words: always/never/everyone. It comes off as condesending.</li>
+<li>Be Objective.</li>
+<li>“If it was obvious it would be there.”</li>
+</ul>
+
+<h2 id="provide-a-patch">Provide a patch</h2>
+
+<p>Just do it. People may not accept your patch but do not take it personally.</p>
+
+<h2 id="do-not-panic">Do not Panic</h2>
+
+<ul>
+<li>Recognize the <em>real</em> problem.</li>
+<li>Come to a consensus (including non-tech folk.)</li>
+<li>Triage. The &ldquo;loudest&rdquo; problem may not be the most important.</li>
+</ul>
+
+<h2 id="stop-the-bleeding">Stop the bleeding</h2>
+
+<ul>
+<li>Rollback.</li>
+<li>Does it stil work?</li>
+<li>Feature Switch. To turn features off.</li>
+</ul>
+
+<h2 id="fix-the-issue">Fix the issue</h2>
+
+<ul>
+<li>Coordinate with your team.</li>
+<li>Write a test.</li>
+<li>Set expectations with everyone.</li>
+<li>Be pridictable.</li>
+</ul>
+
+<h2 id="reflect">Reflect</h2>
+
+<ul>
+<li>Solo (by yourself).</li>
+<li>With your team. Ask the 5 W.</li>
+<li>Fact based (no blame).</li>
+<li>Future focused.</li>
+<li>Do not add a process. Process usually means bad communication.</li>
+</ul>
+
+<hr />
+
+<p><a href="http://twitter.com/mjkirk">Matt Kirk</a>
+Sentiment Analysis</p>
+
+<h2 id="big-data-languages">Big Data Languages</h2>
+
+<ul>
+<li>Java</li>
+<li>Python</li>
+<li>R</li>
+<li>Julia</li>
+<li>Clojure</li>
+</ul>
+
+<p><a href='https://twitter.com/sarablackthorne/status/392379743045054464/photo/1'>
+  <img src='https://brianp.github.io/images/posts/2013-10-21-ruby-is-not-complex-math.jpg' alt='Ruby is not complex math' />
+ </a>
+Photo by: <a href="http://twitter.com/sarablackthorne">Sara Blackthorne</a></p>
+
+<h2 id="step-1-collect-data">Step 1: Collect Data</h2>
+
+<ul>
+<li><a href="http://github.com/jperla/sentiment-data">github.com/jperla/sentiment-data</a></li>
+</ul>
+
+<p>Linear regression has a curse: The curse of dimensionality</p>
+
+<p>Play with it <a href="http://sentiment-analyzer.heroku.com">sentiment-analyzer.heroku.com</a></p>
+
+<h2 id="features-of-text">Features of Text</h2>
+
+<ul>
+<li>Character count.</li>
+<li>Frequency of words.</li>
+<li>Words.</li>
+<li>Stems.</li>
+</ul>
+
+<p><img src='https://brianp.github.io/images/posts/2013-10-21-portland-donuts.png' alt='Portland Hippies make Good Donuts' /></p>
+
+<hr />
+
+<p><a href="http://twitter.com/mandoescamilla">Mando Escamilla</a>
+Tell Us Another Story, Grandpa: Lessons Learned Over 16 Years as a Developer</p>
+
+<p>“A bosses job is to protect and insulate employees.”</p>
+
+<p>“Do what you like as much as you can.”</p>
+
+<p>“Good employees are like gold.”</p>
+
+<p>“Find a mentor.”</p>
+
+<p>“Apply engineering principals to family and every day life.”</p>
+
+<p>“The worst reason to do something today is because you did it yesterday.”</p>
+
+<p>“Work towards your priority.”</p>
+
+<hr />
+
+<p><a href="http://twitter.com/aspleenic">PJ Hagerty</a>
+Coding and The Mozart Effect</p>
+
+<p>8-10 iq points higher when listening to Mozart over ocean sounds or similar “calming music.”</p>
+
+<p>Measuring cognitive ability.</p>
+
+<p>The Mozart effect:
+A set of research results indicating that listening to Mozart&rsquo;s music may induce
+a short-term improvement on the performance of certain kinds of mental tasks
+known as &ldquo;spatial-temporal reasoning;&rdquo; Popularized versions of the hypothesis,
+which suggest that &ldquo;listening to Mozart makes you smarter&rdquo;, or that early
+childhood exposure to classical music has a beneficial effect on mental development;</p>
+
+<p>Most studies used the exact same peice of Mozart. They decided to test how far away
+from that song and receive the same effect. They tested with Justin Bieber and found
+a benefeit was still present but barely. The further away you get from the sound
+of Mozart the smaller the effect will be.
+Find something that is similar and within the same genre but must be a little different.
+You must be finding new music. Jazz/Old Blues.</p>
+
+<p>It&rsquo;s all Ephemeral. If you listen to the same thing too often it will become less effective.</p>
+
+<hr />
+
+<p><a href="http://twitter.com/the_zenspider">Ryan Davis</a>
+Real craftsmen (can) create their own tools</p>
+
+<p>90% software engineering is a lie.<br />
+Websites/devops is not engineering.<br />
+We write software but it is not close to engineering.</p>
+
+<p>We are craftsman. We craft software.</p>
+
+<p>Use the right tool for the job. Custom tools. Do not always write custom tools.</p>
+
+<p>Algol-based languages are no grood. It is <em>static</em> &amp; <em>opaque</em>, not
+introspective and can not reason about its own code.</p>
+
+<p>Tool-Making is for the elite.</p>
+
+<p>Do you write tools to help you code? Why not?</p>
+
+<h2 id="language-tools">Language Tools</h2>
+
+<h3 id="flog-and-flay">Flog and Flay</h3>
+
+<p>Flog analyzes complexity on methods.</p>
+
+<p>Flay reports structually similar code. Fuzzily Similar code.</p>
+
+<p>Tools need to know how to build and walk a language.</p>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

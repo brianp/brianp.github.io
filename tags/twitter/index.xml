@@ -11,10 +11,10 @@
     
     <item>
       <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
-      <link>https://brianp.github.io/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <link>https://brianp.github.io/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
       <pubDate>Sat, 12 Feb 2011 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <guid>https://brianp.github.io/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
       <description>&lt;p&gt;TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.&lt;/p&gt;
 
 &lt;p&gt;While writing a Twitter application in Rails I was having an issue saving tweets to the database.&lt;/p&gt;

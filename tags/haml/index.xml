@@ -3,7 +3,7 @@
   <channel>
       <title>Haml on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/haml/</link>
+    <link>http://alwayscoding.ca/tags/haml/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>HTML Ordered List Offset</title>
-      <link>https://brianp.github.io/momentos/2013/01/31/html-ordered-list-offset/</link>
+      <link>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</link>
       <pubDate>Thu, 31 Jan 2013 12:38:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/01/31/html-ordered-list-offset/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</guid>
       <description>&lt;p&gt;This week at the office I&amp;rsquo;ve been on a coding hiatus and just doing a lot of copy placement and markup. The client requested having a numbered list of categories separated by type headers.&lt;/p&gt;
 
 &lt;p&gt;I added markup as such:&lt;/p&gt;

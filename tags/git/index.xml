@@ -3,7 +3,7 @@
   <channel>
       <title>Git on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/git/</link>
+    <link>http://alwayscoding.ca/tags/git/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>There was a problem with the editor vi</title>
-      <link>https://brianp.github.io/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</link>
+      <link>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</link>
       <pubDate>Thu, 21 Jun 2012 15:45:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</guid>
+      <guid>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</guid>
       <description>&lt;p&gt;I don&amp;rsquo;t recall the circumstances that lead to the issue but anytime I tried to open vim for git I received:&lt;/p&gt;
 
 &lt;p&gt;&amp;ldquo;There was a problem with the editor vi&amp;rdquo;&lt;/p&gt;

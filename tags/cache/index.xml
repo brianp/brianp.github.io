@@ -3,7 +3,7 @@
   <channel>
       <title>Cache on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/cache/</link>
+    <link>http://alwayscoding.ca/tags/cache/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Expiring Cache Fragments In The Rails Console</title>
-      <link>https://brianp.github.io/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
+      <link>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
       <pubDate>Tue, 05 Feb 2013 00:14:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
       <description>&lt;p&gt;One of the much larger Rails applications I work on makes heavy use
 of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t
 auto-expiring at the moment. After doing a deployment I needed to expire

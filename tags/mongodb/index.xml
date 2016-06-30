@@ -3,7 +3,7 @@
   <channel>
       <title>Mongodb on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/mongodb/</link>
+    <link>http://alwayscoding.ca/tags/mongodb/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
-      <link>https://brianp.github.io/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
       <description>
 
 &lt;p&gt;Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the &lt;code&gt;includes&lt;/code&gt; method. The &lt;code&gt;includes&lt;/code&gt; method being the suggested best practice for the problem now. &lt;code&gt;includes&lt;/code&gt; will be mentioned at the bottom of the post.&lt;/p&gt;
@@ -115,10 +115,10 @@ ActiveRecord&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Mongoid and has_secure_password</title>
-      <link>https://brianp.github.io/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
+      <link>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
+      <guid>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
       <description>&lt;p&gt;In the apps I&amp;rsquo;ve been working on recently I decided to utilize rails built in authentication &amp;lsquo;has_secure_password&amp;rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&amp;rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp;amp; Mongoid. When trying to use the has_secure_password method I got:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;  undefined local variable &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;method&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`has_secure_password&amp;#39; for User:Class (NameError)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -129,10 +129,10 @@ ActiveRecord&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>bson keys must be strings or symbols</title>
-      <link>https://brianp.github.io/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <link>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
       <pubDate>Wed, 09 Feb 2011 00:16:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <guid>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>&lt;p&gt;While setting up a new Rails development environment I ran into the
 error &lt;code&gt;bson keys must be strings or symbols&lt;/code&gt;. After some googling I
 found the following method to fix it:&lt;/p&gt;

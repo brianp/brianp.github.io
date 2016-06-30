@@ -3,7 +3,7 @@
   <channel>
       <title>Ruby on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/ruby/</link>
+    <link>http://alwayscoding.ca/tags/ruby/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
-      <link>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <link>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
       <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;
 I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
@@ -35,10 +35,10 @@ I have used the asset pipeline heavily since its release in Rails 3.1.0 over two
     
     <item>
       <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
-      <link>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
@@ -46,7 +46,7 @@ related issues within one of the applications I contract on. This is a just a
 list of notable behaviours I expereinced whilst working with Ruby,
 Rails, Dates &amp;amp; TimeZones.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
 to go alone! Take this.&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Note: DST is in effect at the time of writing.&lt;/p&gt;
@@ -340,10 +340,10 @@ to be seeing more usage.&lt;/p&gt;
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>
 
 &lt;p&gt;Last week during my main work contract I had been tasked with doing some
@@ -407,7 +407,7 @@ very easy with the inclusion of the &lt;a href=&#34;http://guides.rubyonrails.or
 Following a simple structure to manage each pages copy we created a single folder for
 each page and placed each language file within the folder:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
 structure for the internationaliztion files&#39; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This worked simple enough and meant a handful of pages in this section
@@ -764,10 +764,10 @@ or find me on &lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;twitte
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
 what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
 debugging when getting unexpected results or trying to increase query
@@ -788,10 +788,10 @@ Simply restart the console.&lt;/p&gt;
     
     <item>
       <title>Map with Index</title>
-      <link>https://brianp.github.io/momentos/2013/06/07/map-with-index/</link>
+      <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
       <pubDate>Fri, 07 Jun 2013 15:32:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/06/07/map-with-index/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
       <description>&lt;p&gt;Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.&lt;/p&gt;
 
 &lt;p&gt;While working on my main contract today I needed to create a new array
@@ -859,10 +859,10 @@ new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span st
     
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
 idea) some silly conversation occured:&lt;/p&gt;
 
@@ -1014,10 +1014,10 @@ and break something!&lt;/p&gt;
     
     <item>
       <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
-      <link>https://brianp.github.io/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
       <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
       <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
 against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...
@@ -1065,10 +1065,10 @@ ruby 2.0.0p0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;2013-02-24
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
-      <link>https://brianp.github.io/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
       <description>
 
 &lt;p&gt;Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the &lt;code&gt;includes&lt;/code&gt; method. The &lt;code&gt;includes&lt;/code&gt; method being the suggested best practice for the problem now. &lt;code&gt;includes&lt;/code&gt; will be mentioned at the bottom of the post.&lt;/p&gt;
@@ -1169,10 +1169,10 @@ ActiveRecord&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
-      <link>https://brianp.github.io/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <link>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
       <pubDate>Fri, 01 Feb 2013 16:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>&lt;p&gt;Today I was trying to generate a Rails 3.1.0 project (for testing
 purposes). I simply called &lt;code&gt;rails new rollback&lt;/code&gt; which generated a rails
 3.2.11 project and proceeded to change
@@ -1189,10 +1189,10 @@ system for it to work.&lt;/p&gt;
     
     <item>
       <title>Hash Defaults in Ruby</title>
-      <link>https://brianp.github.io/momentos/2012/06/15/hash-defaults-in-ruby/</link>
+      <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
+      <guid>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
       <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
 community system and needed to set a default value for anything that
 the old system didn&amp;rsquo;t have. I was using hashs and thought to myself
@@ -1241,10 +1241,10 @@ h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;ba
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
-      <link>https://brianp.github.io/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>
 
 &lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.
@@ -1340,10 +1340,10 @@ same throughout your code.&lt;/p&gt;
     
     <item>
       <title>Transactions and new_record?</title>
-      <link>https://brianp.github.io/momentos/2012/06/05/transactions-and-new-record/</link>
+      <link>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2012/06/05/transactions-and-new-record/</guid>
+      <guid>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</guid>
       <description>&lt;p&gt;While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I
 ran into an odd issue after I had run a few objects through a Transaction. Although the
 transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted
@@ -1392,10 +1392,10 @@ is no longer an issue.&lt;/p&gt;
     
     <item>
       <title>Flash[:notice] vs Flash.now[:notice]</title>
-      <link>https://brianp.github.io/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
+      <link>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
       <pubDate>Sun, 11 Sep 2011 00:29:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
+      <guid>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
       <description>&lt;p&gt;While working with my new employer (in 2011) I noticed a minor but recurring issue
 in our application. We had been storing flash[:notice] messages in most
 of our actions but were not using that flash message anywhere. This was
@@ -1426,10 +1426,10 @@ rendering in the current action you want to flash.now.&lt;/p&gt;
     
     <item>
       <title>The Ruby Symbol is a Memory Leak</title>
-      <link>https://brianp.github.io/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
+      <link>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
       <pubDate>Sat, 04 Dec 2010 00:13:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
+      <guid>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
       <description>&lt;p&gt;This is just a quick bit that I learned early in my Ruby career and always found interesting.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Symbols Are Memory Leaks&lt;/strong&gt;&lt;/p&gt;

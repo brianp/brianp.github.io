@@ -3,7 +3,7 @@
   <channel>
       <title>Symbol on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/symbol/</link>
+    <link>http://alwayscoding.ca/tags/symbol/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
 idea) some silly conversation occured:&lt;/p&gt;
 
@@ -166,10 +166,10 @@ and break something!&lt;/p&gt;
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
-      <link>https://brianp.github.io/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>
 
 &lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.
@@ -265,10 +265,10 @@ same throughout your code.&lt;/p&gt;
     
     <item>
       <title>The Ruby Symbol is a Memory Leak</title>
-      <link>https://brianp.github.io/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
+      <link>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
       <pubDate>Sat, 04 Dec 2010 00:13:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
+      <guid>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
       <description>&lt;p&gt;This is just a quick bit that I learned early in my Ruby career and always found interesting.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Symbols Are Memory Leaks&lt;/strong&gt;&lt;/p&gt;

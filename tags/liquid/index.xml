@@ -3,7 +3,7 @@
   <channel>
       <title>Liquid on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/liquid/</link>
+    <link>http://alwayscoding.ca/tags/liquid/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Angular and Liquid expressions in Jekyll</title>
-      <link>https://brianp.github.io/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <link>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
       <pubDate>Wed, 09 Oct 2013 19:54:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
       <description>&lt;p&gt;I started writing an Angular application to intereact with an API I have
 produced recently. The Angular app is compiled as a static site
 with Jekyll. I immediately ran into an issue with Angular.

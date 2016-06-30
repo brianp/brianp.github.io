@@ -3,7 +3,7 @@
   <channel>
       <title>Pry on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/tags/pry/</link>
+    <link>http://alwayscoding.ca/tags/pry/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
 idea) some silly conversation occured:&lt;/p&gt;
 

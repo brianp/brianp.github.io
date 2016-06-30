@@ -3,7 +3,7 @@
   <channel>
       <title> on { always: &#39;coding&#39; } </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://brianp.github.io/</link>
+    <link>http://alwayscoding.ca/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Cascadia Ruby 2014 - Day One</title>
-      <link>https://brianp.github.io/momentos/2014/08/11/cascadia-ruby-2014-day-one/</link>
+      <link>http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</link>
       <pubDate>Mon, 11 Aug 2014 09:26:37 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2014/08/11/cascadia-ruby-2014-day-one/</guid>
+      <guid>http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;br /&gt;
@@ -229,10 +229,10 @@ Speed up Rails, Speed up Your Code&lt;/p&gt;
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
-      <link>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <link>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
       <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;
 I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
@@ -253,10 +253,10 @@ I have used the asset pipeline heavily since its release in Rails 3.1.0 over two
     
     <item>
       <title>Cascadia Ruby 2013 - Day Two</title>
-      <link>https://brianp.github.io/momentos/2013/10/22/cascadia-ruby-2013-day-two/</link>
+      <link>http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/</link>
       <pubDate>Tue, 22 Oct 2013 15:22:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/10/22/cascadia-ruby-2013-day-two/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
@@ -601,10 +601,10 @@ difference with it.&lt;/p&gt;
     
     <item>
       <title>Cascadia Ruby 2013 - Day One</title>
-      <link>https://brianp.github.io/momentos/2013/10/21/cascadia-ruby-2013-day-one/</link>
+      <link>http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/</link>
       <pubDate>Mon, 21 Oct 2013 15:45:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/10/21/cascadia-ruby-2013-day-one/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
@@ -947,7 +947,7 @@ Sentiment Analysis&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#39;https://twitter.com/sarablackthorne/status/392379743045054464/photo/1&#39;&gt;
-  &lt;img src=&#39;https://brianp.github.io/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
+  &lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
  &lt;/a&gt;
 Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
 
@@ -970,7 +970,7 @@ Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackt
 &lt;li&gt;Stems.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1050,10 +1050,10 @@ introspective and can not reason about its own code.&lt;/p&gt;
     
     <item>
       <title>Angular and Liquid expressions in Jekyll</title>
-      <link>https://brianp.github.io/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <link>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
       <pubDate>Wed, 09 Oct 2013 19:54:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
       <description>&lt;p&gt;I started writing an Angular application to intereact with an API I have
 produced recently. The Angular app is compiled as a static site
 with Jekyll. I immediately ran into an issue with Angular.
@@ -1105,10 +1105,10 @@ deprecated in favour of the `verbatim` tag.
     
     <item>
       <title>Killing all Ruby Processes</title>
-      <link>https://brianp.github.io/momentos/2013/09/24/killing-all-ruby-processes/</link>
+      <link>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</link>
       <pubDate>Tue, 24 Sep 2013 11:30:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/09/24/killing-all-ruby-processes/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</guid>
       <description>&lt;p&gt;I was running some commands that I later found out had left me with many
 orphaned ruby processes. Too many to kill one by one. I needed to just
 get rid of them all and quickly so killing all ruby processes was the
@@ -1130,10 +1130,10 @@ Mogan&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>MacBook Air (Mid 2013) Wifi Issues</title>
-      <link>https://brianp.github.io/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
+      <link>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
       <pubDate>Tue, 17 Sep 2013 20:20:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
       <description>
 
 &lt;p&gt;As soon as the MacBook Air (Mid 2013) started shipping; reports began
@@ -1144,7 +1144,7 @@ experinced the same issues everyone else was claiming to run into.
 Apple denied the issue at first (as they always do) but later released
 a software update for the issue.&lt;sup&gt;&lt;a href=&#39;#ref-2&#39;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
 (mid 2013)&#39; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Not soon after the software update I began experiencing the
@@ -1189,10 +1189,10 @@ wake from sleep on MacBooks&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>Meaning in my work</title>
-      <link>https://brianp.github.io/momentos/2013/09/10/meaning-in-my-work/</link>
+      <link>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>
       <pubDate>Tue, 10 Sep 2013 12:00:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/09/10/meaning-in-my-work/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;
 “If you enjoy what you do you will never work a day in your life.”
@@ -1216,10 +1216,10 @@ young peoples lives.&lt;/p&gt;
     
     <item>
       <title>HTML Anchors with ids</title>
-      <link>https://brianp.github.io/momentos/2013/09/03/html-anchors-with-ids/</link>
+      <link>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</link>
       <pubDate>Tue, 03 Sep 2013 10:42:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/09/03/html-anchors-with-ids/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</guid>
       <description>&lt;p&gt;Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.&lt;/p&gt;
 
 &lt;p&gt;When adding anchors on a page for the purpose of in-page links my typical method for years
@@ -1255,10 +1255,10 @@ The id and name attributes share the same name space. This means that they canno
     
     <item>
       <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
-      <link>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
@@ -1266,7 +1266,7 @@ related issues within one of the applications I contract on. This is a just a
 list of notable behaviours I expereinced whilst working with Ruby,
 Rails, Dates &amp;amp; TimeZones.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
 to go alone! Take this.&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Note: DST is in effect at the time of writing.&lt;/p&gt;
@@ -1560,10 +1560,10 @@ to be seeing more usage.&lt;/p&gt;
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>
 
 &lt;p&gt;Last week during my main work contract I had been tasked with doing some
@@ -1627,7 +1627,7 @@ very easy with the inclusion of the &lt;a href=&#34;http://guides.rubyonrails.or
 Following a simple structure to manage each pages copy we created a single folder for
 each page and placed each language file within the folder:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#39;https://brianp.github.io/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
 structure for the internationaliztion files&#39; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This worked simple enough and meant a handful of pages in this section
@@ -1984,10 +1984,10 @@ or find me on &lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;twitte
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
 what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
 debugging when getting unexpected results or trying to increase query
@@ -2008,10 +2008,10 @@ Simply restart the console.&lt;/p&gt;
     
     <item>
       <title>Map with Index</title>
-      <link>https://brianp.github.io/momentos/2013/06/07/map-with-index/</link>
+      <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
       <pubDate>Fri, 07 Jun 2013 15:32:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/06/07/map-with-index/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
       <description>&lt;p&gt;Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.&lt;/p&gt;
 
 &lt;p&gt;While working on my main contract today I needed to create a new array
@@ -2079,10 +2079,10 @@ new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span st
     
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
 idea) some silly conversation occured:&lt;/p&gt;
 
@@ -2234,10 +2234,10 @@ and break something!&lt;/p&gt;
     
     <item>
       <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
-      <link>https://brianp.github.io/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
       <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
       
-      <guid>https://brianp.github.io/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
       <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
 against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...

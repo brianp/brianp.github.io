@@ -7,7 +7,223 @@
     <language>en-us</language>
     
     
-    <updated>Mon, 11 Aug 2014 09:26:37 UTC</updated>
+    <updated>Tue, 12 Aug 2014 09:30:59 UTC</updated>
+    
+    <item>
+      <title>Cascadia Ruby 2014 - Day Two</title>
+      <link>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</link>
+      <pubDate>Tue, 12 Aug 2014 09:30:59 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/tjschuck&#34;&gt;T.J. Schuck&lt;/a&gt;&lt;br /&gt;
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;John the Ripper password cracker.&lt;/li&gt;
+&lt;li&gt;hashcat.&lt;/li&gt;
+&lt;li&gt;Expensive key schedule blowfish. eksblowfish.&lt;/li&gt;
+&lt;li&gt;BCrypt
+
+&lt;ul&gt;
+&lt;li&gt;BCrypt dollar signs are delimieters, hash on far right. Salt on left.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2(abxy)&lt;/code&gt; means bcrypt&lt;/li&gt;
+&lt;li&gt;10 = cost&lt;/li&gt;
+&lt;li&gt;$ 2a $ 10 $ salt $ hash&lt;/li&gt;
+&lt;li&gt;12 to 13 range for bcrypt cost.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake-compiler&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jasonrclark&#34;&gt;Jason Clark&lt;/a&gt;&lt;br /&gt;
+Programming in the Small - Teaching my 5 Year Old Ruby&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Patience.&lt;/li&gt;
+&lt;li&gt;Recall.&lt;/li&gt;
+&lt;li&gt;Mistakes.&lt;/li&gt;
+&lt;li&gt;Discovery.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/hone02&#34;&gt;Terence Lee&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/kenichi_pdx&#34;&gt;Kenichi Nakamura&lt;/a&gt;&lt;br /&gt;
+Creating a Chat App in 15 Minutes with Angelo&lt;/p&gt;
+
+&lt;p&gt;Websockets
+- &lt;code&gt;https://github.com/kenichi/angelo&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Events
+- IE does not support server sent events.
+- EventSource API.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/lizmrush&#34;&gt;Liz Rush&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/SomanyHs&#34;&gt;Hsing-Hui Hsu&lt;/a&gt;&lt;br /&gt;
+&amp;ldquo;Good luck with that&amp;rdquo;: Tag Teaming Civic Data&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cylyndrical map.&lt;/li&gt;
+&lt;li&gt;Spheriod map.&lt;/li&gt;
+&lt;li&gt;Torus map (&amp;ldquo;donut&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;Shapefiles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Lightening Talks&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/mjkirk&#34;&gt;Matthew Kirk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Machine Learning in Ruby
+  - C Libs
+  - JRuby
+  - R
+  - Thoughtful Machine Learning (Book)
+  - Facial Classifications
+  - The Kernel Trick
+  - &lt;a href=&#34;thoughtfulml.com&#34;&gt;thoughtfulml.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jxxf&#34;&gt;John Feminella&lt;/a&gt;&lt;br /&gt;
+Card counting
+ - is legal via only your brain.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/davidcmelida&#34;&gt;David Molida&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hacking &amp;amp; Federal Procurement
+- $250billion + a year.
+- Bid on government contracts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/bethanyrentz&#34;&gt;Bethany Rentz&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rubocop: Styleistic errors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/laurenvoswinkel&#34;&gt;Lauren Voswinkle&lt;/a&gt;&lt;br /&gt;
+Talking about money.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lie about what your previous salary was.&lt;/li&gt;
+&lt;li&gt;Employers are only allowed to verify employment dates.&lt;/li&gt;
+&lt;li&gt;1935 Extneded National labours act to allow talking about salaries.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[name]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby is bad at CMS&amp;rsquo;s&lt;/li&gt;
+&lt;li&gt;Locomotive&lt;/li&gt;
+&lt;li&gt;Rifenery&lt;/li&gt;
+&lt;li&gt;Comfortable Mexican Sofar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cassie Schmitz&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jekyll&lt;/li&gt;
+&lt;li&gt;Prose.io&lt;/li&gt;
+&lt;li&gt;Easy to write plugins&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/realntl&#34;&gt;Nathan Ladd&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt; instead of &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;, &lt;code&gt;||&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Stop using TDD.&lt;/li&gt;
+&lt;li&gt;Stop memoizing. Conceptualize your lifecycle.&lt;/li&gt;
+&lt;li&gt;Get rid of private methods. Removes variability of input.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/kerrizor&#34;&gt;Kerrir Miller&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://speakerdeck.com/kerrizor/you-jelly&#34;&gt;Make Jam&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;5-6 cups of mashed fruit&lt;/li&gt;
+&lt;li&gt;Add a box epctin and bring to a rolling boil.&lt;/li&gt;
+&lt;li&gt;4 cups of sweetner.&lt;/li&gt;
+&lt;li&gt;Another rolling boil.&lt;/li&gt;
+&lt;li&gt;remove from heat.&lt;/li&gt;
+&lt;li&gt;Refridgerate or freeze&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/swindsor&#34;&gt;Scott Windsor&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Test induced design damage.&lt;/li&gt;
+&lt;li&gt;Dependency Injection done wrong sucks.&lt;/li&gt;
+&lt;li&gt;Write better code and better tests.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf&#34;&gt;http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/joelstimson&#34;&gt;Joel Stimson&lt;/a&gt;
+Citizen Science&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where regular people go to help scientists.&lt;/li&gt;
+&lt;li&gt;Stardust at home.&lt;/li&gt;
+&lt;li&gt;Zooniverse: Glassifying Galaxies.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014&#34;&gt;https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;User services as a gem.&lt;/li&gt;
+&lt;li&gt;Permissions service as a gem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/amywoodward&#34;&gt;Amy Woodward&lt;/a&gt;&lt;br /&gt;
+Bitcoin mining.
+Fastest bitcoin mining chips in the world.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/roseaboveit&#34;&gt;Whitenet-Rose Levis&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Help new people.&lt;/li&gt;
+&lt;li&gt;Types of investment
+
+&lt;ul&gt;
+&lt;li&gt;Teaching&lt;/li&gt;
+&lt;li&gt;Conversations&lt;/li&gt;
+&lt;li&gt;Writing&lt;/li&gt;
+&lt;li&gt;Code Reviews&lt;/li&gt;
+&lt;li&gt;Actively Welcome People&lt;/li&gt;
+&lt;li&gt;Slight Adaptations&lt;/li&gt;
+&lt;li&gt;Financial&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/_jnf&#34;&gt;Jeremy Flores&lt;/a&gt;&lt;br /&gt;
+How Not to Be Lonely: An Extrovert&amp;rsquo;s Guide to Working Alone
+Tools:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ScreenHero&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Engage in active communication!
+Cultivate your voice.&lt;/p&gt;
+
+&lt;p&gt;Pair programming.
+Everybody&amp;rsquo;s remote.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/laurenvoswinkel&#34;&gt;Lauren Voswinkle&lt;/a&gt;&lt;br /&gt;
+Nitty Gritty Service Building&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SonJay&lt;/code&gt; &lt;a href=&#34;https://github.com/stevecj/son_jay&#34;&gt;https://github.com/stevecj/son_jay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Typhoeus&lt;/code&gt; &lt;a href=&#34;https://github.com/typhoeus/typhoeus&#34;&gt;https://github.com/typhoeus/typhoeus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StackProf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/listrophy&#34;&gt;Brad Grzesiak&lt;/a&gt;&lt;br /&gt;
+SPAAAAAAAAACE&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cascadia Ruby 2014 - Day One</title>

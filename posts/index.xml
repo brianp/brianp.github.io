@@ -7,7 +7,361 @@
     <language>en-us</language>
     
     
-    <updated>Mon, 11 Aug 2014 09:26:37 UTC</updated>
+    <updated>Sun, 08 May 2016 10:06:42 UTC</updated>
+    
+    <item>
+      <title>Cross compilation to OSX with Rust</title>
+      <link>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</link>
+      <pubDate>Sun, 08 May 2016 10:06:42 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</guid>
+      <description>
+
+
+
+
+&lt;p&gt;It started with &lt;a href=&#34;http://github.com/brianp/muxed&#34;&gt;Muxed&lt;/a&gt;. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.&lt;/p&gt;
+
+&lt;p&gt;Overall documentation on the complete process did not seem readily available. So there was a lot of question-asking, googling, and piecing together differents parts of solutions.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s meet &lt;code&gt;Rustup&lt;/code&gt; and deal with some disambiguation.  The original &lt;code&gt;Rustup&lt;/code&gt; was a &lt;a href=&#34;https://static.rust-lang.org/rustup.sh&#34;&gt;bash script&lt;/a&gt; to help install the rust compiler. Since then the name has been re-purposed and now become the &lt;a href=&#34;https://github.com/rust-lang-nursery/rustup.rs&#34;&gt;Rust toolchain installer&lt;/a&gt;. The new &lt;code&gt;Rustup&lt;/code&gt; offers us the beginning of support for &lt;a href=&#34;https://github.com/rust-lang-nursery/rustup.rs#cross-compilation&#34;&gt;cross compilation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;But today we are focusing on a pre Rustup Toolchain cross compilation build process.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s layout some assumptions and dependencies before we start:&lt;/p&gt;
+
+&lt;p&gt;This guide unfortunately requires two systems to build the first time but a single system to continue cross compiling from. It is possible to do with Unix only, but I could not make it work. Assume all instructions are being executed on the Unix system unless otherwise noted.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 15.10 Wily Werewolf (Inside Vagrant/VirtualBox)&lt;/li&gt;
+&lt;li&gt;Mac OSX 10.9.5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Build tools on Ubuntu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;curl&lt;/li&gt;
+&lt;li&gt;git&lt;/li&gt;
+&lt;li&gt;autotools-dev&lt;/li&gt;
+&lt;li&gt;automake&lt;/li&gt;
+&lt;li&gt;cmake&lt;/li&gt;
+&lt;li&gt;clang&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-1-install-the-stdlib&#34;&gt;Step 1. Install the stdlib&lt;/h3&gt;
+
+&lt;p&gt;To cross compile you require the compiled &lt;code&gt;stdlib&lt;/code&gt; for the architecture type you want to compile to. You will want to get the same &lt;code&gt;stdlib&lt;/code&gt; as the version of &lt;code&gt;rustc&lt;/code&gt; you are running. If &lt;code&gt;rustc -v&lt;/code&gt; outputs &lt;code&gt;1.10&lt;/code&gt; then you want &lt;code&gt;stdlib 1.10&lt;/code&gt;. Luckily the Rust community makes these readily available for you. Head on over to &lt;a href=&#34;https://static.rust-lang.org/dist/index.html&#34;&gt;the distribution directoy&lt;/a&gt; and find the package you&amp;rsquo;re looking for based on architecture type, and version.&lt;/p&gt;
+
+&lt;p&gt;In our case it will be: &lt;code&gt;rust-std-1.10.0-x86_64-apple-darwin&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now fetch this package on to the unix system, untar it, and install it. Its location does not matter much and is not required to be in your project:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ wget https://static.rust-lang.org/dist/rust-std-1.10.0-x86_64-apple-darwin.tar.gz
+$ tar -xvxf rust-std-1.10.0-x86_64-apple-darwin
+$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; rust-std-1.10.0-x86_64-apple-darwin
+$ sudo ./install.sh
+install: installing component &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;rust-std-x86_64-apple-darwin&amp;#39;&lt;/span&gt;
+
+   std is standing at the ready.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;step-2-acquire-an-xcode-package&#34;&gt;Step 2. Acquire an Xcode Package&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you will be performing step 3 on an OSX system, and already have xcode installed, you can skip this step.&lt;/p&gt;
+
+&lt;p&gt;Download Xcode. This will require an apple developer login. An active subscription is &lt;strong&gt;not required&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The version of Xcode required at the time of writing is 7.3. You can find links to all the available versions of Xcode &lt;a href=&#34;https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-3-package-the-sdk&#34;&gt;Step 3. Package the SDK&lt;/h3&gt;
+
+&lt;p&gt;This is the part where you may deviate if desired.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/tpoechtrager/osxcross&#34;&gt;OSXCross&lt;/a&gt; has an entire &lt;a href=&#34;https://github.com/tpoechtrager/osxcross#packaging-the-sdk&#34;&gt;section&lt;/a&gt; on how to package the sdk for different OSX versions, while on different systems. Like I mentioned before, I could not manage sdk extraction on Unix, and ended up having to do this part on OSX.&lt;/p&gt;
+
+&lt;p&gt;If you do not already have Xcode installed on your OSX system, install your chosen package.&lt;/p&gt;
+
+&lt;p&gt;Clone the OSXCross repo to your OSX system, move into its directory, and call the extraction tool:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git clone git@github.com:tpoechtrager/osxcross.git
+$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; osxcross
+$ ./tools/gen_sdk_package.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;My system output two packages: &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; and &lt;code&gt;MacOSX10.9.sdk.tar.xz&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Copy the desired package to your Unix system. I moved &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; to the homdir on my Unix VM.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-4-install-osxcross&#34;&gt;Step 4. Install OSXCross&lt;/h3&gt;
+
+&lt;p&gt;Now we also need OSXCross on the Unix system. And we need to move the &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; package into osxcross&amp;rsquo; &lt;code&gt;tarballs&lt;/code&gt; directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git clone git@github.com:tpoechtrager/osxcross.git
+$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; osxcross
+$ mv ~/MacOSX10.10.sdk.tar.xz ./tarballs
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we install OSXCross:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span style=&#34;color: #996633&#34;&gt;OSX_VERSION_MIN&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;10.7 ./build.sh
+
+&amp;gt; All &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;! Now you can use o32-clang&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;++&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; and o64-clang&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;++&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; like a normal compiler.
+
+&amp;gt; &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;more output&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;…
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As OSXCross will remind you, we also need to add the linkers to your path:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Do not forget to add
+
+/home/vagrant/osxcross/target/bin
+
+to your PATH variable.
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;step-5-add-the-target-to-cargo&#34;&gt;Step 5. Add the target to Cargo&lt;/h3&gt;
+
+&lt;p&gt;I read this wrong. &lt;strong&gt;So. Many. Times.&lt;/strong&gt; So let&amp;rsquo;s be careful here.&lt;/p&gt;
+
+&lt;p&gt;We are going to add the linker in our cargo &lt;em&gt;config&lt;/em&gt;. This is the configuration for cargo. &lt;em&gt;Not&lt;/em&gt; the Cargo.toml for your project.&lt;/p&gt;
+
+&lt;p&gt;The configuration file can be in any project, or subdirectory of the project. Cargo will recursively look for a &lt;code&gt;.cargo/config&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Add the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;target.x86_64-apple-darwin&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color: #996633&#34;&gt;linker&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;x86_64-apple-darwin14-clang&amp;quot;&lt;/span&gt;
+
+&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;target.x86_64-unknown-linux-gnu&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This tells cargo which linker to use for the defined target.&lt;/p&gt;
+
+&lt;p&gt;Not defining a linker for the &lt;code&gt;linux-gnu&lt;/code&gt; target sets it to use the default system.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-6-cross-compile-time&#34;&gt;Step 6. Cross Compile Time!&lt;/h3&gt;
+
+&lt;p&gt;Assuming you have made it this far you can now cross compile. Head to your project
+root and run cargo with the &lt;code&gt;--target&lt;/code&gt; option, where the value matches the target
+in the Cargo config:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cargo build --target x86_64-apple-darwin
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Success! You hopefully just cross compiled your application or library!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://alwayscoding.ca/images/posts/kermit-dance-osxcross.gif&#34; alt=&#34;Kermit the frog doing a happy dance!&#34; title=&#34;Kermit the frog doing a happy dance!&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2014 - Day Two</title>
+      <link>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</link>
+      <pubDate>Tue, 12 Aug 2014 09:30:59 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/tjschuck&#34;&gt;T.J. Schuck&lt;/a&gt;&lt;br /&gt;
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;John the Ripper password cracker.&lt;/li&gt;
+&lt;li&gt;hashcat.&lt;/li&gt;
+&lt;li&gt;Expensive key schedule blowfish. eksblowfish.&lt;/li&gt;
+&lt;li&gt;BCrypt
+
+&lt;ul&gt;
+&lt;li&gt;BCrypt dollar signs are delimieters, hash on far right. Salt on left.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2(abxy)&lt;/code&gt; means bcrypt&lt;/li&gt;
+&lt;li&gt;10 = cost&lt;/li&gt;
+&lt;li&gt;$ 2a $ 10 $ salt $ hash&lt;/li&gt;
+&lt;li&gt;12 to 13 range for bcrypt cost.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake-compiler&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jasonrclark&#34;&gt;Jason Clark&lt;/a&gt;&lt;br /&gt;
+Programming in the Small - Teaching my 5 Year Old Ruby&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Patience.&lt;/li&gt;
+&lt;li&gt;Recall.&lt;/li&gt;
+&lt;li&gt;Mistakes.&lt;/li&gt;
+&lt;li&gt;Discovery.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/hone02&#34;&gt;Terence Lee&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/kenichi_pdx&#34;&gt;Kenichi Nakamura&lt;/a&gt;&lt;br /&gt;
+Creating a Chat App in 15 Minutes with Angelo&lt;/p&gt;
+
+&lt;p&gt;Websockets
+- &lt;code&gt;https://github.com/kenichi/angelo&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Events
+- IE does not support server sent events.
+- EventSource API.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/lizmrush&#34;&gt;Liz Rush&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/SomanyHs&#34;&gt;Hsing-Hui Hsu&lt;/a&gt;&lt;br /&gt;
+&amp;ldquo;Good luck with that&amp;rdquo;: Tag Teaming Civic Data&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cylyndrical map.&lt;/li&gt;
+&lt;li&gt;Spheriod map.&lt;/li&gt;
+&lt;li&gt;Torus map (&amp;ldquo;donut&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;Shapefiles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Lightening Talks&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/mjkirk&#34;&gt;Matthew Kirk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Machine Learning in Ruby
+  - C Libs
+  - JRuby
+  - R
+  - Thoughtful Machine Learning (Book)
+  - Facial Classifications
+  - The Kernel Trick
+  - &lt;a href=&#34;thoughtfulml.com&#34;&gt;thoughtfulml.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jxxf&#34;&gt;John Feminella&lt;/a&gt;&lt;br /&gt;
+Card counting
+ - is legal via only your brain.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/davidcmelida&#34;&gt;David Molida&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hacking &amp;amp; Federal Procurement
+- $250billion + a year.
+- Bid on government contracts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/bethanyrentz&#34;&gt;Bethany Rentz&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rubocop: Styleistic errors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/laurenvoswinkel&#34;&gt;Lauren Voswinkle&lt;/a&gt;&lt;br /&gt;
+Talking about money.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lie about what your previous salary was.&lt;/li&gt;
+&lt;li&gt;Employers are only allowed to verify employment dates.&lt;/li&gt;
+&lt;li&gt;1935 Extneded National labours act to allow talking about salaries.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[name]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby is bad at CMS&amp;rsquo;s&lt;/li&gt;
+&lt;li&gt;Locomotive&lt;/li&gt;
+&lt;li&gt;Rifenery&lt;/li&gt;
+&lt;li&gt;Comfortable Mexican Sofar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cassie Schmitz&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jekyll&lt;/li&gt;
+&lt;li&gt;Prose.io&lt;/li&gt;
+&lt;li&gt;Easy to write plugins&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/realntl&#34;&gt;Nathan Ladd&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt; instead of &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;, &lt;code&gt;||&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Stop using TDD.&lt;/li&gt;
+&lt;li&gt;Stop memoizing. Conceptualize your lifecycle.&lt;/li&gt;
+&lt;li&gt;Get rid of private methods. Removes variability of input.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/kerrizor&#34;&gt;Kerrir Miller&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://speakerdeck.com/kerrizor/you-jelly&#34;&gt;Make Jam&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;5-6 cups of mashed fruit&lt;/li&gt;
+&lt;li&gt;Add a box epctin and bring to a rolling boil.&lt;/li&gt;
+&lt;li&gt;4 cups of sweetner.&lt;/li&gt;
+&lt;li&gt;Another rolling boil.&lt;/li&gt;
+&lt;li&gt;remove from heat.&lt;/li&gt;
+&lt;li&gt;Refridgerate or freeze&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/swindsor&#34;&gt;Scott Windsor&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Test induced design damage.&lt;/li&gt;
+&lt;li&gt;Dependency Injection done wrong sucks.&lt;/li&gt;
+&lt;li&gt;Write better code and better tests.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf&#34;&gt;http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/joelstimson&#34;&gt;Joel Stimson&lt;/a&gt;
+Citizen Science&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where regular people go to help scientists.&lt;/li&gt;
+&lt;li&gt;Stardust at home.&lt;/li&gt;
+&lt;li&gt;Zooniverse: Glassifying Galaxies.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014&#34;&gt;https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;User services as a gem.&lt;/li&gt;
+&lt;li&gt;Permissions service as a gem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/amywoodward&#34;&gt;Amy Woodward&lt;/a&gt;&lt;br /&gt;
+Bitcoin mining.
+Fastest bitcoin mining chips in the world.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/roseaboveit&#34;&gt;Whitenet-Rose Levis&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Help new people.&lt;/li&gt;
+&lt;li&gt;Types of investment
+
+&lt;ul&gt;
+&lt;li&gt;Teaching&lt;/li&gt;
+&lt;li&gt;Conversations&lt;/li&gt;
+&lt;li&gt;Writing&lt;/li&gt;
+&lt;li&gt;Code Reviews&lt;/li&gt;
+&lt;li&gt;Actively Welcome People&lt;/li&gt;
+&lt;li&gt;Slight Adaptations&lt;/li&gt;
+&lt;li&gt;Financial&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/_jnf&#34;&gt;Jeremy Flores&lt;/a&gt;&lt;br /&gt;
+How Not to Be Lonely: An Extrovert&amp;rsquo;s Guide to Working Alone
+Tools:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ScreenHero&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Engage in active communication!
+Cultivate your voice.&lt;/p&gt;
+
+&lt;p&gt;Pair programming.
+Everybody&amp;rsquo;s remote.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/laurenvoswinkel&#34;&gt;Lauren Voswinkle&lt;/a&gt;&lt;br /&gt;
+Nitty Gritty Service Building&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SonJay&lt;/code&gt; &lt;a href=&#34;https://github.com/stevecj/son_jay&#34;&gt;https://github.com/stevecj/son_jay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Typhoeus&lt;/code&gt; &lt;a href=&#34;https://github.com/typhoeus/typhoeus&#34;&gt;https://github.com/typhoeus/typhoeus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StackProf&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/listrophy&#34;&gt;Brad Grzesiak&lt;/a&gt;&lt;br /&gt;
+SPAAAAAAAAACE&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cascadia Ruby 2014 - Day One</title>
@@ -1254,7 +1608,7 @@ The id and name attributes share the same name space. This means that they canno
     </item>
     
     <item>
-      <title>Handling Dates &amp;amp; Timezones in Ruby &amp;amp; Rails</title>
+      <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
       <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
       
@@ -2074,212 +2428,6 @@ new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span st
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;So there we have it: Map with index for ruby 1.8 and 1.9.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>More fun with the Ruby Symbol</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
-      <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
-      <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
-idea) some silly conversation occured:&lt;/p&gt;
-
-&lt;p&gt;(someone gists some code)&lt;br /&gt;
-sevenseacat: empty array seems the silly thing to have&lt;br /&gt;
-Tarential: sometimes I like to add empty arrays, you know, just in case I need them later&lt;br /&gt;
-Tarential: so they&amp;rsquo;re close at hand&lt;br /&gt;
-tagrudev: little kittens die when you define an unused var&lt;br /&gt;
-brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]&lt;br /&gt;
-Tarential: Now that&amp;rsquo;s thinking.&lt;/p&gt;
-
-&lt;p&gt;Then some time passed and I ended up throwing a
-&lt;a href=&#34;http://http://pastie.org/6469138&#34; title=&#34;pastie&#34;&gt;pastie&lt;/a&gt; back into the
-channel with the following code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;to_a&lt;/span&gt;
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@array&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;(val)
-    &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; val
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  alias_method &lt;span style=&#34;color: #AA6600&#34;&gt;:previous_inspect&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:inspect&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;inspect&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_s&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt; 
-      &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;inspect
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt;
-      previous_inspect
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Mostly usless but I did find out one interesting piece of information. The &lt;code&gt;Symbol&lt;/code&gt; has
-no public creation interface other then it&amp;rsquo;s standard definition. I&amp;rsquo;m assuming at this point it drops down to the C
-level but I couldn&amp;rsquo;t leave that stone unturned. I put the word out I was
-in search of the Symbol implementation in Ruby. I asked some friends,
-tweeted about it and poked around on IRC.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;REPL in the Pry runtime environment&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; (who brings you awesome projects
-like &lt;a href=&#34;https://github.com/pry/pry&#34; title=&#34;pry&#34;&gt;Pry&lt;/a&gt;) ended up giving me a nice
-intro to what happens when you put &lt;code&gt;:cats&lt;/code&gt; into a ruby runtime
-environment.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll keep this brief and in laymans terms. People who know much
-more about this feel free to email me with corrections or improvements.
-Keep in mind this information was explained at a very high level so it
-wouldn&amp;rsquo;t all go over my head.&lt;/p&gt;
-
-&lt;p&gt;At a very basic level the runtime is performing a simple REPL (Read,
-Evaluate, Print, Loop.)&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;read --&amp;gt; eval --&amp;gt; puts #inspect on eval output --&amp;gt; loop&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Read simply reads in your input. In our case &lt;code&gt;$ :cats&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Eval gets significantly deeper. In the case the value entered is a
-Symbol (or other immediates) it is stored directly in the VALUE pointer.
-&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; provided me with the following
-gist to show how the Symbol is stored: &lt;a href=&#34;https://gist.github.com/banister/febb1f0580cc42eb4297&#34; title=&#34;Pry Gist&#34;&gt;pry_gist.rb&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;(this is only a small piece of the total evalution process.)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;VALUE
-&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;rb_obj_id&lt;/span&gt;(VALUE obj)
-{
-    &lt;span style=&#34;color: #888888&#34;&gt;/*&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                32-bit VALUE space&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *          MSB ------------------------ LSB&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol  ssssssssssssssssssssssss00001110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        sizeof(RVALUE))&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                    object_id space&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                                       LSB&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        (S...S = s...s * A + 4)&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        required&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  where A = sizeof(RVALUE)/4&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  sizeof(RVALUE) is&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  20 if 32-bit, double is 4-byte aligned&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  24 if 32-bit, double is 8-byte aligned&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  40 if 64-bit&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     */&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (TYPE(obj) &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; T_SYMBOL) {
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (SYM2ID(obj) &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;sizeof&lt;/span&gt;(RVALUE) &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;)) &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; FIXNUM_FLAG;
-    }
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (SPECIAL_CONST_P(obj)) {
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; LONG2NUM((SIGNED_VALUE)obj);
-    }
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (VALUE)((SIGNED_VALUE)obj&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;FIXNUM_FLAG);
-}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;He added:
-&lt;blockquote&gt;
-  &lt;p&gt;
-a normal object created via Object.new for example are normally allocated on the heap and they go through a proper initialization process.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;@banister&lt;/strong&gt;
-&lt;/blockquote&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Then the Print runs a simple &lt;code&gt;#inspect&lt;/code&gt; on the &lt;code&gt;Symbol&lt;/code&gt; and returns &lt;code&gt;=&amp;gt; :cats&lt;/code&gt; to you.&lt;/p&gt;
-
-&lt;p&gt;After that we Loop for more input.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;So where does this leave us?&lt;/strong&gt;&lt;br /&gt;
-I ended up getting a great introduction to some things going on
-in my every day environment that I simply take for granted. It all came
-out of some late night nonsense and exploration and now I feel like new
-doors have opened and I&amp;rsquo;m going to have to go through.&lt;/p&gt;
-
-&lt;p&gt;I encourage you to poke around. We write code all day long but really
-finding out what&amp;rsquo;s going on can be new and exciting. So open up a Ruby class
-and break something!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
-      <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
-      <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
-against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...
--&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz
-Installing ruby-2.0.0-p0...
-
-BUILD FAILED
-
-Inspect or clean up the working tree at
-/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615
-Results logged to
-/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log
-
-Last &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;10&lt;/span&gt; log lines:
-installing default gems:
-/Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;build_info,
-cache, doc, gems, specifications&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
-                              bigdecimal 1.2.0
-                              io-console 0.4.2
-                              json 1.7.7
-                              minitest 4.3.2
-                              psych 2.0.0
-                              rake 0.9.6
-                              rdoc 4.0.0
-                              test-unit 2.0.0.0
-The Ruby openssl extension was not compiled. Missing the OpenSSL lib?
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After some googling I found out Mac OS 10.8 ships with a broken OpenSSL
-install. I first needed to install OpenSSL via homebrew&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;brew install openssl&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;After openssl installs successfully we can re-try installing Ruby 2 with
-new options flags&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;RUBY_CONFIGURE_OPTS&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`&amp;quot;&lt;/span&gt; rbenv install 2.0.0-p0
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we&amp;rsquo;re ready to go!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;ruby -v
-ruby 2.0.0p0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;2013-02-24 revision 39474&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;x86_64-darwin12.2.0&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
 </description>
     </item>
     

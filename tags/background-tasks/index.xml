@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Background Tasks on { always: &#39;coding&#39; } </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://alwayscoding.ca/tags/background-tasks/</link>
+    <language>en-us</language>
+    
+    
+    <updated>Thu, 01 Oct 2015 09:12:00 UTC</updated>
+    
+    <item>
+      <title>Tips for working with Delayed Job</title>
+      <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
+      <description>
+
+
+
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/collectiveidea/delayed_job/&#34;&gt;DelayedJob&lt;/a&gt; has always been a
+great “hit the ground running” background task runner for ruby. It is simple to
+setup, easy to use and can more than carry its own weight in tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Don&amp;rsquo;t know what a backround runner does or why you would use one?&lt;/em&gt;&lt;br /&gt;
+I will not delve into why you need one but you can check out a summary
+here: &lt;a href=&#34;https://4loc.wordpress.com/2010/03/10/background-jobs-in-ruby-on-rails/&#34;&gt;Background Jobs in Ruby on Rails&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can sometimes run into some serious trouble trying to debug
+DelayedJobs. Not only do they run the task behind the scenes but
+frequently hide the errors and exceptions back there as well. You will often not see
+exceptions in your logs and most exception notifiers will not catch issues
+that occur in a background task. So how can we debug issues with delayed
+job?&lt;/p&gt;
+
+&lt;p&gt;If you are using SQL you probably had to setup or run a migration for a
+delayed job table. Just like any of your other ActiveRecord models
+DelayedJob has a model you can access. This is your link to the job that
+gets stored in the queue. This makes it easy for you to access the job
+from the console and inspect its attributes.&lt;/p&gt;
+
+&lt;p&gt;The model is &lt;code&gt;Delayed::Job&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the console you can browse the currently queued jobs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;count
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;
+job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Delayed::Job id: 1, queue: nil, last_error: nil, failed_at: nil, priority: 0, attempts: 0, updated_at: nil, locked_by: nil, run_at: nil, handler: nil, _type: nil, locked_at: nil, created_at: nil&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;finding-failed-jobs&#34;&gt;Finding Failed Jobs&lt;/h2&gt;
+
+&lt;p&gt;This is a good start but the default in DelayedJob is for failed jobs to
+be removed from the database. Let us change that option. Create the
+following file:
+&lt;code&gt;config/initializers/delayed_job.rb&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Worker&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;destroy_failed_jobs &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We set this option so failed jobs will not be purged from the database.
+Now that we have a record of our failed jobs we can access those jobs in
+the console. The jobs have a &lt;code&gt;last_error&lt;/code&gt; attribute which contains a
+stacktrace from the error.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;last_eror IS NOT NULL&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Delayed::Job id: 51ea79408d53620bd200026c, failed_at: Thu Sep 05 19:50:16 UTC 2013, locked_by: nil, created_at: Sat Jul 20 11:49:20 UTC 2013, handler: handler_ommited, updated_at: Thu Sep 05 19:50:16 UTC 2013, priority: 0, _type: nil, run_at: Fri Aug 09 21:35:56 UTC 2013, queue: nil, locked_at: nil, attempts: 25, last_error: &amp;quot;undefined method `notifiable&amp;#39; for Stacktrace…&amp;quot;&amp;gt;&lt;/span&gt;
+job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last_error
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;undefined method `notifiable&amp;#39; for  &lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Stacktrace…&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Excellent! Being able to get a stacktrace from the last error can help
+point you in the right direction.&lt;/p&gt;
+
+&lt;h2 id=&#34;loading-the-handler&#34;&gt;Loading the Handler&lt;/h2&gt;
+
+&lt;p&gt;The “Handler” in DelayedJob is the object that &lt;code&gt;#perform&lt;/code&gt; was called on
+to execute the job. At the time the job is entered into the queue the
+handler is serialized to be reconstructed later. While debugging you may
+want access to this handler. You can convert the serailized state of the
+object back to its original form by calling &lt;code&gt;YAML::load&lt;/code&gt; and passing in
+the serialized object.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last
+
+job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handler
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--- !ruby/object:NotificationObserver::Notifier&lt;/span&gt;
+&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;resource_class: !ruby/class Comment&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;resource_id:&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;!ruby/object:BSON::ObjectId &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  data: &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 82&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 67&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 70&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 67&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;- 183&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 112&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 32&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 225&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 252&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 0&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 0&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 1&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+
+notifier &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;YAML&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;load(job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handler)
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;NotificationObserver::Notifier:0x1363a7230 @resource_class=Comment, @resource_id=BSON::ObjectId(&amp;#39;52434643b77020e1fc000001&amp;#39;)&amp;gt;&lt;/span&gt;
+
+notifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
+&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;NotificationObserver&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Notifier&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;working-with-jobs-locally&#34;&gt;Working with jobs locally&lt;/h2&gt;
+
+&lt;p&gt;I find while working with DelayedJob locally my needs can vary. For
+example:&lt;/p&gt;
+
+&lt;p&gt;Sometimes I would prefer the task just not run in the
+background. That way I can see the task perform and get an immediate
+response. Other times I might need the task to run in the background as expected so I can
+develop and test polling methods or execution of code that runs upfront
+while the background task is still processing.&lt;/p&gt;
+
+&lt;p&gt;If your case is the latter then you can run delayed jobs locally and
+require no additional changes. If your case is the prior and you want to run the code upfront then DelayedJob
+has a configurable option that will help.&lt;/p&gt;
+
+&lt;p&gt;In an initializer you can define the parameter &lt;code&gt;Delayed::Worker#delay_jobs&lt;/code&gt; to tell DelayedJob &lt;em&gt;not&lt;/em&gt;
+to run a task in the background and to execute the job code immediately.
+This will allow you to use any of your regular debugging methods whether
+it is using the ruby debugger, pry, or a series or puts statements.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Worker&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;delay_jobs &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;common-problem&#34;&gt;Common problem&lt;/h2&gt;
+
+&lt;p&gt;The most common problem I see and am asked to help diagnose are issues
+serializing the handler. Passing complex objects to DelayedJob is not
+recommended. YAML does its best to serialize all ruby objects but
+sometimes fails. The simplest solution is not to pass an entire
+complex object. If it is a persisted, record pass in only the id and load
+the record from within the job. If you need to save state it could be a
+good place to create a middle man with the stated attributes and simply
+pass the middle man into the job.&lt;/p&gt;
+
+&lt;p&gt;Have other tips for debugging DelayedJob? I would enjoy hearing about
+them. Send me an email or a note to
+&lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;@brian_pearce&lt;/a&gt; on twitter.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

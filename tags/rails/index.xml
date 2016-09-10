@@ -7,7 +7,27 @@
     <language>en-us</language>
     
     
-    <updated>Thu, 01 Oct 2015 09:12:00 UTC</updated>
+    <updated>Wed, 24 Aug 2016 17:28:42 UTC</updated>
+    
+    <item>
+      <title>Rails delegation and N&#43;1</title>
+      <link>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</link>
+      <pubDate>Wed, 24 Aug 2016 17:28:42 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</guid>
+      <description>&lt;p&gt;Profile has many ApiResponses&lt;/p&gt;
+
+&lt;p&gt;def api_response
+  order(&amp;lsquo;id desc&amp;rsquo;).first
+end&lt;/p&gt;
+
+&lt;p&gt;makes multiple queirers n+1&lt;/p&gt;
+
+&lt;p&gt;use rails has_one :api_response -&amp;gt; order(&amp;lsquo;id desc&amp;rsquo;)
+this searchs api_responses for profile_id and returns the first, we just need to make sure
+we order for the one we want.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Tips for working with Delayed Job</title>
@@ -1475,36 +1495,6 @@ href=&#34;http://www.gatezero.org&#34;&gt;Tim Harding&lt;/a&gt;)
 
 &lt;p&gt;If you&amp;rsquo;re redirecting to a new action you want to flash. if you&amp;rsquo;re
 rendering in the current action you want to flash.now.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
-      <link>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
-      <pubDate>Sat, 12 Feb 2011 00:00:00 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
-      <description>&lt;p&gt;TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.&lt;/p&gt;
-
-&lt;p&gt;While writing a Twitter application in Rails I was having an issue saving tweets to the database.&lt;/p&gt;
-
-&lt;p&gt;A quick brief on the application: The app would download tweets from the mention timeline of a particular user. It would only download tweets it hadn&amp;rsquo;t already processed based on the last saved tweets unique id (as set by twitter). All the data from the tweets were making it into the database as expected but every time the application downloaded tweets it would re-download the same tweets.&lt;/p&gt;
-
-&lt;p&gt;After being quite perplexed for a period of time and trying many different solutions I realized that Twitters unique tweet ID did not match the tweet_id being stored locally. This was caused by the sheer size of Twitters id number. I was storing it as an INT which can only go
-up to 2147483647 (MySQL). Where Twitters current tweet id&amp;rsquo;s reside in around 36331797625184256.&lt;/p&gt;
-
-&lt;p&gt;I would need to use MySQL&amp;rsquo;s BIGINT which can go up to 9223372036854775807 to be able to save the id as a number.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately BIGINT ins&amp;rsquo;t a standard type to set via rails migrations.
-As per this post by &lt;a href=&#39;http://spin.atomicobject.com/2011/05/19/ruby-on-rails-and-mysql-bigint/&#39;&gt;Dustin Tinney - Ruby on Rails &amp;amp; MYSQL BIGINT&lt;/a&gt; the proper way to use big int is to create a regular integer column via migrations and the change the column to BIGINT.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;up&lt;/span&gt;
-  create_table(&lt;span style=&#34;color: #AA6600&#34;&gt;:people&lt;/span&gt;) &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;t&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-    t&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;integer &lt;span style=&#34;color: #AA6600&#34;&gt;:number_of_facebook_friends&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  change_column &lt;span style=&#34;color: #AA6600&#34;&gt;:people&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:number_of_facebook_friends&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:bigint&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
 </description>
     </item>
     

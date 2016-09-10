@@ -7,7 +7,27 @@
     <language>en-us</language>
     
     
-    <updated>Tue, 05 Jun 2012 00:00:00 UTC</updated>
+    <updated>Wed, 24 Aug 2016 17:28:42 UTC</updated>
+    
+    <item>
+      <title>Rails delegation and N&#43;1</title>
+      <link>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</link>
+      <pubDate>Wed, 24 Aug 2016 17:28:42 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</guid>
+      <description>&lt;p&gt;Profile has many ApiResponses&lt;/p&gt;
+
+&lt;p&gt;def api_response
+  order(&amp;lsquo;id desc&amp;rsquo;).first
+end&lt;/p&gt;
+
+&lt;p&gt;makes multiple queirers n+1&lt;/p&gt;
+
+&lt;p&gt;use rails has_one :api_response -&amp;gt; order(&amp;lsquo;id desc&amp;rsquo;)
+this searchs api_responses for profile_id and returns the first, we just need to make sure
+we order for the one we want.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Transactions and new_record?</title>

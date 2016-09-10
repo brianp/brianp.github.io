@@ -7,7 +7,269 @@
     <language>en-us</language>
     
     
-    <updated>Sun, 08 May 2016 10:06:42 UTC</updated>
+    <updated>Fri, 09 Sep 2016 13:00:00 UTC</updated>
+    
+    <item>
+      <title>Traits and Threads Workshop</title>
+      <link>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</link>
+      <pubDate>Fri, 09 Sep 2016 13:00:00 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</guid>
+      <description>
+
+&lt;p&gt;These are raw notes taken at &lt;a href=&#34;http://rustconf.com/&#34;&gt;RustConf&lt;/a&gt; during the &amp;ldquo;Traits and Threads&amp;rdquo; workshop put on by &lt;a href=&#34;http://www.twitter.com/aaron_turon&#34;&gt;Aaron Turon&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rust-tutorials.com/exercises/&#34;&gt;All Exercises&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Methods are function that accept self&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;self.items == &amp;amp;(self.items)&lt;/code&gt; where the borrow (&lt;code&gt;&amp;amp;&lt;/code&gt;) is for the item, not
+for &lt;code&gt;self&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Structs have no default value, requires creating all values.&lt;/li&gt;
+&lt;li&gt;mut as &lt;code&gt;mute&lt;/code&gt; not like a mixed breed dog&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Abstraction: The Plan&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generics&lt;/li&gt;
+&lt;li&gt;Traits
+
+&lt;ul&gt;
+&lt;li&gt;As Interfaces&lt;/li&gt;
+&lt;li&gt;For Code Resuse&lt;/li&gt;
+&lt;li&gt;For Perator Overloading&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Trait Objects&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;traits-are-rusts-interfaces&#34;&gt;Traits are rusts interfaces.&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;u64&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slf)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;char&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;#39;{}&amp;#39;&amp;quot;&lt;/span&gt;),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
+What happens if you try to define the same trait or impl that is
+defined already by someone else? (naming collisions etc)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
+Naming collisions follow normal examples but when you try to write an
+interface for a type that you don&amp;rsquo;t own (code gluing) you will run in to
+Coherence issues, for any given trait and type there is a single implementation
+known to the compiler.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
+ Why does the compiler allow &amp;ldquo;different&amp;rdquo; match arms?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
+Given the below code: &lt;code&gt;total += price&lt;/code&gt; is an expression and
+&lt;code&gt;return None&lt;/code&gt; Breaks out of the function, so the compiler &amp;ldquo;assigns&amp;rdquo; it the type
+ you need. It&amp;rsquo;s a &amp;ldquo;get out of jail free card.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.rust-lang.org/?code=%23%21%5Ballow%28dead_code%29%5D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+The+trait%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Atrait+Price+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E%3B%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Store%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Astruct+Store+%7B%0A++++name%3A+String%2C%0A++++items%3A+Vec%3CItem%3E%2C%0A%7D%0A%0A%23%5Bderive%28Debug%29%5D%0Astruct+Item+%7B%0A++++name%3A+%26%27static+str%2C%0A++++price%3A+f32%2C%0A%7D%0A%0Aimpl+Store+%7B%0A++++fn+new%28name%3A+String%29+-%3E+Store+%7B%0A++++++++Store+%7B%0A++++++++++++name%3A+name%2C%0A++++++++++++items%3A+Vec%3A%3Anew%28%29%2C%0A++++++++%7D%0A++++%7D%0A%0A++++fn+add_item%28%26mut+self%2C+item%3A+Item%29+%7B%0A++++++++self.items.push%28item%29%3B%0A++++%7D%0A%7D%0A%0Aimpl+Price+for+Store+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++for+item+in+%26self.items+%7B%0A++++++++++++if+item.name+%3D%3D+item_name+%7B%0A++++++++++++++++return+Some%28item.price%29%3B%0A++++++++++++%7D%0A++++++++%7D%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_store%28%29+-%3E+Store+%7B%0A++++let+mut+store+%3D+Store%3A%3Anew%28format%21%28%22Rustmart%22%29%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22chocolate%22%2C+price%3A+5.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22socks%22%2C+price%3A+23.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22plush+Mozilla+dinosaur%22%2C+price%3A+13.0+%7D%29%3B%0A++++store%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Factory%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%2F%2F+A+factory+for+just+a+single+kind+of+item%0Astruct+Factory+%7B%0A++++item_name%3A+%26%27static+str%2C%0A++++wholesale_price%3A+f32%2C%0A%7D%0A%0Aimpl+Price+for+Factory+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++%2F%2F+Goal%3A+return+the+price+of+the+factory%27s+item%2C+if+the+name+matches%3B%0A++++++++%2F%2F+otherwise+return+%60None%60.%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_factory%28%29+-%3E+Factory+%7B%0A++++Factory+%7B%0A++++++++item_name%3A+%22sprocket%22%2C%0A++++++++wholesale_price%3A+7.67%2C%0A++++%7D%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Total+price%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Afn+total_price%3CP%3A+Price%3E%28provider%3A+%26P%2C+shopping_list%3A+%26%5B%26str%5D%29+-%3E+Option%3Cf32%3E+%7B%0A++++%2F%2F+Goal%3A+compute+the+total+price+of+all+items+in+the+shopping%0A++++%2F%2F+list.+If+any+of+the+options+are+not+present%2C+return+%60None%60.%0A++++None%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Tests%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%23%5Btest%5D%0Afn+total_price_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+Some%2818.0%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%2C+%22fork+and+knife%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+None%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+Some%287.67%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%2C+%22socks%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+None%29%3B%0A%7D%0A&amp;amp;version=nightly&#34;&gt;The Exercise:&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;mut&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.0&lt;/span&gt;;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;item&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;shopping_list&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;provider.price(item)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(price)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;price,&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(total)&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;reuse-default-methods&#34;&gt;Reuse: Default Methods&lt;/h3&gt;
+
+&lt;p&gt;Questions: Should we write methods, or functions?&lt;/p&gt;
+
+&lt;p&gt;When in doubt, lean on methods. Writing things as methods instead of functions allows
+for writing different impls for those methods.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;reuse-layering&#34;&gt;Reuse: Layering&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Self;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;(&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.&lt;/span&gt;clone(),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.&lt;/span&gt;clone())&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Vec&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #FF0000; background-color: #FFAAAA&#34;&gt;…&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
+We&amp;rsquo;re using traits in places where we could use types, what is the
+  relationship between traits and types?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
+We&amp;rsquo;re not yet using traits in a place where types are expected. We&amp;rsquo;re
+ saying &lt;code&gt;T:&lt;/code&gt; is an addon that something has to be true for the type that we&amp;rsquo;re
+ given. Traits are not types, they are information about types.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
+Why &lt;code&gt;T&lt;/code&gt; &amp;amp; &lt;code&gt;U&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;T&lt;/code&gt; for type, and &lt;code&gt;U&lt;/code&gt; because it&amp;rsquo;s the next letter in the alphabit.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
+Could I defined a generic that says it can &lt;em&gt;not&lt;/em&gt; have a specific trait.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
+In most cases you wouldn&amp;rsquo;t need to although it is possible using some pretty advanced techniques.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;objects&#34;&gt;Objects&lt;/h3&gt;
+
+&lt;p&gt;Containers are homogeneous.
+Traits can kind of be used as types.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print_slice(slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print])&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem.print();&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;main()&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print]&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;...&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;[&amp;amp;Print]&lt;/code&gt; is actually an array of pointers, as pointers are all the same sized.
+vs a &lt;code&gt;Char&lt;/code&gt; and &lt;code&gt;Item&lt;/code&gt; which would be mixed sizes. The compiler will perform this
+type of abstraction for you.&lt;/p&gt;
+
+&lt;h4 id=&#34;generics-vs-objects&#34;&gt;Generics vs Objects&lt;/h4&gt;
+
+&lt;p&gt;Generics ( aka zero cost abstractions)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Work for singletons&lt;/li&gt;
+&lt;li&gt;Work for uniform collection&lt;/li&gt;
+&lt;li&gt;Provide static dispatch
+
+&lt;ul&gt;
+&lt;li&gt;Good for performance&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Objects&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Must live behind a pointer&lt;/li&gt;
+&lt;li&gt;Work for heterogeneous collections&lt;/li&gt;
+&lt;li&gt;Provide dynamic dispatch
+
+&lt;ul&gt;
+&lt;li&gt;Bad for performance&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;threads&#34;&gt;Threads&lt;/h2&gt;
+
+&lt;p&gt;Moden &lt;em&gt;Parallel&lt;/em&gt; systems programming without the hassle, crashes, heisenbugs, fear.&lt;/p&gt;
+
+&lt;p&gt;Multiparadigm&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Message passing&lt;/li&gt;
+&lt;li&gt;Mutable shared memory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Principles_of_Compiler_Design&#34;&gt;Principals of compiler design&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;No data races, No matter what, regardless of paradigm.&lt;/p&gt;
+
+&lt;p&gt;What are data races?&lt;br /&gt;
+Two unsynchronized threads accessing the same data where at lease one writes.&lt;/p&gt;
+
+&lt;p&gt;Ingredients of a data race:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Aliasing (multiple things with access to the same thing)&lt;/li&gt;
+&lt;li&gt;Mutation (at least one thread is writing)&lt;/li&gt;
+&lt;li&gt;No ordering (compiler has no idea this is happening and will optimize assuming
+it&amp;rsquo;s not happening)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ownership and borrowing system is at the core of ensuring you can have both aliasing
+or mutation, but never at the same time.
+No data races = No accidentally-shared state.&lt;/p&gt;
+
+&lt;p&gt;All sharing is explicit. No threads can have access to this thing while your thread
+has access to it.&lt;/p&gt;
+
+&lt;p&gt;Each thread will &lt;code&gt;move&lt;/code&gt; and take ownership of variables passed to that thread.
+Usage in the main thread is no longer permitted, and you&amp;rsquo;ll get a compile time
+error.&lt;/p&gt;
+
+&lt;p&gt;Sharing immutable data between threads?&lt;br /&gt;
+Use &lt;code&gt;std::sync::Arc&lt;/code&gt;. With &lt;code&gt;Arc&lt;/code&gt; you can not know at what point it will be deallocated. It eliminates itself once all threads
+have finished with itself. Arc keeps a count for how much it&amp;rsquo;s been cloned and when
+it&amp;rsquo;s dropped it decrements and eliminates itself once at 0.&lt;/p&gt;
+
+&lt;p&gt;Static lifetime is exempt and allowed to be passed to different threads.&lt;/p&gt;
+
+&lt;h3 id=&#34;channels&#34;&gt;Channels&lt;/h3&gt;
+
+&lt;p&gt;Two threads can transfer ownership of data through a channel.
+Channels create a transmitter and a receiver. Tx and Rx can be passed to threads.
+Whoever has the Tx, can send data to whoever owns the Rx.&lt;/p&gt;
+
+&lt;h3 id=&#34;locks&#34;&gt;Locks&lt;/h3&gt;
+
+&lt;p&gt;Mutex is a name for a lock. Mutual exclusion.
+Rust fundamentally uses ownership to manage unlocks of locks you&amp;rsquo;ve taken. You
+never need to unlock or let go of the data.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rails delegation and N&#43;1</title>
+      <link>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</link>
+      <pubDate>Wed, 24 Aug 2016 17:28:42 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</guid>
+      <description>&lt;p&gt;Profile has many ApiResponses&lt;/p&gt;
+
+&lt;p&gt;def api_response
+  order(&amp;lsquo;id desc&amp;rsquo;).first
+end&lt;/p&gt;
+
+&lt;p&gt;makes multiple queirers n+1&lt;/p&gt;
+
+&lt;p&gt;use rails has_one :api_response -&amp;gt; order(&amp;lsquo;id desc&amp;rsquo;)
+this searchs api_responses for profile_id and returns the first, we just need to make sure
+we order for the one we want.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cross compilation to OSX with Rust</title>
@@ -2035,454 +2297,6 @@ learning how close &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/co
 eliminate &lt;code&gt;DateTime&lt;/code&gt; once the remaining gaps have been bridged. I&amp;rsquo;d wager &lt;code&gt;Date&lt;/code&gt; being
 moved from Ruby core to the stdlib is a sign that the &lt;code&gt;Time&lt;/code&gt; class seems
 to be seeing more usage.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
-      <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
-      <description>
-
-&lt;p&gt;Last week during my main work contract I had been tasked with doing some
-would-be trivial content updates to a section of a client application.
-Content updates would normally involve hopping into a view changing some
-images or text and re-deploying. This particular section though is a
-little more complex then that and way more complex then it should be.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-setup&#34;&gt;The Setup&lt;/h3&gt;
-
-&lt;p&gt;This particular section of the application has rotating content. Each
-rotation we&amp;rsquo;ll refer to as a &lt;em&gt;Phase&lt;/em&gt;. Each phase is displayed for a
-length of time determined by the client and is switched on demand via an
-admin interface. Some structural changes occur on pages but very few. For the
-most part it&amp;rsquo;s copy that changes. On some pages it could be entire
-blocks of copy on others maybe simple date changes.&lt;br /&gt;
-The phases represent stages of a competition. ex:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Phase 1: Contest closed - References last years contest.&lt;/li&gt;
-&lt;li&gt;Phase 2: Announcing the call for submissions opening date and rules.&lt;/li&gt;
-&lt;li&gt;Phase 3: Call for submissions opened.&lt;/li&gt;
-&lt;li&gt;Phase 4: Submissions closed. Public judging occurs.&lt;/li&gt;
-&lt;li&gt;Phase 5: Public Judging closes. Internal judging occurs.&lt;/li&gt;
-&lt;li&gt;Phase 6: Winners Announced.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
-
-&lt;p&gt;How to offer phase specific copy with out gratuitous amounts of switch or
-else/if logic in views. As well as keeping the copy and app as DRY as possible.&lt;/p&gt;
-
-&lt;h3 id=&#34;failed-attempts&#34;&gt;Failed Attempts&lt;/h3&gt;
-
-&lt;p&gt;The original implemntation setup was to use partials. Have one partial
-with the standard set of copy and then have phase specific partials
-that would be included if a phase specific file exists. This was simple.
-Everyone knows how partials work and the swtiching system was easy
-enough to see and figure out.&lt;/p&gt;
-
-&lt;p&gt;The drawbacks weren&amp;rsquo;t apparent at first. Over time as the client
-required more and more minute details the partials became more
-difficult to manage. Some became less DRY as larger blocks of copy would
-have to be repeated with small differenes such as dates or names. Over time
-the similar content would get out of sync as someone would make a change
-in one phase specific file but not realize the same change was
-required in an earlier or later phase specific file. We ended up having
-numbered phase folders phase1 - phase6 all with similar files
-inside. All of which needed to be changed when layout or copy updates
-occured.&lt;/p&gt;
-
-&lt;p&gt;This became an un-mangable system. Something will always be missed. Copy
-will always be wrong somewhere in any given phase at some point in
-time.&lt;/p&gt;
-
-&lt;h3 id=&#34;introduction-to-i18n&#34;&gt;Introduction to I18n&lt;/h3&gt;
-
-&lt;p&gt;Within the same section of application a few months back the client
-requested certain pages have internationalized content. Rails makes this
-very easy with the inclusion of the &lt;a href=&#34;http://guides.rubyonrails.org/i18n.html&#34;&gt;I18n gem&lt;/a&gt;.
-Following a simple structure to manage each pages copy we created a single folder for
-each page and placed each language file within the folder:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
-structure for the internationaliztion files&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This worked simple enough and meant a handful of pages in this section
-of the app are now using I18n helpers and had copy stored in the
-YAML files.&lt;/p&gt;
-
-&lt;p&gt;Copy stored in YAML translates into a basic key value store.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;en:
-  awards:
-    program:
-      title: The title to the Awards Program page
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;With that in our translation files the copy now becomes accessbile
-using the I18n interface.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.program.title&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The title to the Awards Program page&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;a-new-idea&#34;&gt;A new Idea&lt;/h3&gt;
-
-&lt;p&gt;After fighting with phase specific files and more copy issues I
-decided we needed to revisit the problem. I began thinking about the
-process of internationalizing the previous pages. The usage for I18n
-solves almost the exact problem we&amp;rsquo;re having: Same page, different
-copy.&lt;/p&gt;
-
-&lt;p&gt;I decided to try something simple. Add the content in the yaml,
-follow it with the phase specific content and offer it a naming
-convention to match the yaml key + phase. Something along the lines of:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  marquee:
-    pane1:
-      title: Audience Voting
-      title_p5: Voting now closed
-      text: An AUDIENCE AWARD...
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I then added a helper method for views:
-&lt;em&gt;note&lt;/em&gt;: The &lt;code&gt;@phase&lt;/code&gt; variable is being set in a before filter within
-this section of the app.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;pt&lt;/span&gt;(string)
-  phase_string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;string&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(phase_string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_sym)
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;What this does:
-Appends the provided key with the phase number (Lets
-assume 5.) Then checks to see if that key is set. If the key is not set use the
-original key to find the default return value. Based on our YAML file above
-we can now call the method with &lt;code&gt;pt(&#39;awards.marquee.pane1.title&#39;)&lt;/code&gt;. If
-the phase happens to be set to 5 our return value will be &lt;code&gt;&amp;quot;Voting now
-closed&amp;quot;&lt;/code&gt; otherwise we will get &lt;code&gt;&amp;quot;Audience Voting&amp;quot;&lt;/code&gt;. YAY! It worked.&lt;/p&gt;
-
-&lt;p&gt;It just doesn&amp;rsquo;t sit right though. I left the code as is for the rest of
-the day and thought about how it would be used and where it could be
-problematic.&lt;/p&gt;
-
-&lt;h3 id=&#34;let-it-stew&#34;&gt;Let it stew&lt;/h3&gt;
-
-&lt;p&gt;The next day I came back to the problem having identified a few
-situations where the format of the YAML file just wouldn&amp;rsquo;t hold up.&lt;/p&gt;
-
-&lt;p&gt;1) What if every field in pane1 needs to be changed per phase. That will
-quickly create a chaotic yaml file. title_p1, title_p2, title_p3, etc.&lt;/p&gt;
-
-&lt;p&gt;2) What if phase 5 and phase 6 are identical. Now I have to make duplicate
-entries for title_p5 and title_p6. That&amp;rsquo;s not very DRY.&lt;/p&gt;
-
-&lt;p&gt;The solution needs to be more flexible I thought. I&amp;rsquo;m on the right track
-but it should be easier and obvious to manage the content.&lt;/p&gt;
-
-&lt;p&gt;Lets look at the YAML for the second problem above:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  index:
-    module4:
-      tab1:
-        title: Awards
-        header: Awards Contest
-        text: The Ad...
-        title_p5: Voting Now Closed
-        header_p5: Awards Finalists
-        text_p5: Winners to be...
-        title_p6: Voting Now Closed
-        header_p6: Awards Finalists
-        text_p6: Winners to be...
-
-&lt;span style=&#34;color: #888888&#34;&gt;# At best we could DRY it up a little by using YAML anchors (&amp;amp;) and references (*)&lt;/span&gt;
-    ...
-        title_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt; Voting Now Closed
-        header_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_header&lt;/span&gt; Awards Finalists
-        text_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_text&lt;/span&gt; Winners to be...
-        title_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
-        header_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_header&lt;/span&gt;
-        text_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_text&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We managed to DRY it up a little but it&amp;rsquo;s still hideous. I&amp;rsquo;d have to
-define every single phase specific key even if it&amp;rsquo;s the same content.&lt;br /&gt;
-I don&amp;rsquo;t want to do that. That is the existing problem but
-shuffled to a different spot in the app.&lt;/p&gt;
-
-&lt;p&gt;I thought about it some more.&lt;/p&gt;
-
-&lt;p&gt;What if I could define a phase specific &amp;ldquo;tab1&amp;rdquo; in the yaml. I&amp;rsquo;d still have
-to express each phase but the nesting would allow me to DRY it up pretty
-quick.&lt;/p&gt;
-
-&lt;p&gt;At some point I also decided prepending the phase was better then appending.&lt;/p&gt;
-
-&lt;p&gt;I redefined the YAML file in a manner I&amp;rsquo;d &lt;i&gt;like&lt;/i&gt; to be able to
-manage my content:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  index:
-    module4:
-      tab1:
-        title: Awards
-        p2_title: Phase 2 title
-        header: Awards Contest
-        text: The Ad...
-      p5_tab1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt;
-        title: Voting Now Closed
-        header: Awards Finalists
-        text: Winners to be...
-      p6_tab1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This idea was going to let me create phase specific content at any
-nesting level. If I only needed a title change in phase 2. Then simply create a
-phase specific title. If I needed a phase specific area. Define the
-phase the key a level higher and anything nested will be considered copy for that
-area. As shown this also makes replicating entire sections for multiple
-phases a breeze using YAML anchors.&lt;/p&gt;
-
-&lt;p&gt;It sounded like a solid interface for managing the content but now I
-need to make it work. This requires checking for phase specific content
-at any given level of the YAML nesting interface. At the beginning at the end
-and anywhere in between.&lt;/p&gt;
-
-&lt;p&gt;I knew right away I wasn&amp;rsquo;t going to be writing this in a helper method
-so I created a new class and utilized the class from within the helper:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;pt&lt;/span&gt;(string)
-  &lt;span style=&#34;color: #007020&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(string, &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;)
-  &lt;span style=&#34;color: #007020&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;translate
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I started the class off pretty simple. Just replicating the usage I
-already had. This worked with the original YAML files but clearly
-wouldn&amp;rsquo;t work with the new format.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;
-
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;attr_accessor&lt;/span&gt; &lt;span style=&#34;color: #AA6600&#34;&gt;:string&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:phase&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;initialize&lt;/span&gt;(string, phase)
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@string&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; phase
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
-    phase_string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;string&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-    &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(phase_string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_sym)
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;translate&lt;/span&gt;
-    find_translation
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;In order to find phase specific keys anywhere within the nesting, the next
-thing I had to do was find all possible key combinations.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.index.module4.tab1.title&amp;#39;&lt;/span&gt;
-a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
-  b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-  b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p6_awards.index.module4.tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.p6_index.module4.tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.p6_module4.tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.module4.p6_tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.module4.tab1.p6_title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Great. Next we need to check to see if any of those keys return a value.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-  possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  phrase
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This checks to see if the keys return anything. If not returning a
-default blank string. If &lt;code&gt;phrase&lt;/code&gt; is still blank after we have checked all
-the keys go back to using the unmodified provided key and return
-the phrase. We can&amp;rsquo;t just use the original string as the default anymore
-as the first key miss would then set the &lt;code&gt;phrase&lt;/code&gt; to the original key
-value and we would short-circuit the loop.&lt;/p&gt;
-
-&lt;p&gt;This also worked pretty well but I quickly realized it to was
-problematic. If we actually wanted to pass an empty string as phase
-specific content (blanking out a header?) then we would actually end up
-with the default header. With the following YAML as an example.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  title: Awards Header
-  p2_title: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;pt(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.title&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #888888&#34;&gt;# With phase 2&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Awards Header&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This happens becuase we&amp;rsquo;re comparing against blank values and
-considering a blank value a miss. When in this case a blank value is
-exactly what we want returned.&lt;/p&gt;
-
-&lt;p&gt;To fix the problem we stop setting blank values on the initial lookup.
-Lets allow I18n to raise a missing translation exception as that is it&amp;rsquo;s
-normal behaviour without defaults.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
-  extract_possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;begin&lt;/span&gt;
-      phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:raise&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;)
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;rescue&lt;/span&gt;
-      &lt;span style=&#34;color: #888888&#34;&gt;# Let I18n raise a MissingTranslation exception.&lt;/span&gt;
-      &lt;span style=&#34;color: #888888&#34;&gt;# We&amp;#39;ll blank out the value or find the default after.&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
-    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  phrase
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This solves our blank title issue. As shown below:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;pt(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.title&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #888888&#34;&gt;# With phase 2&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;wrapping-it-all-up&#34;&gt;Wrapping it all up&lt;/h3&gt;
-
-&lt;p&gt;That pretty much gives us all the functionality we need at the moment.
-Check out the full class:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;
-
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;attr_accessor&lt;/span&gt; &lt;span style=&#34;color: #AA6600&#34;&gt;:string&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:phase&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:possibilities&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;initialize&lt;/span&gt;(string, phase)
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@string&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; phase
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;extract_possibilities&lt;/span&gt;
-    a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-      b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
-      b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-      b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
-    extract_possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;begin&lt;/span&gt;
-        phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:raise&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;)
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;rescue&lt;/span&gt;
-        &lt;span style=&#34;color: #888888&#34;&gt;# Let I18n raise a MissingTranslation exception.&lt;/span&gt;
-        &lt;span style=&#34;color: #888888&#34;&gt;# We&amp;#39;ll blank out the value or find the default after.&lt;/span&gt;
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
-      phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-    phrase
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;translate&lt;/span&gt;
-    find_translation
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After using translations in this way for a few days the new method
-proved its versatility. Allowing the formatting of the YAML
-files in different but very declarative manners. Just to start:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  faq:
-    entry_header: What is the entry deadline?
-    entry_paragraphs:
-      - Call for Sub...
-      - All med...
-      - All med...
-      - Award w...
-    p5_entry_paragraphs: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;entries_closed&lt;/span&gt;
-      - Submissions are...
-    p6_entry_paragraphs: &lt;span style=&#34;color: #996633&#34;&gt;*entries_closed&lt;/span&gt;
-
-  index:
-    module4:
-      tab1:
-        title: Awards
-        p2_title: Phase 2 title
-        header: Awards Contest
-        text: The Ad...
-      p5_tab1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt;
-        title: Voting Now Closed
-        header: Awards Finalists
-        text: Winners to be...
-      p6_tab1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
-
-  marquee:
-    pane1:
-      title: Audience Award Voting
-      text: An AUDIENCE AWA...
-    p5_pane1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_marquee&lt;/span&gt;
-      title: Voting now closed
-      text: Winners of th...
-    p6_pane1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_marquee&lt;/span&gt;
-    pane2:
-      title: Judges
-      text: Meet Ad...
-    pane3:
-      title: Essentials
-      text: The Ad...
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;All in all I found the new soltion to be quickly solving all the copy
-update issues we were previously encountering. As we move the content
-into the translation files slowly we can be removing all the repetitive
-phase specific view files that have cluttered up the view directories.&lt;/p&gt;
-
-&lt;p&gt;Thanks for reading through the post. The code is far from perfect but I
-felt like I wanted to share the process anyway. If you have any
-suggestions or corrections to make please send me an email
-or find me on &lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>DataMapper SQL Queries in Rails Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
-      <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
-      <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
-what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
-debugging when getting unexpected results or trying to increase query
-performance.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;DataMapper::Logger.new($stdout, :debug)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Enter that at anytime while running in &lt;code&gt;rails c&lt;/code&gt; and you should start
-seeing the output immediatley.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;
-If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity
-map. In which case a new query isn&amp;rsquo;t actually being performed. Try a
-query that you haven&amp;rsquo;t done yet and verify the results are output. Or
-Simply restart the console.&lt;/p&gt;
 </description>
     </item>
     

@@ -126,14 +126,13 @@
                     <span class="post-date">Fri, Sep 9, 2016</span>
                     
 
-<p>These are raw notes taken at <a href="http://rustconf.com/">RustConf</a> during the &ldquo;Traits and Threads&rdquo; workshop put on by <a href="http://www.twitter.com/aaron_turon">Aaron Turon</a></p>
+<p>These are raw notes taken at <a href="http://rustconf.com/">RustConf</a> during the “Traits and Threads” workshop put on by <a href="http://www.twitter.com/aaron_turon">Aaron Turon</a></p>
 
 <p><a href="http://rust-tutorials.com/exercises/">All Exercises</a></p>
 
 <ul>
 <li>Methods are function that accept self</li>
-<li><code>&amp;self.items == &amp;(self.items)</code> where the borrow (<code>&amp;</code>) is for the item, not
-for <code>self</code>.</li>
+<li><code>&amp;self.items == &amp;(self.items)</code> where the borrow (<code>&amp;</code>) is for the item, not for <code>self</code>.</li>
 <li>Structs have no default value, requires creating all values.</li>
 <li>mut as <code>mute</code> not like a mixed breed dog</li>
 </ul>
@@ -158,47 +157,42 @@ for <code>self</code>.</li>
 
 <h2 id="traits-are-rusts-interfaces">Traits are rusts interfaces.</h2>
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">trait</span><span style="color: #bbbbbb"> </span>Print<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>);<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>);<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">impl</span><span style="color: #bbbbbb"> </span>Print<span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span><span style="color: #333399; font-weight: bold">u64</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>println<span style="color: #333333">!</span>(<span style="background-color: #fff0f0">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span>slf)<span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>println<span style="color: #333333">!</span>(<span style="background-color: #fff0f0">&quot;{}&quot;</span>,<span style="color: #bbbbbb"> </span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">impl</span><span style="color: #bbbbbb"> </span>Print<span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span>char<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>println<span style="color: #333333">!</span>(<span style="background-color: #fff0f0">&quot;&#39;{}&#39;&quot;</span>),<span style="color: #bbbbbb"> </span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>println<span style="color: #333333">!</span>(<span style="background-color: #fff0f0">&quot;&#39;{}&#39;&quot;</span>),<span style="color: #bbbbbb"> </span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 </pre></div>
 
 <p><strong>Question:</strong><br />
-What happens if you try to define the same trait or impl that is
-defined already by someone else? (naming collisions etc)</p>
+What happens if you try to define the same trait or impl that is defined already by someone else? (naming collisions etc)</p>
 
 <p><strong>Answer:</strong><br />
-Naming collisions follow normal examples but when you try to write an
-interface for a type that you don&rsquo;t own (code gluing) you will run in to
-Coherence issues, for any given trait and type there is a single implementation
-known to the compiler.</p>
+Naming collisions follow normal examples but when you try to write an interface for a type that you don’t own (code gluing) you will run in to Coherence issues, for any given trait and type there is a single implementation known to the compiler.</p>
 
 <hr />
 
 <p><strong>Question:</strong><br />
- Why does the compiler allow &ldquo;different&rdquo; match arms?</p>
+Why does the compiler allow “different” match arms?</p>
 
 <p><strong>Answer:</strong><br />
-Given the below code: <code>total += price</code> is an expression and
-<code>return None</code> Breaks out of the function, so the compiler &ldquo;assigns&rdquo; it the type
- you need. It&rsquo;s a &ldquo;get out of jail free card.&rdquo;</p>
+Given the below code: <code>total += price</code> is an expression and <code>return None</code> Breaks out of the function, so the compiler “assigns” it the type you need. It’s a “get out of jail free card.”</p>
 
 <p><a href="https://play.rust-lang.org/?code=%23%21%5Ballow%28dead_code%29%5D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+The+trait%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Atrait+Price+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E%3B%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Store%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Astruct+Store+%7B%0A++++name%3A+String%2C%0A++++items%3A+Vec%3CItem%3E%2C%0A%7D%0A%0A%23%5Bderive%28Debug%29%5D%0Astruct+Item+%7B%0A++++name%3A+%26%27static+str%2C%0A++++price%3A+f32%2C%0A%7D%0A%0Aimpl+Store+%7B%0A++++fn+new%28name%3A+String%29+-%3E+Store+%7B%0A++++++++Store+%7B%0A++++++++++++name%3A+name%2C%0A++++++++++++items%3A+Vec%3A%3Anew%28%29%2C%0A++++++++%7D%0A++++%7D%0A%0A++++fn+add_item%28%26mut+self%2C+item%3A+Item%29+%7B%0A++++++++self.items.push%28item%29%3B%0A++++%7D%0A%7D%0A%0Aimpl+Price+for+Store+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++for+item+in+%26self.items+%7B%0A++++++++++++if+item.name+%3D%3D+item_name+%7B%0A++++++++++++++++return+Some%28item.price%29%3B%0A++++++++++++%7D%0A++++++++%7D%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_store%28%29+-%3E+Store+%7B%0A++++let+mut+store+%3D+Store%3A%3Anew%28format%21%28%22Rustmart%22%29%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22chocolate%22%2C+price%3A+5.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22socks%22%2C+price%3A+23.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22plush+Mozilla+dinosaur%22%2C+price%3A+13.0+%7D%29%3B%0A++++store%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Factory%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%2F%2F+A+factory+for+just+a+single+kind+of+item%0Astruct+Factory+%7B%0A++++item_name%3A+%26%27static+str%2C%0A++++wholesale_price%3A+f32%2C%0A%7D%0A%0Aimpl+Price+for+Factory+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++%2F%2F+Goal%3A+return+the+price+of+the+factory%27s+item%2C+if+the+name+matches%3B%0A++++++++%2F%2F+otherwise+return+%60None%60.%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_factory%28%29+-%3E+Factory+%7B%0A++++Factory+%7B%0A++++++++item_name%3A+%22sprocket%22%2C%0A++++++++wholesale_price%3A+7.67%2C%0A++++%7D%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Total+price%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Afn+total_price%3CP%3A+Price%3E%28provider%3A+%26P%2C+shopping_list%3A+%26%5B%26str%5D%29+-%3E+Option%3Cf32%3E+%7B%0A++++%2F%2F+Goal%3A+compute+the+total+price+of+all+items+in+the+shopping%0A++++%2F%2F+list.+If+any+of+the+options+are+not+present%2C+return+%60None%60.%0A++++None%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Tests%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%23%5Btest%5D%0Afn+total_price_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+Some%2818.0%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%2C+%22fork+and+knife%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+None%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+Some%287.67%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%2C+%22socks%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+None%29%3B%0A%7D%0A&amp;version=nightly">The Exercise:</a></p>
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">let</span><span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">mut</span><span style="color: #bbbbbb"> </span>total<span style="color: #bbbbbb"> </span><span style="color: #333333">=</span><span style="color: #bbbbbb"> </span><span style="color: #6600EE; font-weight: bold">0.0</span>;<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span>item<span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">in</span><span style="color: #bbbbbb"> </span>shopping_list<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">match</span><span style="color: #bbbbbb"> </span>provider.price(item)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span><span style="color: #007020">Some</span>(price)<span style="color: #bbbbbb"> </span><span style="color: #333333">=&gt;</span><span style="color: #bbbbbb"> </span>total<span style="color: #bbbbbb"> </span><span style="color: #333333">+=</span><span style="color: #bbbbbb"> </span>price,<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">      </span><span style="color: #007020">None</span><span style="color: #bbbbbb"> </span><span style="color: #333333">=&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">return</span><span style="color: #bbbbbb"> </span><span style="color: #007020">None</span><span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span>}<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">match</span><span style="color: #bbbbbb"> </span>provider.price(item)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">        </span><span style="color: #007020">Some</span>(price)<span style="color: #bbbbbb"> </span><span style="color: #333333">=&gt;</span><span style="color: #bbbbbb"> </span>total<span style="color: #bbbbbb"> </span><span style="color: #333333">+=</span><span style="color: #bbbbbb"> </span>price,<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">        </span><span style="color: #007020">None</span><span style="color: #bbbbbb"> </span><span style="color: #333333">=&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">return</span><span style="color: #bbbbbb"> </span><span style="color: #007020">None</span><span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
+
 <span style="color: #007020">Some</span>(total)<span style="color: #bbbbbb"></span>
 </pre></div>
 
@@ -208,33 +202,29 @@ Given the below code: <code>total += price</code> is an expression and
 
 <p>Questions: Should we write methods, or functions?</p>
 
-<p>When in doubt, lean on methods. Writing things as methods instead of functions allows
-for writing different impls for those methods.</p>
+<p>When in doubt, lean on methods. Writing things as methods instead of functions allows for writing different impls for those methods.</p>
 
 <hr />
 
 <h3 id="reuse-layering">Reuse: Layering</h3>
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">trait</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Clone</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>clone(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span><span style="color: #333333">-&gt;</span><span style="color: #bbbbbb"> </span>Self;<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>clone(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span><span style="color: #333333">-&gt;</span><span style="color: #bbbbbb"> </span>Self;<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">impl</span><span style="color: #333333">&lt;</span>T<span style="color: #333333">:</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Clone</span>,<span style="color: #bbbbbb"> </span>U<span style="color: #333333">:</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Clone</span><span style="color: #333333">&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Clone</span><span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span>(T,<span style="color: #bbbbbb"> </span>U)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>clone(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span><span style="color: #333333">-&gt;</span><span style="color: #bbbbbb"> </span>(T,<span style="color: #bbbbbb"> </span>U)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">    </span>(<span style="color: #007020">self</span>.<span style="color: #6600EE; font-weight: bold">0.</span>clone(),<span style="color: #bbbbbb"> </span><span style="color: #007020">self</span>.<span style="color: #6600EE; font-weight: bold">1.</span>clone())<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span>}<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>clone(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>)<span style="color: #bbbbbb"> </span><span style="color: #333333">-&gt;</span><span style="color: #bbbbbb"> </span>(T,<span style="color: #bbbbbb"> </span>U)<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">        </span>(<span style="color: #007020">self</span>.<span style="color: #6600EE; font-weight: bold">0.</span>clone(),<span style="color: #bbbbbb"> </span><span style="color: #007020">self</span>.<span style="color: #6600EE; font-weight: bold">1.</span>clone())<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">impl</span><span style="color: #333333">&lt;</span>T<span style="color: #333333">:</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Clone</span><span style="color: #333333">&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Clone</span><span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span><span style="color: #007020">Vec</span><span style="color: #333333">&lt;</span>T<span style="color: #333333">&gt;</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span><span style="color: #FF0000; background-color: #FFAAAA">…</span><span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
 </pre></div>
 
 <p><strong>Question:</strong><br />
-We&rsquo;re using traits in places where we could use types, what is the
-  relationship between traits and types?</p>
+We’re using traits in places where we could use types, what is the relationship between traits and types?</p>
 
 <p><strong>Answer:</strong><br />
-We&rsquo;re not yet using traits in a place where types are expected. We&rsquo;re
- saying <code>T:</code> is an addon that something has to be true for the type that we&rsquo;re
- given. Traits are not types, they are information about types.</p>
+We’re not yet using traits in a place where types are expected. We’re saying <code>T:</code> is an addon that something has to be true for the type that we’re given. Traits are not types, they are information about types.</p>
 
 <hr />
 
@@ -242,7 +232,7 @@ We&rsquo;re not yet using traits in a place where types are expected. We&rsquo;r
 Why <code>T</code> &amp; <code>U</code>?</p>
 
 <p><strong>Answer:</strong><br />
-<code>T</code> for type, and <code>U</code> because it&rsquo;s the next letter in the alphabit.</p>
+<code>T</code> for type, and <code>U</code> because it’s the next letter in the alphabit.</p>
 
 <hr />
 
@@ -250,30 +240,27 @@ Why <code>T</code> &amp; <code>U</code>?</p>
 Could I defined a generic that says it can <em>not</em> have a specific trait.</p>
 
 <p><strong>Answer:</strong><br />
-In most cases you wouldn&rsquo;t need to although it is possible using some pretty advanced techniques.</p>
+In most cases you wouldn’t need to although it is possible using some pretty advanced techniques.</p>
 
 <hr />
 
 <h3 id="objects">Objects</h3>
 
-<p>Containers are homogeneous.
-Traits can kind of be used as types.</p>
+<p>Containers are homogeneous. Traits can kind of be used as types.</p>
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">trait</span><span style="color: #bbbbbb"> </span>Print<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>);<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print(<span style="color: #333333">&amp;</span><span style="color: #007020">self</span>);<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>print_slice(slice<span style="color: #333333">:</span><span style="color: #bbbbbb"> </span><span style="color: #333333">&amp;</span>[<span style="color: #333333">&amp;</span>Print])<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span>elem<span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">in</span><span style="color: #bbbbbb"> </span>slice<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>elem.print();<span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">for</span><span style="color: #bbbbbb"> </span>elem<span style="color: #bbbbbb"> </span><span style="color: #008800; font-weight: bold">in</span><span style="color: #bbbbbb"> </span>slice<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"> </span>elem.print();<span style="color: #bbbbbb"> </span>}<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 
 <span style="color: #008800; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>main()<span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
-<span style="color: #bbbbbb">  </span><span style="color: #008800; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>slice<span style="color: #333333">:</span><span style="color: #bbbbbb"> </span><span style="color: #333333">&amp;</span>[<span style="color: #333333">&amp;</span>Print]<span style="color: #bbbbbb"> </span><span style="color: #333333">=</span><span style="color: #bbbbbb"> </span><span style="color: #333333">&amp;</span>...<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #008800; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>slice<span style="color: #333333">:</span><span style="color: #bbbbbb"> </span><span style="color: #333333">&amp;</span>[<span style="color: #333333">&amp;</span>Print]<span style="color: #bbbbbb"> </span><span style="color: #333333">=</span><span style="color: #bbbbbb"> </span><span style="color: #333333">&amp;</span>...<span style="color: #bbbbbb"></span>
 }<span style="color: #bbbbbb"></span>
 </pre></div>
 
-<p><code>[&amp;Print]</code> is actually an array of pointers, as pointers are all the same sized.
-vs a <code>Char</code> and <code>Item</code> which would be mixed sizes. The compiler will perform this
-type of abstraction for you.</p>
+<p><code>[&amp;Print]</code> is actually an array of pointers, as pointers are all the same sized. vs a <code>Char</code> and <code>Item</code> which would be mixed sizes. The compiler will perform this type of abstraction for you.</p>
 
 <h4 id="generics-vs-objects">Generics vs Objects</h4>
 
@@ -324,39 +311,27 @@ Two unsynchronized threads accessing the same data where at lease one writes.</p
 <ul>
 <li>Aliasing (multiple things with access to the same thing)</li>
 <li>Mutation (at least one thread is writing)</li>
-<li>No ordering (compiler has no idea this is happening and will optimize assuming
-it&rsquo;s not happening)</li>
+<li>No ordering (compiler has no idea this is happening and will optimize assuming it’s not happening)</li>
 </ul>
 
-<p>Ownership and borrowing system is at the core of ensuring you can have both aliasing
-or mutation, but never at the same time.
-No data races = No accidentally-shared state.</p>
+<p>Ownership and borrowing system is at the core of ensuring you can have both aliasing or mutation, but never at the same time. No data races = No accidentally-shared state.</p>
 
-<p>All sharing is explicit. No threads can have access to this thing while your thread
-has access to it.</p>
+<p>All sharing is explicit. No threads can have access to this thing while your thread has access to it.</p>
 
-<p>Each thread will <code>move</code> and take ownership of variables passed to that thread.
-Usage in the main thread is no longer permitted, and you&rsquo;ll get a compile time
-error.</p>
+<p>Each thread will <code>move</code> and take ownership of variables passed to that thread. Usage in the main thread is no longer permitted, and you’ll get a compile time error.</p>
 
 <p>Sharing immutable data between threads?<br />
-Use <code>std::sync::Arc</code>. With <code>Arc</code> you can not know at what point it will be deallocated. It eliminates itself once all threads
-have finished with itself. Arc keeps a count for how much it&rsquo;s been cloned and when
-it&rsquo;s dropped it decrements and eliminates itself once at 0.</p>
+Use <code>std::sync::Arc</code>. With <code>Arc</code> you can not know at what point it will be deallocated. It eliminates itself once all threads have finished with itself. Arc keeps a count for how much it’s been cloned and when it’s dropped it decrements and eliminates itself once at 0.</p>
 
 <p>Static lifetime is exempt and allowed to be passed to different threads.</p>
 
 <h3 id="channels">Channels</h3>
 
-<p>Two threads can transfer ownership of data through a channel.
-Channels create a transmitter and a receiver. Tx and Rx can be passed to threads.
-Whoever has the Tx, can send data to whoever owns the Rx.</p>
+<p>Two threads can transfer ownership of data through a channel. Channels create a transmitter and a receiver. Tx and Rx can be passed to threads. Whoever has the Tx, can send data to whoever owns the Rx.</p>
 
 <h3 id="locks">Locks</h3>
 
-<p>Mutex is a name for a lock. Mutual exclusion.
-Rust fundamentally uses ownership to manage unlocks of locks you&rsquo;ve taken. You
-never need to unlock or let go of the data.</p>
+<p>Mutex is a name for a lock. Mutual exclusion. Rust fundamentally uses ownership to manage unlocks of locks you’ve taken. You never need to unlock or let go of the data.</p>
 
                 </div>
             </div>

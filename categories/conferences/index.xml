@@ -7,24 +7,411 @@
     <language>en-us</language>
     
     
-    <updated>Fri, 09 Sep 2016 13:00:00 UTC</updated>
+    <updated>Sat, 10 Sep 2016 10:00:00 UTC</updated>
+    
+    <item>
+      <title>RustConf 2016 Talks</title>
+      <link>http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</guid>
+      <description>
+
+&lt;h2 id=&#34;opening-keynote&#34;&gt;Opening Keynote&lt;/h2&gt;
+
+&lt;p&gt;by Aaron Turon and Niko Matsakis&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/keynote.jpg&#39; alt=&#39;Aaron Turon and Nika Matsakis&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/eigenrick&#34;&gt;@eigenrick&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;175 new features since 1.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;New features underway&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Specialization&lt;/li&gt;
+&lt;li&gt;impl Trait&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;?&lt;/code&gt; operator&lt;/li&gt;
+&lt;li&gt;Macro 1.1 offers custom derive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compiler internals redesigned&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mir in orbit&lt;/li&gt;
+&lt;li&gt;Dynamic drop flags&lt;/li&gt;
+&lt;li&gt;Incremental comp&lt;/li&gt;
+&lt;li&gt;Error messages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Challenges in the Rust survey&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1 in 4 Learning curve (First 3 weeks is rough)&lt;/li&gt;
+&lt;li&gt;1 in 7 More libraris&lt;/li&gt;
+&lt;li&gt;1 in 9 &amp;ldquo;Maturity&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;1 in 19 IDEs&lt;/li&gt;
+&lt;li&gt;1 in 20 Compiler Perf&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Speed and reliability are core values of rust, but for 2017, productivity should as well.&lt;/p&gt;
+
+&lt;p&gt;Potential areas for new/improved libs&lt;/p&gt;
+
+&lt;p&gt;Rust on the server&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Futures for async I/O&lt;/li&gt;
+&lt;li&gt;Tokio for protocols&lt;/li&gt;
+&lt;li&gt;Middleware ecosystem&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Parallelism &amp;amp; Concurrency&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Deliver on Rust&amp;rsquo;s potential&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Serialization&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Stable serde&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rust numerics/ML&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Establish foundations?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;serde&lt;/code&gt; is pronounced &lt;code&gt;serdy&lt;/code&gt; not &lt;code&gt;serd&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Discoverability&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A tricky balance:&lt;/p&gt;
+
+&lt;p&gt;Make it easy to find the &amp;ldquo;best&amp;rdquo;&lt;br /&gt;
+… but allow newcomers to take root&lt;br /&gt;
+… but incentivize the right things&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tools&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rustup
+
+&lt;ul&gt;
+&lt;li&gt;NDK support&lt;/li&gt;
+&lt;li&gt;Emscripten/wasm&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;cargo
+
+&lt;ul&gt;
+&lt;li&gt;Private/shared&lt;/li&gt;
+&lt;li&gt;Build system integration&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;rustfmt
+
+&lt;ul&gt;
+&lt;li&gt;Strike team for the format&lt;/li&gt;
+&lt;li&gt;The bike shed of bike sheds&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/phildawes/racer&#34;&gt;Racer&lt;/a&gt; for code completion in editors.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;the-illustrated-adventure-survival-guide&#34;&gt;The Illustrated Adventure Survival Guide&lt;/h2&gt;
+
+&lt;p&gt;by Liz Baillie&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/survivalguide.jpg&#39; alt=&#39;Adventure Survival Guide&#39; /&gt;
+photo by &lt;a href=&#34;https://twitter.com/QEDunham&#34;&gt;@QEDunham&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Classes vs Traits&lt;/li&gt;
+&lt;li&gt;Error handling&lt;/li&gt;
+&lt;li&gt;Stack &amp;amp; Heap&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;integrating-rust-and-vlc&#34;&gt;Integrating Rust and VLC&lt;/h2&gt;
+
+&lt;p&gt;by Geoffroy Couprie&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/vlc.jpg&#39; alt=&#39;Integrating Rust and VLC&#39; /&gt;
+photo by &lt;a href=&#34;https://twitter.com/eigenrick&#34;&gt;@nathanaeljones&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;VLC has &lt;code&gt;C&lt;/code&gt; code and is now using &lt;code&gt;Rust&lt;/code&gt; to replace the &lt;code&gt;C&lt;/code&gt; code.&lt;/p&gt;
+
+&lt;p&gt;Autotools with Rust.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;the-rustplay-classifier&#34;&gt;The RustPlay Classifier&lt;/h2&gt;
+
+&lt;p&gt;by Suchin Gururangan and Colin O&amp;rsquo;Brien&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/rustplay.jpg&#39; alt=&#39;The RustPlay Classifier&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Technical Debt in Data Science&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Siloed teams&lt;/li&gt;
+&lt;li&gt;Pipeline junkgles&lt;/li&gt;
+&lt;li&gt;Unscalable Experiments&lt;/li&gt;
+&lt;li&gt;…and all the normal engineering tech debt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;“A mature system might end up being (at most) 5% learning code.”&lt;/p&gt;
+
+&lt;p&gt;Service oriented Machine Learning&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Data Collection&lt;/li&gt;
+&lt;li&gt;Data Inventory&lt;/li&gt;
+&lt;li&gt;Feature Extraction&lt;/li&gt;
+&lt;li&gt;Model Generation&lt;/li&gt;
+&lt;li&gt;Prediction&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/tailhook/vagga&#34;&gt;Vagga: a containerization tool without daemons&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/nikomatsakis/rayon&#34;&gt;Rayon: A data parallelism library for Rust&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;using-generics-effectively&#34;&gt;Using Generics Effectively&lt;/h2&gt;
+
+&lt;p&gt;by Without Boats&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/generics.jpg&#39; alt=&#39;Using Generics Effectively&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How will I know when it&amp;rsquo;s a good idea to use a &lt;code&gt;Trait&lt;/code&gt; or an &lt;code&gt;Enum&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199/ref=sr_1_1?ie=UTF8&amp;amp;qid=1473543382&amp;amp;sr=8-1&amp;amp;keywords=a+pattern+language&#34;&gt;A Pattern Language Book&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;“Design patterns are a sign your language itsn&amp;rsquo;t powerful enough.”&lt;/p&gt;
+
+&lt;p&gt;Patterns don&amp;rsquo;t have to be template of classes.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;back-to-the-futures&#34;&gt;Back to the Futures&lt;/h2&gt;
+
+&lt;p&gt;by Alex Crichton&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/futures.jpg&#39; alt=&#39;Back to the Futures&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s a Future?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;DB query&lt;/li&gt;
+&lt;li&gt;RPC Request&lt;/li&gt;
+&lt;li&gt;Timeouts&lt;/li&gt;
+&lt;li&gt;CPU Intensive Work&lt;/li&gt;
+&lt;li&gt;Socket Readiness&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The fastest server&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mio is state of the art&lt;/li&gt;
+&lt;li&gt;Primarily using state machines&lt;/li&gt;
+&lt;li&gt;Avoids unnecessary allocation/synchronization&lt;/li&gt;
+&lt;li&gt;Futures must &amp;ldquo;compile down&amp;rdquo; to the same code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Zero-cost futures&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No allocations in combinators&lt;/li&gt;
+&lt;li&gt;No synchronization in combinators&lt;/li&gt;
+&lt;li&gt;One dynamic dispatch per event&lt;/li&gt;
+&lt;li&gt;One allocation per connection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/tokio-rs/tokio&#34;&gt;Tokio: Asynchronous I/O for Rust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/futures2.jpg&#39; alt=&#39;Back to the Futures&#39; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;a-modern-editor-in-rust&#34;&gt;A Modern Editor in Rust&lt;/h2&gt;
+
+&lt;p&gt;by Raph Levien&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/google/xi-editor&#34;&gt;The Xi Editor: A modern editor with a backend written in Rust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/editor.jpg&#39; alt=&#39;A Modern Editor in Rust&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Main goal: performance&lt;/p&gt;
+
+&lt;p&gt;How to make a fast editor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use a fast language&lt;/li&gt;
+&lt;li&gt;Exploit multicore parallelism&lt;/li&gt;
+&lt;li&gt;Use advanced algorithms and data structures
+
+&lt;ul&gt;
+&lt;li&gt;Ropes&lt;/li&gt;
+&lt;li&gt;Minimal incremental algorithms&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Asynchrony
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t block slow operations&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Operation Transformation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Request to plugin is async&lt;/li&gt;
+&lt;li&gt;User may edit while plugin is thinking&lt;/li&gt;
+&lt;li&gt;Transform results from plugin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Xi-rope internals&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rope is a specialization of a generic tree&lt;/li&gt;
+&lt;li&gt;Parametrized on &lt;code&gt;Leaf&lt;/code&gt; and &lt;code&gt;NodeInfo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;3 different specializations of generic tree
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Rope&lt;/code&gt; (Leaf = String)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Line breaks&lt;/code&gt; (Lead = vec of line breaks offsets)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Rich text spans&lt;/code&gt; (Leaf = vec of spans; interval)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Xi-rpc today&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JSON-RPC
+
+&lt;ul&gt;
+&lt;li&gt;Why?&lt;/li&gt;
+&lt;li&gt;JSON implementations are fast&lt;/li&gt;
+&lt;li&gt;An easy dep to satisfy&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Threaded design
+
+&lt;ul&gt;
+&lt;li&gt;Separate thread blocking on input&lt;/li&gt;
+&lt;li&gt;Inter-thread communication with channels&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Arc&amp;lt;Mutex&amp;lt;&amp;gt;&amp;gt;&lt;/code&gt; to acquire state.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;rfc-in-order-to-form-a-more-perfect-union&#34;&gt;RFC: In Order to Form a More Perfect union&lt;/h2&gt;
+
+&lt;p&gt;by Josh Triplett&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/rfc.jpg&#39; alt=&#39;RFCs&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Linux Kernal Virtual Machine&lt;br /&gt;
+/dev/kvm&lt;/p&gt;
+
+&lt;p&gt;Floppy drive, vm security issue.&lt;/p&gt;
+
+&lt;p&gt;Unions&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Multi storage variables&lt;/li&gt;
+&lt;li&gt;Different types&lt;/li&gt;
+&lt;li&gt;Overlapping types&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rust RFC&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Community process&lt;/li&gt;
+&lt;li&gt;Lightweight but not to light&lt;/li&gt;
+&lt;li&gt;Shepard&lt;/li&gt;
+&lt;li&gt;Rust team makes approval decisions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;#[repr(C)] struct&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Crater&lt;/code&gt; takes a proposed change to the language, loads the entire cargo env
+base, and checks for breakage.&lt;/p&gt;
+
+&lt;p&gt;Improvements through the RFC process by way of multiple person interaction.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;closing-keynote-systems-programming-with-rust&#34;&gt;Closing Keynote - Systems Programming with Rust&lt;/h2&gt;
+
+&lt;p&gt;by Julia Evans&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/systems1.jpg&#39; alt=&#39;Systems Programming&#39; /&gt;
+photo by &lt;a href=&#34;https://twitter.com/TedMielczarek&#34;&gt;@TedMielczarek&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Rules of programming experiments&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;it doesn&amp;rsquo;t have to be good&lt;/li&gt;
+&lt;li&gt;it doesn&amp;rsquo;t have to work&lt;/li&gt;
+&lt;li&gt;you have to learn something&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/systems.jpg&#39; alt=&#39;Systems Programming&#39; /&gt;
+photo by &lt;a href=&#34;https://twitter.com/_lizbaillie&#34;&gt;_lizbaillie&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;libdrawf&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;no idea how it works&lt;/li&gt;
+&lt;li&gt;terrible API&lt;/li&gt;
+&lt;li&gt;slow&lt;/li&gt;
+&lt;li&gt;linker problems&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/gimli-rs/gimli&#34;&gt;Gimli: A lazy, zero-copy parser for the DWARF debugging format&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;rustconf-2016-conclusion&#34;&gt;RustConf 2016 Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The year the &lt;code&gt;Rust&lt;/code&gt; conferences started! The overall vibe was excellent. Everyone
+was just excited to be there. For me personally the hallway track was very
+different then the conferences I&amp;rsquo;m used to. I&amp;rsquo;m used to hallway chat about apps
+and gems and web development. The general chatter here was system performance
+which is out of my normal space. So I learned a lot. As well as sat in on conversations
+I considered a little over my head.&lt;/p&gt;
+
+&lt;p&gt;The workshops on Friday were great as well. I participated in the Intermediate
+workshop. Although I really wish I could have grabbed some pieces of both the
+intermediate and advanced. I have a pretty good grasp on lifetimes, but do
+frequently run in to problems with lifetimes and structs. Where as in the
+intermediate I had a good concept of &lt;code&gt;Traits&lt;/code&gt; but run into problems with generics.
+So both workshops had a little something I wanted but decided to go to the intermediate
+workshop and was not disapointed. &lt;a href=&#34;http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/&#34;&gt;Check out some of my notes&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Traits and Threads Workshop</title>
       <link>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</link>
-      <pubDate>Fri, 09 Sep 2016 13:00:00 UTC</pubDate>
+      <pubDate>Fri, 09 Sep 2016 10:00:00 UTC</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</guid>
       <description>
 
-&lt;p&gt;These are raw notes taken at &lt;a href=&#34;http://rustconf.com/&#34;&gt;RustConf&lt;/a&gt; during the &amp;ldquo;Traits and Threads&amp;rdquo; workshop put on by &lt;a href=&#34;http://www.twitter.com/aaron_turon&#34;&gt;Aaron Turon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These are raw notes taken at &lt;a href=&#34;http://rustconf.com/&#34;&gt;RustConf&lt;/a&gt; during the “Traits and Threads” workshop put on by &lt;a href=&#34;http://www.twitter.com/aaron_turon&#34;&gt;Aaron Turon&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://rust-tutorials.com/exercises/&#34;&gt;All Exercises&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Methods are function that accept self&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;amp;self.items == &amp;amp;(self.items)&lt;/code&gt; where the borrow (&lt;code&gt;&amp;amp;&lt;/code&gt;) is for the item, not
-for &lt;code&gt;self&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;self.items == &amp;amp;(self.items)&lt;/code&gt; where the borrow (&lt;code&gt;&amp;amp;&lt;/code&gt;) is for the item, not for &lt;code&gt;self&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Structs have no default value, requires creating all values.&lt;/li&gt;
 &lt;li&gt;mut as &lt;code&gt;mute&lt;/code&gt; not like a mixed breed dog&lt;/li&gt;
 &lt;/ul&gt;
@@ -49,47 +436,42 @@ for &lt;code&gt;self&lt;/code&gt;.&lt;/li&gt;
 
 &lt;h2 id=&#34;traits-are-rusts-interfaces&#34;&gt;Traits are rusts interfaces.&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;u64&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slf)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;char&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;#39;{}&amp;#39;&amp;quot;&lt;/span&gt;),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;#39;{}&amp;#39;&amp;quot;&lt;/span&gt;),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-What happens if you try to define the same trait or impl that is
-defined already by someone else? (naming collisions etc)&lt;/p&gt;
+What happens if you try to define the same trait or impl that is defined already by someone else? (naming collisions etc)&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-Naming collisions follow normal examples but when you try to write an
-interface for a type that you don&amp;rsquo;t own (code gluing) you will run in to
-Coherence issues, for any given trait and type there is a single implementation
-known to the compiler.&lt;/p&gt;
+Naming collisions follow normal examples but when you try to write an interface for a type that you don’t own (code gluing) you will run in to Coherence issues, for any given trait and type there is a single implementation known to the compiler.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
- Why does the compiler allow &amp;ldquo;different&amp;rdquo; match arms?&lt;/p&gt;
+Why does the compiler allow “different” match arms?&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-Given the below code: &lt;code&gt;total += price&lt;/code&gt; is an expression and
-&lt;code&gt;return None&lt;/code&gt; Breaks out of the function, so the compiler &amp;ldquo;assigns&amp;rdquo; it the type
- you need. It&amp;rsquo;s a &amp;ldquo;get out of jail free card.&amp;rdquo;&lt;/p&gt;
+Given the below code: &lt;code&gt;total += price&lt;/code&gt; is an expression and &lt;code&gt;return None&lt;/code&gt; Breaks out of the function, so the compiler “assigns” it the type you need. It’s a “get out of jail free card.”&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://play.rust-lang.org/?code=%23%21%5Ballow%28dead_code%29%5D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+The+trait%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Atrait+Price+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E%3B%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Store%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Astruct+Store+%7B%0A++++name%3A+String%2C%0A++++items%3A+Vec%3CItem%3E%2C%0A%7D%0A%0A%23%5Bderive%28Debug%29%5D%0Astruct+Item+%7B%0A++++name%3A+%26%27static+str%2C%0A++++price%3A+f32%2C%0A%7D%0A%0Aimpl+Store+%7B%0A++++fn+new%28name%3A+String%29+-%3E+Store+%7B%0A++++++++Store+%7B%0A++++++++++++name%3A+name%2C%0A++++++++++++items%3A+Vec%3A%3Anew%28%29%2C%0A++++++++%7D%0A++++%7D%0A%0A++++fn+add_item%28%26mut+self%2C+item%3A+Item%29+%7B%0A++++++++self.items.push%28item%29%3B%0A++++%7D%0A%7D%0A%0Aimpl+Price+for+Store+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++for+item+in+%26self.items+%7B%0A++++++++++++if+item.name+%3D%3D+item_name+%7B%0A++++++++++++++++return+Some%28item.price%29%3B%0A++++++++++++%7D%0A++++++++%7D%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_store%28%29+-%3E+Store+%7B%0A++++let+mut+store+%3D+Store%3A%3Anew%28format%21%28%22Rustmart%22%29%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22chocolate%22%2C+price%3A+5.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22socks%22%2C+price%3A+23.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22plush+Mozilla+dinosaur%22%2C+price%3A+13.0+%7D%29%3B%0A++++store%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Factory%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%2F%2F+A+factory+for+just+a+single+kind+of+item%0Astruct+Factory+%7B%0A++++item_name%3A+%26%27static+str%2C%0A++++wholesale_price%3A+f32%2C%0A%7D%0A%0Aimpl+Price+for+Factory+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++%2F%2F+Goal%3A+return+the+price+of+the+factory%27s+item%2C+if+the+name+matches%3B%0A++++++++%2F%2F+otherwise+return+%60None%60.%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_factory%28%29+-%3E+Factory+%7B%0A++++Factory+%7B%0A++++++++item_name%3A+%22sprocket%22%2C%0A++++++++wholesale_price%3A+7.67%2C%0A++++%7D%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Total+price%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Afn+total_price%3CP%3A+Price%3E%28provider%3A+%26P%2C+shopping_list%3A+%26%5B%26str%5D%29+-%3E+Option%3Cf32%3E+%7B%0A++++%2F%2F+Goal%3A+compute+the+total+price+of+all+items+in+the+shopping%0A++++%2F%2F+list.+If+any+of+the+options+are+not+present%2C+return+%60None%60.%0A++++None%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Tests%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%23%5Btest%5D%0Afn+total_price_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+Some%2818.0%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%2C+%22fork+and+knife%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+None%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+Some%287.67%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%2C+%22socks%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+None%29%3B%0A%7D%0A&amp;amp;version=nightly&#34;&gt;The Exercise:&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;mut&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.0&lt;/span&gt;;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;item&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;shopping_list&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;provider.price(item)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(price)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;price,&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;provider.price(item)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(price)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;price,&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+
 &lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(total)&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -99,33 +481,29 @@ Given the below code: &lt;code&gt;total += price&lt;/code&gt; is an expression a
 
 &lt;p&gt;Questions: Should we write methods, or functions?&lt;/p&gt;
 
-&lt;p&gt;When in doubt, lean on methods. Writing things as methods instead of functions allows
-for writing different impls for those methods.&lt;/p&gt;
+&lt;p&gt;When in doubt, lean on methods. Writing things as methods instead of functions allows for writing different impls for those methods.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&#34;reuse-layering&#34;&gt;Reuse: Layering&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Self;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Self;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;(&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.&lt;/span&gt;clone(),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.&lt;/span&gt;clone())&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;        &lt;/span&gt;(&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.&lt;/span&gt;clone(),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.&lt;/span&gt;clone())&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Vec&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #FF0000; background-color: #FFAAAA&#34;&gt;…&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-We&amp;rsquo;re using traits in places where we could use types, what is the
-  relationship between traits and types?&lt;/p&gt;
+We’re using traits in places where we could use types, what is the relationship between traits and types?&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-We&amp;rsquo;re not yet using traits in a place where types are expected. We&amp;rsquo;re
- saying &lt;code&gt;T:&lt;/code&gt; is an addon that something has to be true for the type that we&amp;rsquo;re
- given. Traits are not types, they are information about types.&lt;/p&gt;
+We’re not yet using traits in a place where types are expected. We’re saying &lt;code&gt;T:&lt;/code&gt; is an addon that something has to be true for the type that we’re given. Traits are not types, they are information about types.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -133,7 +511,7 @@ We&amp;rsquo;re not yet using traits in a place where types are expected. We&amp
 Why &lt;code&gt;T&lt;/code&gt; &amp;amp; &lt;code&gt;U&lt;/code&gt;?&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-&lt;code&gt;T&lt;/code&gt; for type, and &lt;code&gt;U&lt;/code&gt; because it&amp;rsquo;s the next letter in the alphabit.&lt;/p&gt;
+&lt;code&gt;T&lt;/code&gt; for type, and &lt;code&gt;U&lt;/code&gt; because it’s the next letter in the alphabit.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -141,30 +519,27 @@ Why &lt;code&gt;T&lt;/code&gt; &amp;amp; &lt;code&gt;U&lt;/code&gt;?&lt;/p&gt;
 Could I defined a generic that says it can &lt;em&gt;not&lt;/em&gt; have a specific trait.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-In most cases you wouldn&amp;rsquo;t need to although it is possible using some pretty advanced techniques.&lt;/p&gt;
+In most cases you wouldn’t need to although it is possible using some pretty advanced techniques.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&#34;objects&#34;&gt;Objects&lt;/h3&gt;
 
-&lt;p&gt;Containers are homogeneous.
-Traits can kind of be used as types.&lt;/p&gt;
+&lt;p&gt;Containers are homogeneous. Traits can kind of be used as types.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print_slice(slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print])&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem.print();&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem.print();&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;main()&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print]&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;...&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print]&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;...&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 }&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code&gt;[&amp;amp;Print]&lt;/code&gt; is actually an array of pointers, as pointers are all the same sized.
-vs a &lt;code&gt;Char&lt;/code&gt; and &lt;code&gt;Item&lt;/code&gt; which would be mixed sizes. The compiler will perform this
-type of abstraction for you.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[&amp;amp;Print]&lt;/code&gt; is actually an array of pointers, as pointers are all the same sized. vs a &lt;code&gt;Char&lt;/code&gt; and &lt;code&gt;Item&lt;/code&gt; which would be mixed sizes. The compiler will perform this type of abstraction for you.&lt;/p&gt;
 
 &lt;h4 id=&#34;generics-vs-objects&#34;&gt;Generics vs Objects&lt;/h4&gt;
 
@@ -215,39 +590,27 @@ Two unsynchronized threads accessing the same data where at lease one writes.&lt
 &lt;ul&gt;
 &lt;li&gt;Aliasing (multiple things with access to the same thing)&lt;/li&gt;
 &lt;li&gt;Mutation (at least one thread is writing)&lt;/li&gt;
-&lt;li&gt;No ordering (compiler has no idea this is happening and will optimize assuming
-it&amp;rsquo;s not happening)&lt;/li&gt;
+&lt;li&gt;No ordering (compiler has no idea this is happening and will optimize assuming it’s not happening)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Ownership and borrowing system is at the core of ensuring you can have both aliasing
-or mutation, but never at the same time.
-No data races = No accidentally-shared state.&lt;/p&gt;
+&lt;p&gt;Ownership and borrowing system is at the core of ensuring you can have both aliasing or mutation, but never at the same time. No data races = No accidentally-shared state.&lt;/p&gt;
 
-&lt;p&gt;All sharing is explicit. No threads can have access to this thing while your thread
-has access to it.&lt;/p&gt;
+&lt;p&gt;All sharing is explicit. No threads can have access to this thing while your thread has access to it.&lt;/p&gt;
 
-&lt;p&gt;Each thread will &lt;code&gt;move&lt;/code&gt; and take ownership of variables passed to that thread.
-Usage in the main thread is no longer permitted, and you&amp;rsquo;ll get a compile time
-error.&lt;/p&gt;
+&lt;p&gt;Each thread will &lt;code&gt;move&lt;/code&gt; and take ownership of variables passed to that thread. Usage in the main thread is no longer permitted, and you’ll get a compile time error.&lt;/p&gt;
 
 &lt;p&gt;Sharing immutable data between threads?&lt;br /&gt;
-Use &lt;code&gt;std::sync::Arc&lt;/code&gt;. With &lt;code&gt;Arc&lt;/code&gt; you can not know at what point it will be deallocated. It eliminates itself once all threads
-have finished with itself. Arc keeps a count for how much it&amp;rsquo;s been cloned and when
-it&amp;rsquo;s dropped it decrements and eliminates itself once at 0.&lt;/p&gt;
+Use &lt;code&gt;std::sync::Arc&lt;/code&gt;. With &lt;code&gt;Arc&lt;/code&gt; you can not know at what point it will be deallocated. It eliminates itself once all threads have finished with itself. Arc keeps a count for how much it’s been cloned and when it’s dropped it decrements and eliminates itself once at 0.&lt;/p&gt;
 
 &lt;p&gt;Static lifetime is exempt and allowed to be passed to different threads.&lt;/p&gt;
 
 &lt;h3 id=&#34;channels&#34;&gt;Channels&lt;/h3&gt;
 
-&lt;p&gt;Two threads can transfer ownership of data through a channel.
-Channels create a transmitter and a receiver. Tx and Rx can be passed to threads.
-Whoever has the Tx, can send data to whoever owns the Rx.&lt;/p&gt;
+&lt;p&gt;Two threads can transfer ownership of data through a channel. Channels create a transmitter and a receiver. Tx and Rx can be passed to threads. Whoever has the Tx, can send data to whoever owns the Rx.&lt;/p&gt;
 
 &lt;h3 id=&#34;locks&#34;&gt;Locks&lt;/h3&gt;
 
-&lt;p&gt;Mutex is a name for a lock. Mutual exclusion.
-Rust fundamentally uses ownership to manage unlocks of locks you&amp;rsquo;ve taken. You
-never need to unlock or let go of the data.&lt;/p&gt;
+&lt;p&gt;Mutex is a name for a lock. Mutual exclusion. Rust fundamentally uses ownership to manage unlocks of locks you’ve taken. You never need to unlock or let go of the data.&lt;/p&gt;
 </description>
     </item>
     

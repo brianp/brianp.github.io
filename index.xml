@@ -7,7 +7,242 @@
     <language>en-us</language>
     
     
-    <updated>Sat, 10 Sep 2016 10:00:00 UTC</updated>
+    <updated>Sat, 17 Sep 2016 09:30:00 UTC</updated>
+    
+    <item>
+      <title>RustFest 2016 Talks</title>
+      <link>http://alwayscoding.ca/momentos/2016/09/17/rustfest-2016-talks/</link>
+      <pubDate>Sat, 17 Sep 2016 09:30:00 UTC</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2016/09/17/rustfest-2016-talks/</guid>
+      <description>
+
+&lt;p&gt;Photo of Ryan Levick taking care of conference housekeeping
+&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/intro.jpg&#39; alt=&#39;Ryan Levick Intro to RustFest&#39; /&gt;
+by &lt;a href=&#34;https://twitter.com/timglabisch&#34;&gt;@timglabisch&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;keynote-subtyping-in-rust-and-clarke-s-third-law&#34;&gt;Keynote: Subtyping in Rust and Clarke&amp;rsquo;s Third Law&lt;/h2&gt;
+
+&lt;p&gt;by Felix Klock&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/subtyping.jpg&#39; alt=&#39;Felix Klock&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/andrewhobden&#34;&gt;@andrewhobden&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Lifetimes!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;learning-to-love-the-unfamiliar&#34;&gt;Learning to Love the Unfamiliar&lt;/h2&gt;
+
+&lt;p&gt;by Brian Pearce (ME!)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/rustfestbp-intro.jpg&#39; alt=&#39;Brian Pearce&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/andrewhobden&#34;&gt;@andrewhobden&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;An intro to rust for developers coming from other languages.&lt;/p&gt;
+
+&lt;p&gt;Maybe types&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Option&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Some&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;None&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Result&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ok&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Err&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;try!&lt;/code&gt; Macro and learning to catch &lt;code&gt;panics!&lt;/code&gt; (runtime exceptions)&lt;/p&gt;
+
+&lt;p&gt;Testing
+ - Inline tests for functions you just wrote
+ - /tests/ dir for integration testing
+ - random order testing by default
+ - parrallel test runs.
+  - Can cause problems when simultaniously doing io or sharing resources.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;time-gap-2-missed-talks&#34;&gt;Time Gap - 2 missed talks&lt;/h1&gt;
+
+&lt;p&gt;Needed to take some alone time post talk to wind down.
+Will update this after I watch the videos.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;intermezzos-a-teaching-operating-system&#34;&gt;intermezzOS: a teaching operating system&lt;/h2&gt;
+
+&lt;p&gt;by Ashley Williams&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/intermezzos.jpg&#39; alt=&#39;Ashley Williams&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/rustfest&#34;&gt;@RustFest&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Introducing systems programming concepts to experienced devs from other languages.&lt;/p&gt;
+
+&lt;p&gt;Do you know JS? Why not write an OS!&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;OS Dev.org&lt;/del&gt; Terrible site.&lt;/p&gt;
+
+&lt;p&gt;What is a kernal: The core of the os.&lt;/p&gt;
+
+&lt;p&gt;Building an OS is like coding in the dark.&lt;/p&gt;
+
+&lt;p&gt;Virtualization - Vagrant, VBox, XQuartz&lt;/p&gt;
+
+&lt;p&gt;BIOS - Basic input output service
+GRUB&lt;/p&gt;
+
+&lt;p&gt;Linking - How the sections of an input file should be mapped in the output file.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Teaching is the way of letting you know how sloppy your thinking is.&amp;rdquo;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;teaching-myself-rust-through-the-medium-of-coordinate-system-transforms-and-ffi&#34;&gt;Teaching myself Rust through the medium of coordinate system transforms and FFI&lt;/h2&gt;
+
+&lt;p&gt;by Stephan Hügel&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/coord.jpg&#39; alt=&#39;Stephan Hügel&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/andrewhobden&#34;&gt;@andrewhobden&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Phone GPS is only generally accurate to 15-meters.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/mcarton/rust-herbie-lint&#34;&gt;https://github.com/mcarton/rust-herbie-lint&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/georust&#34;&gt;https://github.com/georust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://urschrei.github.io/rustfest/#/&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;why-you-d-be-better-off-using-quickcheck-when-porting-to-rust&#34;&gt;Why you&amp;rsquo;d be better off using QuickCheck when porting to Rust&lt;/h2&gt;
+
+&lt;p&gt;by Martin Hellspong&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/quickcheck.jpg&#39; alt=&#39;Martin Hellspong&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/adrian_brink&#34;&gt;@adrian_brink&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Find more bugs with less effort per bug.&lt;/p&gt;
+
+&lt;p&gt;QuickCheck can be set to explore. Found a bug requiring a sequence of 17 api calls.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/BurntSushi/quickcheck&#34;&gt;QuickCheck for Rust (with shrinking)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Sometimes builds fail due to stability issues. Making quickcheck more stable will
+trade stability for the amount of possible bugs to find.&lt;/p&gt;
+
+&lt;p&gt;Microcontroller project
+ - control software for christmas tree lights&lt;/p&gt;
+
+&lt;p&gt;1600 QuickCheck tests
+- Run single threaded, takes a couple hours.&lt;/p&gt;
+
+&lt;p&gt;Statement types&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fact&lt;/li&gt;
+&lt;li&gt;Inverse&lt;/li&gt;
+&lt;li&gt;Compare known good
+
+&lt;ul&gt;
+&lt;li&gt;Unoptimized&lt;/li&gt;
+&lt;li&gt;Idealistic&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notable uses of QC&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Regex, byteorder, intertools&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;linux-usb-hid-interfacing-in-userspace&#34;&gt;Linux USB HID Interfacing in Userspace&lt;/h2&gt;
+
+&lt;p&gt;by William Light&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/hid.jpg&#39; alt=&#39;William Light&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/adrian_brink&#34;&gt;@adrian_brink&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;empathetic-communication-why-vulnerability-is-the-key-to-collaboration&#34;&gt;Empathetic communication: why vulnerability is the key to collaboration&lt;/h2&gt;
+
+&lt;p&gt;by Sharon Steed&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/communication.jpg&#39; alt=&#39;Sharon Steed&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/rustfest&#34;&gt;@RustFest&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;I stutter&amp;rdquo;&lt;br /&gt;
+Avoidance of words, or situations that would increase or ephathize stuttering.&lt;/p&gt;
+
+&lt;p&gt;Later in life facing fears of talking by entering more situations that require
+talking.&lt;/p&gt;
+
+&lt;p&gt;Communication at it&amp;rsquo;s core should be an act of empathy.&lt;/p&gt;
+
+&lt;p&gt;Microblogs are killing email:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Slack (is the fastest growing B2B SaaS business)&lt;/li&gt;
+&lt;li&gt;Snaphat&lt;/li&gt;
+&lt;li&gt;Twitter&lt;/li&gt;
+&lt;li&gt;Texting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Failures of communication cannot be automated away. You must confront those
+failures eye-to-eye, not screen-to-screen.&lt;/p&gt;
+
+&lt;p&gt;Collaboration fails because:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;People are afraid of being wrong&lt;/li&gt;
+&lt;li&gt;People are afraid of being misunderstood&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Silence kill Collaboration.&lt;/p&gt;
+
+&lt;p&gt;Speak to people the way they need to be spoken to in order to receive your message.&lt;/p&gt;
+
+&lt;p&gt;Great communication takes vulnerability and courage.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;techniques-for-writing-concurrent-applications-with-asynchronous-i-o&#34;&gt;Techniques for writing concurrent applications with asynchronous I/O&lt;/h2&gt;
+
+&lt;p&gt;by Matthieu Wipliez&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/io.jpg&#39; alt=&#39;Matthiue Wipliez&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/rustfest&#34;&gt;@RustFest&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;keynote-science-tools-borrow-rust&#34;&gt;Keynote: Science tools borrow Rust&lt;/h2&gt;
+
+&lt;p&gt;by Hanneli Tavante&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustfest2016/science.jpg&#39; alt=&#39;Hanneli Tavante&#39; /&gt;
+photo by: &lt;a href=&#34;https://twitter.com/rustfest&#34;&gt;@RustFest&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Transforming Math concepts in to code in an expressive way.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;We had trouble expressing mathematics in &lt;a href=&#34;https://www.gnu.org/software/octave/&#34;&gt;Octave&lt;/a&gt; with C++.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Matrices, Why are they important?&lt;/p&gt;
+
+&lt;p&gt;You can use unsafe, just don&amp;rsquo;t make it public.&lt;/p&gt;
+
+&lt;p&gt;Let your public method handle the function call to your unsafe method. Let your
+public method handle the failure cases.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>RustConf 2016 Talks</title>
@@ -2316,45 +2551,6 @@ over the world to attend any educational insitutue of their choosing.
 My project manager read the email to me and I got goosebumps. A
 project that I worked on will actually be making a major difference in twenty-five
 young peoples lives.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>HTML Anchors with ids</title>
-      <link>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</link>
-      <pubDate>Tue, 03 Sep 2013 10:42:00 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</guid>
-      <description>&lt;p&gt;Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.&lt;/p&gt;
-
-&lt;p&gt;When adding anchors on a page for the purpose of in-page links my typical method for years
-has been to add a link with the anchor name in the &lt;code&gt;href&lt;/code&gt; and an anchor tag with a
-&lt;code&gt;name&lt;/code&gt; attribute.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-Some page content…
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Just the other day &lt;a href=&#34;http://www.twitter.com/ry5n&#34;&gt;@ry5n&lt;/a&gt; informed me that a link that corresponds to an elements &lt;code&gt;id&lt;/code&gt; will work just the
-same and there&amp;rsquo;s no need to add an additional anchor with a &lt;code&gt;name&lt;/code&gt;. This
-allows you to use any element as the anchor. I find this avoids
-additional un-nessecary markup and overall is more convenient.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-Some page content…
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;According to &lt;a href=&#34;http://www.w3.org/TR/html401/struct/links.html#anchors-with-id&#34;&gt;the
-docs&lt;/a&gt;:
-&lt;blockquote&gt;
-  &lt;p&gt;
-The id and name attributes share the same name space. This means that they cannot both define an anchor with the same name in the same document. It is permissible to use both attributes to specify an element&#39;s unique identifier for the following elements: A, APPLET, FORM, FRAME, IFRAME, IMG, and MAP. When both attributes are used on a single element, their values must be identical.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;&lt;/strong&gt;
-&lt;/blockquote&gt;
-&lt;/p&gt;
 </description>
     </item>
     

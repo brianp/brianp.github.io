@@ -1,0 +1,743 @@
+
+
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Cascadia Ruby 2014 - Day Two</title>
+    <meta name="author" content="Brian Pearce">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="http://alwayscoding.ca/favicon.png">
+    
+
+    
+    <meta name="description" content="Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.">
+    <meta property="og:description" content="Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Cascadia Ruby 2014 - Day Two">
+    <meta property="og:url" content="/posts/cascadia-ruby-2014-day-two/">
+    <meta property="og:site_name" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:description" content="Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.">
+    
+      <meta name="twitter:creator" content="@brian_pearce">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="http://alwayscoding.ca/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://alwayscoding.ca/">{ always: &#39;coding&#39; }</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="http://alwayscoding.ca/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://alwayscoding.ca/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Brian Pearce</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/brianp" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.twitter.com/brian_pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/brian-pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Cascadia Ruby 2014 - Day Two
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2014-08-12T09:30:59Z">
+        
+  August 12, 2014
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conf">conf</a>, 
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conferences">conferences</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p><strong>Note</strong>: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.</p>
+
+<p><a href="https://twitter.com/tjschuck">T.J. Schuck</a><br />
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts</p>
+
+<ul>
+<li>John the Ripper password cracker.</li>
+<li>hashcat.</li>
+<li>Expensive key schedule blowfish. eksblowfish.</li>
+<li>BCrypt
+
+<ul>
+<li>BCrypt dollar signs are delimieters, hash on far right. Salt on left.</li>
+<li><code>2(abxy)</code> means bcrypt</li>
+<li>10 = cost</li>
+<li>$ 2a $ 10 $ salt $ hash</li>
+<li>12 to 13 range for bcrypt cost.</li>
+<li><code>rake-compiler</code></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<p><a href="https://twitter.com/jasonrclark">Jason Clark</a><br />
+Programming in the Small - Teaching my 5 Year Old Ruby</p>
+
+<ul>
+<li>Patience.</li>
+<li>Recall.</li>
+<li>Mistakes.</li>
+<li>Discovery.</li>
+</ul>
+
+<p><a href="https://twitter.com/hone02">Terence Lee</a> &amp; <a href="https://twitter.com/kenichi_pdx">Kenichi Nakamura</a><br />
+Creating a Chat App in 15 Minutes with Angelo</p>
+
+<p>Websockets
+- <code>https://github.com/kenichi/angelo</code></p>
+
+<p>Events
+- IE does not support server sent events.
+- EventSource API.</p>
+
+<hr />
+
+<p><a href="https://twitter.com/lizmrush">Liz Rush</a> &amp; <a href="https://twitter.com/SomanyHs">Hsing-Hui Hsu</a><br />
+&ldquo;Good luck with that&rdquo;: Tag Teaming Civic Data</p>
+
+<ul>
+<li>Cylyndrical map.</li>
+<li>Spheriod map.</li>
+<li>Torus map (&ldquo;donut&rdquo;).</li>
+<li>Shapefiles.</li>
+</ul>
+
+<hr />
+
+<p>Lightening Talks</p>
+
+<p><a href="https://twitter.com/mjkirk">Matthew Kirk</a></p>
+
+<p>Machine Learning in Ruby
+  - C Libs
+  - JRuby
+  - R
+  - Thoughtful Machine Learning (Book)
+  - Facial Classifications
+  - The Kernel Trick
+  - <a href="thoughtfulml.com">thoughtfulml.com</a></p>
+
+<p><a href="https://twitter.com/jxxf">John Feminella</a><br />
+Card counting
+ - is legal via only your brain.</p>
+
+<p><a href="https://twitter.com/davidcmelida">David Molida</a></p>
+
+<p>Hacking &amp; Federal Procurement
+- $250billion + a year.
+- Bid on government contracts.</p>
+
+<p><a href="https://twitter.com/bethanyrentz">Bethany Rentz</a></p>
+
+<ul>
+<li>Rubocop: Styleistic errors.</li>
+</ul>
+
+<p><a href="https://twitter.com/laurenvoswinkel">Lauren Voswinkle</a><br />
+Talking about money.</p>
+
+<ul>
+<li>Lie about what your previous salary was.</li>
+<li>Employers are only allowed to verify employment dates.</li>
+<li>1935 Extneded National labours act to allow talking about salaries.</li>
+</ul>
+
+<p>[name]</p>
+
+<ul>
+<li>Ruby is bad at CMS&rsquo;s</li>
+<li>Locomotive</li>
+<li>Rifenery</li>
+<li>Comfortable Mexican Sofar</li>
+</ul>
+
+<p>Cassie Schmitz</p>
+
+<ul>
+<li>Jekyll</li>
+<li>Prose.io</li>
+<li>Easy to write plugins</li>
+</ul>
+
+<p><a href="https://twitter.com/realntl">Nathan Ladd</a></p>
+
+<ul>
+<li>Use <code>and</code>, <code>or</code> instead of <code>&amp;&amp;</code>, <code>||</code></li>
+<li>Stop using TDD.</li>
+<li>Stop memoizing. Conceptualize your lifecycle.</li>
+<li>Get rid of private methods. Removes variability of input.</li>
+</ul>
+
+<p><a href="https://twitter.com/kerrizor">Kerrir Miller</a><br />
+<a href="https://speakerdeck.com/kerrizor/you-jelly">Make Jam</a></p>
+
+<ol>
+<li>5-6 cups of mashed fruit</li>
+<li>Add a box epctin and bring to a rolling boil.</li>
+<li>4 cups of sweetner.</li>
+<li>Another rolling boil.</li>
+<li>remove from heat.</li>
+<li>Refridgerate or freeze</li>
+</ol>
+
+<p><a href="https://twitter.com/swindsor">Scott Windsor</a></p>
+
+<ul>
+<li>Test induced design damage.</li>
+<li>Dependency Injection done wrong sucks.</li>
+<li>Write better code and better tests.</li>
+<li><a href="http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf">http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf</a></li>
+</ul>
+
+<p><a href="http://twitter.com/joelstimson">Joel Stimson</a>
+Citizen Science</p>
+
+<ul>
+<li>Where regular people go to help scientists.</li>
+<li>Stardust at home.</li>
+<li>Zooniverse: Glassifying Galaxies.</li>
+<li><a href="https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014">https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014</a></li>
+</ul>
+
+<p><a href="https://twitter.com/djspinmonkey">John Hyland</a></p>
+
+<ul>
+<li>User services as a gem.</li>
+<li>Permissions service as a gem.</li>
+</ul>
+
+<p><a href="https://twitter.com/amywoodward">Amy Woodward</a><br />
+Bitcoin mining.
+Fastest bitcoin mining chips in the world.</p>
+
+<p><a href="http://twitter.com/roseaboveit">Whitenet-Rose Levis</a></p>
+
+<ul>
+<li>Help new people.</li>
+<li>Types of investment
+
+<ul>
+<li>Teaching</li>
+<li>Conversations</li>
+<li>Writing</li>
+<li>Code Reviews</li>
+<li>Actively Welcome People</li>
+<li>Slight Adaptations</li>
+<li>Financial</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<p><a href="https://twitter.com/_jnf">Jeremy Flores</a><br />
+How Not to Be Lonely: An Extrovert&rsquo;s Guide to Working Alone
+Tools:</p>
+
+<ul>
+<li>ScreenHero</li>
+</ul>
+
+<p>Engage in active communication!
+Cultivate your voice.</p>
+
+<p>Pair programming.
+Everybody&rsquo;s remote.</p>
+
+<p><a href="https://twitter.com/laurenvoswinkel">Lauren Voswinkle</a><br />
+Nitty Gritty Service Building</p>
+
+<ul>
+<li><code>SonJay</code> <a href="https://github.com/stevecj/son_jay">https://github.com/stevecj/son_jay</a></li>
+<li><code>Typhoeus</code> <a href="https://github.com/typhoeus/typhoeus">https://github.com/typhoeus/typhoeus</a></li>
+<li><code>StackProf</code></li>
+</ul>
+
+<p><a href="https://twitter.com/listrophy">Brad Grzesiak</a><br />
+SPAAAAAAAAACE</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/2015-10-01-tips-for-working-with-delayed-job/" data-tooltip="Tips for working with Delayed Job">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/cascadia-ruby-2014-day-one/" data-tooltip="Cascadia Ruby 2014 - Day One">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alwayscoding.ca/posts/cascadia-ruby-2014-day-two/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alwayscoding.ca/posts/cascadia-ruby-2014-day-two/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alwayscoding.ca/posts/cascadia-ruby-2014-day-two/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Brian Pearce. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/2015-10-01-tips-for-working-with-delayed-job/" data-tooltip="Tips for working with Delayed Job">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/cascadia-ruby-2014-day-one/" data-tooltip="Cascadia Ruby 2014 - Day One">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alwayscoding.ca/posts/cascadia-ruby-2014-day-two/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alwayscoding.ca/posts/cascadia-ruby-2014-day-two/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alwayscoding.ca/posts/cascadia-ruby-2014-day-two/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falwayscoding.ca%2Fposts%2Fcascadia-ruby-2014-day-two%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http%3A%2F%2Falwayscoding.ca%2Fposts%2Fcascadia-ruby-2014-day-two%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http%3A%2F%2Falwayscoding.ca%2Fposts%2Fcascadia-ruby-2014-day-two%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Brian Pearce</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Barcelona, Spain
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         0 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('http://alwayscoding.ca/images/side-column-bg-blur.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="http://alwayscoding.ca/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+    
+  </body>
+</html>
+

@@ -1,163 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Hash on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Hash on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/hash/</link>
+    <description>Recent content in Hash on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jun 2012 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/hash/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Fri, 15 Jun 2012 00:00:00 UTC</updated>
     
     <item>
       <title>Hash Defaults in Ruby</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
-      <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
-community system and needed to set a default value for anything that
-the old system didn&amp;rsquo;t have. I was using hashs and thought to myself
-&amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I
-found out that hashs do infact support defaults.&lt;/p&gt;
-
-&lt;p&gt;I encourage you to check out the Ruby Docs
-&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default&#34; title=&#34;Ruby Docs: Hash&#34;&gt;http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s Hash defaults at a quick glance:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;)
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:not_a_key&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;         &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;#39;cat&amp;#39;&lt;/span&gt;
-
-h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:not_a_key&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;         &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;#39;cat&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You can also feed the Hash a block that will execute on lookup&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;h,k&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; k&lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; }     &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;5&lt;/span&gt;
-
-h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;h,k&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; k&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_s &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39; says meowww&amp;#39;&lt;/span&gt; }  &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                                        &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat says meowww&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Hashs can also take default Procs. Although as per the docs &amp;ldquo;It is not possible to set the default to a Proc that will be executed on each key lookup.&amp;rdquo;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;proc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;, key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; key
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;       &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; #&amp;lt;Proc:0x401b3948@-:6&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To utiize Procs properly you must use the default_proc method:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default_proc &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;proc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;, key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; key
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;       &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; 4&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;   &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;quot;catcat&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description>I was writing a rake task to handle importing data from an older community system and needed to set a default value for anything that the old system didn&amp;rsquo;t have. I was using hashs and thought to myself &amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I found out that hashs do infact support defaults.
+I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default</description>
     </item>
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
-      <description>
-
-&lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.
-No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar
-JavaScript Object Notation.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.8&lt;/span&gt;
-{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.9&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;On an average day I write equally as much JavaScript as I do Ruby so the
-new 1.9 syntax is an easy swtich for me.&lt;/p&gt;
-
-&lt;p&gt;Do these updates to the syntax mean that we&amp;rsquo;ll be seeing
-the demise of the 1.8 syntax anytime soon? Definitely not.&lt;/p&gt;
-
-&lt;p&gt;The syntax change isn&amp;rsquo;t that simple. There are certain things you simply
-can not do with the new 1.9 syntax.&lt;/p&gt;
-
-&lt;h2 id=&#34;keys-do-not-have-to-be-symbols-or-strings&#34;&gt;Keys do not have to be symbols or strings&lt;/h2&gt;
-
-&lt;p&gt;You can actually use any object in the language as a key in a hash. The
-most common are Symbols and Strings. Less used are Classes, Objects,
-Floats or pretty much anything that is an object in Ruby. Which is
-pretty much everything.&lt;/p&gt;
-
-&lt;p&gt;The catch here is the 1.9 syntax only supports symbols as keys. So if
-you need to use any kind of hyphanated string or special object as a key
-you will need to use the hashrocket syntax. Some examples:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cats-meow&amp;#39;&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; syntax error, unexpected &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;}&amp;#39;&lt;/span&gt;, expecting &lt;span style=&#34;color: #dd7700; font-weight: bold&#34;&gt;$end&lt;/span&gt;
-{&lt;span style=&#34;color: #AA6600&#34;&gt;:&amp;#39;cats-meow&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:&amp;#39;cats-meow&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-
-{&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;}
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Cat&lt;/span&gt;; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-c &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new
-{c &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Cat:0x007fd5512f41c0&amp;gt;=&amp;gt;&amp;quot;meow&amp;quot;}&lt;/span&gt;
-
-{&lt;span style=&#34;color: #007020&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;a string&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #007020&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;a string&amp;quot;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;two-different-symbols&#34;&gt;Two different Symbols&lt;/h2&gt;
-
-&lt;p&gt;Another catch is that the 1.9 syntax is the only place in ruby where a symbol is
-represented differently. A symbol is normally preppended with a
-colon. ex. &lt;code&gt;:mysymbol&lt;/code&gt;. Only in the 1.9 hash syntax is the symbol
-represented without the preppended colon and then following the JSObject
-Notation has a colon at the end of the symbol defining the key value
-relationship. The inconsistent use of Symbols like this could lead to
-confusion for people new to the language.&lt;/p&gt;
-
-&lt;h2 id=&#34;mixing-the-syntax&#34;&gt;Mixing the syntax&lt;/h2&gt;
-
-&lt;p&gt;You can also mix the JSON and Hashrocket syntax. Although for the sanity if your
-fellow developers please do not.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The 1.9 syntax can also look extremely weird when passing Symbols as
-values:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:meow&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;dog&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:bark&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;owl&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:hoot&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:meow&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:bark&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:hoot&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;keys-are-now-unordered&#34;&gt;Keys are now unordered&lt;/h2&gt;
-
-&lt;p&gt;Aside from the syntax change; ruby 1.9 also treats the ordering of the
-key/values differently. In ruby 1.9 the keys are no longer ordered.
-Although after some playing around I found my 1.8.7 REE install was not exactly
-ordering the hash as I was expecting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;hoot&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.9&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;hoot&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;}
-
-{&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;hoot&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.8.7&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;hoot&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;which-one-should-i-use&#34;&gt;Which one should I use?&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://github.com/styleguide/ruby&#34;&gt;Github Ruby Styleguide&lt;/a&gt;
-suggests just to use the hashrocket syntax 100% of the time.&lt;/p&gt;
-
-&lt;p&gt;It really is a personal/team preference on the syntax choice. I think
-consistency is the most important thing. As long as you are doing it the
-same throughout your code.&lt;/p&gt;
-</description>
+      <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
+{:cat =&amp;gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
     </item>
     
   </channel>

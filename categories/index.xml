@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on { always: &#39;coding&#39; }</title>
+    <link>http://alwayscoding.ca/categories/</link>
+    <description>Recent content in Categories on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conf</title>
+      <link>http://alwayscoding.ca/categories/conf/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/categories/conf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conferences</title>
+      <link>http://alwayscoding.ca/categories/conferences/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/categories/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workshops</title>
+      <link>http://alwayscoding.ca/categories/workshops/</link>
+      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/categories/workshops/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

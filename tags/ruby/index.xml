@@ -1,1586 +1,179 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Ruby on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Ruby on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/ruby/</link>
+    <description>Recent content in Ruby on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Thu, 01 Oct 2015 09:12:00 UTC</updated>
     
     <item>
       <title>Tips for working with Delayed Job</title>
       <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 UTC</pubDate>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
-      <description>
-
-
-
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/collectiveidea/delayed_job/&#34;&gt;DelayedJob&lt;/a&gt; has always been a
-great “hit the ground running” background task runner for ruby. It is simple to
-setup, easy to use and can more than carry its own weight in tasks.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Don&amp;rsquo;t know what a backround runner does or why you would use one?&lt;/em&gt;&lt;br /&gt;
-I will not delve into why you need one but you can check out a summary
-here: &lt;a href=&#34;https://4loc.wordpress.com/2010/03/10/background-jobs-in-ruby-on-rails/&#34;&gt;Background Jobs in Ruby on Rails&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can sometimes run into some serious trouble trying to debug
-DelayedJobs. Not only do they run the task behind the scenes but
-frequently hide the errors and exceptions back there as well. You will often not see
-exceptions in your logs and most exception notifiers will not catch issues
-that occur in a background task. So how can we debug issues with delayed
-job?&lt;/p&gt;
-
-&lt;p&gt;If you are using SQL you probably had to setup or run a migration for a
-delayed job table. Just like any of your other ActiveRecord models
-DelayedJob has a model you can access. This is your link to the job that
-gets stored in the queue. This makes it easy for you to access the job
-from the console and inspect its attributes.&lt;/p&gt;
-
-&lt;p&gt;The model is &lt;code&gt;Delayed::Job&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;In the console you can browse the currently queued jobs:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;count
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;
-job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Delayed::Job id: 1, queue: nil, last_error: nil, failed_at: nil, priority: 0, attempts: 0, updated_at: nil, locked_by: nil, run_at: nil, handler: nil, _type: nil, locked_at: nil, created_at: nil&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;finding-failed-jobs&#34;&gt;Finding Failed Jobs&lt;/h2&gt;
-
-&lt;p&gt;This is a good start but the default in DelayedJob is for failed jobs to
-be removed from the database. Let us change that option. Create the
-following file:
-&lt;code&gt;config/initializers/delayed_job.rb&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Worker&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;destroy_failed_jobs &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;false&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We set this option so failed jobs will not be purged from the database.
-Now that we have a record of our failed jobs we can access those jobs in
-the console. The jobs have a &lt;code&gt;last_error&lt;/code&gt; attribute which contains a
-stacktrace from the error.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;last_eror IS NOT NULL&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Delayed::Job id: 51ea79408d53620bd200026c, failed_at: Thu Sep 05 19:50:16 UTC 2013, locked_by: nil, created_at: Sat Jul 20 11:49:20 UTC 2013, handler: handler_ommited, updated_at: Thu Sep 05 19:50:16 UTC 2013, priority: 0, _type: nil, run_at: Fri Aug 09 21:35:56 UTC 2013, queue: nil, locked_at: nil, attempts: 25, last_error: &amp;quot;undefined method `notifiable&amp;#39; for Stacktrace…&amp;quot;&amp;gt;&lt;/span&gt;
-job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last_error
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;undefined method `notifiable&amp;#39; for  &lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Stacktrace…&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Excellent! Being able to get a stacktrace from the last error can help
-point you in the right direction.&lt;/p&gt;
-
-&lt;h2 id=&#34;loading-the-handler&#34;&gt;Loading the Handler&lt;/h2&gt;
-
-&lt;p&gt;The “Handler” in DelayedJob is the object that &lt;code&gt;#perform&lt;/code&gt; was called on
-to execute the job. At the time the job is entered into the queue the
-handler is serialized to be reconstructed later. While debugging you may
-want access to this handler. You can convert the serailized state of the
-object back to its original form by calling &lt;code&gt;YAML::load&lt;/code&gt; and passing in
-the serialized object.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last
-
-job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handler
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--- !ruby/object:NotificationObserver::Notifier&lt;/span&gt;
-&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;resource_class: !ruby/class Comment&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;resource_id:&lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;!ruby/object:BSON::ObjectId &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  data: &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 82&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 67&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 70&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 67&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;- 183&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 112&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 32&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 225&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 252&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 0&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 0&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 1&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-
-notifier &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;YAML&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;load(job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handler)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;NotificationObserver::Notifier:0x1363a7230 @resource_class=Comment, @resource_id=BSON::ObjectId(&amp;#39;52434643b77020e1fc000001&amp;#39;)&amp;gt;&lt;/span&gt;
-
-notifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;NotificationObserver&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Notifier&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;working-with-jobs-locally&#34;&gt;Working with jobs locally&lt;/h2&gt;
-
-&lt;p&gt;I find while working with DelayedJob locally my needs can vary. For
-example:&lt;/p&gt;
-
-&lt;p&gt;Sometimes I would prefer the task just not run in the
-background. That way I can see the task perform and get an immediate
-response. Other times I might need the task to run in the background as expected so I can
-develop and test polling methods or execution of code that runs upfront
-while the background task is still processing.&lt;/p&gt;
-
-&lt;p&gt;If your case is the latter then you can run delayed jobs locally and
-require no additional changes. If your case is the prior and you want to run the code upfront then DelayedJob
-has a configurable option that will help.&lt;/p&gt;
-
-&lt;p&gt;In an initializer you can define the parameter &lt;code&gt;Delayed::Worker#delay_jobs&lt;/code&gt; to tell DelayedJob &lt;em&gt;not&lt;/em&gt;
-to run a task in the background and to execute the job code immediately.
-This will allow you to use any of your regular debugging methods whether
-it is using the ruby debugger, pry, or a series or puts statements.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Worker&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;delay_jobs &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;false&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;common-problem&#34;&gt;Common problem&lt;/h2&gt;
-
-&lt;p&gt;The most common problem I see and am asked to help diagnose are issues
-serializing the handler. Passing complex objects to DelayedJob is not
-recommended. YAML does its best to serialize all ruby objects but
-sometimes fails. The simplest solution is not to pass an entire
-complex object. If it is a persisted, record pass in only the id and load
-the record from within the job. If you need to save state it could be a
-good place to create a middle man with the stated attributes and simply
-pass the middle man into the job.&lt;/p&gt;
-
-&lt;p&gt;Have other tips for debugging DelayedJob? I would enjoy hearing about
-them. Send me an email or a note to
-&lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;@brian_pearce&lt;/a&gt; on twitter.&lt;/p&gt;
-</description>
+      <description>DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
+Don&amp;rsquo;t know what a backround runner does or why you would use one?
+I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</description>
     </item>
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
       <link>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
-      <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
-      <description>&lt;blockquote&gt;
-  &lt;p&gt;
-I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;@brian_pearce&lt;/strong&gt;
-&lt;/blockquote&gt;
-
-
-&lt;p&gt;I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.&lt;/p&gt;
-
-&lt;p&gt;Head on over to the &lt;a href=&#34;http://inside.unbounce.com/product-dev/handling-code-duplication/&#34;&gt;Inside Unbounce&lt;/a&gt; blog to check out the full post.&lt;/p&gt;
-
-&lt;p&gt;
-&lt;/p&gt;
-</description>
+      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</description>
     </item>
     
     <item>
       <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
       <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
-      <pubDate>Thu, 15 Aug 2013 11:21:00 UTC</pubDate>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
-related issues within one of the applications I contract on. This is a just a
-list of notable behaviours I expereinced whilst working with Ruby,
-Rails, Dates &amp;amp; TimeZones.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg&#39; alt=&#34;It&#39;s dangerous
-to go alone! Take this.&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Note: DST is in effect at the time of writing.&lt;/p&gt;
-
-&lt;h2 id=&#34;inconsistent-handling-of-dst&#34;&gt;Inconsistent Handling of DST&lt;/h2&gt;
-
-&lt;p&gt;In the code below we instantiate an &lt;code&gt;ActiveSupport::TimeZone&lt;/code&gt; object. I would love to
-think that this instance would know everything about that Time Zone. Its
-offset inside and outside of DST. I would expect the method
-&lt;code&gt;TimeZone#formatted_offset&lt;/code&gt; to account for DST and return the offset
-accordingly. It doesn&amp;rsquo;t. It outputs the offset for Standard time only. Ideally I&amp;rsquo;d like to see more concise method
-naming. &lt;code&gt;standard_offset&lt;/code&gt; vs &lt;code&gt;daylight_offset&lt;/code&gt; or &lt;code&gt;dst_offset&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Alas, after we have the zone object we can pass that zone into a &lt;code&gt;in_time_zone&lt;/code&gt; method to calculate a time in a
-particular zone based off an existing time. This method does in fact take
-DST into consideration.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
-zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
-zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-08:00&amp;quot;&lt;/span&gt;
-time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-07:00&amp;quot;&lt;/span&gt;
-time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Wed&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;36&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PDT&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;07&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This can be problematic. Different methods were utilized in
-different sections of the app in turn DST and Time Zone offsets were being
-calculated differently.&lt;/p&gt;
-
-&lt;p&gt;You could do the following to acheive the same
-conversion using the helpful &lt;code&gt;new_offset&lt;/code&gt; method and passing in the
-offset but it would result in a Standard time conversion:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
-zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
-zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;-08:00&amp;quot;&lt;/span&gt;
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new_offset(zone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;formatted_offset)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Wed&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;20&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;36&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0800&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The above gives you exactly what you ask it for. A time with a specific
-offset. The downside to this is the offset being fetched above is again
-a method that does not take DST into consideration and would throw off
-your result.&lt;/p&gt;
-
-&lt;h2 id=&#34;converting-to-different-time-formats-to-utilize-certain-methods&#34;&gt;Converting to different Time formats to utilize certain methods&lt;/h2&gt;
-
-&lt;p&gt;Another issue was the requirement to flip flop between types to
-utilize specific methods. I&amp;rsquo;d have to call &lt;code&gt;to_datetime&lt;/code&gt; to utilize
-changing offsets without adjusting the current point in time. Then
-follow it with &lt;code&gt;to_time&lt;/code&gt; to pass it into a &lt;code&gt;Timecop&lt;/code&gt; method.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Time&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
-&lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-03:00&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#Atlantic Time (Canada)&lt;/span&gt;
-zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;beginning_of_day &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;seconds)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;UTC&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;:&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;00&lt;/span&gt;
-time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Time&lt;/span&gt;
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
-time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0700&lt;/span&gt;
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_time
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mon&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;26&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;07&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
-time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeWithZone&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Another annoyance here is the 8th &amp;amp; 12th line:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;If you don&amp;rsquo;t re-assign time to the new &lt;code&gt;DateTime&lt;/code&gt; instance (line #12) the
-&lt;code&gt;Time&lt;/code&gt; instance will not throw an error when calling the &lt;code&gt;change&lt;/code&gt;
-method. It also won&amp;rsquo;t do anything else including producing the desired result.
-Which will leave you pulling hair while wondering why you&amp;rsquo;re not landing
-in the time with the zone you want.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
-time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeWithZone&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#oops forgot to re-assign&lt;/span&gt;
-time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@time_zone_offset&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Sun&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Aug&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2013&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;23&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;58&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #4400EE; font-weight: bold&#34;&gt;0000&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;There we have it. No error and no time zone adjustment.&lt;/p&gt;
-
-&lt;p&gt;This is because the Rails &lt;code&gt;Time&lt;/code&gt; class adds a change method but it only
-responds to a hash with the following keys: &lt;code&gt;:year, :month, :day, :hour, :min, :sec, :usec&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Aside Rant:
-&lt;code&gt;Time&lt;/code&gt; has a date. If it was just time then it should
-have no date. Much like &lt;code&gt;Date&lt;/code&gt; has no time. If &lt;code&gt;Time&lt;/code&gt; has a date what
-separates it from &lt;code&gt;DateTime&lt;/code&gt; or &lt;code&gt;TimeWithZone&lt;/code&gt;? If &lt;code&gt;TimeWithZone&lt;/code&gt; has a
-date shouldn&amp;rsquo;t it be &lt;code&gt;DateTimeWithZone&lt;/code&gt;. For that matter &lt;code&gt;DateTime&lt;/code&gt; already
-has a zone so why have a second &lt;code&gt;DateTimeWithZone&lt;/code&gt; class for the same thing? (I actually
-ended up looking into this more. &lt;a href=&#39;#timevsdatetime&#39;&gt;See below: The State of Time vs DateTime&lt;/a&gt;)&lt;/p&gt;
-
-&lt;h2 id=&#34;storing-in-utc-isn-t-a-be-all-end-all-solution&#34;&gt;Storing in UTC isn&amp;rsquo;t a be all end all solution&lt;/h2&gt;
-
-&lt;p&gt;Anytime I mentioned I was working with Time Zones people just said
-&amp;ldquo;Store it in UTC&amp;rdquo;. As if that was the solution to all woes. The problem
-here is that the dates and times being stored (in UTC) were not being
-converted to or from UTC to the desired time in zone. String formatted dates sans time &amp;amp; offset
-were being passed and created as UTC time stamps.
-This makes those timestamps wrong as &lt;code&gt;2013-08-25&lt;/code&gt; passed in will be saved
-as &lt;code&gt;2013-08-25 00:00:00 UTC&lt;/code&gt; and is not the same as
-&lt;code&gt;2013-08-25 00:00:00 PST&lt;/code&gt; (They have a +7 hour difference). So when doing
-comparisons to the stored dates you could end up with inaccurate results when just comparing
-against string values. If the desired offset was high or low enough the UTC
-date could actually be a different day then what&amp;rsquo;s expected.&lt;/p&gt;
-
-&lt;p&gt;The times were not being
-converted on their way into the database as the timezone field was independent of each
-particular time or date fields in related records. If the user changed the
-Time Zone field callbacks would have to trigger a re-calculation on every time
-related field on every related record. I&amp;rsquo;m not going to get into any
-more specifics but our current method was the most desired way to
-handle the process as we dind&amp;rsquo;t want to constantly be re-caluclating
-times in the databse if a user switched the zone. It&amp;rsquo;s just that some steps were missed in our
-comparing of the non adjusted dates.&lt;/p&gt;
-
-&lt;h2 id=&#34;testing-time-zone-differences&#34;&gt;Testing Time Zone differences&lt;/h2&gt;
-
-&lt;p&gt;As the Dependecy Injection (DPI) band wagon rolled around using tools like
-&lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; became
-&amp;ldquo;unnessecary.&amp;rdquo; I did my best to keep DPI in mind while working with Time
-related methods. Which made unit testing them significantly easier. Here&amp;rsquo;s a quick
-run down on why DPI helps with time related methods:&lt;/p&gt;
-
-&lt;p&gt;Consider the following code without DPI.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# app/models/milestone.rb&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;effective_or_nearest&lt;/span&gt;
-  date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now
-  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; effective_on(date)
-  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date ? first : last &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
-  milestone
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The code above checks to see if we&amp;rsquo;re within a milestone date range
-currently. If we&amp;rsquo;re before or after the range then assign the closest
-milestone (first or last.)&lt;/p&gt;
-
-&lt;p&gt;The problem here is trying to test that the last milestone would get
-returned in the event we are past the milestone range because
-DateTime.now in this case is before the milestone end times.
-Instead we can just use DPI and feed in whatever date we
-want. We can also assign it a smart default as the current time.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# app/models/milestone.rb&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;effective_or_nearest&lt;/span&gt;(date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;now)
-  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; effective_on(date)
-  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date ? first : last &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
-  milestone
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now that we can control the comparitor date we can pass in anything
-we&amp;rsquo;de like while testing:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;# spec/models/milestone_spec.rb&lt;/span&gt;
-it &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;assigns the last milestone as the date is after the requirement&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
-  date &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;days&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;from_now
-  milestone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;effective_or_nearest(date)
-  milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;should equal &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Keeping DPI in mind while writing your code can definietly make writing
-your tests easier. This is is just a single benefeit to DPI. I encourage
-you to check out other examples.&lt;/p&gt;
-
-&lt;p&gt;This doesn&amp;rsquo;t mean that I don&amp;rsquo;t feel there&amp;rsquo;s a place for
-&lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; in my life. The unit
-tests ran quick and I was happy with them. The area was sensitive though
-and I wanted to really ensure we always got the results we wanted. I
-wanted to write some full stack tests that
-started manipulating data as a user from other time zones.&lt;/p&gt;
-
-&lt;p&gt;In this case I had the user registering for an activity that was
-setup in the Atlantic time zone (Atlantic Time (Canada)). The
-start and end times for milestones would be based off the AST timezone.
-This test let me move the context of the user exactly 2 seconds before the end of the first milestone
-in AST. Which would be +4 hours PST. Register the user at that time and
-ensure I recieve the desired results.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;zoned_time&lt;/span&gt;(date_time)
-  zone &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActiveSupport&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;TimeZone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Pacific Time (US &amp;amp; Canada)&amp;quot;&lt;/span&gt;)
-  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; date_time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_datetime
-  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;change(&lt;span style=&#34;color: #AA6600&#34;&gt;:offset&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; event&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;time_zone_offset)
-  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in_time_zone(zone)&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_time
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-it &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;assigns the first milestone&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
-  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;first&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;start_date
-  time &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; zoned_time(time&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;beginning_of_day &lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;seconds)
-  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Timecop&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;travel(&lt;span style=&#34;color: #3333BB&#34;&gt;@time&lt;/span&gt;) &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
-    visit &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/register&amp;#39;&lt;/span&gt;
-    signup &lt;span style=&#34;color: #888888&#34;&gt;#fills out a form and submits&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;milestone&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;should eq &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Milestone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;first
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Using &lt;a href=&#34;https://github.com/travisjeffery/timecop&#34;&gt;Timecop&lt;/a&gt; like this
-helped ensure users in different time zones would
-have all time related constraints met properly. This was more satisfying
-then just createing a time and injecting it directly into my method.
-Using DPI left me less wiggle room in creating circumstanes to reveal
-other possible scenarios under which the time constraints might be
-calculated improperly under different zones.&lt;/p&gt;
-
-&lt;h2 id=&#34;some-notes-on-the-different-ruby-rails-date-time-classes&#34;&gt;Some notes on the different Ruby/Rails Date &amp;amp; Time classes.&lt;/h2&gt;
-
-&lt;p&gt;A quick map of where different Date and Time classes and modules live:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ruby
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Date.html&#34;&gt;Date 1.9.3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Time.html&#34;&gt;Time 1.9.3&lt;/a&gt; -
-&lt;a href=&#34;http://www.ruby-doc.org/core-2.0/Time.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ruby Standard Library
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html&#34;&gt;Date 1.9.3&lt;/a&gt; -
-&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Time.html&#34;&gt;Time 1.9.3&lt;/a&gt; -
-&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Time.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html&#34;&gt;DateTime 1.9.3&lt;/a&gt; -
-&lt;a href=&#34;http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/DateTime.html&#34;&gt;2.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Rails
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/Date.html&#34;&gt;Date&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/Time.html&#34;&gt;Time&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/DateTime.html&#34;&gt;DateTime&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html&#34;&gt;ActiveSupport::TimeZone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html&#34;&gt;ActiveSupport::TimeWithZone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;TZInfo (included gem)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://tzinfo.rubyforge.org/doc/TZInfo/Timezone.html&#34;&gt;TZInfo::Timezone&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The rails &lt;code&gt;Date&lt;/code&gt; and &lt;code&gt;Time&lt;/code&gt; classes bring lots of the fancy niceties
-that we like to use. Methods such as &lt;code&gt;from_now&lt;/code&gt; in lines like
-&lt;code&gt;2.days.from_now&lt;/code&gt;. They extend this functionality to the base ruby
-classes for use anywhere.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;TZInfo&lt;/code&gt; is a ruby library used to &amp;ldquo;provide daylight savings aware
-transformations between times in different timezones.&amp;rdquo;
-&lt;code&gt;ActiveSupport::TimeZone&lt;/code&gt; and &lt;code&gt;ActiveSupport::TimeWithZone&lt;/code&gt; are
-essentially wrappers for TZInfo interaction.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-would-i-use-datetime-over-the-time-class&#34;&gt;Why would I use &lt;code&gt;DateTime&lt;/code&gt; over the &lt;code&gt;Time&lt;/code&gt; class?&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/10957717/what-is-the-point-of-the-datetime-class&#34;&gt;This Stackoverflow Question&lt;/a&gt; seems to sum up the original reason for it:
-{% blockquote %}
-DateTime had an advantage over Time on 32 bit machines in Rubies &amp;lt; 1.9.2 - Time was a victim of the Y2K38 problem and limited to a 32 bit range. This problem is solved either on 64 bit machines and/or in recent Ruby versions. You still may need to use DateTime if for example 1.8 compatibility is a must or you rely on using methods from its API which often deviates from that of Time.
-{% endblockquote %}&lt;/p&gt;
-
-&lt;h3 id=&#34;span-id-timevsdatetime-the-state-of-time-vs-datetime-a&#34;&gt;&lt;span id=&#39;timevsdatetime&#39;&gt;The state of Time vs DateTime&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;After reading through &lt;a href=&#34;http://danilenko.org/2012/7/6/rails_timezones/&#34;&gt;this additional blog
-post&lt;/a&gt; the differences
-between &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/code&gt; seem to be getting smaller since Ruby 1.9.2 hit and you could really pick
-either with some subtle nuances. Our app deals with many
-different time zones at any one time so the suggested practice there
-doesn&amp;rsquo;t really solve our internal issues. It seems like a decent
-practice to pickup though. That way if your app does become Time Zone dependent
-at some point you&amp;rsquo;ve already taken away a lot of headache.&lt;/p&gt;
-
-&lt;h2 id=&#34;reflection&#34;&gt;Reflection&lt;/h2&gt;
-
-&lt;p&gt;Overall I wish there were less public facing Date &amp;amp; Time related entities. I
-don&amp;rsquo;t doubt all of these classes serve a purpose but I don&amp;rsquo;t think they
-should all have a public interface and I don&amp;rsquo;t want to have anything
-returned that&amp;rsquo;s not a &lt;code&gt;Date&lt;/code&gt;, &lt;code&gt;Time&lt;/code&gt; or &lt;code&gt;DateTime&lt;/code&gt; instance. After
-learning how close &lt;code&gt;Time&lt;/code&gt; and &lt;code&gt;DateTime&lt;/code&gt; have become I&amp;rsquo;d even propose to
-eliminate &lt;code&gt;DateTime&lt;/code&gt; once the remaining gaps have been bridged. I&amp;rsquo;d wager &lt;code&gt;Date&lt;/code&gt; being
-moved from Ruby core to the stdlib is a sign that the &lt;code&gt;Time&lt;/code&gt; class seems
-to be seeing more usage.&lt;/p&gt;
-</description>
+      <description>I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone related issues within one of the applications I contract on. This is a just a list of notable behaviours I expereinced whilst working with Ruby, Rails, Dates &amp;amp; TimeZones.
+Note: DST is in effect at the time of writing.
+Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::TimeZone object. I would love to think that this instance would know everything about that Time Zone.</description>
     </item>
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
       <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
-      <pubDate>Thu, 13 Jun 2013 17:33:00 UTC</pubDate>
+      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
-      <description>
-
-&lt;p&gt;Last week during my main work contract I had been tasked with doing some
-would-be trivial content updates to a section of a client application.
-Content updates would normally involve hopping into a view changing some
-images or text and re-deploying. This particular section though is a
-little more complex then that and way more complex then it should be.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-setup&#34;&gt;The Setup&lt;/h3&gt;
-
-&lt;p&gt;This particular section of the application has rotating content. Each
-rotation we&amp;rsquo;ll refer to as a &lt;em&gt;Phase&lt;/em&gt;. Each phase is displayed for a
-length of time determined by the client and is switched on demand via an
-admin interface. Some structural changes occur on pages but very few. For the
-most part it&amp;rsquo;s copy that changes. On some pages it could be entire
-blocks of copy on others maybe simple date changes.&lt;br /&gt;
-The phases represent stages of a competition. ex:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Phase 1: Contest closed - References last years contest.&lt;/li&gt;
-&lt;li&gt;Phase 2: Announcing the call for submissions opening date and rules.&lt;/li&gt;
-&lt;li&gt;Phase 3: Call for submissions opened.&lt;/li&gt;
-&lt;li&gt;Phase 4: Submissions closed. Public judging occurs.&lt;/li&gt;
-&lt;li&gt;Phase 5: Public Judging closes. Internal judging occurs.&lt;/li&gt;
-&lt;li&gt;Phase 6: Winners Announced.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
-
-&lt;p&gt;How to offer phase specific copy with out gratuitous amounts of switch or
-else/if logic in views. As well as keeping the copy and app as DRY as possible.&lt;/p&gt;
-
-&lt;h3 id=&#34;failed-attempts&#34;&gt;Failed Attempts&lt;/h3&gt;
-
-&lt;p&gt;The original implemntation setup was to use partials. Have one partial
-with the standard set of copy and then have phase specific partials
-that would be included if a phase specific file exists. This was simple.
-Everyone knows how partials work and the swtiching system was easy
-enough to see and figure out.&lt;/p&gt;
-
-&lt;p&gt;The drawbacks weren&amp;rsquo;t apparent at first. Over time as the client
-required more and more minute details the partials became more
-difficult to manage. Some became less DRY as larger blocks of copy would
-have to be repeated with small differenes such as dates or names. Over time
-the similar content would get out of sync as someone would make a change
-in one phase specific file but not realize the same change was
-required in an earlier or later phase specific file. We ended up having
-numbered phase folders phase1 - phase6 all with similar files
-inside. All of which needed to be changed when layout or copy updates
-occured.&lt;/p&gt;
-
-&lt;p&gt;This became an un-mangable system. Something will always be missed. Copy
-will always be wrong somewhere in any given phase at some point in
-time.&lt;/p&gt;
-
-&lt;h3 id=&#34;introduction-to-i18n&#34;&gt;Introduction to I18n&lt;/h3&gt;
-
-&lt;p&gt;Within the same section of application a few months back the client
-requested certain pages have internationalized content. Rails makes this
-very easy with the inclusion of the &lt;a href=&#34;http://guides.rubyonrails.org/i18n.html&#34;&gt;I18n gem&lt;/a&gt;.
-Following a simple structure to manage each pages copy we created a single folder for
-each page and placed each language file within the folder:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-06-10-directory.png&#39; alt=&#39;the directory
-structure for the internationaliztion files&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This worked simple enough and meant a handful of pages in this section
-of the app are now using I18n helpers and had copy stored in the
-YAML files.&lt;/p&gt;
-
-&lt;p&gt;Copy stored in YAML translates into a basic key value store.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;en:
-  awards:
-    program:
-      title: The title to the Awards Program page
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;With that in our translation files the copy now becomes accessbile
-using the I18n interface.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.program.title&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The title to the Awards Program page&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;a-new-idea&#34;&gt;A new Idea&lt;/h3&gt;
-
-&lt;p&gt;After fighting with phase specific files and more copy issues I
-decided we needed to revisit the problem. I began thinking about the
-process of internationalizing the previous pages. The usage for I18n
-solves almost the exact problem we&amp;rsquo;re having: Same page, different
-copy.&lt;/p&gt;
-
-&lt;p&gt;I decided to try something simple. Add the content in the yaml,
-follow it with the phase specific content and offer it a naming
-convention to match the yaml key + phase. Something along the lines of:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  marquee:
-    pane1:
-      title: Audience Voting
-      title_p5: Voting now closed
-      text: An AUDIENCE AWARD...
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I then added a helper method for views:
-&lt;em&gt;note&lt;/em&gt;: The &lt;code&gt;@phase&lt;/code&gt; variable is being set in a before filter within
-this section of the app.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;pt&lt;/span&gt;(string)
-  phase_string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;string&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-  &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(phase_string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_sym)
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;What this does:
-Appends the provided key with the phase number (Lets
-assume 5.) Then checks to see if that key is set. If the key is not set use the
-original key to find the default return value. Based on our YAML file above
-we can now call the method with &lt;code&gt;pt(&#39;awards.marquee.pane1.title&#39;)&lt;/code&gt;. If
-the phase happens to be set to 5 our return value will be &lt;code&gt;&amp;quot;Voting now
-closed&amp;quot;&lt;/code&gt; otherwise we will get &lt;code&gt;&amp;quot;Audience Voting&amp;quot;&lt;/code&gt;. YAY! It worked.&lt;/p&gt;
-
-&lt;p&gt;It just doesn&amp;rsquo;t sit right though. I left the code as is for the rest of
-the day and thought about how it would be used and where it could be
-problematic.&lt;/p&gt;
-
-&lt;h3 id=&#34;let-it-stew&#34;&gt;Let it stew&lt;/h3&gt;
-
-&lt;p&gt;The next day I came back to the problem having identified a few
-situations where the format of the YAML file just wouldn&amp;rsquo;t hold up.&lt;/p&gt;
-
-&lt;p&gt;1) What if every field in pane1 needs to be changed per phase. That will
-quickly create a chaotic yaml file. title_p1, title_p2, title_p3, etc.&lt;/p&gt;
-
-&lt;p&gt;2) What if phase 5 and phase 6 are identical. Now I have to make duplicate
-entries for title_p5 and title_p6. That&amp;rsquo;s not very DRY.&lt;/p&gt;
-
-&lt;p&gt;The solution needs to be more flexible I thought. I&amp;rsquo;m on the right track
-but it should be easier and obvious to manage the content.&lt;/p&gt;
-
-&lt;p&gt;Lets look at the YAML for the second problem above:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  index:
-    module4:
-      tab1:
-        title: Awards
-        header: Awards Contest
-        text: The Ad...
-        title_p5: Voting Now Closed
-        header_p5: Awards Finalists
-        text_p5: Winners to be...
-        title_p6: Voting Now Closed
-        header_p6: Awards Finalists
-        text_p6: Winners to be...
-
-&lt;span style=&#34;color: #888888&#34;&gt;# At best we could DRY it up a little by using YAML anchors (&amp;amp;) and references (*)&lt;/span&gt;
-    ...
-        title_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt; Voting Now Closed
-        header_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_header&lt;/span&gt; Awards Finalists
-        text_p5: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_text&lt;/span&gt; Winners to be...
-        title_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
-        header_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_header&lt;/span&gt;
-        text_p6: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_text&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We managed to DRY it up a little but it&amp;rsquo;s still hideous. I&amp;rsquo;d have to
-define every single phase specific key even if it&amp;rsquo;s the same content.&lt;br /&gt;
-I don&amp;rsquo;t want to do that. That is the existing problem but
-shuffled to a different spot in the app.&lt;/p&gt;
-
-&lt;p&gt;I thought about it some more.&lt;/p&gt;
-
-&lt;p&gt;What if I could define a phase specific &amp;ldquo;tab1&amp;rdquo; in the yaml. I&amp;rsquo;d still have
-to express each phase but the nesting would allow me to DRY it up pretty
-quick.&lt;/p&gt;
-
-&lt;p&gt;At some point I also decided prepending the phase was better then appending.&lt;/p&gt;
-
-&lt;p&gt;I redefined the YAML file in a manner I&amp;rsquo;d &lt;i&gt;like&lt;/i&gt; to be able to
-manage my content:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  index:
-    module4:
-      tab1:
-        title: Awards
-        p2_title: Phase 2 title
-        header: Awards Contest
-        text: The Ad...
-      p5_tab1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt;
-        title: Voting Now Closed
-        header: Awards Finalists
-        text: Winners to be...
-      p6_tab1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This idea was going to let me create phase specific content at any
-nesting level. If I only needed a title change in phase 2. Then simply create a
-phase specific title. If I needed a phase specific area. Define the
-phase the key a level higher and anything nested will be considered copy for that
-area. As shown this also makes replicating entire sections for multiple
-phases a breeze using YAML anchors.&lt;/p&gt;
-
-&lt;p&gt;It sounded like a solid interface for managing the content but now I
-need to make it work. This requires checking for phase specific content
-at any given level of the YAML nesting interface. At the beginning at the end
-and anywhere in between.&lt;/p&gt;
-
-&lt;p&gt;I knew right away I wasn&amp;rsquo;t going to be writing this in a helper method
-so I created a new class and utilized the class from within the helper:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;pt&lt;/span&gt;(string)
-  &lt;span style=&#34;color: #007020&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(string, &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;)
-  &lt;span style=&#34;color: #007020&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;translate
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I started the class off pretty simple. Just replicating the usage I
-already had. This worked with the original YAML files but clearly
-wouldn&amp;rsquo;t work with the new format.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;
-
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;attr_accessor&lt;/span&gt; &lt;span style=&#34;color: #AA6600&#34;&gt;:string&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:phase&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;initialize&lt;/span&gt;(string, phase)
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@string&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; phase
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
-    phase_string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;string&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-    &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(phase_string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_sym)
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;translate&lt;/span&gt;
-    find_translation
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;In order to find phase specific keys anywhere within the nesting, the next
-thing I had to do was find all possible key combinations.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.index.module4.tab1.title&amp;#39;&lt;/span&gt;
-a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
-  b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-  b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p6_awards.index.module4.tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.p6_index.module4.tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.p6_module4.tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.module4.p6_tab1.title&amp;quot;&lt;/span&gt;,
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.index.module4.tab1.p6_title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Great. Next we need to check to see if any of those keys return a value.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-  possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  phrase
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This checks to see if the keys return anything. If not returning a
-default blank string. If &lt;code&gt;phrase&lt;/code&gt; is still blank after we have checked all
-the keys go back to using the unmodified provided key and return
-the phrase. We can&amp;rsquo;t just use the original string as the default anymore
-as the first key miss would then set the &lt;code&gt;phrase&lt;/code&gt; to the original key
-value and we would short-circuit the loop.&lt;/p&gt;
-
-&lt;p&gt;This also worked pretty well but I quickly realized it to was
-problematic. If we actually wanted to pass an empty string as phase
-specific content (blanking out a header?) then we would actually end up
-with the default header. With the following YAML as an example.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  title: Awards Header
-  p2_title: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;pt(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.title&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #888888&#34;&gt;# With phase 2&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Awards Header&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This happens becuase we&amp;rsquo;re comparing against blank values and
-considering a blank value a miss. When in this case a blank value is
-exactly what we want returned.&lt;/p&gt;
-
-&lt;p&gt;To fix the problem we stop setting blank values on the initial lookup.
-Lets allow I18n to raise a missing translation exception as that is it&amp;rsquo;s
-normal behaviour without defaults.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
-  extract_possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;begin&lt;/span&gt;
-      phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:raise&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;)
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;rescue&lt;/span&gt;
-      &lt;span style=&#34;color: #888888&#34;&gt;# Let I18n raise a MissingTranslation exception.&lt;/span&gt;
-      &lt;span style=&#34;color: #888888&#34;&gt;# We&amp;#39;ll blank out the value or find the default after.&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
-    phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  phrase
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This solves our blank title issue. As shown below:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;pt(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.title&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #888888&#34;&gt;# With phase 2&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;wrapping-it-all-up&#34;&gt;Wrapping it all up&lt;/h3&gt;
-
-&lt;p&gt;That pretty much gives us all the functionality we need at the moment.
-Check out the full class:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Awards&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;PhaseTranslations&lt;/span&gt;
-
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;attr_accessor&lt;/span&gt; &lt;span style=&#34;color: #AA6600&#34;&gt;:string&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:phase&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:possibilities&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;initialize&lt;/span&gt;(string, phase)
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@string&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@phase&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; phase
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;extract_possibilities&lt;/span&gt;
-    a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-      b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
-      b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-      b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;find_translation&lt;/span&gt;(phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;nil&lt;/span&gt;)
-    extract_possibilities&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;begin&lt;/span&gt;
-        phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(key, &lt;span style=&#34;color: #AA6600&#34;&gt;:raise&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;)
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;unless&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;blank?
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;rescue&lt;/span&gt;
-        &lt;span style=&#34;color: #888888&#34;&gt;# Let I18n raise a MissingTranslation exception.&lt;/span&gt;
-        &lt;span style=&#34;color: #888888&#34;&gt;# We&amp;#39;ll blank out the value or find the default after.&lt;/span&gt;
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; phrase&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;nil?
-      phrase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;I18n&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;t(string, &lt;span style=&#34;color: #AA6600&#34;&gt;:default&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-    phrase
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;translate&lt;/span&gt;
-    find_translation
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After using translations in this way for a few days the new method
-proved its versatility. Allowing the formatting of the YAML
-files in different but very declarative manners. Just to start:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;awards:
-  faq:
-    entry_header: What is the entry deadline?
-    entry_paragraphs:
-      - Call for Sub...
-      - All med...
-      - All med...
-      - Award w...
-    p5_entry_paragraphs: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;entries_closed&lt;/span&gt;
-      - Submissions are...
-    p6_entry_paragraphs: &lt;span style=&#34;color: #996633&#34;&gt;*entries_closed&lt;/span&gt;
-
-  index:
-    module4:
-      tab1:
-        title: Awards
-        p2_title: Phase 2 title
-        header: Awards Contest
-        text: The Ad...
-      p5_tab1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed&lt;/span&gt;
-        title: Voting Now Closed
-        header: Awards Finalists
-        text: Winners to be...
-      p6_tab1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed&lt;/span&gt;
-
-  marquee:
-    pane1:
-      title: Audience Award Voting
-      text: An AUDIENCE AWA...
-    p5_pane1: &lt;span style=&#34;color: #997700; font-weight: bold&#34;&gt;&amp;amp;voting_closed_marquee&lt;/span&gt;
-      title: Voting now closed
-      text: Winners of th...
-    p6_pane1: &lt;span style=&#34;color: #996633&#34;&gt;*voting_closed_marquee&lt;/span&gt;
-    pane2:
-      title: Judges
-      text: Meet Ad...
-    pane3:
-      title: Essentials
-      text: The Ad...
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;All in all I found the new soltion to be quickly solving all the copy
-update issues we were previously encountering. As we move the content
-into the translation files slowly we can be removing all the repetitive
-phase specific view files that have cluttered up the view directories.&lt;/p&gt;
-
-&lt;p&gt;Thanks for reading through the post. The code is far from perfect but I
-felt like I wanted to share the process anyway. If you have any
-suggestions or corrections to make please send me an email
-or find me on &lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
+The Setup This particular section of the application has rotating content.</description>
     </item>
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
       <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
-      <pubDate>Sun, 09 Jun 2013 13:37:00 UTC</pubDate>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
-      <description>&lt;p&gt;A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly
-what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in
-debugging when getting unexpected results or trying to increase query
-performance.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;DataMapper::Logger.new($stdout, :debug)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Enter that at anytime while running in &lt;code&gt;rails c&lt;/code&gt; and you should start
-seeing the output immediatley.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;
-If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity
-map. In which case a new query isn&amp;rsquo;t actually being performed. Try a
-query that you haven&amp;rsquo;t done yet and verify the results are output. Or
-Simply restart the console.&lt;/p&gt;
-</description>
+      <description>A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
+DataMapper::Logger.new($stdout, :debug)
+Enter that at anytime while running in rails c and you should start seeing the output immediatley.
+Note If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity map.</description>
     </item>
     
     <item>
       <title>Map with Index</title>
       <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
-      <pubDate>Fri, 07 Jun 2013 15:32:00 UTC</pubDate>
+      <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
-      <description>&lt;p&gt;Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.&lt;/p&gt;
-
-&lt;p&gt;While working on my main contract today I needed to create a new array
-based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just
-use &lt;code&gt;Enumerable::map&lt;/code&gt; right? Almost immediatley I realized I needed
-to make a reference to an array via the loops index. I first
-checked to see if a &lt;code&gt;map_with_index&lt;/code&gt; existed similar to
-&lt;a href=&#34;http://www.ruby-doc.org/core-2.0/Enumerable.html#method-i-each_with_index&#34;&gt;Enumerable::each_with_index&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It doesn&amp;rsquo;t.&lt;/p&gt;
-
-&lt;p&gt;I took a quick read through the docs and realized that &lt;code&gt;each_with_index&lt;/code&gt; actually returns an Enumerable.
-This means I can use &lt;code&gt;each_with_index&lt;/code&gt; and &lt;code&gt;map&lt;/code&gt; to achieve the desired
-effect. Here&amp;rsquo;s an example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# Canada eh?&lt;/span&gt;
-new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map { &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;value,index&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;value&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; is at position &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;index&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; }
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The cat is at position 0&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The dog is at position 1&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The moose is at position 2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;A closer look at the Enumerable returned by &lt;code&gt;each_with_index&lt;/code&gt; shows us
-exactly what each_with_index returns that lets map play so nicely:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;, &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;, &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;From here the array of arrays will get mapped. I had never thought of
-passing multiple values into a &lt;code&gt;map&lt;/code&gt; block but it works wonders. The
-&lt;code&gt;map&lt;/code&gt; block takes each value of the inner array and offers it as a value
-inside the block.&lt;/p&gt;
-
-&lt;p&gt;The actual reason I needed this code was to parse and alter a string
-into keys with multiple possible matches. I plan to write a more in-depth
-post regarding this topic later but until then here&amp;rsquo;s the snippet I used:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;phase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# Dynamic&lt;/span&gt;
-string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.about.marquee.title&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# A key for a yaml translation&lt;/span&gt;
-
-a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
-  b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-  b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p2_awards.about.marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.p2_about.marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.about.p2_marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.about.marquee.p2_title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This output the different possibilites where one of the potential keys
-could be prefixed with &amp;lsquo;p2&amp;rsquo;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ruby 1.9&lt;/strong&gt;&lt;br /&gt;
-While writing this post and sifting through documentation I also found
-the
-&lt;a href=&#34;http://ruby-doc.org/core-1.9.3/Enumerator.html#method-i-with_index&#34;&gt;Enumberable#with_index&lt;/a&gt;
-method which essentially does the same thing but can make the syntax
-easier to read:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;with_index {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;value,index&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;value&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; is at position &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;index&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; }
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The cat is at position 0&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The dog is at position 1&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The moose is at position 2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;So there we have it: Map with index for ruby 1.8 and 1.9.&lt;/p&gt;
-</description>
+      <description>Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.
+While working on my main contract today I needed to create a new array based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just use Enumerable::map right? Almost immediatley I realized I needed to make a reference to an array via the loops index. I first checked to see if a map_with_index existed similar to Enumerable::each_with_index.
+It doesn&amp;rsquo;t.</description>
     </item>
     
     <item>
       <title>More fun with the Ruby Symbol</title>
       <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
-      <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
-      <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
-idea) some silly conversation occured:&lt;/p&gt;
-
-&lt;p&gt;(someone gists some code)&lt;br /&gt;
-sevenseacat: empty array seems the silly thing to have&lt;br /&gt;
-Tarential: sometimes I like to add empty arrays, you know, just in case I need them later&lt;br /&gt;
-Tarential: so they&amp;rsquo;re close at hand&lt;br /&gt;
-tagrudev: little kittens die when you define an unused var&lt;br /&gt;
-brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]&lt;br /&gt;
-Tarential: Now that&amp;rsquo;s thinking.&lt;/p&gt;
-
-&lt;p&gt;Then some time passed and I ended up throwing a
-&lt;a href=&#34;http://http://pastie.org/6469138&#34; title=&#34;pastie&#34;&gt;pastie&lt;/a&gt; back into the
-channel with the following code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;to_a&lt;/span&gt;
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@array&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;(val)
-    &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; val
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  alias_method &lt;span style=&#34;color: #AA6600&#34;&gt;:previous_inspect&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:inspect&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;inspect&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_s&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt; 
-      &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;inspect
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt;
-      previous_inspect
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Mostly usless but I did find out one interesting piece of information. The &lt;code&gt;Symbol&lt;/code&gt; has
-no public creation interface other then it&amp;rsquo;s standard definition. I&amp;rsquo;m assuming at this point it drops down to the C
-level but I couldn&amp;rsquo;t leave that stone unturned. I put the word out I was
-in search of the Symbol implementation in Ruby. I asked some friends,
-tweeted about it and poked around on IRC.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;REPL in the Pry runtime environment&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; (who brings you awesome projects
-like &lt;a href=&#34;https://github.com/pry/pry&#34; title=&#34;pry&#34;&gt;Pry&lt;/a&gt;) ended up giving me a nice
-intro to what happens when you put &lt;code&gt;:cats&lt;/code&gt; into a ruby runtime
-environment.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll keep this brief and in laymans terms. People who know much
-more about this feel free to email me with corrections or improvements.
-Keep in mind this information was explained at a very high level so it
-wouldn&amp;rsquo;t all go over my head.&lt;/p&gt;
-
-&lt;p&gt;At a very basic level the runtime is performing a simple REPL (Read,
-Evaluate, Print, Loop.)&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;read --&amp;gt; eval --&amp;gt; puts #inspect on eval output --&amp;gt; loop&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Read simply reads in your input. In our case &lt;code&gt;$ :cats&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Eval gets significantly deeper. In the case the value entered is a
-Symbol (or other immediates) it is stored directly in the VALUE pointer.
-&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; provided me with the following
-gist to show how the Symbol is stored: &lt;a href=&#34;https://gist.github.com/banister/febb1f0580cc42eb4297&#34; title=&#34;Pry Gist&#34;&gt;pry_gist.rb&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;(this is only a small piece of the total evalution process.)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;VALUE
-&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;rb_obj_id&lt;/span&gt;(VALUE obj)
-{
-    &lt;span style=&#34;color: #888888&#34;&gt;/*&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                32-bit VALUE space&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *          MSB ------------------------ LSB&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol  ssssssssssssssssssssssss00001110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        sizeof(RVALUE))&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                    object_id space&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                                       LSB&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        (S...S = s...s * A + 4)&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        required&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  where A = sizeof(RVALUE)/4&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  sizeof(RVALUE) is&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  20 if 32-bit, double is 4-byte aligned&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  24 if 32-bit, double is 8-byte aligned&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  40 if 64-bit&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     */&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (TYPE(obj) &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; T_SYMBOL) {
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (SYM2ID(obj) &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;sizeof&lt;/span&gt;(RVALUE) &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;)) &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; FIXNUM_FLAG;
-    }
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (SPECIAL_CONST_P(obj)) {
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; LONG2NUM((SIGNED_VALUE)obj);
-    }
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (VALUE)((SIGNED_VALUE)obj&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;FIXNUM_FLAG);
-}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;He added:
-&lt;blockquote&gt;
-  &lt;p&gt;
-a normal object created via Object.new for example are normally allocated on the heap and they go through a proper initialization process.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;@banister&lt;/strong&gt;
-&lt;/blockquote&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Then the Print runs a simple &lt;code&gt;#inspect&lt;/code&gt; on the &lt;code&gt;Symbol&lt;/code&gt; and returns &lt;code&gt;=&amp;gt; :cats&lt;/code&gt; to you.&lt;/p&gt;
-
-&lt;p&gt;After that we Loop for more input.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;So where does this leave us?&lt;/strong&gt;&lt;br /&gt;
-I ended up getting a great introduction to some things going on
-in my every day environment that I simply take for granted. It all came
-out of some late night nonsense and exploration and now I feel like new
-doors have opened and I&amp;rsquo;m going to have to go through.&lt;/p&gt;
-
-&lt;p&gt;I encourage you to poke around. We write code all day long but really
-finding out what&amp;rsquo;s going on can be new and exciting. So open up a Ruby class
-and break something!&lt;/p&gt;
-</description>
+      <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
+(someone gists some code)
+sevenseacat: empty array seems the silly thing to have
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later
+Tarential: so they&amp;rsquo;re close at hand
+tagrudev: little kittens die when you define an unused var
+brianpWins: but if you do want to leave empty arrays around.</description>
     </item>
     
     <item>
       <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
       <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
-      <pubDate>Tue, 12 Mar 2013 00:42:00 UTC</pubDate>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
-      <description>&lt;p&gt;Excited to start running &lt;a href=&#34;http://www.github.com/brianp/garnish&#34; title=&#34;Garnish&#34;&gt;Garnish&lt;/a&gt;
-against Ruby 2.0.0 I attempted installation tonight to get build failed:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;downloading ruby-2.0.0-p0.tar.gz...
--&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz
-Installing ruby-2.0.0-p0...
-
-BUILD FAILED
-
-Inspect or clean up the working tree at
-/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615
-Results logged to
-/var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log
-
-Last &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;10&lt;/span&gt; log lines:
-installing default gems:
-/Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;build_info,
-cache, doc, gems, specifications&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
-                              bigdecimal 1.2.0
-                              io-console 0.4.2
-                              json 1.7.7
-                              minitest 4.3.2
-                              psych 2.0.0
-                              rake 0.9.6
-                              rdoc 4.0.0
-                              test-unit 2.0.0.0
-The Ruby openssl extension was not compiled. Missing the OpenSSL lib?
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After some googling I found out Mac OS 10.8 ships with a broken OpenSSL
-install. I first needed to install OpenSSL via homebrew&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;brew install openssl&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;After openssl installs successfully we can re-try installing Ruby 2 with
-new options flags&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;RUBY_CONFIGURE_OPTS&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline`&amp;quot;&lt;/span&gt; rbenv install 2.0.0-p0
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we&amp;rsquo;re ready to go!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;ruby -v
-ruby 2.0.0p0 &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;2013-02-24 revision 39474&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;x86_64-darwin12.2.0&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description>Excited to start running Garnish against Ruby 2.0.0 I attempted installation tonight to get build failed:
+downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz Installing ruby-2.0.0-p0... BUILD FAILED Inspect or clean up the working tree at /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615 Results logged to /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log Last 10 log lines: installing default gems: /Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 (build_info, cache, doc, gems, specifications) bigdecimal 1.2.0 io-console 0.4.2 json 1.7.7 minitest 4.3.2 psych 2.0.0 rake 0.9.6 rdoc 4.0.0 test-unit 2.0.0.0 The Ruby openssl extension was not compiled.</description>
     </item>
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
       <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
-      <pubDate>Wed, 06 Mar 2013 02:02:00 UTC</pubDate>
+      <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
-      <description>
-
-&lt;p&gt;Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the &lt;code&gt;includes&lt;/code&gt; method. The &lt;code&gt;includes&lt;/code&gt; method being the suggested best practice for the problem now. &lt;code&gt;includes&lt;/code&gt; will be mentioned at the bottom of the post.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;#current&#34;&gt;Take me to the current best practice&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;How to deal with n+1 issues utilizing identity maps:&lt;/p&gt;
-
-&lt;h3 id=&#34;what-is-the-n-1-issue&#34;&gt;What is the n+1 issue?&lt;/h3&gt;
-
-&lt;p&gt;The n plus 1 issue occurs when you reference an associated record while looping an array of records. For example (using sql): You load a list of &lt;code&gt;Posts&lt;/code&gt; and loop those posts displaying the &lt;code&gt;User&lt;/code&gt; who created each post. The initial posts would require a single query &lt;code&gt;SELECT * FROM &#39;posts&#39;&lt;/code&gt;.  Then when you loop the posts to display the user using &lt;code&gt;post.user&lt;/code&gt;. The db will be queried again. &lt;code&gt;SELECT * FROM &#39;users&#39; WHERE &#39;user_id&#39; = post.user_id&lt;/code&gt;. This query will happen once for every post you loop. If you have 10 posts you will get 10 extra queries for the users who wrote those posts. This is the definition of the n+1 issue.&lt;/p&gt;
-
-&lt;h3 id=&#34;avoiding-unnecessary-queries&#34;&gt;Avoiding unnecessary queries&lt;/h3&gt;
-
-&lt;p&gt;In my case it was an n+2 issue.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Judge&lt;/span&gt;
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mongoid&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Document&lt;/span&gt;
-  belongs_to &lt;span style=&#34;color: #AA6600&#34;&gt;:user&lt;/span&gt;
-  belongs_to &lt;span style=&#34;color: #AA6600&#34;&gt;:photo&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;as_json&lt;/span&gt;(options&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;{})
-    {
-      &lt;span style=&#34;color: #007020&#34;&gt;id&lt;/span&gt;: _id,
-      &lt;span style=&#34;color: #AA6600&#34;&gt;photo&lt;/span&gt;: photo,
-      &lt;span style=&#34;color: #AA6600&#34;&gt;user&lt;/span&gt;: user
-    }
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;User&lt;/span&gt;
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mongoid&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Document&lt;/span&gt;
-  has_one &lt;span style=&#34;color: #AA6600&#34;&gt;:judge&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Photo&lt;/span&gt;
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mongoid&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Document&lt;/span&gt;
-  has_one &lt;span style=&#34;color: #AA6600&#34;&gt;:judge&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #888888&#34;&gt;# judges_controller&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;index&lt;/span&gt;
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Judge&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;all
-  respond_with &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This as_json response results in an n+2 query issue from the Judge record. in my case giving the dev server a response time of:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Completed 200 OK in 816ms (Views: 785.2ms)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The key to solving this issue is to load the &lt;code&gt;Users&lt;/code&gt; and the &lt;code&gt;Photos&lt;/code&gt; in a single query instead of 1 by 1 per &lt;code&gt;Judge&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can do this utilizing Mongoids IdentityMap. Mongoid 2 and Mongoid 3 support this feature.&lt;/p&gt;
-
-&lt;p&gt;First turn on the identity map in the mongoid.yml configuration file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;development:
-  host: localhost
-  database: awesome_app
-  identity_map_enabled: true
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now change the controller action to manually load the users and photos. Note: The Mongoid::Relation record will lazily evaluate the query so you must call to_a to actually query the records and have them stored in the IdentityMap.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;index&lt;/span&gt;
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Judge&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;all
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@users&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;color: #AA6600&#34;&gt;:_id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:user_id&lt;/span&gt;))&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@photos&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Photo&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;color: #AA6600&#34;&gt;:_id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:photo_id&lt;/span&gt;))&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-  respond_with &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This results in only 3 queries total. 1 for the &lt;code&gt;Judges&lt;/code&gt;, 1 for the &lt;code&gt;Users&lt;/code&gt; and 1 for the &lt;code&gt;Photos&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Completed 200 OK in 559ms (Views: 87.7ms)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;how-does-this-work-what-s-an-identitymap&#34;&gt;How does this work? What&amp;rsquo;s an IdentityMap?&lt;/h3&gt;
-
-&lt;p&gt;An IdentityMap helps to keep track of what objects or records have already been loaded. So if you fetch the first &lt;code&gt;User&lt;/code&gt; record the IdentityMap will store it. Then if you attempt to fetch the same &lt;code&gt;User&lt;/code&gt; again Mongoid queries the IdentityMap for the User before it queries the Database again. This will save 1 query on the database.&lt;/p&gt;
-
-&lt;p&gt;By fetching all of the &lt;code&gt;User&lt;/code&gt; and &lt;code&gt;Photo&lt;/code&gt; records that the &lt;code&gt;Judges&lt;/code&gt; require in manual queries we load the data into the IdentityMap for later use. Then when the Judge requires it&amp;rsquo;s &lt;code&gt;User&lt;/code&gt; and &lt;code&gt;Photo&lt;/code&gt; it checks the IdentityMap and does not need to query the database for them.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#39;current&#39;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;the-includes-method&#34;&gt;The includes method&lt;/h3&gt;
-
-&lt;p&gt;Following the practice from ActiveRecord, Mongoid later included a method for doing this type of call in a single concise method.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Judge&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;all&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;includes(&lt;span style=&#34;color: #AA6600&#34;&gt;:user&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:photo&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This will perform only 3 queries selecting only the users and photos that belong to the returned judges.&lt;/p&gt;
-
-&lt;p&gt;Here are links to the docs for both Mongoid and ActiveRecord:&lt;br /&gt;
-&lt;a href=&#34;http://mongoid.org/en/mongoid/docs/querying.html#query_plus&#34;&gt;Read more about eager loading in
-Mongoid&lt;/a&gt;.&lt;br /&gt;
-&lt;a href=&#34;http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations&#34;&gt;Read more about eager loading in
-ActiveRecord&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the includes method. The includes method being the suggested best practice for the problem now. includes will be mentioned at the bottom of the post.
+Take me to the current best practice.
+How to deal with n+1 issues utilizing identity maps:
+What is the n+1 issue?</description>
     </item>
     
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
       <link>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
-      <pubDate>Fri, 01 Feb 2013 16:00:00 UTC</pubDate>
+      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
-      <description>&lt;p&gt;Today I was trying to generate a Rails 3.1.0 project (for testing
-purposes). I simply called &lt;code&gt;rails new rollback&lt;/code&gt; which generated a rails
-3.2.11 project and proceeded to change
-the gemfile version to 3.1.0. This resulted in numerous application errors.
-The simple solution was to generate the project with the Rails version
-3.1.0. To do this call the gem with the version number as such:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ rails _3.1.0_ new rollback
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You also must already have this version of the gem installed on your
-system for it to work.&lt;/p&gt;
-</description>
+      <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
+$ rails _3.1.0_ new rollback  You also must already have this version of the gem installed on your system for it to work.</description>
     </item>
     
     <item>
       <title>Hash Defaults in Ruby</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
-      <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
-community system and needed to set a default value for anything that
-the old system didn&amp;rsquo;t have. I was using hashs and thought to myself
-&amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I
-found out that hashs do infact support defaults.&lt;/p&gt;
-
-&lt;p&gt;I encourage you to check out the Ruby Docs
-&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default&#34; title=&#34;Ruby Docs: Hash&#34;&gt;http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s Hash defaults at a quick glance:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;)
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:not_a_key&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;         &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;#39;cat&amp;#39;&lt;/span&gt;
-
-h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:not_a_key&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;         &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;#39;cat&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You can also feed the Hash a block that will execute on lookup&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;h,k&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; k&lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; }     &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;5&lt;/span&gt;
-
-h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;h,k&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; k&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_s &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39; says meowww&amp;#39;&lt;/span&gt; }  &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                                        &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat says meowww&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Hashs can also take default Procs. Although as per the docs &amp;ldquo;It is not possible to set the default to a Proc that will be executed on each key lookup.&amp;rdquo;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;proc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;, key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; key
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;       &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; #&amp;lt;Proc:0x401b3948@-:6&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To utiize Procs properly you must use the default_proc method:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default_proc &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;proc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;, key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; key
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;       &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; 4&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;   &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;quot;catcat&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description>I was writing a rake task to handle importing data from an older community system and needed to set a default value for anything that the old system didn&amp;rsquo;t have. I was using hashs and thought to myself &amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I found out that hashs do infact support defaults.
+I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default</description>
     </item>
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
-      <description>
-
-&lt;p&gt;At a first glance the 1.9 ruby hash syntax looks like a simple change.
-No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar
-JavaScript Object Notation.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.8&lt;/span&gt;
-{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.9&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;On an average day I write equally as much JavaScript as I do Ruby so the
-new 1.9 syntax is an easy swtich for me.&lt;/p&gt;
-
-&lt;p&gt;Do these updates to the syntax mean that we&amp;rsquo;ll be seeing
-the demise of the 1.8 syntax anytime soon? Definitely not.&lt;/p&gt;
-
-&lt;p&gt;The syntax change isn&amp;rsquo;t that simple. There are certain things you simply
-can not do with the new 1.9 syntax.&lt;/p&gt;
-
-&lt;h2 id=&#34;keys-do-not-have-to-be-symbols-or-strings&#34;&gt;Keys do not have to be symbols or strings&lt;/h2&gt;
-
-&lt;p&gt;You can actually use any object in the language as a key in a hash. The
-most common are Symbols and Strings. Less used are Classes, Objects,
-Floats or pretty much anything that is an object in Ruby. Which is
-pretty much everything.&lt;/p&gt;
-
-&lt;p&gt;The catch here is the 1.9 syntax only supports symbols as keys. So if
-you need to use any kind of hyphanated string or special object as a key
-you will need to use the hashrocket syntax. Some examples:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cats-meow&amp;#39;&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; syntax error, unexpected &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;}&amp;#39;&lt;/span&gt;, expecting &lt;span style=&#34;color: #dd7700; font-weight: bold&#34;&gt;$end&lt;/span&gt;
-{&lt;span style=&#34;color: #AA6600&#34;&gt;:&amp;#39;cats-meow&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:&amp;#39;cats-meow&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-
-{&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;}
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Cat&lt;/span&gt;; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-c &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new
-{c &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Cat:0x007fd5512f41c0&amp;gt;=&amp;gt;&amp;quot;meow&amp;quot;}&lt;/span&gt;
-
-{&lt;span style=&#34;color: #007020&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;a string&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #007020&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;a string&amp;quot;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;two-different-symbols&#34;&gt;Two different Symbols&lt;/h2&gt;
-
-&lt;p&gt;Another catch is that the 1.9 syntax is the only place in ruby where a symbol is
-represented differently. A symbol is normally preppended with a
-colon. ex. &lt;code&gt;:mysymbol&lt;/code&gt;. Only in the 1.9 hash syntax is the symbol
-represented without the preppended colon and then following the JSObject
-Notation has a colon at the end of the symbol defining the key value
-relationship. The inconsistent use of Symbols like this could lead to
-confusion for people new to the language.&lt;/p&gt;
-
-&lt;h2 id=&#34;mixing-the-syntax&#34;&gt;Mixing the syntax&lt;/h2&gt;
-
-&lt;p&gt;You can also mix the JSON and Hashrocket syntax. Although for the sanity if your
-fellow developers please do not.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The 1.9 syntax can also look extremely weird when passing Symbols as
-values:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;cat&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:meow&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;dog&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:bark&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;owl&lt;/span&gt;: &lt;span style=&#34;color: #AA6600&#34;&gt;:hoot&lt;/span&gt;}
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:meow&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:bark&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:hoot&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;keys-are-now-unordered&#34;&gt;Keys are now unordered&lt;/h2&gt;
-
-&lt;p&gt;Aside from the syntax change; ruby 1.9 also treats the ordering of the
-key/values differently. In ruby 1.9 the keys are no longer ordered.
-Although after some playing around I found my 1.8.7 REE install was not exactly
-ordering the hash as I was expecting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;{&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;hoot&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.9&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;hoot&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;}
-
-{&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;bark&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;hoot&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meow&amp;#39;&lt;/span&gt;} &lt;span style=&#34;color: #888888&#34;&gt;# 1.8.7&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color: #AA6600&#34;&gt;:owl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;hoot&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;meow&amp;quot;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bark&amp;quot;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;which-one-should-i-use&#34;&gt;Which one should I use?&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://github.com/styleguide/ruby&#34;&gt;Github Ruby Styleguide&lt;/a&gt;
-suggests just to use the hashrocket syntax 100% of the time.&lt;/p&gt;
-
-&lt;p&gt;It really is a personal/team preference on the syntax choice. I think
-consistency is the most important thing. As long as you are doing it the
-same throughout your code.&lt;/p&gt;
-</description>
+      <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
+{:cat =&amp;gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
     </item>
     
     <item>
       <title>Transactions and new_record?</title>
       <link>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</link>
-      <pubDate>Tue, 05 Jun 2012 00:00:00 UTC</pubDate>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</guid>
-      <description>&lt;p&gt;While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I
-ran into an odd issue after I had run a few objects through a Transaction. Although the
-transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted
-in a return of false as if the record had been saved to the database.&lt;/p&gt;
-
-&lt;p&gt;I also found the same issue recorded here:
-&lt;a href=&#34;http://squarewheel.wordpress.com/2008/06/11/new_record/&#34; title=&#34;New Record&#34;&gt;http://squarewheel.wordpress.com/2008/06/11/new_record/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is example code where the error will happen. Tested with Rails 3.1.0 &amp;amp;
-ActiveRecord 3.1.0&lt;/p&gt;
-
-&lt;p&gt;For this example I generated a new project&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;rails new rollback
-rails g model Cat name:string purrr:string age:integer lives_left:integer
-rake db:migrate
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then I can kick up a console session:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;transaction &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@cat&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;color: #007020&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Professor Wellington&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;purrr&lt;/span&gt;: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;meooow&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;age&lt;/span&gt;: &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;17&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;lives_left&lt;/span&gt;: &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;6&lt;/span&gt;)
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;save
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Exception&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; throws a big error&lt;/span&gt;
-
-&lt;span style=&#34;color: #3333BB&#34;&gt;@cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;persisted?
-&lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; true&lt;/span&gt;
-&lt;span style=&#34;color: #3333BB&#34;&gt;@cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new_record?
-&lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; false&lt;/span&gt;
-&lt;span style=&#34;color: #3333BB&#34;&gt;@cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;inspect
-&lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;lt;Cat id: 1, name: \&amp;quot;Professor Wellington\&amp;quot;, purrr: &amp;#39;meooow&amp;#39;, age:&lt;/span&gt;
-&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;17&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;lives_left&lt;/span&gt;: &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;created_at&lt;/span&gt;: \&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;2013-02-02 00:20:44&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;, updated_at: &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;2013-02-02 00:20:44&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Cat.count&lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;#=&amp;gt; 0&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;So even though the Professor was never actually saved to the database
-the ruby model acts as if it has been.&lt;/p&gt;
-
-&lt;p&gt;I didn&amp;rsquo;t revisit the issue until publishing this post (the current date
-is Feb 1, 2013) and have since found that in Rails 3.1.10 the issue has
-been resolved. I don&amp;rsquo;t know at what patch level the fix happend but it
-is no longer an issue.&lt;/p&gt;
-</description>
+      <description>While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I ran into an odd issue after I had run a few objects through a Transaction. Although the transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted in a return of false as if the record had been saved to the database.
+I also found the same issue recorded here: http://squarewheel.wordpress.com/2008/06/11/new_record/
+Here is example code where the error will happen.</description>
     </item>
     
     <item>
       <title>Flash[:notice] vs Flash.now[:notice]</title>
       <link>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
-      <pubDate>Sun, 11 Sep 2011 00:29:00 UTC</pubDate>
+      <pubDate>Sun, 11 Sep 2011 00:29:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
-      <description>&lt;p&gt;While working with my new employer (in 2011) I noticed a minor but recurring issue
-in our application. We had been storing flash[:notice] messages in most
-of our actions but were not using that flash message anywhere. This was
-resulting in the flash message showing up at in-appropriate times. What
-I was unaware of was a slightly different call which is
-flash.now[:notice]. This results in the flash only having a lifespan of
-the through the next request. It will not persist if the user clicks a link and
-follows through to another action.&lt;/p&gt;
-
-&lt;p&gt;I found this quick post mentioning the differences.
-&lt;a href=&#34;http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html&#34;&gt;
-&lt;a href=&#34;http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html&#34;&gt;http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html&lt;/a&gt;&lt;/a&gt;
-It also links to the following post giving a much more in depth
-explanation.
-&lt;a
-href=&#34;http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/&#34;&gt;
-&lt;a href=&#34;http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/&#34;&gt;http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The long and short for when do use which call is: (Quoted from &lt;a
-href=&#34;http://www.gatezero.org&#34;&gt;Tim Harding&lt;/a&gt;)
-&lt;code&gt;flash[:notice]&lt;/code&gt; when redirecting
-&lt;code&gt;flash.now[:notice]&lt;/code&gt; when rendering&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re redirecting to a new action you want to flash. if you&amp;rsquo;re
-rendering in the current action you want to flash.now.&lt;/p&gt;
-</description>
+      <description>While working with my new employer (in 2011) I noticed a minor but recurring issue in our application. We had been storing flash[:notice] messages in most of our actions but were not using that flash message anywhere. This was resulting in the flash message showing up at in-appropriate times. What I was unaware of was a slightly different call which is flash.now[:notice]. This results in the flash only having a lifespan of the through the next request.</description>
     </item>
     
     <item>
       <title>The Ruby Symbol is a Memory Leak</title>
       <link>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
-      <pubDate>Sat, 04 Dec 2010 00:13:00 UTC</pubDate>
+      <pubDate>Sat, 04 Dec 2010 00:13:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
-      <description>&lt;p&gt;This is just a quick bit that I learned early in my Ruby career and always found interesting.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Symbols Are Memory Leaks&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So is this the end of the world?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;No&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Symbols are a unique thing in ruby. It&amp;rsquo;s immutable, constant and unique. You can re-use the same Symbol over and over without allocating extra memory. As opposed to using a String over and over which will allocate memory with each instance.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So how does that make it a memory leak?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;One key difference between the Symbol and the String is that a Symbol is never garbage-collected. Once the memory is allocated it is never released.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So what&amp;rsquo;s this mean?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Use a Symbol to represent only something you&amp;rsquo;ll use again.&lt;br /&gt;
-Don&amp;rsquo;t generate random dynamic Symbols you&amp;rsquo;ll use only once or infrequently, you&amp;rsquo;ll never get that memory back.&lt;/p&gt;
-
-&lt;p&gt;Want to learn more about the Ruby Symbol have some links:&lt;br /&gt;
-&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Symbol.html&#34; title=&#34;Ruby Docs: Symbol&#34;&gt;http://www.ruby-doc.org/core-1.9.3/Symbol.html&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://glu.ttono.us/articles/2005/08/19/understanding-ruby-symbols&#34; title=&#34;Understanding Ruby Symbols&#34;&gt;http://glu.ttono.us/articles/2005/08/19/understanding-ruby-symbols&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.tricksonrails.com/2010/06/avoid-memory-leaks-in-ruby-rails-code-and-protect-against-denial-of-service/&#34; title=&#34;Avoid memory leaks in your ruby/rails code and protect you against denial of service&#34;&gt;http://www.tricksonrails.com/2010/06/avoid-memory-leaks-in-ruby-rails-code-and-protect-against-denial-of-service/&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.rubytips.org/2008/01/26/what-is-a-ruby-symbol-symbols-explained/&#34; title=&#34;What is a ruby symbol? – symbols explained&#34;&gt;http://www.rubytips.org/2008/01/26/what-is-a-ruby-symbol-symbols-explained/&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>This is just a quick bit that I learned early in my Ruby career and always found interesting.
+Symbols Are Memory Leaks
+So is this the end of the world?
+No
+Symbols are a unique thing in ruby. It&amp;rsquo;s immutable, constant and unique. You can re-use the same Symbol over and over without allocating extra memory. As opposed to using a String over and over which will allocate memory with each instance.</description>
     </item>
     
   </channel>

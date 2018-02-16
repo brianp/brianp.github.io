@@ -1,150 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Unix on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Unix on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/unix/</link>
+    <description>Recent content in Unix on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 08 May 2016 10:06:42 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/unix/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Sun, 08 May 2016 10:06:42 UTC</updated>
     
     <item>
       <title>Cross compilation to OSX with Rust</title>
       <link>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 UTC</pubDate>
+      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</guid>
-      <description>
-
-
-
-
-&lt;p&gt;It started with &lt;a href=&#34;http://github.com/brianp/muxed&#34;&gt;Muxed&lt;/a&gt;. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.&lt;/p&gt;
-
-&lt;p&gt;Overall documentation on the complete process did not seem readily available. So there was a lot of question-asking, googling, and piecing together differents parts of solutions.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s meet &lt;code&gt;Rustup&lt;/code&gt; and deal with some disambiguation.  The original &lt;code&gt;Rustup&lt;/code&gt; was a &lt;a href=&#34;https://static.rust-lang.org/rustup.sh&#34;&gt;bash script&lt;/a&gt; to help install the rust compiler. Since then the name has been re-purposed and now become the &lt;a href=&#34;https://github.com/rust-lang-nursery/rustup.rs&#34;&gt;Rust toolchain installer&lt;/a&gt;. The new &lt;code&gt;Rustup&lt;/code&gt; offers us the beginning of support for &lt;a href=&#34;https://github.com/rust-lang-nursery/rustup.rs#cross-compilation&#34;&gt;cross compilation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;But today we are focusing on a pre Rustup Toolchain cross compilation build process.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s layout some assumptions and dependencies before we start:&lt;/p&gt;
-
-&lt;p&gt;This guide unfortunately requires two systems to build the first time but a single system to continue cross compiling from. It is possible to do with Unix only, but I could not make it work. Assume all instructions are being executed on the Unix system unless otherwise noted.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ubuntu 15.10 Wily Werewolf (Inside Vagrant/VirtualBox)&lt;/li&gt;
-&lt;li&gt;Mac OSX 10.9.5&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Build tools on Ubuntu:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;curl&lt;/li&gt;
-&lt;li&gt;git&lt;/li&gt;
-&lt;li&gt;autotools-dev&lt;/li&gt;
-&lt;li&gt;automake&lt;/li&gt;
-&lt;li&gt;cmake&lt;/li&gt;
-&lt;li&gt;clang&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-1-install-the-stdlib&#34;&gt;Step 1. Install the stdlib&lt;/h3&gt;
-
-&lt;p&gt;To cross compile you require the compiled &lt;code&gt;stdlib&lt;/code&gt; for the architecture type you want to compile to. You will want to get the same &lt;code&gt;stdlib&lt;/code&gt; as the version of &lt;code&gt;rustc&lt;/code&gt; you are running. If &lt;code&gt;rustc -v&lt;/code&gt; outputs &lt;code&gt;1.10&lt;/code&gt; then you want &lt;code&gt;stdlib 1.10&lt;/code&gt;. Luckily the Rust community makes these readily available for you. Head on over to &lt;a href=&#34;https://static.rust-lang.org/dist/index.html&#34;&gt;the distribution directoy&lt;/a&gt; and find the package you&amp;rsquo;re looking for based on architecture type, and version.&lt;/p&gt;
-
-&lt;p&gt;In our case it will be: &lt;code&gt;rust-std-1.10.0-x86_64-apple-darwin&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now fetch this package on to the unix system, untar it, and install it. Its location does not matter much and is not required to be in your project:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ wget https://static.rust-lang.org/dist/rust-std-1.10.0-x86_64-apple-darwin.tar.gz
-$ tar -xvxf rust-std-1.10.0-x86_64-apple-darwin
-$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; rust-std-1.10.0-x86_64-apple-darwin
-$ sudo ./install.sh
-install: installing component &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;rust-std-x86_64-apple-darwin&amp;#39;&lt;/span&gt;
-
-   std is standing at the ready.
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;step-2-acquire-an-xcode-package&#34;&gt;Step 2. Acquire an Xcode Package&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you will be performing step 3 on an OSX system, and already have xcode installed, you can skip this step.&lt;/p&gt;
-
-&lt;p&gt;Download Xcode. This will require an apple developer login. An active subscription is &lt;strong&gt;not required&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The version of Xcode required at the time of writing is 7.3. You can find links to all the available versions of Xcode &lt;a href=&#34;https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-3-package-the-sdk&#34;&gt;Step 3. Package the SDK&lt;/h3&gt;
-
-&lt;p&gt;This is the part where you may deviate if desired.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/tpoechtrager/osxcross&#34;&gt;OSXCross&lt;/a&gt; has an entire &lt;a href=&#34;https://github.com/tpoechtrager/osxcross#packaging-the-sdk&#34;&gt;section&lt;/a&gt; on how to package the sdk for different OSX versions, while on different systems. Like I mentioned before, I could not manage sdk extraction on Unix, and ended up having to do this part on OSX.&lt;/p&gt;
-
-&lt;p&gt;If you do not already have Xcode installed on your OSX system, install your chosen package.&lt;/p&gt;
-
-&lt;p&gt;Clone the OSXCross repo to your OSX system, move into its directory, and call the extraction tool:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git clone git@github.com:tpoechtrager/osxcross.git
-$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; osxcross
-$ ./tools/gen_sdk_package.sh
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;My system output two packages: &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; and &lt;code&gt;MacOSX10.9.sdk.tar.xz&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Copy the desired package to your Unix system. I moved &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; to the homdir on my Unix VM.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-4-install-osxcross&#34;&gt;Step 4. Install OSXCross&lt;/h3&gt;
-
-&lt;p&gt;Now we also need OSXCross on the Unix system. And we need to move the &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; package into osxcross&amp;rsquo; &lt;code&gt;tarballs&lt;/code&gt; directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git clone git@github.com:tpoechtrager/osxcross.git
-$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; osxcross
-$ mv ~/MacOSX10.10.sdk.tar.xz ./tarballs
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we install OSXCross:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span style=&#34;color: #996633&#34;&gt;OSX_VERSION_MIN&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;10.7 ./build.sh
-
-&amp;gt; All &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;! Now you can use o32-clang&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;++&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; and o64-clang&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;++&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; like a normal compiler.
-
-&amp;gt; &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;more output&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;…
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;As OSXCross will remind you, we also need to add the linkers to your path:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Do not forget to add
-
-/home/vagrant/osxcross/target/bin
-
-to your PATH variable.
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;step-5-add-the-target-to-cargo&#34;&gt;Step 5. Add the target to Cargo&lt;/h3&gt;
-
-&lt;p&gt;I read this wrong. &lt;strong&gt;So. Many. Times.&lt;/strong&gt; So let&amp;rsquo;s be careful here.&lt;/p&gt;
-
-&lt;p&gt;We are going to add the linker in our cargo &lt;em&gt;config&lt;/em&gt;. This is the configuration for cargo. &lt;em&gt;Not&lt;/em&gt; the Cargo.toml for your project.&lt;/p&gt;
-
-&lt;p&gt;The configuration file can be in any project, or subdirectory of the project. Cargo will recursively look for a &lt;code&gt;.cargo/config&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Add the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;target.x86_64-apple-darwin&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;color: #996633&#34;&gt;linker&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;x86_64-apple-darwin14-clang&amp;quot;&lt;/span&gt;
-
-&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;target.x86_64-unknown-linux-gnu&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This tells cargo which linker to use for the defined target.&lt;/p&gt;
-
-&lt;p&gt;Not defining a linker for the &lt;code&gt;linux-gnu&lt;/code&gt; target sets it to use the default system.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-6-cross-compile-time&#34;&gt;Step 6. Cross Compile Time!&lt;/h3&gt;
-
-&lt;p&gt;Assuming you have made it this far you can now cross compile. Head to your project
-root and run cargo with the &lt;code&gt;--target&lt;/code&gt; option, where the value matches the target
-in the Cargo config:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cargo build --target x86_64-apple-darwin
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Success! You hopefully just cross compiled your application or library!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://alwayscoding.ca/images/posts/kermit-dance-osxcross.gif&#34; alt=&#34;Kermit the frog doing a happy dance!&#34; title=&#34;Kermit the frog doing a happy dance!&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</description>
     </item>
     
   </channel>

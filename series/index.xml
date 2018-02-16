@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on { always: &#39;coding&#39; }</title>
+    <link>http://alwayscoding.ca/series/</link>
+    <description>Recent content in Series on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Aug 2014 09:30:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://alwayscoding.ca/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cascadia Ruby</title>
+      <link>http://alwayscoding.ca/series/cascadia-ruby/</link>
+      <pubDate>Tue, 12 Aug 2014 09:30:59 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/series/cascadia-ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013</title>
+      <link>http://alwayscoding.ca/series/cascadia-ruby-2013/</link>
+      <pubDate>Tue, 22 Oct 2013 15:22:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/series/cascadia-ruby-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2014</title>
+      <link>http://alwayscoding.ca/series/cascadia-ruby-2014/</link>
+      <pubDate>Tue, 12 Aug 2014 09:30:59 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/series/cascadia-ruby-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rustconf</title>
+      <link>http://alwayscoding.ca/series/rustconf/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/series/rustconf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rustconf 2016</title>
+      <link>http://alwayscoding.ca/series/rustconf-2016/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/series/rustconf-2016/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

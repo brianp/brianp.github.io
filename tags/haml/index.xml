@@ -1,101 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Haml on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Haml on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/haml/</link>
+    <description>Recent content in Haml on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2013 12:38:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/haml/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Thu, 31 Jan 2013 12:38:00 UTC</updated>
     
     <item>
       <title>HTML Ordered List Offset</title>
       <link>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</link>
-      <pubDate>Thu, 31 Jan 2013 12:38:00 UTC</pubDate>
+      <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</guid>
-      <description>&lt;p&gt;This week at the office I&amp;rsquo;ve been on a coding hiatus and just doing a lot of copy placement and markup. The client requested having a numbered list of categories separated by type headers.&lt;/p&gt;
-
-&lt;p&gt;I added markup as such:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  %ul
-    %li
-      %h2 Video
-      %ol
-        %li Animation
-        %li Documentary
-        %li Music Video
-        %li Narrative
-        %li Poetry/Experimental
-        %li Collaboration
-        %li UNICEF Challenge
-
-    %li
-      %h2 Print
-      %ol
-        %li Photo Collection/Digital Story/Photo Essay
-        %li Poster/Collage/Campaign
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Output:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Video
-
-&lt;ol&gt;
-&lt;li&gt;Animation&lt;/li&gt;
-&lt;li&gt;Documentary&lt;/li&gt;
-&lt;li&gt;Music Video&lt;/li&gt;
-&lt;li&gt;Narrative&lt;/li&gt;
-&lt;li&gt;Poetry/Experimental&lt;/li&gt;
-&lt;li&gt;Collaboration&lt;/li&gt;
-&lt;li&gt;UNICEF Challenge&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;Print
-
-&lt;ol&gt;
-&lt;li&gt;Photo Collection/Digital Story/Photo Essay&lt;/li&gt;
-&lt;li&gt;Poster/Collage/Campaign&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The problem with this was it restarted the second group of categories
-numbering.&lt;/p&gt;
-
-&lt;p&gt;After a quick google and a /facepalm I learned that the &lt;code&gt;&amp;lt;OL&amp;gt;&lt;/code&gt; tag has had a
-&lt;code&gt;start&lt;/code&gt; attribute since&amp;hellip; The era of mammoths.&lt;/p&gt;
-
-&lt;p&gt;I quickly got the desired result by adding start:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  %h2 Print
-  %ol{:start =&amp;gt; 8}
-    %li Photo Collection/Digital Story/Photo Essay
-    %li Poster/Collage/Campaign
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Output:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Video &amp;hellip;
-&lt;ol start=&#39;7&#39;&gt;
-&lt;li&gt;UNICEF Challenge&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;Print
-&lt;ol start=&#39;8&#39;&gt;
-&lt;li&gt;Photo Collection/Digital Story/Photo Essay&lt;/li&gt;
-&lt;li&gt;Poster/Collage/Campaign&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A decade of web development under my belt and I can still pick up some very basic tips.&lt;/p&gt;
-
-&lt;aside&gt;
-  Aside: I also learned while writing this post (in markdown) that
-Markdown doesn&#39;t support Ordered List Start attributes. So to show the
-example output of the desired result I had to use plain html.
-&lt;/aside&gt;
-</description>
+      <description>This week at the office I&amp;rsquo;ve been on a coding hiatus and just doing a lot of copy placement and markup. The client requested having a numbered list of categories separated by type headers.
+I added markup as such:
+ %ul %li %h2 Video %ol %li Animation %li Documentary %li Music Video %li Narrative %li Poetry/Experimental %li Collaboration %li UNICEF Challenge %li %h2 Print %ol %li Photo Collection/Digital Story/Photo Essay %li Poster/Collage/Campaign  Output:</description>
     </item>
     
   </channel>

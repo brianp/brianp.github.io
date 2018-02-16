@@ -1,546 +1,922 @@
-    <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.16" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title> { always: &#39;coding&#39; } &middot; { always: &#39;coding&#39; } </title>
-    
-    <link rel="stylesheet" type="text/css" href="http://alwayscoding.ca//css/uno.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://alwayscoding.ca//css/lightGallery.css" />
-    
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://alwayscoding.ca/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="http://alwayscoding.ca/favicon.ico">
-    
-    <link href="http://alwayscoding.ca/index.xml" rel="alternate" type="application/rss+xml" title="{ always: &#39;coding&#39; }" />
-    
-    <script src="http://alwayscoding.ca//js/jquery.min.js"></script>
-    <script src="http://alwayscoding.ca//js/main.min.js">
-    </script>
-</head>
 
-    <body>
-        <div id="scriptHeader">
-    <span class="mobile btn-mobile-menu">
-            <i class="fa fa-bars btn-mobile-menu__icon"></i>
-            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
-    </span>
-    <header class="
-        
-        
-                panel-cover
-        
-        "  style="background-image: url(/images/side-column-bg.jpg)" >
-    <div class="panel-main">
-        <div class="panel-main__inner panel-inverted">
-            <div class="panel-main__content"> 
-                <a href="http://alwayscoding.ca//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
-                <h1 class="panel-cover__title panel-title">
-                    <a href="http://alwayscoding.ca//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
-                </h1>
-                <hr class="panel-cover__divider" />
-                <p class="panel-cover__description">  Brian Pearce  </p>
-                <hr class="panel-cover__divider panel-cover__divider--secondary" />
-                <div class="navigation-wrapper">
-                    <nav class="cover-navigation cover-navigation--primary">
-                        <ul class="navigation">
-                            <li class="navigation__item"><a href="http://alwayscoding.ca/#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li>
-                            <li class="navigation__item"><a href="http://alwayscoding.ca/posts" title="The blog archive" class="blog-button">Archive</a> </li></br>
-                            
-                            
-                       </ul>
-                    </nav> <nav class="cover-navigation navigation--social">
-    <ul class="navigation"> 
-        
-        <li class="navigation__item">
-            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
-        </li>  
-        
-        <li class="navigation__item">
-            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
-        </li>   
-        
-        <li class="navigation__item">
-            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
-        </li>  </br>  </ul>
-</nav>
- </div>
-            </div>
-        </div>
-        <div class="panel-cover--overlay"></div>
-    </div>
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <title>{ always: &#39;coding&#39; }</title>
+    <meta name="author" content="Brian Pearce">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="http://alwayscoding.ca/favicon.png">
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="http://alwayscoding.ca/index.xml">
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="{ always: &#39;coding&#39; }">
+    <meta property="og:url" content="/">
+    <meta property="og:site_name" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:description" content="">
+    
+      <meta name="twitter:creator" content="@brian_pearce">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="http://alwayscoding.ca/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://alwayscoding.ca/">{ always: &#39;coding&#39; }</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="http://alwayscoding.ca/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
 </header>
-</div>
-<noscript>
-    <style>
-        #scriptHeader {display:none;}
-        .navigation-wrapper{
-            display: block;
-            top: 0;
-        }
-    </style>
 
-    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/side-column-bg.jpg)">
-        <div class="panel-main">
-            <div class="panel-main__inner panel-inverted">
-                <div class="panel-main__content"> 
-                    <a href="http://alwayscoding.ca//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
-                    <h1 class="panel-cover__title panel-title">
-                        <a href="http://alwayscoding.ca//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
-                    </h1>
-                    <hr class="panel-cover__divider" />
-                    <p class="panel-cover__description">  Brian Pearce  </p>
-                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
-                    <div class="navigation-wrapper">
-                        <nav class="cover-navigation cover-navigation--primary">
-                            <ul class="navigation">
-                                <li class="navigation__item"><a href="http://alwayscoding.ca//#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li></br>
-                                
-                                
-                           </ul>
-                        </nav> <nav class="cover-navigation navigation--social">
-    <ul class="navigation"> 
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://alwayscoding.ca/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-        <li class="navigation__item">
-            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
-        </li>  
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
         
-        <li class="navigation__item">
-            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
-        </li>   
-        
-        <li class="navigation__item">
-            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
-        </li>  </br>  </ul>
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/brianp" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.twitter.com/brian_pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/brian-pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
 </nav>
- </div>
-                </div>
-            </div>
-            <div class="panel-cover--overlay"></div>
-        </div>
-    </header>
-</noscript>
 
-        <div class="content-wrapper">
-          <div class="content-wrapper__inner">
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <section class="postShorten-group main-content-wrap">
+          
+          
             
-              <div class="post">
-                <h1>RustConf 2016 Talks</h1>
-                <span class="post-date">Sat, Sep 10, 2016</span>
-                
-
-<h2 id="opening-keynote">Opening Keynote</h2>
-
-<p>by Aaron Turon and Niko Matsakis</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/keynote.jpg' alt='Aaron Turon and Nika Matsakis' />
-photo by: <a href="https://twitter.com/eigenrick">@eigenrick</a></p>
-
-<ul>
-<li>175 new features since 1.0</li>
-</ul>
-
-<p>New features underway</p>
-
-<ul>
-<li>Specialization</li>
-<li>impl Trait</li>
-<li>The <code>?</code> operator</li>
-<li>Macro 1.1 offers custom derive</li>
-</ul>
-
-<p>Compiler internals redesigned</p>
-
-<ul>
-<li>Mir in orbit</li>
-<li>Dynamic drop flags</li>
-<li>Incremental comp</li>
-<li>Error messages</li>
-</ul>
-
-<p>Challenges in the Rust survey</p>
-
-<ul>
-<li>1 in 4 Learning curve (First 3 weeks is rough)</li>
-<li>1 in 7 More libraris</li>
-<li>1 in 9 &ldquo;Maturity&rdquo;</li>
-<li>1 in 19 IDEs</li>
-<li>1 in 20 Compiler Perf</li>
-</ul>
-
-<p>Speed and reliability are core values of rust, but for 2017, productivity should as well.</p>
-
-<p>Potential areas for new/improved libs</p>
-
-<p>Rust on the server</p>
-
-<ul>
-<li>Futures for async I/O</li>
-<li>Tokio for protocols</li>
-<li>Middleware ecosystem</li>
-</ul>
-
-<p>Parallelism &amp; Concurrency</p>
-
-<ul>
-<li>Deliver on Rust&rsquo;s potential</li>
-</ul>
-
-<p>Serialization</p>
-
-<ul>
-<li>Stable serde</li>
-</ul>
-
-<p>Rust numerics/ML</p>
-
-<ul>
-<li>Establish foundations?</li>
-</ul>
-
-<p><code>serde</code> is pronounced <code>serdy</code> not <code>serd</code>.</p>
-
-<p><strong>Discoverability</strong></p>
-
-<p>A tricky balance:</p>
-
-<p>Make it easy to find the &ldquo;best&rdquo;<br />
-… but allow newcomers to take root<br />
-… but incentivize the right things</p>
-
-<p><strong>Tools</strong></p>
-
-<ul>
-<li>rustup
-
-<ul>
-<li>NDK support</li>
-<li>Emscripten/wasm</li>
-</ul></li>
-<li>cargo
-
-<ul>
-<li>Private/shared</li>
-<li>Build system integration</li>
-</ul></li>
-<li>rustfmt
-
-<ul>
-<li>Strike team for the format</li>
-<li>The bike shed of bike sheds</li>
-</ul></li>
-</ul>
-
-<p><a href="https://github.com/phildawes/racer">Racer</a> for code completion in editors.</p>
-
-<hr />
-
-<h2 id="the-illustrated-adventure-survival-guide">The Illustrated Adventure Survival Guide</h2>
-
-<p>by Liz Baillie</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/survivalguide.jpg' alt='Adventure Survival Guide' />
-photo by <a href="https://twitter.com/QEDunham">@QEDunham</a></p>
-
-<ul>
-<li>Classes vs Traits</li>
-<li>Error handling</li>
-<li>Stack &amp; Heap</li>
-</ul>
-
-<hr />
-
-<h2 id="integrating-rust-and-vlc">Integrating Rust and VLC</h2>
-
-<p>by Geoffroy Couprie</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/vlc.jpg' alt='Integrating Rust and VLC' />
-photo by <a href="https://twitter.com/eigenrick">@nathanaeljones</a></p>
-
-<p>VLC has <code>C</code> code and is now using <code>Rust</code> to replace the <code>C</code> code.</p>
-
-<p>Autotools with Rust.</p>
-
-<hr />
-
-<h2 id="the-rustplay-classifier">The RustPlay Classifier</h2>
-
-<p>by Suchin Gururangan and Colin O&rsquo;Brien</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/rustplay.jpg' alt='The RustPlay Classifier' /></p>
-
-<p>Technical Debt in Data Science</p>
-
-<ul>
-<li>Siloed teams</li>
-<li>Pipeline junkgles</li>
-<li>Unscalable Experiments</li>
-<li>…and all the normal engineering tech debt</li>
-</ul>
-
-<p>“A mature system might end up being (at most) 5% learning code.”</p>
-
-<p>Service oriented Machine Learning</p>
-
-<ul>
-<li>Data Collection</li>
-<li>Data Inventory</li>
-<li>Feature Extraction</li>
-<li>Model Generation</li>
-<li>Prediction</li>
-</ul>
-
-<p><a href="https://github.com/tailhook/vagga">Vagga: a containerization tool without daemons</a><br />
-<a href="https://github.com/nikomatsakis/rayon">Rayon: A data parallelism library for Rust</a></p>
-
-<hr />
-
-<h2 id="using-generics-effectively">Using Generics Effectively</h2>
-
-<p>by Without Boats</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/generics.jpg' alt='Using Generics Effectively' /></p>
-
-<p>How will I know when it&rsquo;s a good idea to use a <code>Trait</code> or an <code>Enum</code>?</p>
-
-<p><a href="https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199/ref=sr_1_1?ie=UTF8&amp;qid=1473543382&amp;sr=8-1&amp;keywords=a+pattern+language">A Pattern Language Book</a></p>
-
-<p>“Design patterns are a sign your language itsn&rsquo;t powerful enough.”</p>
-
-<p>Patterns don&rsquo;t have to be template of classes.</p>
-
-<hr />
-
-<h2 id="back-to-the-futures">Back to the Futures</h2>
-
-<p>by Alex Crichton</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/futures.jpg' alt='Back to the Futures' /></p>
-
-<p>What&rsquo;s a Future?</p>
-
-<ul>
-<li>DB query</li>
-<li>RPC Request</li>
-<li>Timeouts</li>
-<li>CPU Intensive Work</li>
-<li>Socket Readiness</li>
-</ul>
-
-<p>The fastest server</p>
-
-<ul>
-<li>mio is state of the art</li>
-<li>Primarily using state machines</li>
-<li>Avoids unnecessary allocation/synchronization</li>
-<li>Futures must &ldquo;compile down&rdquo; to the same code</li>
-</ul>
-
-<p>Zero-cost futures</p>
-
-<ul>
-<li>No allocations in combinators</li>
-<li>No synchronization in combinators</li>
-<li>One dynamic dispatch per event</li>
-<li>One allocation per connection</li>
-</ul>
-
-<p><a href="https://github.com/tokio-rs/tokio">Tokio: Asynchronous I/O for Rust</a></p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/futures2.jpg' alt='Back to the Futures' /></p>
-
-<hr />
-
-<h2 id="a-modern-editor-in-rust">A Modern Editor in Rust</h2>
-
-<p>by Raph Levien</p>
-
-<p><a href="https://github.com/google/xi-editor">The Xi Editor: A modern editor with a backend written in Rust</a></p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/editor.jpg' alt='A Modern Editor in Rust' /></p>
-
-<p>Main goal: performance</p>
-
-<p>How to make a fast editor:</p>
-
-<ul>
-<li>Use a fast language</li>
-<li>Exploit multicore parallelism</li>
-<li>Use advanced algorithms and data structures
-
-<ul>
-<li>Ropes</li>
-<li>Minimal incremental algorithms</li>
-</ul></li>
-<li>Asynchrony
-
-<ul>
-<li>Don&rsquo;t block slow operations</li>
-</ul></li>
-</ul>
-
-<p>Operation Transformation</p>
-
-<ul>
-<li>Request to plugin is async</li>
-<li>User may edit while plugin is thinking</li>
-<li>Transform results from plugin</li>
-</ul>
-
-<p>Xi-rope internals</p>
-
-<ul>
-<li>Rope is a specialization of a generic tree</li>
-<li>Parametrized on <code>Leaf</code> and <code>NodeInfo</code></li>
-<li>3 different specializations of generic tree
-
-<ul>
-<li><code>Rope</code> (Leaf = String)</li>
-<li><code>Line breaks</code> (Lead = vec of line breaks offsets)</li>
-<li><code>Rich text spans</code> (Leaf = vec of spans; interval)</li>
-</ul></li>
-</ul>
-
-<p>Xi-rpc today</p>
-
-<ul>
-<li>JSON-RPC
-
-<ul>
-<li>Why?</li>
-<li>JSON implementations are fast</li>
-<li>An easy dep to satisfy</li>
-</ul></li>
-<li>Threaded design
-
-<ul>
-<li>Separate thread blocking on input</li>
-<li>Inter-thread communication with channels</li>
-<li><code>Arc&lt;Mutex&lt;&gt;&gt;</code> to acquire state.</li>
-</ul></li>
-</ul>
-
-<hr />
-
-<h2 id="rfc-in-order-to-form-a-more-perfect-union">RFC: In Order to Form a More Perfect union</h2>
-
-<p>by Josh Triplett</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/rfc.jpg' alt='RFCs' /></p>
-
-<p>Linux Kernal Virtual Machine<br />
-/dev/kvm</p>
-
-<p>Floppy drive, vm security issue.</p>
-
-<p>Unions</p>
-
-<ul>
-<li>Multi storage variables</li>
-<li>Different types</li>
-<li>Overlapping types</li>
-</ul>
-
-<p>Rust RFC</p>
-
-<ul>
-<li>Community process</li>
-<li>Lightweight but not to light</li>
-<li>Shepard</li>
-<li>Rust team makes approval decisions</li>
-</ul>
-
-<p><code>#[repr(C)] struct</code></p>
-
-<p><code>Crater</code> takes a proposed change to the language, loads the entire cargo env
-base, and checks for breakage.</p>
-
-<p>Improvements through the RFC process by way of multiple person interaction.</p>
-
-<hr />
-
-<h2 id="closing-keynote-systems-programming-with-rust">Closing Keynote - Systems Programming with Rust</h2>
-
-<p>by Julia Evans</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/systems1.jpg' alt='Systems Programming' />
-photo by <a href="https://twitter.com/TedMielczarek">@TedMielczarek</a></p>
-
-<p>Rules of programming experiments</p>
-
-<ul>
-<li>it doesn&rsquo;t have to be good</li>
-<li>it doesn&rsquo;t have to work</li>
-<li>you have to learn something</li>
-</ul>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/systems.jpg' alt='Systems Programming' />
-photo by <a href="https://twitter.com/_lizbaillie">_lizbaillie</a></p>
-
-<p>libdrawf</p>
-
-<ul>
-<li>no idea how it works</li>
-<li>terrible API</li>
-<li>slow</li>
-<li>linker problems</li>
-</ul>
-
-<p><a href="https://github.com/gimli-rs/gimli">Gimli: A lazy, zero-copy parser for the DWARF debugging format</a></p>
-
-<hr />
-
-<h2 id="rustconf-2016-conclusion">RustConf 2016 Conclusion</h2>
-
-<p>The year the <code>Rust</code> conferences started! The overall vibe was excellent. Everyone
-was just excited to be there. For me personally the hallway track was very
-different then the conferences I&rsquo;m used to. I&rsquo;m used to hallway chat about apps
-and gems and web development. The general chatter here was system performance
-which is out of my normal space. So I learned a lot. As well as sat in on conversations
-I considered a little over my head.</p>
-
-<p>The workshops on Friday were great as well. I participated in the Intermediate
-workshop. Although I really wish I could have grabbed some pieces of both the
-intermediate and advanced. I have a pretty good grasp on lifetimes, but do
-frequently run in to problems with lifetimes and structs. Where as in the
-intermediate I had a good concept of <code>Traits</code> but run into problems with generics.
-So both workshops had a little something I wanted but decided to go to the intermediate
-workshop and was not disapointed. <a href="http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/">Check out some of my notes</a>.</p>
-
-              </div>
-              <div class="sharing">
-<a href="https://twitter.com/intent/tweet?status=RustConf%202016%20Talks-http%3a%2f%2falwayscoding.ca%2fmomentos%2f2016%2f09%2f10%2frustconf-2016-talks%2f" target="_blank" title="Follow me on Twitter" class="twitter">
-<span class="fa fa-twitter-square fa-3x"></span></a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2falwayscoding.ca%2fmomentos%2f2016%2f09%2f10%2frustconf-2016-talks%2f" target="_blank" title="Join me on Facebook" class="facebook">
-<span class="fa fa-facebook-square fa-3x"></span></a>
-<a href="https://plus.google.com/share?url=http%3a%2f%2falwayscoding.ca%2fmomentos%2f2016%2f09%2f10%2frustconf-2016-talks%2f" target="_blank" title="Google+" class="googleplus">
-<span class="fa fa-google-plus-square fa-3x"></span></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2falwayscoding.ca%2fmomentos%2f2016%2f09%2f10%2frustconf-2016-talks%2f&title=RustConf%202016%20Talks" target="_blank" title="LinkedIn" class="linkedin">
-<span class="fa fa-linkedin-square fa-3x"></span></a>
-<a href="http://www.reddit.com/submit?url=http%3a%2f%2falwayscoding.ca%2fmomentos%2f2016%2f09%2f10%2frustconf-2016-talks%2f" target="_blank" title="Reddit" class="reddit"><span class="fa fa-reddit-square fa-3x"></span></a>
-<a href="http://www.stumbleupon.com/submit?url=http%3a%2f%2falwayscoding.ca%2fmomentos%2f2016%2f09%2f10%2frustconf-2016-talks%2f" target="_blank" title="StumbleUpon" class="stumbleupon"><span class="fa fa-stumbleupon fa-3x">
-</span></a>
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/">
+          RustConf 2016 Talks
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-09-10T10:00:00Z">
+        
+  September 10, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conf">conf</a>, 
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conferences">conferences</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      Opening Keynote by Aaron Turon and Niko Matsakis
+photo by: @eigenrick
+ 175 new features since 1.0  New features underway
+ Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
+ Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
+ 1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraris 1 in 9 &ldquo;Maturity&rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/">
+          Traits and Threads Workshop
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-09-09T10:00:00Z">
+        
+  September 9, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conf">conf</a>, 
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conferences">conferences</a>, 
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/workshops">workshops</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
+All Exercises
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
+ Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/">
+          Cross compilation to OSX with Rust
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-05-08T10:06:42Z">
+        
+  May 8, 2016
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/">
+          Tips for working with Delayed Job
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2015-10-01T09:12:00Z">
+        
+  October 1, 2015
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
+Don&rsquo;t know what a backround runner does or why you would use one?
+I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/">
+          Cascadia Ruby 2014 - Day Two
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2014-08-12T09:30:59Z">
+        
+  August 12, 2014
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conf">conf</a>, 
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conferences">conferences</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/">
+          Cascadia Ruby 2014 - Day One
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2014-08-11T09:26:37Z">
+        
+  August 11, 2014
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conf">conf</a>, 
+    
+      <a class="category-link" href="http://alwayscoding.ca/categories/conferences">conferences</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+John Hyland
+Be Awesome By Being Boring
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+The Science of Success
+ Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/">
+          Handling code duplication with Sass @imports in the asset pipeline
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2014-02-25T15:08:38Z">
+        
+  February 25, 2014
+
+      </time>
+    
+    
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+      <p>
+        <a href="http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/" class="postShorten-excerpt_link link">Continue reading</a>
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+          
+  <div class="pagination-bar">
+    <ul class="pagination">
+      
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="http://alwayscoding.ca/page/2/">
+              <span>OLDER POSTS</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+      
+      <li class="pagination-number">page 1 of 5</li>
+    </ul>
+  </div>
+
+
+        </section>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Brian Pearce. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Brian Pearce</h4>
+    
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Barcelona, Spain
+      </div>
+    
+  </div>
 </div>
-              
 
-
-
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
             
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/">
+                <h3 class="media-heading">RustConf 2016 Talks</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
+photo by: @eigenrick
+ 175 new features since 1.0  New features underway
+ Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
+ Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
+ 1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraris 1 in 9 &ldquo;Maturity&rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
           </div>
-        </div>
-        <footer class="footer"></footer>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/">
+                <h3 class="media-heading">Traits and Threads Workshop</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
+All Exercises
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
+ Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/">
+                <h3 class="media-heading">Cross compilation to OSX with Rust</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/">
+                <h3 class="media-heading">Tips for working with Delayed Job</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
+Don&rsquo;t know what a backround runner does or why you would use one?
+I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/">
+                <h3 class="media-heading">Cascadia Ruby 2014 - Day Two</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/">
+                <h3 class="media-heading">Cascadia Ruby 2014 - Day One</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+John Hyland
+Be Awesome By Being Boring
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+The Science of Success
+ Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/">
+                <h3 class="media-heading">Handling code duplication with Sass @imports in the asset pipeline</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/">
+                <h3 class="media-heading">Cascadia Ruby 2013 - Day Two</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Andy Delcambre Cascadia Ruby 2013: Ruby Systems Programming
+The kernal  Runs in kernal mode. Not your code. Can do anything and everything.  Your Code  Runs in user mode. Math. Access memory.  System calls  Ask the kernal nicely to do things. Api to kenal mode. If it is not in the syscall_table you can not call it.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/">
+                <h3 class="media-heading">Cascadia Ruby 2013 - Day One</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Josh Adams and Robby Clements Ruby Robotics
+Where to start Sphero - $130.00  Bluetooth enabled ball. Drives itself around. Best dog toy ever. Waterproof.  Parrot AR Droid - $150.00  Acts as its own wifi AP. Connect over wifi. UDP packers. Stream video from 2 cameras.  Rolling your own  Beaglebone Black.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/">
+                <h3 class="media-heading">Angular and Liquid expressions in Jekyll</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I started writing an Angular application to intereact with an API I have produced recently. The Angular app is compiled as a static site with Jekyll. I immediately ran into an issue with Angular. None of my expressions were showing up. I realized it was because Liquid which is included with Jekyll uses the same expression tags as Angular: {{ myVariable }}. This meant the Angular expressions were not making it as raw text into the final template as they were being caught by Liquid.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         34 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('http://alwayscoding.ca/images/side-column-bg-blur.jpg');"></div>
+  
 
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-38251543-1', 'auto');
-  ga('send', 'pageview');
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="http://alwayscoding.ca/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
 </script>
 
-    </body>
+
+
+
+    
+  </body>
 </html>

@@ -1,2361 +1,388 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title> on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>{ always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/</link>
+    <description>Recent content on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 10 Sep 2016 10:00:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Sat, 10 Sep 2016 10:00:00 UTC</updated>
     
     <item>
       <title>RustConf 2016 Talks</title>
       <link>http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</link>
-      <pubDate>Sat, 10 Sep 2016 10:00:00 UTC</pubDate>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</guid>
-      <description>
-
-&lt;h2 id=&#34;opening-keynote&#34;&gt;Opening Keynote&lt;/h2&gt;
-
-&lt;p&gt;by Aaron Turon and Niko Matsakis&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/keynote.jpg&#39; alt=&#39;Aaron Turon and Nika Matsakis&#39; /&gt;
-photo by: &lt;a href=&#34;https://twitter.com/eigenrick&#34;&gt;@eigenrick&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;175 new features since 1.0&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;New features underway&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Specialization&lt;/li&gt;
-&lt;li&gt;impl Trait&lt;/li&gt;
-&lt;li&gt;The &lt;code&gt;?&lt;/code&gt; operator&lt;/li&gt;
-&lt;li&gt;Macro 1.1 offers custom derive&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Compiler internals redesigned&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mir in orbit&lt;/li&gt;
-&lt;li&gt;Dynamic drop flags&lt;/li&gt;
-&lt;li&gt;Incremental comp&lt;/li&gt;
-&lt;li&gt;Error messages&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Challenges in the Rust survey&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1 in 4 Learning curve (First 3 weeks is rough)&lt;/li&gt;
-&lt;li&gt;1 in 7 More libraris&lt;/li&gt;
-&lt;li&gt;1 in 9 &amp;ldquo;Maturity&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;1 in 19 IDEs&lt;/li&gt;
-&lt;li&gt;1 in 20 Compiler Perf&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Speed and reliability are core values of rust, but for 2017, productivity should as well.&lt;/p&gt;
-
-&lt;p&gt;Potential areas for new/improved libs&lt;/p&gt;
-
-&lt;p&gt;Rust on the server&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Futures for async I/O&lt;/li&gt;
-&lt;li&gt;Tokio for protocols&lt;/li&gt;
-&lt;li&gt;Middleware ecosystem&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Parallelism &amp;amp; Concurrency&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Deliver on Rust&amp;rsquo;s potential&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Serialization&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Stable serde&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Rust numerics/ML&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Establish foundations?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;serde&lt;/code&gt; is pronounced &lt;code&gt;serdy&lt;/code&gt; not &lt;code&gt;serd&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Discoverability&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;A tricky balance:&lt;/p&gt;
-
-&lt;p&gt;Make it easy to find the &amp;ldquo;best&amp;rdquo;&lt;br /&gt;
-… but allow newcomers to take root&lt;br /&gt;
-… but incentivize the right things&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tools&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;rustup
-
-&lt;ul&gt;
-&lt;li&gt;NDK support&lt;/li&gt;
-&lt;li&gt;Emscripten/wasm&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;cargo
-
-&lt;ul&gt;
-&lt;li&gt;Private/shared&lt;/li&gt;
-&lt;li&gt;Build system integration&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;rustfmt
-
-&lt;ul&gt;
-&lt;li&gt;Strike team for the format&lt;/li&gt;
-&lt;li&gt;The bike shed of bike sheds&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/phildawes/racer&#34;&gt;Racer&lt;/a&gt; for code completion in editors.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;the-illustrated-adventure-survival-guide&#34;&gt;The Illustrated Adventure Survival Guide&lt;/h2&gt;
-
-&lt;p&gt;by Liz Baillie&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/survivalguide.jpg&#39; alt=&#39;Adventure Survival Guide&#39; /&gt;
-photo by &lt;a href=&#34;https://twitter.com/QEDunham&#34;&gt;@QEDunham&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Classes vs Traits&lt;/li&gt;
-&lt;li&gt;Error handling&lt;/li&gt;
-&lt;li&gt;Stack &amp;amp; Heap&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;integrating-rust-and-vlc&#34;&gt;Integrating Rust and VLC&lt;/h2&gt;
-
-&lt;p&gt;by Geoffroy Couprie&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/vlc.jpg&#39; alt=&#39;Integrating Rust and VLC&#39; /&gt;
-photo by &lt;a href=&#34;https://twitter.com/eigenrick&#34;&gt;@nathanaeljones&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;VLC has &lt;code&gt;C&lt;/code&gt; code and is now using &lt;code&gt;Rust&lt;/code&gt; to replace the &lt;code&gt;C&lt;/code&gt; code.&lt;/p&gt;
-
-&lt;p&gt;Autotools with Rust.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;the-rustplay-classifier&#34;&gt;The RustPlay Classifier&lt;/h2&gt;
-
-&lt;p&gt;by Suchin Gururangan and Colin O&amp;rsquo;Brien&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/rustplay.jpg&#39; alt=&#39;The RustPlay Classifier&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Technical Debt in Data Science&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Siloed teams&lt;/li&gt;
-&lt;li&gt;Pipeline junkgles&lt;/li&gt;
-&lt;li&gt;Unscalable Experiments&lt;/li&gt;
-&lt;li&gt;…and all the normal engineering tech debt&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;“A mature system might end up being (at most) 5% learning code.”&lt;/p&gt;
-
-&lt;p&gt;Service oriented Machine Learning&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Data Collection&lt;/li&gt;
-&lt;li&gt;Data Inventory&lt;/li&gt;
-&lt;li&gt;Feature Extraction&lt;/li&gt;
-&lt;li&gt;Model Generation&lt;/li&gt;
-&lt;li&gt;Prediction&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/tailhook/vagga&#34;&gt;Vagga: a containerization tool without daemons&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/nikomatsakis/rayon&#34;&gt;Rayon: A data parallelism library for Rust&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;using-generics-effectively&#34;&gt;Using Generics Effectively&lt;/h2&gt;
-
-&lt;p&gt;by Without Boats&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/generics.jpg&#39; alt=&#39;Using Generics Effectively&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;How will I know when it&amp;rsquo;s a good idea to use a &lt;code&gt;Trait&lt;/code&gt; or an &lt;code&gt;Enum&lt;/code&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199/ref=sr_1_1?ie=UTF8&amp;amp;qid=1473543382&amp;amp;sr=8-1&amp;amp;keywords=a+pattern+language&#34;&gt;A Pattern Language Book&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;“Design patterns are a sign your language itsn&amp;rsquo;t powerful enough.”&lt;/p&gt;
-
-&lt;p&gt;Patterns don&amp;rsquo;t have to be template of classes.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;back-to-the-futures&#34;&gt;Back to the Futures&lt;/h2&gt;
-
-&lt;p&gt;by Alex Crichton&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/futures.jpg&#39; alt=&#39;Back to the Futures&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s a Future?&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;DB query&lt;/li&gt;
-&lt;li&gt;RPC Request&lt;/li&gt;
-&lt;li&gt;Timeouts&lt;/li&gt;
-&lt;li&gt;CPU Intensive Work&lt;/li&gt;
-&lt;li&gt;Socket Readiness&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The fastest server&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;mio is state of the art&lt;/li&gt;
-&lt;li&gt;Primarily using state machines&lt;/li&gt;
-&lt;li&gt;Avoids unnecessary allocation/synchronization&lt;/li&gt;
-&lt;li&gt;Futures must &amp;ldquo;compile down&amp;rdquo; to the same code&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Zero-cost futures&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;No allocations in combinators&lt;/li&gt;
-&lt;li&gt;No synchronization in combinators&lt;/li&gt;
-&lt;li&gt;One dynamic dispatch per event&lt;/li&gt;
-&lt;li&gt;One allocation per connection&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/tokio-rs/tokio&#34;&gt;Tokio: Asynchronous I/O for Rust&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/futures2.jpg&#39; alt=&#39;Back to the Futures&#39; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;a-modern-editor-in-rust&#34;&gt;A Modern Editor in Rust&lt;/h2&gt;
-
-&lt;p&gt;by Raph Levien&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/google/xi-editor&#34;&gt;The Xi Editor: A modern editor with a backend written in Rust&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/editor.jpg&#39; alt=&#39;A Modern Editor in Rust&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Main goal: performance&lt;/p&gt;
-
-&lt;p&gt;How to make a fast editor:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use a fast language&lt;/li&gt;
-&lt;li&gt;Exploit multicore parallelism&lt;/li&gt;
-&lt;li&gt;Use advanced algorithms and data structures
-
-&lt;ul&gt;
-&lt;li&gt;Ropes&lt;/li&gt;
-&lt;li&gt;Minimal incremental algorithms&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Asynchrony
-
-&lt;ul&gt;
-&lt;li&gt;Don&amp;rsquo;t block slow operations&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Operation Transformation&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Request to plugin is async&lt;/li&gt;
-&lt;li&gt;User may edit while plugin is thinking&lt;/li&gt;
-&lt;li&gt;Transform results from plugin&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Xi-rope internals&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Rope is a specialization of a generic tree&lt;/li&gt;
-&lt;li&gt;Parametrized on &lt;code&gt;Leaf&lt;/code&gt; and &lt;code&gt;NodeInfo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;3 different specializations of generic tree
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Rope&lt;/code&gt; (Leaf = String)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Line breaks&lt;/code&gt; (Lead = vec of line breaks offsets)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Rich text spans&lt;/code&gt; (Leaf = vec of spans; interval)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Xi-rpc today&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;JSON-RPC
-
-&lt;ul&gt;
-&lt;li&gt;Why?&lt;/li&gt;
-&lt;li&gt;JSON implementations are fast&lt;/li&gt;
-&lt;li&gt;An easy dep to satisfy&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Threaded design
-
-&lt;ul&gt;
-&lt;li&gt;Separate thread blocking on input&lt;/li&gt;
-&lt;li&gt;Inter-thread communication with channels&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Arc&amp;lt;Mutex&amp;lt;&amp;gt;&amp;gt;&lt;/code&gt; to acquire state.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;rfc-in-order-to-form-a-more-perfect-union&#34;&gt;RFC: In Order to Form a More Perfect union&lt;/h2&gt;
-
-&lt;p&gt;by Josh Triplett&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/rfc.jpg&#39; alt=&#39;RFCs&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Linux Kernal Virtual Machine&lt;br /&gt;
-/dev/kvm&lt;/p&gt;
-
-&lt;p&gt;Floppy drive, vm security issue.&lt;/p&gt;
-
-&lt;p&gt;Unions&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Multi storage variables&lt;/li&gt;
-&lt;li&gt;Different types&lt;/li&gt;
-&lt;li&gt;Overlapping types&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Rust RFC&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Community process&lt;/li&gt;
-&lt;li&gt;Lightweight but not to light&lt;/li&gt;
-&lt;li&gt;Shepard&lt;/li&gt;
-&lt;li&gt;Rust team makes approval decisions&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;#[repr(C)] struct&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Crater&lt;/code&gt; takes a proposed change to the language, loads the entire cargo env
-base, and checks for breakage.&lt;/p&gt;
-
-&lt;p&gt;Improvements through the RFC process by way of multiple person interaction.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;closing-keynote-systems-programming-with-rust&#34;&gt;Closing Keynote - Systems Programming with Rust&lt;/h2&gt;
-
-&lt;p&gt;by Julia Evans&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/systems1.jpg&#39; alt=&#39;Systems Programming&#39; /&gt;
-photo by &lt;a href=&#34;https://twitter.com/TedMielczarek&#34;&gt;@TedMielczarek&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Rules of programming experiments&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it doesn&amp;rsquo;t have to be good&lt;/li&gt;
-&lt;li&gt;it doesn&amp;rsquo;t have to work&lt;/li&gt;
-&lt;li&gt;you have to learn something&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/rustconf2016/systems.jpg&#39; alt=&#39;Systems Programming&#39; /&gt;
-photo by &lt;a href=&#34;https://twitter.com/_lizbaillie&#34;&gt;_lizbaillie&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;libdrawf&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;no idea how it works&lt;/li&gt;
-&lt;li&gt;terrible API&lt;/li&gt;
-&lt;li&gt;slow&lt;/li&gt;
-&lt;li&gt;linker problems&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gimli-rs/gimli&#34;&gt;Gimli: A lazy, zero-copy parser for the DWARF debugging format&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;rustconf-2016-conclusion&#34;&gt;RustConf 2016 Conclusion&lt;/h2&gt;
-
-&lt;p&gt;The year the &lt;code&gt;Rust&lt;/code&gt; conferences started! The overall vibe was excellent. Everyone
-was just excited to be there. For me personally the hallway track was very
-different then the conferences I&amp;rsquo;m used to. I&amp;rsquo;m used to hallway chat about apps
-and gems and web development. The general chatter here was system performance
-which is out of my normal space. So I learned a lot. As well as sat in on conversations
-I considered a little over my head.&lt;/p&gt;
-
-&lt;p&gt;The workshops on Friday were great as well. I participated in the Intermediate
-workshop. Although I really wish I could have grabbed some pieces of both the
-intermediate and advanced. I have a pretty good grasp on lifetimes, but do
-frequently run in to problems with lifetimes and structs. Where as in the
-intermediate I had a good concept of &lt;code&gt;Traits&lt;/code&gt; but run into problems with generics.
-So both workshops had a little something I wanted but decided to go to the intermediate
-workshop and was not disapointed. &lt;a href=&#34;http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/&#34;&gt;Check out some of my notes&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Opening Keynote by Aaron Turon and Niko Matsakis
+photo by: @eigenrick
+ 175 new features since 1.0  New features underway
+ Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
+ Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
+ 1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraris 1 in 9 &amp;ldquo;Maturity&amp;rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.</description>
     </item>
     
     <item>
       <title>Traits and Threads Workshop</title>
       <link>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</link>
-      <pubDate>Fri, 09 Sep 2016 10:00:00 UTC</pubDate>
+      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</guid>
-      <description>
-
-&lt;p&gt;These are raw notes taken at &lt;a href=&#34;http://rustconf.com/&#34;&gt;RustConf&lt;/a&gt; during the “Traits and Threads” workshop put on by &lt;a href=&#34;http://www.twitter.com/aaron_turon&#34;&gt;Aaron Turon&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://rust-tutorials.com/exercises/&#34;&gt;All Exercises&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Methods are function that accept self&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;amp;self.items == &amp;amp;(self.items)&lt;/code&gt; where the borrow (&lt;code&gt;&amp;amp;&lt;/code&gt;) is for the item, not for &lt;code&gt;self&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Structs have no default value, requires creating all values.&lt;/li&gt;
-&lt;li&gt;mut as &lt;code&gt;mute&lt;/code&gt; not like a mixed breed dog&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Abstraction: The Plan&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generics&lt;/li&gt;
-&lt;li&gt;Traits
-
-&lt;ul&gt;
-&lt;li&gt;As Interfaces&lt;/li&gt;
-&lt;li&gt;For Code Resuse&lt;/li&gt;
-&lt;li&gt;For Perator Overloading&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Trait Objects&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;traits-are-rusts-interfaces&#34;&gt;Traits are rusts interfaces.&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;u64&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;char&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;println&lt;span style=&#34;color: #333333&#34;&gt;!&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;#39;{}&amp;#39;&amp;quot;&lt;/span&gt;),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-What happens if you try to define the same trait or impl that is defined already by someone else? (naming collisions etc)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-Naming collisions follow normal examples but when you try to write an interface for a type that you don’t own (code gluing) you will run in to Coherence issues, for any given trait and type there is a single implementation known to the compiler.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-Why does the compiler allow “different” match arms?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-Given the below code: &lt;code&gt;total += price&lt;/code&gt; is an expression and &lt;code&gt;return None&lt;/code&gt; Breaks out of the function, so the compiler “assigns” it the type you need. It’s a “get out of jail free card.”&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://play.rust-lang.org/?code=%23%21%5Ballow%28dead_code%29%5D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+The+trait%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Atrait+Price+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E%3B%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Store%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Astruct+Store+%7B%0A++++name%3A+String%2C%0A++++items%3A+Vec%3CItem%3E%2C%0A%7D%0A%0A%23%5Bderive%28Debug%29%5D%0Astruct+Item+%7B%0A++++name%3A+%26%27static+str%2C%0A++++price%3A+f32%2C%0A%7D%0A%0Aimpl+Store+%7B%0A++++fn+new%28name%3A+String%29+-%3E+Store+%7B%0A++++++++Store+%7B%0A++++++++++++name%3A+name%2C%0A++++++++++++items%3A+Vec%3A%3Anew%28%29%2C%0A++++++++%7D%0A++++%7D%0A%0A++++fn+add_item%28%26mut+self%2C+item%3A+Item%29+%7B%0A++++++++self.items.push%28item%29%3B%0A++++%7D%0A%7D%0A%0Aimpl+Price+for+Store+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++for+item+in+%26self.items+%7B%0A++++++++++++if+item.name+%3D%3D+item_name+%7B%0A++++++++++++++++return+Some%28item.price%29%3B%0A++++++++++++%7D%0A++++++++%7D%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_store%28%29+-%3E+Store+%7B%0A++++let+mut+store+%3D+Store%3A%3Anew%28format%21%28%22Rustmart%22%29%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22chocolate%22%2C+price%3A+5.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22socks%22%2C+price%3A+23.0+%7D%29%3B%0A++++store.add_item%28Item+%7B+name%3A+%22plush+Mozilla+dinosaur%22%2C+price%3A+13.0+%7D%29%3B%0A++++store%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Factory%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%2F%2F+A+factory+for+just+a+single+kind+of+item%0Astruct+Factory+%7B%0A++++item_name%3A+%26%27static+str%2C%0A++++wholesale_price%3A+f32%2C%0A%7D%0A%0Aimpl+Price+for+Factory+%7B%0A++++fn+price%28%26self%2C+item_name%3A+%26str%29+-%3E+Option%3Cf32%3E+%7B%0A++++++++%2F%2F+Goal%3A+return+the+price+of+the+factory%27s+item%2C+if+the+name+matches%3B%0A++++++++%2F%2F+otherwise+return+%60None%60.%0A++++++++None%0A++++%7D%0A%7D%0A%0Afn+build_factory%28%29+-%3E+Factory+%7B%0A++++Factory+%7B%0A++++++++item_name%3A+%22sprocket%22%2C%0A++++++++wholesale_price%3A+7.67%2C%0A++++%7D%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Total+price%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0Afn+total_price%3CP%3A+Price%3E%28provider%3A+%26P%2C+shopping_list%3A+%26%5B%26str%5D%29+-%3E+Option%3Cf32%3E+%7B%0A++++%2F%2F+Goal%3A+compute+the+total+price+of+all+items+in+the+shopping%0A++++%2F%2F+list.+If+any+of+the+options+are+not+present%2C+return+%60None%60.%0A++++None%0A%7D%0A%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%2F%2F+Tests%0A%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%0A%0A%23%5Btest%5D%0Afn+total_price_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+Some%2818.0%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_store%28%29+%7B%0A++++let+store+%3D+build_store%28%29%3B%0A++++let+list+%3D+vec%21%5B%22chocolate%22%2C+%22plush+Mozilla+dinosaur%22%2C+%22fork+and+knife%22%5D%3B%0A++++assert_eq%21%28total_price%28%26store%2C+%26list%29%2C+None%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+Some%287.67%29%29%3B%0A%7D%0A%0A%23%5Btest%5D%0Afn+total_price_missing_factory%28%29+%7B%0A++++let+factory+%3D+build_factory%28%29%3B%0A++++let+list+%3D+vec%21%5B%22sprocket%22%2C+%22socks%22%5D%3B%0A++++assert_eq%21%28total_price%28%26factory%2C+%26list%29%2C+None%29%3B%0A%7D%0A&amp;amp;version=nightly&#34;&gt;The Exercise:&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;mut&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.0&lt;/span&gt;;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;item&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;shopping_list&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;provider.price(item)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(price)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;total&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;price,&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;None&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #007020&#34;&gt;Some&lt;/span&gt;(total)&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;reuse-default-methods&#34;&gt;Reuse: Default Methods&lt;/h3&gt;
-
-&lt;p&gt;Questions: Should we write methods, or functions?&lt;/p&gt;
-
-&lt;p&gt;When in doubt, lean on methods. Writing things as methods instead of functions allows for writing different impls for those methods.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;reuse-layering&#34;&gt;Reuse: Layering&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Self;&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;clone(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;(T,&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;U)&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;        &lt;/span&gt;(&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0.&lt;/span&gt;clone(),&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;.&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.&lt;/span&gt;clone())&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;impl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Clone&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;Vec&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt;T&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #FF0000; background-color: #FFAAAA&#34;&gt;…&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-We’re using traits in places where we could use types, what is the relationship between traits and types?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-We’re not yet using traits in a place where types are expected. We’re saying &lt;code&gt;T:&lt;/code&gt; is an addon that something has to be true for the type that we’re given. Traits are not types, they are information about types.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-Why &lt;code&gt;T&lt;/code&gt; &amp;amp; &lt;code&gt;U&lt;/code&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-&lt;code&gt;T&lt;/code&gt; for type, and &lt;code&gt;U&lt;/code&gt; because it’s the next letter in the alphabit.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Question:&lt;/strong&gt;&lt;br /&gt;
-Could I defined a generic that says it can &lt;em&gt;not&lt;/em&gt; have a specific trait.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;&lt;br /&gt;
-In most cases you wouldn’t need to although it is possible using some pretty advanced techniques.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;objects&#34;&gt;Objects&lt;/h3&gt;
-
-&lt;p&gt;Containers are homogeneous. Traits can kind of be used as types.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;trait&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;Print&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;self&lt;/span&gt;);&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;print_slice(slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print])&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;elem.print();&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;fn&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;main()&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color: #bbbbbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;slice&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;[&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;Print]&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #bbbbbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;...&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-}&lt;span style=&#34;color: #bbbbbb&#34;&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code&gt;[&amp;amp;Print]&lt;/code&gt; is actually an array of pointers, as pointers are all the same sized. vs a &lt;code&gt;Char&lt;/code&gt; and &lt;code&gt;Item&lt;/code&gt; which would be mixed sizes. The compiler will perform this type of abstraction for you.&lt;/p&gt;
-
-&lt;h4 id=&#34;generics-vs-objects&#34;&gt;Generics vs Objects&lt;/h4&gt;
-
-&lt;p&gt;Generics ( aka zero cost abstractions)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Work for singletons&lt;/li&gt;
-&lt;li&gt;Work for uniform collection&lt;/li&gt;
-&lt;li&gt;Provide static dispatch
-
-&lt;ul&gt;
-&lt;li&gt;Good for performance&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Objects&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Must live behind a pointer&lt;/li&gt;
-&lt;li&gt;Work for heterogeneous collections&lt;/li&gt;
-&lt;li&gt;Provide dynamic dispatch
-
-&lt;ul&gt;
-&lt;li&gt;Bad for performance&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;threads&#34;&gt;Threads&lt;/h2&gt;
-
-&lt;p&gt;Moden &lt;em&gt;Parallel&lt;/em&gt; systems programming without the hassle, crashes, heisenbugs, fear.&lt;/p&gt;
-
-&lt;p&gt;Multiparadigm&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Message passing&lt;/li&gt;
-&lt;li&gt;Mutable shared memory&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Principles_of_Compiler_Design&#34;&gt;Principals of compiler design&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;No data races, No matter what, regardless of paradigm.&lt;/p&gt;
-
-&lt;p&gt;What are data races?&lt;br /&gt;
-Two unsynchronized threads accessing the same data where at lease one writes.&lt;/p&gt;
-
-&lt;p&gt;Ingredients of a data race:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Aliasing (multiple things with access to the same thing)&lt;/li&gt;
-&lt;li&gt;Mutation (at least one thread is writing)&lt;/li&gt;
-&lt;li&gt;No ordering (compiler has no idea this is happening and will optimize assuming it’s not happening)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ownership and borrowing system is at the core of ensuring you can have both aliasing or mutation, but never at the same time. No data races = No accidentally-shared state.&lt;/p&gt;
-
-&lt;p&gt;All sharing is explicit. No threads can have access to this thing while your thread has access to it.&lt;/p&gt;
-
-&lt;p&gt;Each thread will &lt;code&gt;move&lt;/code&gt; and take ownership of variables passed to that thread. Usage in the main thread is no longer permitted, and you’ll get a compile time error.&lt;/p&gt;
-
-&lt;p&gt;Sharing immutable data between threads?&lt;br /&gt;
-Use &lt;code&gt;std::sync::Arc&lt;/code&gt;. With &lt;code&gt;Arc&lt;/code&gt; you can not know at what point it will be deallocated. It eliminates itself once all threads have finished with itself. Arc keeps a count for how much it’s been cloned and when it’s dropped it decrements and eliminates itself once at 0.&lt;/p&gt;
-
-&lt;p&gt;Static lifetime is exempt and allowed to be passed to different threads.&lt;/p&gt;
-
-&lt;h3 id=&#34;channels&#34;&gt;Channels&lt;/h3&gt;
-
-&lt;p&gt;Two threads can transfer ownership of data through a channel. Channels create a transmitter and a receiver. Tx and Rx can be passed to threads. Whoever has the Tx, can send data to whoever owns the Rx.&lt;/p&gt;
-
-&lt;h3 id=&#34;locks&#34;&gt;Locks&lt;/h3&gt;
-
-&lt;p&gt;Mutex is a name for a lock. Mutual exclusion. Rust fundamentally uses ownership to manage unlocks of locks you’ve taken. You never need to unlock or let go of the data.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Rails delegation and N&#43;1</title>
-      <link>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</link>
-      <pubDate>Wed, 24 Aug 2016 17:28:42 UTC</pubDate>
-      
-      <guid>http://alwayscoding.ca/draft/2016-08-24-n-plus-one-and-rails-delegation/</guid>
-      <description>&lt;p&gt;Profile has many ApiResponses&lt;/p&gt;
-
-&lt;p&gt;def api_response
-  order(&amp;lsquo;id desc&amp;rsquo;).first
-end&lt;/p&gt;
-
-&lt;p&gt;makes multiple queirers n+1&lt;/p&gt;
-
-&lt;p&gt;use rails has_one :api_response -&amp;gt; order(&amp;lsquo;id desc&amp;rsquo;)
-this searchs api_responses for profile_id and returns the first, we just need to make sure
-we order for the one we want.&lt;/p&gt;
-</description>
+      <description>These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
+All Exercises
+ Methods are function that accept self &amp;amp;self.items == &amp;amp;(self.items) where the borrow (&amp;amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
+ Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</description>
     </item>
     
     <item>
       <title>Cross compilation to OSX with Rust</title>
       <link>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 UTC</pubDate>
+      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</guid>
-      <description>
-
-
-
-
-&lt;p&gt;It started with &lt;a href=&#34;http://github.com/brianp/muxed&#34;&gt;Muxed&lt;/a&gt;. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.&lt;/p&gt;
-
-&lt;p&gt;Overall documentation on the complete process did not seem readily available. So there was a lot of question-asking, googling, and piecing together differents parts of solutions.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s meet &lt;code&gt;Rustup&lt;/code&gt; and deal with some disambiguation.  The original &lt;code&gt;Rustup&lt;/code&gt; was a &lt;a href=&#34;https://static.rust-lang.org/rustup.sh&#34;&gt;bash script&lt;/a&gt; to help install the rust compiler. Since then the name has been re-purposed and now become the &lt;a href=&#34;https://github.com/rust-lang-nursery/rustup.rs&#34;&gt;Rust toolchain installer&lt;/a&gt;. The new &lt;code&gt;Rustup&lt;/code&gt; offers us the beginning of support for &lt;a href=&#34;https://github.com/rust-lang-nursery/rustup.rs#cross-compilation&#34;&gt;cross compilation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;But today we are focusing on a pre Rustup Toolchain cross compilation build process.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s layout some assumptions and dependencies before we start:&lt;/p&gt;
-
-&lt;p&gt;This guide unfortunately requires two systems to build the first time but a single system to continue cross compiling from. It is possible to do with Unix only, but I could not make it work. Assume all instructions are being executed on the Unix system unless otherwise noted.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ubuntu 15.10 Wily Werewolf (Inside Vagrant/VirtualBox)&lt;/li&gt;
-&lt;li&gt;Mac OSX 10.9.5&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Build tools on Ubuntu:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;curl&lt;/li&gt;
-&lt;li&gt;git&lt;/li&gt;
-&lt;li&gt;autotools-dev&lt;/li&gt;
-&lt;li&gt;automake&lt;/li&gt;
-&lt;li&gt;cmake&lt;/li&gt;
-&lt;li&gt;clang&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-1-install-the-stdlib&#34;&gt;Step 1. Install the stdlib&lt;/h3&gt;
-
-&lt;p&gt;To cross compile you require the compiled &lt;code&gt;stdlib&lt;/code&gt; for the architecture type you want to compile to. You will want to get the same &lt;code&gt;stdlib&lt;/code&gt; as the version of &lt;code&gt;rustc&lt;/code&gt; you are running. If &lt;code&gt;rustc -v&lt;/code&gt; outputs &lt;code&gt;1.10&lt;/code&gt; then you want &lt;code&gt;stdlib 1.10&lt;/code&gt;. Luckily the Rust community makes these readily available for you. Head on over to &lt;a href=&#34;https://static.rust-lang.org/dist/index.html&#34;&gt;the distribution directoy&lt;/a&gt; and find the package you&amp;rsquo;re looking for based on architecture type, and version.&lt;/p&gt;
-
-&lt;p&gt;In our case it will be: &lt;code&gt;rust-std-1.10.0-x86_64-apple-darwin&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now fetch this package on to the unix system, untar it, and install it. Its location does not matter much and is not required to be in your project:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ wget https://static.rust-lang.org/dist/rust-std-1.10.0-x86_64-apple-darwin.tar.gz
-$ tar -xvxf rust-std-1.10.0-x86_64-apple-darwin
-$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; rust-std-1.10.0-x86_64-apple-darwin
-$ sudo ./install.sh
-install: installing component &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;rust-std-x86_64-apple-darwin&amp;#39;&lt;/span&gt;
-
-   std is standing at the ready.
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;step-2-acquire-an-xcode-package&#34;&gt;Step 2. Acquire an Xcode Package&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you will be performing step 3 on an OSX system, and already have xcode installed, you can skip this step.&lt;/p&gt;
-
-&lt;p&gt;Download Xcode. This will require an apple developer login. An active subscription is &lt;strong&gt;not required&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The version of Xcode required at the time of writing is 7.3. You can find links to all the available versions of Xcode &lt;a href=&#34;https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-3-package-the-sdk&#34;&gt;Step 3. Package the SDK&lt;/h3&gt;
-
-&lt;p&gt;This is the part where you may deviate if desired.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/tpoechtrager/osxcross&#34;&gt;OSXCross&lt;/a&gt; has an entire &lt;a href=&#34;https://github.com/tpoechtrager/osxcross#packaging-the-sdk&#34;&gt;section&lt;/a&gt; on how to package the sdk for different OSX versions, while on different systems. Like I mentioned before, I could not manage sdk extraction on Unix, and ended up having to do this part on OSX.&lt;/p&gt;
-
-&lt;p&gt;If you do not already have Xcode installed on your OSX system, install your chosen package.&lt;/p&gt;
-
-&lt;p&gt;Clone the OSXCross repo to your OSX system, move into its directory, and call the extraction tool:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git clone git@github.com:tpoechtrager/osxcross.git
-$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; osxcross
-$ ./tools/gen_sdk_package.sh
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;My system output two packages: &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; and &lt;code&gt;MacOSX10.9.sdk.tar.xz&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Copy the desired package to your Unix system. I moved &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; to the homdir on my Unix VM.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-4-install-osxcross&#34;&gt;Step 4. Install OSXCross&lt;/h3&gt;
-
-&lt;p&gt;Now we also need OSXCross on the Unix system. And we need to move the &lt;code&gt;MacOSX10.10.sdk.tar.xz&lt;/code&gt; package into osxcross&amp;rsquo; &lt;code&gt;tarballs&lt;/code&gt; directory.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git clone git@github.com:tpoechtrager/osxcross.git
-$ &lt;span style=&#34;color: #007020&#34;&gt;cd&lt;/span&gt; osxcross
-$ mv ~/MacOSX10.10.sdk.tar.xz ./tarballs
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we install OSXCross:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span style=&#34;color: #996633&#34;&gt;OSX_VERSION_MIN&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;10.7 ./build.sh
-
-&amp;gt; All &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;! Now you can use o32-clang&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;++&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; and o64-clang&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;++&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; like a normal compiler.
-
-&amp;gt; &lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;more output&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;…
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;As OSXCross will remind you, we also need to add the linkers to your path:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Do not forget to add
-
-/home/vagrant/osxcross/target/bin
-
-to your PATH variable.
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;step-5-add-the-target-to-cargo&#34;&gt;Step 5. Add the target to Cargo&lt;/h3&gt;
-
-&lt;p&gt;I read this wrong. &lt;strong&gt;So. Many. Times.&lt;/strong&gt; So let&amp;rsquo;s be careful here.&lt;/p&gt;
-
-&lt;p&gt;We are going to add the linker in our cargo &lt;em&gt;config&lt;/em&gt;. This is the configuration for cargo. &lt;em&gt;Not&lt;/em&gt; the Cargo.toml for your project.&lt;/p&gt;
-
-&lt;p&gt;The configuration file can be in any project, or subdirectory of the project. Cargo will recursively look for a &lt;code&gt;.cargo/config&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Add the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;target.x86_64-apple-darwin&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;span style=&#34;color: #996633&#34;&gt;linker&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;x86_64-apple-darwin14-clang&amp;quot;&lt;/span&gt;
-
-&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;target.x86_64-unknown-linux-gnu&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This tells cargo which linker to use for the defined target.&lt;/p&gt;
-
-&lt;p&gt;Not defining a linker for the &lt;code&gt;linux-gnu&lt;/code&gt; target sets it to use the default system.&lt;/p&gt;
-
-&lt;h3 id=&#34;step-6-cross-compile-time&#34;&gt;Step 6. Cross Compile Time!&lt;/h3&gt;
-
-&lt;p&gt;Assuming you have made it this far you can now cross compile. Head to your project
-root and run cargo with the &lt;code&gt;--target&lt;/code&gt; option, where the value matches the target
-in the Cargo config:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ cargo build --target x86_64-apple-darwin
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Success! You hopefully just cross compiled your application or library!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://alwayscoding.ca/images/posts/kermit-dance-osxcross.gif&#34; alt=&#34;Kermit the frog doing a happy dance!&#34; title=&#34;Kermit the frog doing a happy dance!&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</description>
     </item>
     
     <item>
       <title>Tips for working with Delayed Job</title>
       <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 UTC</pubDate>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
-      <description>
-
-
-
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/collectiveidea/delayed_job/&#34;&gt;DelayedJob&lt;/a&gt; has always been a
-great “hit the ground running” background task runner for ruby. It is simple to
-setup, easy to use and can more than carry its own weight in tasks.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Don&amp;rsquo;t know what a backround runner does or why you would use one?&lt;/em&gt;&lt;br /&gt;
-I will not delve into why you need one but you can check out a summary
-here: &lt;a href=&#34;https://4loc.wordpress.com/2010/03/10/background-jobs-in-ruby-on-rails/&#34;&gt;Background Jobs in Ruby on Rails&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can sometimes run into some serious trouble trying to debug
-DelayedJobs. Not only do they run the task behind the scenes but
-frequently hide the errors and exceptions back there as well. You will often not see
-exceptions in your logs and most exception notifiers will not catch issues
-that occur in a background task. So how can we debug issues with delayed
-job?&lt;/p&gt;
-
-&lt;p&gt;If you are using SQL you probably had to setup or run a migration for a
-delayed job table. Just like any of your other ActiveRecord models
-DelayedJob has a model you can access. This is your link to the job that
-gets stored in the queue. This makes it easy for you to access the job
-from the console and inspect its attributes.&lt;/p&gt;
-
-&lt;p&gt;The model is &lt;code&gt;Delayed::Job&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;In the console you can browse the currently queued jobs:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;count
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;
-job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Delayed::Job id: 1, queue: nil, last_error: nil, failed_at: nil, priority: 0, attempts: 0, updated_at: nil, locked_by: nil, run_at: nil, handler: nil, _type: nil, locked_at: nil, created_at: nil&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;finding-failed-jobs&#34;&gt;Finding Failed Jobs&lt;/h2&gt;
-
-&lt;p&gt;This is a good start but the default in DelayedJob is for failed jobs to
-be removed from the database. Let us change that option. Create the
-following file:
-&lt;code&gt;config/initializers/delayed_job.rb&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Worker&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;destroy_failed_jobs &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;false&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We set this option so failed jobs will not be purged from the database.
-Now that we have a record of our failed jobs we can access those jobs in
-the console. The jobs have a &lt;code&gt;last_error&lt;/code&gt; attribute which contains a
-stacktrace from the error.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;last_eror IS NOT NULL&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;Delayed::Job id: 51ea79408d53620bd200026c, failed_at: Thu Sep 05 19:50:16 UTC 2013, locked_by: nil, created_at: Sat Jul 20 11:49:20 UTC 2013, handler: handler_ommited, updated_at: Thu Sep 05 19:50:16 UTC 2013, priority: 0, _type: nil, run_at: Fri Aug 09 21:35:56 UTC 2013, queue: nil, locked_at: nil, attempts: 25, last_error: &amp;quot;undefined method `notifiable&amp;#39; for Stacktrace…&amp;quot;&amp;gt;&lt;/span&gt;
-job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last_error
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;undefined method `notifiable&amp;#39; for  &lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Stacktrace…&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Excellent! Being able to get a stacktrace from the last error can help
-point you in the right direction.&lt;/p&gt;
-
-&lt;h2 id=&#34;loading-the-handler&#34;&gt;Loading the Handler&lt;/h2&gt;
-
-&lt;p&gt;The “Handler” in DelayedJob is the object that &lt;code&gt;#perform&lt;/code&gt; was called on
-to execute the job. At the time the job is entered into the queue the
-handler is serialized to be reconstructed later. While debugging you may
-want access to this handler. You can convert the serailized state of the
-object back to its original form by calling &lt;code&gt;YAML::load&lt;/code&gt; and passing in
-the serialized object.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;job &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Job&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;last
-
-job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handler
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;--- !ruby/object:NotificationObserver::Notifier&lt;/span&gt;
-&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;resource_class: !ruby/class Comment&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;resource_id:&lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;!ruby/object:BSON::ObjectId &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  data: &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 82&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 67&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 70&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 67&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;background-color: #fff0f0&#34;&gt;- 183&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 112&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 32&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 225&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 252&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 0&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 0&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;  - 1&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-
-notifier &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;YAML&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;load(job&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handler)
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;#&amp;lt;NotificationObserver::Notifier:0x1363a7230 @resource_class=Comment, @resource_id=BSON::ObjectId(&amp;#39;52434643b77020e1fc000001&amp;#39;)&amp;gt;&lt;/span&gt;
-
-notifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;NotificationObserver&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Notifier&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;working-with-jobs-locally&#34;&gt;Working with jobs locally&lt;/h2&gt;
-
-&lt;p&gt;I find while working with DelayedJob locally my needs can vary. For
-example:&lt;/p&gt;
-
-&lt;p&gt;Sometimes I would prefer the task just not run in the
-background. That way I can see the task perform and get an immediate
-response. Other times I might need the task to run in the background as expected so I can
-develop and test polling methods or execution of code that runs upfront
-while the background task is still processing.&lt;/p&gt;
-
-&lt;p&gt;If your case is the latter then you can run delayed jobs locally and
-require no additional changes. If your case is the prior and you want to run the code upfront then DelayedJob
-has a configurable option that will help.&lt;/p&gt;
-
-&lt;p&gt;In an initializer you can define the parameter &lt;code&gt;Delayed::Worker#delay_jobs&lt;/code&gt; to tell DelayedJob &lt;em&gt;not&lt;/em&gt;
-to run a task in the background and to execute the job code immediately.
-This will allow you to use any of your regular debugging methods whether
-it is using the ruby debugger, pry, or a series or puts statements.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Delayed&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Worker&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;delay_jobs &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;false&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;common-problem&#34;&gt;Common problem&lt;/h2&gt;
-
-&lt;p&gt;The most common problem I see and am asked to help diagnose are issues
-serializing the handler. Passing complex objects to DelayedJob is not
-recommended. YAML does its best to serialize all ruby objects but
-sometimes fails. The simplest solution is not to pass an entire
-complex object. If it is a persisted, record pass in only the id and load
-the record from within the job. If you need to save state it could be a
-good place to create a middle man with the stated attributes and simply
-pass the middle man into the job.&lt;/p&gt;
-
-&lt;p&gt;Have other tips for debugging DelayedJob? I would enjoy hearing about
-them. Send me an email or a note to
-&lt;a href=&#34;http://www.twitter.com/brian_pearce&#34;&gt;@brian_pearce&lt;/a&gt; on twitter.&lt;/p&gt;
-</description>
+      <description>DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
+Don&amp;rsquo;t know what a backround runner does or why you would use one?
+I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</description>
     </item>
     
     <item>
       <title>Cascadia Ruby 2014 - Day Two</title>
       <link>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</link>
-      <pubDate>Tue, 12 Aug 2014 09:30:59 UTC</pubDate>
+      <pubDate>Tue, 12 Aug 2014 09:30:59 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/tjschuck&#34;&gt;T.J. Schuck&lt;/a&gt;&lt;br /&gt;
-80,000 Plaintext Passwords: An Open Source Love Story in Three Acts&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;John the Ripper password cracker.&lt;/li&gt;
-&lt;li&gt;hashcat.&lt;/li&gt;
-&lt;li&gt;Expensive key schedule blowfish. eksblowfish.&lt;/li&gt;
-&lt;li&gt;BCrypt
-
-&lt;ul&gt;
-&lt;li&gt;BCrypt dollar signs are delimieters, hash on far right. Salt on left.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2(abxy)&lt;/code&gt; means bcrypt&lt;/li&gt;
-&lt;li&gt;10 = cost&lt;/li&gt;
-&lt;li&gt;$ 2a $ 10 $ salt $ hash&lt;/li&gt;
-&lt;li&gt;12 to 13 range for bcrypt cost.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;rake-compiler&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/jasonrclark&#34;&gt;Jason Clark&lt;/a&gt;&lt;br /&gt;
-Programming in the Small - Teaching my 5 Year Old Ruby&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Patience.&lt;/li&gt;
-&lt;li&gt;Recall.&lt;/li&gt;
-&lt;li&gt;Mistakes.&lt;/li&gt;
-&lt;li&gt;Discovery.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/hone02&#34;&gt;Terence Lee&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/kenichi_pdx&#34;&gt;Kenichi Nakamura&lt;/a&gt;&lt;br /&gt;
-Creating a Chat App in 15 Minutes with Angelo&lt;/p&gt;
-
-&lt;p&gt;Websockets
-- &lt;code&gt;https://github.com/kenichi/angelo&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Events
-- IE does not support server sent events.
-- EventSource API.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/lizmrush&#34;&gt;Liz Rush&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://twitter.com/SomanyHs&#34;&gt;Hsing-Hui Hsu&lt;/a&gt;&lt;br /&gt;
-&amp;ldquo;Good luck with that&amp;rdquo;: Tag Teaming Civic Data&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Cylyndrical map.&lt;/li&gt;
-&lt;li&gt;Spheriod map.&lt;/li&gt;
-&lt;li&gt;Torus map (&amp;ldquo;donut&amp;rdquo;).&lt;/li&gt;
-&lt;li&gt;Shapefiles.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Lightening Talks&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/mjkirk&#34;&gt;Matthew Kirk&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Machine Learning in Ruby
-  - C Libs
-  - JRuby
-  - R
-  - Thoughtful Machine Learning (Book)
-  - Facial Classifications
-  - The Kernel Trick
-  - &lt;a href=&#34;thoughtfulml.com&#34;&gt;thoughtfulml.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/jxxf&#34;&gt;John Feminella&lt;/a&gt;&lt;br /&gt;
-Card counting
- - is legal via only your brain.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/davidcmelida&#34;&gt;David Molida&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Hacking &amp;amp; Federal Procurement
-- $250billion + a year.
-- Bid on government contracts.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/bethanyrentz&#34;&gt;Bethany Rentz&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Rubocop: Styleistic errors.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/laurenvoswinkel&#34;&gt;Lauren Voswinkle&lt;/a&gt;&lt;br /&gt;
-Talking about money.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Lie about what your previous salary was.&lt;/li&gt;
-&lt;li&gt;Employers are only allowed to verify employment dates.&lt;/li&gt;
-&lt;li&gt;1935 Extneded National labours act to allow talking about salaries.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;[name]&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ruby is bad at CMS&amp;rsquo;s&lt;/li&gt;
-&lt;li&gt;Locomotive&lt;/li&gt;
-&lt;li&gt;Rifenery&lt;/li&gt;
-&lt;li&gt;Comfortable Mexican Sofar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cassie Schmitz&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Jekyll&lt;/li&gt;
-&lt;li&gt;Prose.io&lt;/li&gt;
-&lt;li&gt;Easy to write plugins&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/realntl&#34;&gt;Nathan Ladd&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt; instead of &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;, &lt;code&gt;||&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Stop using TDD.&lt;/li&gt;
-&lt;li&gt;Stop memoizing. Conceptualize your lifecycle.&lt;/li&gt;
-&lt;li&gt;Get rid of private methods. Removes variability of input.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/kerrizor&#34;&gt;Kerrir Miller&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://speakerdeck.com/kerrizor/you-jelly&#34;&gt;Make Jam&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;5-6 cups of mashed fruit&lt;/li&gt;
-&lt;li&gt;Add a box epctin and bring to a rolling boil.&lt;/li&gt;
-&lt;li&gt;4 cups of sweetner.&lt;/li&gt;
-&lt;li&gt;Another rolling boil.&lt;/li&gt;
-&lt;li&gt;remove from heat.&lt;/li&gt;
-&lt;li&gt;Refridgerate or freeze&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/swindsor&#34;&gt;Scott Windsor&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Test induced design damage.&lt;/li&gt;
-&lt;li&gt;Dependency Injection done wrong sucks.&lt;/li&gt;
-&lt;li&gt;Write better code and better tests.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf&#34;&gt;http://s3.sentientmonkey.com/tdd-lightning-cascadia-2014.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/joelstimson&#34;&gt;Joel Stimson&lt;/a&gt;
-Citizen Science&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Where regular people go to help scientists.&lt;/li&gt;
-&lt;li&gt;Stardust at home.&lt;/li&gt;
-&lt;li&gt;Zooniverse: Glassifying Galaxies.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014&#34;&gt;https://speakerdeck.com/stim371/citizen-science-lightning-talk-cascadia-ruby-2014&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;User services as a gem.&lt;/li&gt;
-&lt;li&gt;Permissions service as a gem.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/amywoodward&#34;&gt;Amy Woodward&lt;/a&gt;&lt;br /&gt;
-Bitcoin mining.
-Fastest bitcoin mining chips in the world.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/roseaboveit&#34;&gt;Whitenet-Rose Levis&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Help new people.&lt;/li&gt;
-&lt;li&gt;Types of investment
-
-&lt;ul&gt;
-&lt;li&gt;Teaching&lt;/li&gt;
-&lt;li&gt;Conversations&lt;/li&gt;
-&lt;li&gt;Writing&lt;/li&gt;
-&lt;li&gt;Code Reviews&lt;/li&gt;
-&lt;li&gt;Actively Welcome People&lt;/li&gt;
-&lt;li&gt;Slight Adaptations&lt;/li&gt;
-&lt;li&gt;Financial&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/_jnf&#34;&gt;Jeremy Flores&lt;/a&gt;&lt;br /&gt;
-How Not to Be Lonely: An Extrovert&amp;rsquo;s Guide to Working Alone
-Tools:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ScreenHero&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Engage in active communication!
-Cultivate your voice.&lt;/p&gt;
-
-&lt;p&gt;Pair programming.
-Everybody&amp;rsquo;s remote.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/laurenvoswinkel&#34;&gt;Lauren Voswinkle&lt;/a&gt;&lt;br /&gt;
-Nitty Gritty Service Building&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;SonJay&lt;/code&gt; &lt;a href=&#34;https://github.com/stevecj/son_jay&#34;&gt;https://github.com/stevecj/son_jay&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Typhoeus&lt;/code&gt; &lt;a href=&#34;https://github.com/typhoeus/typhoeus&#34;&gt;https://github.com/typhoeus/typhoeus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;StackProf&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/listrophy&#34;&gt;Brad Grzesiak&lt;/a&gt;&lt;br /&gt;
-SPAAAAAAAAACE&lt;/p&gt;
-</description>
+      <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.</description>
     </item>
     
     <item>
       <title>Cascadia Ruby 2014 - Day One</title>
       <link>http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</link>
-      <pubDate>Mon, 11 Aug 2014 09:26:37 UTC</pubDate>
+      <pubDate>Mon, 11 Aug 2014 09:26:37 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/djspinmonkey&#34;&gt;John Hyland&lt;/a&gt;&lt;br /&gt;
-Be Awesome By Being Boring&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;“standard is better then better”&lt;/li&gt;
-&lt;li&gt;Nobody know how it works yet.&lt;/li&gt;
-&lt;li&gt;Docker apis changed.&lt;/li&gt;
-&lt;li&gt;No standard uusage pattern.&lt;/li&gt;
-&lt;li&gt;Security wild card.&lt;/li&gt;
-&lt;li&gt;Protocol Buffer version of your performance critical endpoints.&lt;/li&gt;
-&lt;li&gt;SRV Records.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;&lt;br /&gt;
-The Science of Success&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Jarvis March (Gift wrapping Algorithm.)&lt;/li&gt;
-&lt;li&gt;Monotone Algorithm.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;benchmark/ips&lt;/code&gt; Runs iterations per second.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;benchmark-bigo&lt;/code&gt; Benchmarks big o notation algorithms.&lt;/li&gt;
-&lt;li&gt;geojson.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://tinyurl.com/cog-shorts-cascadia&#34;&gt;Cognitive Shortcuts: Models, Visualizations, Metaphors, and Other Lies&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Programming is hard. Due to abstractions.&lt;/li&gt;
-&lt;li&gt;Visual/Spatial Reasoning
-
-&lt;ul&gt;
-&lt;li&gt;The Squint Test: Stand back and try to discern identifiable parts of the
-code. Heavily margined, columns.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Linguistic/Social Reasoning:
-
-&lt;ul&gt;
-&lt;li&gt;Rubber Ducking.&lt;/li&gt;
-&lt;li&gt;Start writing an email describing the problem.&lt;/li&gt;
-&lt;li&gt;Please Mr. Gear what is your ratio?&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Practical Object Oriented Design in Ruby - Sandi Metz.&lt;/li&gt;
-&lt;li&gt;Body Syntonic Reasoning.&lt;/li&gt;
-&lt;li&gt;Saccades.&lt;/li&gt;
-&lt;li&gt;Pac Man Smell solution.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/hondanhon&#34;&gt;Dan Hon&lt;/a&gt;&lt;br /&gt;
-Designing for Empathy&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GOV.UK: Shows only the next holiday.&lt;/li&gt;
-&lt;li&gt;Zappos CS will send you to competitors if it helps you.&lt;/li&gt;
-&lt;li&gt;Dropbox setup user friendly opt-out while telecoms require mail sent to a PO
-box.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/jxxf&#34;&gt;John Feminella&lt;/a&gt;&lt;br /&gt;
-Why We Can&amp;rsquo;t Have Nice Things: Unicode, Dates, and Names&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;As humans our assumptions make it in to our code.&lt;/li&gt;
-&lt;li&gt;Marriage license database had man and woman id. This fails in states with
-same sex marriages.&lt;/li&gt;
-&lt;li&gt;Time.advance can cuase errors when moving over months with 28 days.&lt;/li&gt;
-&lt;li&gt;Scunthorpe problem.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/StarrHorne&#34;&gt;Starr Horne&lt;/a&gt;&lt;br /&gt;
-Biggish Data With Rails and Postgresql&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The Vitures of a programmer
-
-&lt;ul&gt;
-&lt;li&gt;Laziness&lt;/li&gt;
-&lt;li&gt;Impatience&lt;/li&gt;
-&lt;li&gt;Hubris&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Use real computers to work with your database.&lt;/li&gt;
-&lt;li&gt;Use explain.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Common problems&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Slooow cache misses.
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-pgtune&#34;&gt;http://bit.ly/biggish-pgtune&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Slooow disk I/O
-
-&lt;ul&gt;
-&lt;li&gt;blockdev &amp;ndash;setra 2048 /dev/sda&lt;/li&gt;
-&lt;li&gt;Read ahead cache&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Slooow Vacuums
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-vacuum&#34;&gt;http://bit.ly/biggish-vacuum&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Too Mandy DB Connections
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-pool&#34;&gt;http://bit.ly/biggish-pool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;My locks have locked my locks
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-locks&#34;&gt;http://bit.ly/biggish-locks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;but I have to run a report full of slow queries!
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-replication&#34;&gt;http://bit.ly/biggish-replication&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;I can&amp;rsquo;t delete these old rows!
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-partition&#34;&gt;http://bit.ly/biggish-partition&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Backups take forever
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://bit.ly/biggish-wal-e&#34;&gt;http://bit.ly/biggish-wal-e&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/MilesForrest&#34;&gt;Miles Forrest&lt;/a&gt;&lt;br /&gt;
-Cloning the Seattle Ruby Brigade&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Don&amp;rsquo;t always enforce the problem areas.&lt;/li&gt;
-&lt;li&gt;Enforce the areas that you need to protect.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt;&lt;br /&gt;
-N design patterns you might actually use (where N is &amp;lt; 10)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Template:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Outline for a similar task.&lt;/li&gt;
-&lt;li&gt;ETL: Extract Transfer Load.&lt;/li&gt;
-&lt;li&gt;Share common code.&lt;/li&gt;
-&lt;li&gt;Advantages
-
-&lt;ul&gt;
-&lt;li&gt;Isolate difference.&lt;/li&gt;
-&lt;li&gt;Easy to add new versions.&lt;/li&gt;
-&lt;li&gt;Force common algorithm.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Disadvantages
-
-&lt;ul&gt;
-&lt;li&gt;Read multiple files&lt;/li&gt;
-&lt;li&gt;Inheirtance * 2&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Storage Strategy&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Composite&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Let consumers ignore quantity.&lt;/li&gt;
-&lt;li&gt;Trees of arbitrary depth.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Decorator&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Command&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/tenderlove&#34;&gt;Aaron Patterson&lt;/a&gt;&lt;br /&gt;
-Speed up Rails, Speed up Your Code&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Markov Chains.&lt;/li&gt;
-&lt;li&gt;Binary Heap to pick random children.&lt;/li&gt;
-&lt;li&gt;ruby -d&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;benchmark-ips&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stackprof&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;allocation_tracer&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;tracepoint&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fewer types =/= faster/easier code.&lt;/li&gt;
-&lt;li&gt;Freeze strings if performance requires it.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+John Hyland
+Be Awesome By Being Boring
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+The Science of Success
+ Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</description>
     </item>
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
       <link>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
-      <pubDate>Tue, 25 Feb 2014 15:08:38 UTC</pubDate>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
-      <description>&lt;blockquote&gt;
-  &lt;p&gt;
-I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;@brian_pearce&lt;/strong&gt;
-&lt;/blockquote&gt;
-
-
-&lt;p&gt;I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.&lt;/p&gt;
-
-&lt;p&gt;Head on over to the &lt;a href=&#34;http://inside.unbounce.com/product-dev/handling-code-duplication/&#34;&gt;Inside Unbounce&lt;/a&gt; blog to check out the full post.&lt;/p&gt;
-
-&lt;p&gt;
-&lt;/p&gt;
-</description>
+      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</description>
     </item>
     
     <item>
       <title>Cascadia Ruby 2013 - Day Two</title>
       <link>http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/</link>
-      <pubDate>Tue, 22 Oct 2013 15:22:00 UTC</pubDate>
+      <pubDate>Tue, 22 Oct 2013 15:22:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/adelcambre&#34;&gt;Andy Delcambre&lt;/a&gt;
-Cascadia Ruby 2013: Ruby Systems Programming&lt;/p&gt;
-
-&lt;h2 id=&#34;the-kernal&#34;&gt;The kernal&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Runs in kernal mode.&lt;/li&gt;
-&lt;li&gt;Not your code.&lt;/li&gt;
-&lt;li&gt;Can do anything and everything.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;your-code&#34;&gt;Your Code&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Runs in user mode.&lt;/li&gt;
-&lt;li&gt;Math.&lt;/li&gt;
-&lt;li&gt;Access memory.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;system-calls&#34;&gt;System calls&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ask the kernal nicely to do things.&lt;/li&gt;
-&lt;li&gt;Api to kenal mode.&lt;/li&gt;
-&lt;li&gt;If it is not in the syscall_table you can not call it.&lt;/li&gt;
-&lt;li&gt;Unix has 261 syscalls implemented.&lt;/li&gt;
-&lt;li&gt;Windows has thousands listed (implemented/unimplemented).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Linux System Programming by Robert Love&lt;/li&gt;
-&lt;li&gt;Unix Network Programming by Richard Stevens&lt;/li&gt;
-&lt;li&gt;Advanced Programming in the UNIX Environment by Richard Stevens&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/davystevenson&#34;&gt;Davy Stevenson&lt;/a&gt;
-Ruby as Art; Ruby as Science; Ruby as Craft&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Analyses and study of algorithms.&lt;/li&gt;
-&lt;li&gt;Algorithm: A set of instructions that will solve a particular problem.&lt;/li&gt;
-&lt;li&gt;Fuctional programming in ruby.&lt;/li&gt;
-&lt;li&gt;The best code is no code. The best code is code that already exists.&lt;/li&gt;
-&lt;li&gt;There is a difference between being correct and being right.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/kerrizor&#34;&gt;Kerri Miller&lt;/a&gt;
-Cascadia Ruby 2013: Gambling for Rubyists&lt;/p&gt;
-
-&lt;p&gt;Every decision is a compromise. We pick postgres over mysql because we feel we are getting a benefeit.&lt;/p&gt;
-
-&lt;p&gt;“You are the best” + Be Humble&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/jerrydantonio&#34;&gt;Jerry D&amp;rsquo;Antonio&lt;/a&gt; &lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby-presentation&#34;&gt;code&lt;/a&gt;
-Advanced Multithreading in Ruby&lt;/p&gt;
-
-&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Blocking IO is one of the first reasons to use concurrency.&lt;/li&gt;
-&lt;li&gt;Shared muteable data is bad.&lt;/li&gt;
-&lt;li&gt;Future represents actions that take effect at a future time and return a specific value.&lt;/li&gt;
-&lt;li&gt;mutex.sychronize.&lt;/li&gt;
-&lt;li&gt;Do not block the reactor.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jdantonio/concurrent-ruby&#34;&gt;Concurrent&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/harukizaemon/hamster&#34;&gt;Hamster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Threadsafe&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/eventmachine/eventmachine&#34;&gt;Eventmachine&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ruby-amqp/amqp&#34;&gt;AMQP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/celluloid/celluloid&#34;&gt;Celluloid&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/geeksam&#34;&gt;Sam Livingston-Gray&lt;/a&gt;, &lt;a href=&#34;http://www.slideshare.net/geeksam/fluent-refactoring-cascadia-ruby-conf-2013-1021&#34;&gt;slides&lt;/a&gt;
-Fluent Refactoring&lt;/p&gt;
-
-&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
-
-&lt;h3 id=&#34;refactoring&#34;&gt;Refactoring&lt;/h3&gt;
-
-&lt;p&gt;A language that describes ways to make your code suck less.&lt;/p&gt;
-
-&lt;h3 id=&#34;fluency&#34;&gt;Fluency&lt;/h3&gt;
-
-&lt;p&gt;What you can say when you are woken up in the middle of the night with
-a flashlight in your face.&lt;/p&gt;
-
-&lt;p&gt;Levels of Proficiency&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Level 1; Tarzan at a Party; “Beer!” “Good party.”&lt;/li&gt;
-&lt;li&gt;Level 2; Going to the party; “Where is the party?” “How do I get to the
-party”&lt;/li&gt;
-&lt;li&gt;Level 3; Discussing the party; “What happened at the party last night?”&lt;/li&gt;
-&lt;li&gt;Level 4; Charlie Rose; “Should parties be illegal?”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;patterns&#34;&gt;Patterns&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Guard Clause; Best practices in small talk.&lt;/li&gt;
-&lt;li&gt;Flatten Nested Conditionals.&lt;/li&gt;
-&lt;li&gt;SRP (Single Responsibility Prinicpal).&lt;/li&gt;
-&lt;li&gt;Replace Conditional With Polymorphism.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Practical Object-Oriented Ruby&lt;/li&gt;
-&lt;li&gt;Refactoring&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Lightning Talks
-Apologies if I misspelled anyones names below.&lt;/p&gt;
-
-&lt;h2 id=&#34;rex-lexer-generator&#34;&gt;Rex lexer generator&lt;/h2&gt;
-
-&lt;p&gt;by: Ryan Davis&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ruby_parser lexer - Unmaintainable.&lt;/li&gt;
-&lt;li&gt;Oedipus Lex - “This is not your fathers lexer.”&lt;/li&gt;
-&lt;li&gt;Massive extensions.&lt;/li&gt;
-&lt;li&gt;Self-bootstrapping.&lt;/li&gt;
-&lt;li&gt;Uses ruby more directly.&lt;/li&gt;
-&lt;li&gt;Predicate methods.&lt;/li&gt;
-&lt;li&gt;Action methods.&lt;/li&gt;
-&lt;li&gt;Clean state changes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;focus-on-the-custard&#34;&gt;Focus on the Custard&lt;/h2&gt;
-
-&lt;p&gt;by: Bethany Rentz&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Put the customer first in the designs.&lt;/li&gt;
-&lt;li&gt;You != Your customer.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;the-surfers-rule&#34;&gt;The Surfers Rule&lt;/h2&gt;
-
-&lt;p&gt;by: Milan Loveless&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Have Passion.&lt;/li&gt;
-&lt;li&gt;No Dare / No Flair. Try things and be innovative.&lt;/li&gt;
-&lt;li&gt;Always look outside. Look where you can learn.&lt;/li&gt;
-&lt;li&gt;Move before it moves you.&lt;/li&gt;
-&lt;li&gt;Never turn your back on the ocean.&lt;/li&gt;
-&lt;li&gt;Expect to wipe out.&lt;/li&gt;
-&lt;li&gt;Never surf alone.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;speed-up-your-tests-with-rspec-set&#34;&gt;Speed up your tests with rspec-set&lt;/h2&gt;
-
-&lt;p&gt;by: Philippe Creux&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;FactoryGirl is sloooow.&lt;/li&gt;
-&lt;li&gt;rspec-set creates records in the db prior to running transactions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;seattle-rb&#34;&gt;Seattle.rb&lt;/h2&gt;
-
-&lt;p&gt;by: Pete Higgins&lt;/p&gt;
-
-&lt;p&gt;First Tuesday of every month. Presentation oriented social occasion with “Show and tell.”&lt;br /&gt;
-All other Tuesdays are hack nights.&lt;br /&gt;
-seattlerb.org&lt;/p&gt;
-
-&lt;h2 id=&#34;regional-conferences&#34;&gt;Regional Conferences&lt;/h2&gt;
-
-&lt;p&gt;by: Koby Ranquest&lt;/p&gt;
-
-&lt;h3 id=&#34;los-angelos-ruby-conference&#34;&gt;Los Angelos Ruby Conference&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Feb 8th.&lt;/li&gt;
-&lt;li&gt;Very newbie friendly.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ruby-on-ales-2014&#34;&gt;Ruby on Ales 2014&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Bend Oregon.&lt;/li&gt;
-&lt;li&gt;The tower theatre.&lt;/li&gt;
-&lt;li&gt;March 6th - 7th.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;a-cautionary-tale&#34;&gt;A Cautionary Tale&lt;/h2&gt;
-
-&lt;p&gt;by: Jason Clark&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Forks not alaways an exact copy.&lt;/li&gt;
-&lt;li&gt;Only the thread that calls fork goes to the new thread.&lt;/li&gt;
-&lt;li&gt;Locks cause problems.&lt;/li&gt;
-&lt;li&gt;Lock doesn&amp;rsquo;t always release on child process.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;pdx-rb&#34;&gt;pdx.rb&lt;/h2&gt;
-
-&lt;p&gt;by: Audrie Eschright&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Calagator for pdx meetups.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;epdx.org&#34;&gt;ePDX.org&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;PDX employer graph.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;woodshop&#34;&gt;Woodshop&lt;/h2&gt;
-
-&lt;p&gt;by: Scott Windsor&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Build your own Code Climate inside vim.&lt;/li&gt;
-&lt;li&gt;Flog inside vim.&lt;/li&gt;
-&lt;li&gt;Simplecov inside vim.&lt;/li&gt;
-&lt;li&gt;Hack your tools.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sentientmonkey/vimfiles&#34;&gt;https://github.com/sentientmonkey/vimfiles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ruby-is-broken&#34;&gt;Ruby is Broken&lt;/h2&gt;
-
-&lt;p&gt;by: Nathan Zook&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;No one is perfect.&lt;/li&gt;
-&lt;li&gt;Should not be able to not use namespaces.&lt;/li&gt;
-&lt;li&gt;Method resolution order.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;2-talks-omitted-i-missed-them&#34;&gt;2 Talks omitted (I missed them)&lt;/h2&gt;
-
-&lt;h2 id=&#34;a-game-in-ruby&#34;&gt;A Game in ruby&lt;/h2&gt;
-
-&lt;p&gt;by: Robby Clements&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/jlnr/gosu&#34;&gt;Gosu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Chungu?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;centralized-logging&#34;&gt;Centralized Logging&lt;/h2&gt;
-
-&lt;p&gt;by: Ashlegh Baumgardner&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Logstash.&lt;/li&gt;
-&lt;li&gt;Logstash sleeps and retrys causes problems.&lt;/li&gt;
-&lt;li&gt;Sparsify.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ruby-testing&#34;&gt;Ruby Testing&lt;/h2&gt;
-
-&lt;p&gt;by: Amiel Martin&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Testing notifications via led lights.&lt;/li&gt;
-&lt;li&gt;DigiSpark.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;
-The Client is Always Right {But Sometimes They Need a Little Help}&lt;/p&gt;
-
-&lt;h2 id=&#34;who&#34;&gt;Who?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Who is the intended user group?&lt;/li&gt;
-&lt;li&gt;What are their usability needs?&lt;/li&gt;
-&lt;li&gt;Who will we test our product with before release?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;How do we determine the best platform?&lt;/li&gt;
-&lt;li&gt;Is this a major change or a change in usage?&lt;/li&gt;
-&lt;li&gt;How is this product going to best be used?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;what&#34;&gt;What?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;What are the key features of this product?&lt;/li&gt;
-&lt;li&gt;How do we maintain our usability?&lt;/li&gt;
-&lt;li&gt;What do we build to keep our products story consistent with our core vision?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/CarlAlviani&#34;&gt;Carl Alviani&lt;/a&gt;
-Not Created Equal: The History and Discernment of Plastics in Product Design&lt;/p&gt;
-
-&lt;p&gt;How recyclable are the following products. (Due to processing methods):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Glass — 34%&lt;/li&gt;
-&lt;li&gt;paper — 60%&lt;/li&gt;
-&lt;li&gt;Polymer — 90%&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1962 — Parkseine was developed to replace Ivory as the elephants were dying off.&lt;br /&gt;
-1894 — Rayon developed to replace Silk.&lt;br /&gt;
-1909 — Bakelite developed to replace Shalak. Used for things like telephones, appliances, &amp;amp; pencil sharpeners.&lt;/p&gt;
-
-&lt;p&gt;1933 — PVC &amp;amp; Acrylic&lt;br /&gt;
-1939 — Polythylene &amp;amp; Nylon&lt;br /&gt;
-1941 — PET &amp;amp; ABS&lt;/p&gt;
-
-&lt;p&gt;Real silicone is identifiable by bending it and verifying there is no visible
-difference with it.&lt;/p&gt;
-
-&lt;p&gt;#7 Recycling symbol “Other” is not recyclable.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.core77.com&#34;&gt;core77.com&lt;/a&gt; &amp;amp; Search: “Not created Equal: A Long (Loving) Plastics Primer”&lt;/p&gt;
-</description>
+      <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Andy Delcambre Cascadia Ruby 2013: Ruby Systems Programming
+The kernal  Runs in kernal mode. Not your code. Can do anything and everything.  Your Code  Runs in user mode. Math. Access memory.  System calls  Ask the kernal nicely to do things. Api to kenal mode. If it is not in the syscall_table you can not call it.</description>
     </item>
     
     <item>
       <title>Cascadia Ruby 2013 - Day One</title>
       <link>http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/</link>
-      <pubDate>Mon, 21 Oct 2013 15:45:00 UTC</pubDate>
+      <pubDate>Mon, 21 Oct 2013 15:45:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/knewter&#34;&gt;Josh Adams&lt;/a&gt; and &lt;a href=&#34;http://twitter.com/robby_clements&#34;&gt;Robby Clements&lt;/a&gt;
-Ruby Robotics&lt;/p&gt;
-
-&lt;h2 id=&#34;where-to-start&#34;&gt;Where to start&lt;/h2&gt;
-
-&lt;h3 id=&#34;sphero-130-00&#34;&gt;Sphero - $130.00&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Bluetooth enabled ball.&lt;/li&gt;
-&lt;li&gt;Drives itself around.&lt;/li&gt;
-&lt;li&gt;Best dog toy ever.&lt;/li&gt;
-&lt;li&gt;Waterproof.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;parrot-ar-droid-150-00&#34;&gt;Parrot AR Droid - $150.00&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Acts as its own wifi AP.&lt;/li&gt;
-&lt;li&gt;Connect over wifi.&lt;/li&gt;
-&lt;li&gt;UDP packers.&lt;/li&gt;
-&lt;li&gt;Stream video from 2 cameras.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;rolling-your-own&#34;&gt;Rolling your own&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Beaglebone Black.&lt;/li&gt;
-&lt;li&gt;PCDuino.&lt;/li&gt;
-&lt;li&gt;Arduino.&lt;/li&gt;
-&lt;li&gt;Raspberry Pi.&lt;/li&gt;
-&lt;li&gt;Microncontroller is a small computer.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;pi-setup&#34;&gt;Pi Setup&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install rvm.&lt;/li&gt;
-&lt;li&gt;Ruby.&lt;/li&gt;
-&lt;li&gt;1.9.3 works better.&lt;/li&gt;
-&lt;li&gt;Expect changes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;pi-tips&#34;&gt;Pi Tips&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Be caeful with the PI. Get transistors to protect it.&lt;/li&gt;
-&lt;li&gt;Limited hardwar PWM out.&lt;/li&gt;
-&lt;li&gt;At least 1amp power supply.&lt;/li&gt;
-&lt;li&gt;Pi Cobbler.&lt;/li&gt;
-&lt;li&gt;Cirago wifi $11.00.&lt;/li&gt;
-&lt;li&gt;Case so the PI does not short out.&lt;/li&gt;
-&lt;li&gt;Class 10 SD card. DD is slow on a bad card.&lt;/li&gt;
-&lt;li&gt;Camera module $24.00.&lt;/li&gt;
-&lt;li&gt;Ruby gem: &lt;a href=&#34;https://github.com/jwhitehorn/pi_piper&#34;&gt;Pi-Piper&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ruboto/ruboto&#34;&gt;Ruboto&lt;/a&gt; project for jruby &amp;amp; android.&lt;/li&gt;
-&lt;li&gt;jRuby put the stdlib in the laod path.&lt;/li&gt;
-&lt;li&gt;Pulse Width Modulation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/everydaytype&#34;&gt;Nick Cox&lt;/a&gt;
-We All Make Mistakes: Learning from Gaffes in the Ruby Community&lt;/p&gt;
-
-&lt;p&gt;We all make mistakes.&lt;/p&gt;
-
-&lt;h2 id=&#34;thesis&#34;&gt;Thesis&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Perfection is a goal.&lt;/li&gt;
-&lt;li&gt;Mistakes in software are inevitable.&lt;/li&gt;
-&lt;li&gt;Openly admit mistake.&lt;/li&gt;
-&lt;li&gt;Ecourage openness.&lt;/li&gt;
-&lt;li&gt;Learn from mistakes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;shame-spiral&#34;&gt;Shame spiral&lt;/h2&gt;
-
-&lt;p&gt;When mistakes are made you can fall into a shame spiral.
-Definitiation: When you feel bad about something then you feel bad about feeling bad.&lt;/p&gt;
-
-&lt;h3 id=&#34;software-isn-t-life-or-death&#34;&gt;Software isn&amp;rsquo;t life or death.&lt;/h3&gt;
-
-&lt;h3 id=&#34;software-ability-intelligence&#34;&gt;Software ability != intelligence&lt;/h3&gt;
-
-&lt;h2 id=&#34;think-about-your-own-mistake&#34;&gt;Think about your own mistake&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Does it bring you anxiety.&lt;/li&gt;
-&lt;li&gt;How did you handle it?&lt;/li&gt;
-&lt;li&gt;Did you cover it up with tech jargon so know one knew it happened.&lt;/li&gt;
-&lt;li&gt;Did you bring it up with someone?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;blameless-postmortems&#34;&gt;Blameless Postmortems&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;What actions did they took at what time?&lt;/li&gt;
-&lt;li&gt;What effects did you observe during the time of crisis? (How was it
-handeled?)&lt;/li&gt;
-&lt;li&gt;Expectations they had?&lt;/li&gt;
-&lt;li&gt;Assumptions they made?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;encourage-team-communication&#34;&gt;Encourage team communication&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dev days or half days.&lt;/li&gt;
-&lt;li&gt;Teamwide postmortems.&lt;/li&gt;
-&lt;li&gt;Lunch &amp;amp; Learn.&lt;/li&gt;
-&lt;li&gt;Consultancy? Write a post about it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;conslusion&#34;&gt;Conslusion&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mistakes are inevitable.&lt;/li&gt;
-&lt;li&gt;Change the conversation: Mistakes shoud teach lessons.&lt;/li&gt;
-&lt;li&gt;What are we doing as a culture to encourage transparency?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Nick also published a software confessional &lt;a href=&#34;http://softwareconfessional.com/&#34;&gt;http://softwareconfessional.com/&lt;/a&gt;
-if you wanted to make a confession about a major bug you created.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/copiousfreetime&#34;&gt;Jeremy Hinegardner&lt;/a&gt;
-Taking Ruby to the Movies&lt;/p&gt;
-
-&lt;h2 id=&#34;act-1&#34;&gt;Act 1&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Amazon Import - Shipping your HD to amazon.&lt;/li&gt;
-&lt;li&gt;Create Manifest.&lt;/li&gt;
-&lt;li&gt;Prpare your device.&lt;/li&gt;
-&lt;li&gt;Send a CreateJob.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Put extra stuff on shipping boxes. FedEx records all of those things.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;act-2&#34;&gt;Act 2&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;S3 torrent file. Add “.torrent” to any url. Only torrents smaller then 5GB in size.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/maxgillett/s3_multipart&#34;&gt;S3 multipart&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;act-3&#34;&gt;Act 3&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use FFmpeg.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;act-4&#34;&gt;Act 4&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Firstboot.&lt;/li&gt;
-&lt;li&gt;Init script.&lt;/li&gt;
-&lt;li&gt;rc.local.&lt;/li&gt;
-&lt;li&gt;Amazon User Data. (curl any instance url).&lt;/li&gt;
-&lt;li&gt;:shutdown_behavior =&amp;gt; &amp;lsquo;terminate&amp;rsquo;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/StarrHorne&#34;&gt;Starr Horne&lt;/a&gt;
-The hackers guide to usability testing&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Design can have bugs.&lt;/li&gt;
-&lt;li&gt;Programmers are not your users.&lt;/li&gt;
-&lt;li&gt;Designes are not your users.&lt;/li&gt;
-&lt;li&gt;You clients may not be your users.&lt;/li&gt;
-&lt;li&gt;Form make them feel dumb due to terminology.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;“Usability testing: you don&amp;rsquo;t need microphones and video cameras and two-way
-mirrors and guys in lab coats.”
- - You don&amp;rsquo;t need a lab or a team. Just sit someone infront of a computer and
- have a clip board ready.&lt;/p&gt;
-
-&lt;p&gt;Two tests:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;What is it test?&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Have them look at something and just ask them what it is?&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Please do this:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Give someone a particular task.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Read: Steve Krug - Rocket Surgery Made Easy&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/thagomizer_rb&#34;&gt;Aja Hammerly&lt;/a&gt; (&lt;a href=&#34;http://www.thagomizer.com/files/something_went_wrong.pdf&#34;&gt;slide deck&lt;/a&gt;)
-We&amp;rsquo;re sorry but something went wrong&lt;/p&gt;
-
-&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
-
-&lt;h3 id=&#34;step-0-known-state&#34;&gt;Step 0: Known State&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Not nessecarley a good state but be able to always get back to it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-1-identify-a-problem&#34;&gt;Step 1: Identify A Problem&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Write down steps.&lt;/li&gt;
-&lt;li&gt;Write a test.&lt;/li&gt;
-&lt;li&gt;Failing Integration test is usually to big debug.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-2-make-hypothese&#34;&gt;Step 2: Make Hypothese&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Avoid Conjunction.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-3-test-hypothese&#34;&gt;Step 3: Test Hypothese&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;5 minutes. You should have an understanding in 5 minutes.&lt;/li&gt;
-&lt;li&gt;One thing at a time.&lt;/li&gt;
-&lt;li&gt;Stop refactoring while debugging (Red/Green/Refactor).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-4-is-it-fixed&#34;&gt;Step 4: Is it fixed?&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use guard.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-5-refactor&#34;&gt;Step 5: Refactor&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Only once it is fixed can you begin refactoring.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;step-6a-next-failure&#34;&gt;Step 6a: Next Failure&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Re-run your tests and find out if it is still broken.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;tools&#34;&gt;Tools&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Git Bisect.&lt;/li&gt;
-&lt;li&gt;People.&lt;/li&gt;
-&lt;li&gt;Rubber ducking (Talk it out even if it is an inanimite object).&lt;/li&gt;
-&lt;li&gt;Labradoing (Rubber Ducking).&lt;/li&gt;
-&lt;li&gt;Ask for help.&lt;/li&gt;
-&lt;li&gt;Read the Docs.&lt;/li&gt;
-&lt;li&gt;Issue &amp;amp; Bug trackers.&lt;/li&gt;
-&lt;li&gt;Mailing Lists.&lt;/li&gt;
-&lt;li&gt;Set a time Limit. (30min)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;bug-writing&#34;&gt;Bug writing:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;What I did&lt;/li&gt;
-&lt;li&gt;What happened&lt;/li&gt;
-&lt;li&gt;What I expected&lt;/li&gt;
-&lt;li&gt;Notes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;be-nice&#34;&gt;Be nice&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;No generalizations.&lt;/li&gt;
-&lt;li&gt;Don&amp;rsquo;t write bugs with words: always/never/everyone. It comes off as condesending.&lt;/li&gt;
-&lt;li&gt;Be Objective.&lt;/li&gt;
-&lt;li&gt;“If it was obvious it would be there.”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;provide-a-patch&#34;&gt;Provide a patch&lt;/h2&gt;
-
-&lt;p&gt;Just do it. People may not accept your patch but do not take it personally.&lt;/p&gt;
-
-&lt;h2 id=&#34;do-not-panic&#34;&gt;Do not Panic&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Recognize the &lt;em&gt;real&lt;/em&gt; problem.&lt;/li&gt;
-&lt;li&gt;Come to a consensus (including non-tech folk.)&lt;/li&gt;
-&lt;li&gt;Triage. The &amp;ldquo;loudest&amp;rdquo; problem may not be the most important.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;stop-the-bleeding&#34;&gt;Stop the bleeding&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Rollback.&lt;/li&gt;
-&lt;li&gt;Does it stil work?&lt;/li&gt;
-&lt;li&gt;Feature Switch. To turn features off.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;fix-the-issue&#34;&gt;Fix the issue&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Coordinate with your team.&lt;/li&gt;
-&lt;li&gt;Write a test.&lt;/li&gt;
-&lt;li&gt;Set expectations with everyone.&lt;/li&gt;
-&lt;li&gt;Be pridictable.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;reflect&#34;&gt;Reflect&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Solo (by yourself).&lt;/li&gt;
-&lt;li&gt;With your team. Ask the 5 W.&lt;/li&gt;
-&lt;li&gt;Fact based (no blame).&lt;/li&gt;
-&lt;li&gt;Future focused.&lt;/li&gt;
-&lt;li&gt;Do not add a process. Process usually means bad communication.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/mjkirk&#34;&gt;Matt Kirk&lt;/a&gt;
-Sentiment Analysis&lt;/p&gt;
-
-&lt;h2 id=&#34;big-data-languages&#34;&gt;Big Data Languages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Java&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;R&lt;/li&gt;
-&lt;li&gt;Julia&lt;/li&gt;
-&lt;li&gt;Clojure&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#39;https://twitter.com/sarablackthorne/status/392379743045054464/photo/1&#39;&gt;
-  &lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-10-21-ruby-is-not-complex-math.jpg&#39; alt=&#39;Ruby is not complex math&#39; /&gt;
- &lt;/a&gt;
-Photo by: &lt;a href=&#34;http://twitter.com/sarablackthorne&#34;&gt;Sara Blackthorne&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;step-1-collect-data&#34;&gt;Step 1: Collect Data&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/jperla/sentiment-data&#34;&gt;github.com/jperla/sentiment-data&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Linear regression has a curse: The curse of dimensionality&lt;/p&gt;
-
-&lt;p&gt;Play with it &lt;a href=&#34;http://sentiment-analyzer.heroku.com&#34;&gt;sentiment-analyzer.heroku.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;features-of-text&#34;&gt;Features of Text&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Character count.&lt;/li&gt;
-&lt;li&gt;Frequency of words.&lt;/li&gt;
-&lt;li&gt;Words.&lt;/li&gt;
-&lt;li&gt;Stems.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-10-21-portland-donuts.png&#39; alt=&#39;Portland Hippies make Good Donuts&#39; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/mandoescamilla&#34;&gt;Mando Escamilla&lt;/a&gt;
-Tell Us Another Story, Grandpa: Lessons Learned Over 16 Years as a Developer&lt;/p&gt;
-
-&lt;p&gt;“A bosses job is to protect and insulate employees.”&lt;/p&gt;
-
-&lt;p&gt;“Do what you like as much as you can.”&lt;/p&gt;
-
-&lt;p&gt;“Good employees are like gold.”&lt;/p&gt;
-
-&lt;p&gt;“Find a mentor.”&lt;/p&gt;
-
-&lt;p&gt;“Apply engineering principals to family and every day life.”&lt;/p&gt;
-
-&lt;p&gt;“The worst reason to do something today is because you did it yesterday.”&lt;/p&gt;
-
-&lt;p&gt;“Work towards your priority.”&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/aspleenic&#34;&gt;PJ Hagerty&lt;/a&gt;
-Coding and The Mozart Effect&lt;/p&gt;
-
-&lt;p&gt;8-10 iq points higher when listening to Mozart over ocean sounds or similar “calming music.”&lt;/p&gt;
-
-&lt;p&gt;Measuring cognitive ability.&lt;/p&gt;
-
-&lt;p&gt;The Mozart effect:
-A set of research results indicating that listening to Mozart&amp;rsquo;s music may induce
-a short-term improvement on the performance of certain kinds of mental tasks
-known as &amp;ldquo;spatial-temporal reasoning;&amp;rdquo; Popularized versions of the hypothesis,
-which suggest that &amp;ldquo;listening to Mozart makes you smarter&amp;rdquo;, or that early
-childhood exposure to classical music has a beneficial effect on mental development;&lt;/p&gt;
-
-&lt;p&gt;Most studies used the exact same peice of Mozart. They decided to test how far away
-from that song and receive the same effect. They tested with Justin Bieber and found
-a benefeit was still present but barely. The further away you get from the sound
-of Mozart the smaller the effect will be.
-Find something that is similar and within the same genre but must be a little different.
-You must be finding new music. Jazz/Old Blues.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s all Ephemeral. If you listen to the same thing too often it will become less effective.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://twitter.com/the_zenspider&#34;&gt;Ryan Davis&lt;/a&gt;
-Real craftsmen (can) create their own tools&lt;/p&gt;
-
-&lt;p&gt;90% software engineering is a lie.&lt;br /&gt;
-Websites/devops is not engineering.&lt;br /&gt;
-We write software but it is not close to engineering.&lt;/p&gt;
-
-&lt;p&gt;We are craftsman. We craft software.&lt;/p&gt;
-
-&lt;p&gt;Use the right tool for the job. Custom tools. Do not always write custom tools.&lt;/p&gt;
-
-&lt;p&gt;Algol-based languages are no grood. It is &lt;em&gt;static&lt;/em&gt; &amp;amp; &lt;em&gt;opaque&lt;/em&gt;, not
-introspective and can not reason about its own code.&lt;/p&gt;
-
-&lt;p&gt;Tool-Making is for the elite.&lt;/p&gt;
-
-&lt;p&gt;Do you write tools to help you code? Why not?&lt;/p&gt;
-
-&lt;h2 id=&#34;language-tools&#34;&gt;Language Tools&lt;/h2&gt;
-
-&lt;h3 id=&#34;flog-and-flay&#34;&gt;Flog and Flay&lt;/h3&gt;
-
-&lt;p&gt;Flog analyzes complexity on methods.&lt;/p&gt;
-
-&lt;p&gt;Flay reports structually similar code. Fuzzily Similar code.&lt;/p&gt;
-
-&lt;p&gt;Tools need to know how to build and walk a language.&lt;/p&gt;
-</description>
+      <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Josh Adams and Robby Clements Ruby Robotics
+Where to start Sphero - $130.00  Bluetooth enabled ball. Drives itself around. Best dog toy ever. Waterproof.  Parrot AR Droid - $150.00  Acts as its own wifi AP. Connect over wifi. UDP packers. Stream video from 2 cameras.  Rolling your own  Beaglebone Black.</description>
     </item>
     
     <item>
       <title>Angular and Liquid expressions in Jekyll</title>
       <link>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 UTC</pubDate>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
-      <description>&lt;p&gt;I started writing an Angular application to intereact with an API I have
-produced recently. The Angular app is compiled as a static site
-with Jekyll. I immediately ran into an issue with Angular.
- None of my expressions were showing up. I
-realized it was because Liquid which is included with Jekyll uses the
-same expression tags as Angular: &lt;code&gt;{{ myVariable }}&lt;/code&gt;. This meant the
-Angular expressions were not making it as raw text into the final template
-as they were being caught by Liquid.&lt;/p&gt;
-
-&lt;p&gt;I started by looking to see if there was an easy way to deactivate Liquid
-inside Jekyll as I had no intention of using it. Without monkey patching the rendering process
-it seemed like I was stuck with the Liquid processing.&lt;/p&gt;
-
-&lt;p&gt;All is not lost though. A quick search returned an option to change the
-expression symbols for Angular:&lt;/p&gt;
-
-&lt;p&gt;Coffeescript:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #3333BB&#34;&gt;@myApp = &lt;/span&gt;angular.module(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;, [])
-
-@myApp.config [&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;$interpolateProvider&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;($interpolateProvider)-&amp;gt;&lt;/span&gt;
-  $interpolateProvider.startSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{(&amp;#39;&lt;/span&gt;).endSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;)}&amp;#39;&lt;/span&gt;)
-]
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Javascript:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; myapp;
-myApp &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; angular.module(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myApp&amp;#39;&lt;/span&gt;, []);
-
-myApp.config([
-  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;$interpolateProvider&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;($interpolateProvider) {
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; $interpolateProvider.startSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{(&amp;#39;&lt;/span&gt;).endSymbol(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;)}&amp;#39;&lt;/span&gt;);
-  }
-]);
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This allowed me to now use &lt;code&gt;{( myVariable )}&lt;/code&gt; for Anuglar expressions and it
-does not get caught in the liquid filters.&lt;/p&gt;
-
-&lt;aside&gt;
-**Aside:** While writing Liquid examples in Octopress; 
-`{{ myVariable }}`
-actually gets caught in the Liquid filter as an expression. I had to use 
-the Liquid `raw` &amp; `endraw` tags to be able to show the expression above. 
-Also note in newer versions of Jekyll and Liquid `raw` has been
-deprecated in favour of the `verbatim` tag.
-&lt;/aside&gt;
-</description>
+      <description>I started writing an Angular application to intereact with an API I have produced recently. The Angular app is compiled as a static site with Jekyll. I immediately ran into an issue with Angular. None of my expressions were showing up. I realized it was because Liquid which is included with Jekyll uses the same expression tags as Angular: {{ myVariable }}. This meant the Angular expressions were not making it as raw text into the final template as they were being caught by Liquid.</description>
     </item>
     
     <item>
       <title>Killing all Ruby Processes</title>
       <link>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</link>
-      <pubDate>Tue, 24 Sep 2013 11:30:00 UTC</pubDate>
+      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</guid>
-      <description>&lt;p&gt;I was running some commands that I later found out had left me with many
-orphaned ruby processes. Too many to kill one by one. I needed to just
-get rid of them all and quickly so killing all ruby processes was the
-best way to go.&lt;br /&gt;
-Here is a short list of convenient and inconvenient ways
-to do that:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; each in &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`&lt;/span&gt;ps -eo pid,command | grep ruby | grep -v grep | awk &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`&lt;/span&gt;; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt; -9 &lt;span style=&#34;color: #996633&#34;&gt;$each&lt;/span&gt;;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;
-killall −9 ruby
-pkill -9 ruby
-pidof ruby | xargs &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt; -9
-ps aux | grep sidekiq | awk &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt; | xargs &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The easiest commands and best suggestions were brought to my attention
-by &lt;a href=&#34;https://twitter.com/AlanBailward&#34;&gt;Alan Bailward&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/halkeye&#34;&gt;Gavin
-Mogan&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
+Here is a short list of convenient and inconvenient ways to do that:
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.</description>
     </item>
     
     <item>
       <title>MacBook Air (Mid 2013) Wifi Issues</title>
       <link>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
-      <pubDate>Tue, 17 Sep 2013 20:20:00 UTC</pubDate>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
-      <description>
-
-&lt;p&gt;As soon as the MacBook Air (Mid 2013) started shipping; reports began
-flooding in about intermittant wifi connectivity
-problems.&lt;sup&gt;&lt;a href=&#39;#ref-1&#39;&gt;[1]&lt;/a&gt;&lt;/sup&gt; The day after it was
-released I ordered it. I can&amp;rsquo;t say I
-experinced the same issues everyone else was claiming to run into.
-Apple denied the issue at first (as they always do) but later released
-a software update for the issue.&lt;sup&gt;&lt;a href=&#39;#ref-2&#39;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#39;http://alwayscoding.ca/images/posts/2013-08-25-macbookair.jpg&#39; alt=&#39;Macbook Air
-(mid 2013)&#39; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Not soon after the software update I began experiencing the
-wifi connectivity issues. When the laptop is woken from sleep it
-will connect to the first network available. After this connection it will
-no longer show any available network. I will have to proceed by turning the wifi off and
-back on again. It will search for all the networks and then let me finally
-connect to my own. This process repeats anytime the laptop goes to
-sleep.&lt;/p&gt;
-
-&lt;h2 id=&#34;other-issues&#34;&gt;Other Issues&lt;/h2&gt;
-
-&lt;p&gt;Aside from the aforementioned wireless issue the laptop now suffers from sleep/wake
-problems. When woken from sleep I can use the laptop like normal for
-five to ten seconds before it will put itself back to sleep. Waking it a
-second time requires multiple trackpad/keyboard presses before it
-responds.&lt;/p&gt;
-
-&lt;p&gt;After some searching it seems like the sleep/wake issue might be related to a new standby mode.&lt;sup&gt;&lt;a href=&#39;#ref-3&#39;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;{% blockquote Jason D. O&amp;rsquo;Grady, &lt;a href=&#34;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&#34;&gt;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&lt;/a&gt; %}
-…the reason for the delay is Apple&amp;rsquo;s new standby mode which is built into OS X to achieve longer battery life when MacBook Pros and Airs are sleeping…
-{% endblockquote %}&lt;/p&gt;
-
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-
-&lt;p&gt;1.
-  * &lt;a id=&#39;ref-1&#39; href=&#39;http://9to5mac.com/2013/06/24/apple-investigating-new-macbook-air-wifi-issues-some-customers-receiving-replacements/&#39;&gt;Apple investigating new MacBook Air Wi-Fi issues, customers
-   receiving replacements&lt;/a&gt;
-  * &lt;a href=&#34;http://www.macrumors.com/2013/06/29/apple-testing-software-update-to-address-2013-macbook-air-wi-fi-issues/&#34;&gt;Apple Testing Software Update to Address 2013 MacBook Air Wi-Fi
-    Issues&lt;/a&gt;
-  * &lt;a href=&#34;http://www.engadget.com/2013/06/24/apple-allegedly-looking-into-macbook-air-wifi-issue-replacing-m/&#34;&gt;Apple allegedly looking into MacBook Air WiFi issue, replacing
-    machines&lt;/a&gt;
-2.
-  &lt;a id=&#39;ref-2&#39; href=&#39;http://support.apple.com/kb/DL1672&#39;&gt;MacBook Air (Mid 2013) Software Update 1.0&lt;/a&gt;
-3.
-  &lt;a id=&#39;ref-3&#39;
-    href=&#39;http://www.zdnet.com/faster-wake-from-sleep-on-macbooks-7000017301/&#39;&gt;Faster
-wake from sleep on MacBooks&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>As soon as the MacBook Air (Mid 2013) started shipping; reports began flooding in about intermittant wifi connectivity problems.[1] The day after it was released I ordered it. I can&amp;rsquo;t say I experinced the same issues everyone else was claiming to run into. Apple denied the issue at first (as they always do) but later released a software update for the issue.[2]
+Not soon after the software update I began experiencing the wifi connectivity issues.</description>
     </item>
     
     <item>
       <title>Meaning in my work</title>
       <link>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 UTC</pubDate>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</guid>
-      <description>&lt;blockquote&gt;
-  &lt;p&gt;
-“If you enjoy what you do you will never work a day in your life.”
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;&lt;/strong&gt;
-&lt;/blockquote&gt;
-
-
-&lt;p&gt;Just recently I was elated when a client contacted us. We have
-been working on an ongoing project with them for over two years. They
-contacted us just to let us know they had used the project as a
-demo and witness. They used the project to help acquire funding for twenty-five full
-scholarships for youth from all
-over the world to attend any educational insitutue of their choosing.
-My project manager read the email to me and I got goosebumps. A
-project that I worked on will actually be making a major difference in twenty-five
-young peoples lives.&lt;/p&gt;
-</description>
+      <description>“If you enjoy what you do you will never work a day in your life.”      Just recently I was elated when a client contacted us. We have been working on an ongoing project with them for over two years. They contacted us just to let us know they had used the project as a demo and witness. They used the project to help acquire funding for twenty-five full scholarships for youth from all over the world to attend any educational insitutue of their choosing.</description>
     </item>
     
     <item>
       <title>HTML Anchors with ids</title>
       <link>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</link>
-      <pubDate>Tue, 03 Sep 2013 10:42:00 UTC</pubDate>
+      <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</guid>
-      <description>&lt;p&gt;Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.&lt;/p&gt;
-
-&lt;p&gt;When adding anchors on a page for the purpose of in-page links my typical method for years
-has been to add a link with the anchor name in the &lt;code&gt;href&lt;/code&gt; and an anchor tag with a
-&lt;code&gt;name&lt;/code&gt; attribute.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-Some page content…
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Just the other day &lt;a href=&#34;http://www.twitter.com/ry5n&#34;&gt;@ry5n&lt;/a&gt; informed me that a link that corresponds to an elements &lt;code&gt;id&lt;/code&gt; will work just the
-same and there&amp;rsquo;s no need to add an additional anchor with a &lt;code&gt;name&lt;/code&gt;. This
-allows you to use any element as the anchor. I find this avoids
-additional un-nessecary markup and overall is more convenient.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#productList&amp;quot;&lt;/span&gt;&amp;gt;View more products&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-Some page content…
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;productList&amp;quot;&lt;/span&gt;&amp;gt;…&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;According to &lt;a href=&#34;http://www.w3.org/TR/html401/struct/links.html#anchors-with-id&#34;&gt;the
-docs&lt;/a&gt;:
-&lt;blockquote&gt;
-  &lt;p&gt;
-The id and name attributes share the same name space. This means that they cannot both define an anchor with the same name in the same document. It is permissible to use both attributes to specify an element&#39;s unique identifier for the following elements: A, APPLET, FORM, FRAME, IFRAME, IMG, and MAP. When both attributes are used on a single element, their values must be identical.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;&lt;/strong&gt;
-&lt;/blockquote&gt;
-&lt;/p&gt;
-</description>
+      <description>Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
+When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
+&amp;lt;a href=&amp;quot;#productList&amp;quot;&amp;gt;View more products&amp;lt;/a&amp;gt; Some page content… &amp;lt;a name=&amp;quot;productList&amp;quot;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;ul class=&amp;quot;productList&amp;quot;&amp;gt;…&amp;lt;/a&amp;gt;  Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&amp;rsquo;s no need to add an additional anchor with a name.</description>
+    </item>
+    
+    <item>
+      <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
+      <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <description>I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone related issues within one of the applications I contract on. This is a just a list of notable behaviours I expereinced whilst working with Ruby, Rails, Dates &amp;amp; TimeZones.
+Note: DST is in effect at the time of writing.
+Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::TimeZone object. I would love to think that this instance would know everything about that Time Zone.</description>
+    </item>
+    
+    <item>
+      <title>Using Rails I18n translations to solve dynamic content issues</title>
+      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <description>Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
+The Setup This particular section of the application has rotating content.</description>
+    </item>
+    
+    <item>
+      <title>DataMapper SQL Queries in Rails Console</title>
+      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <description>A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
+DataMapper::Logger.new($stdout, :debug)
+Enter that at anytime while running in rails c and you should start seeing the output immediatley.
+Note If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity map.</description>
+    </item>
+    
+    <item>
+      <title>Map with Index</title>
+      <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
+      <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
+      <description>Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.
+While working on my main contract today I needed to create a new array based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just use Enumerable::map right? Almost immediatley I realized I needed to make a reference to an array via the loops index. I first checked to see if a map_with_index existed similar to Enumerable::each_with_index.
+It doesn&amp;rsquo;t.</description>
+    </item>
+    
+    <item>
+      <title>More fun with the Ruby Symbol</title>
+      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
+(someone gists some code)
+sevenseacat: empty array seems the silly thing to have
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later
+Tarential: so they&amp;rsquo;re close at hand
+tagrudev: little kittens die when you define an unused var
+brianpWins: but if you do want to leave empty arrays around.</description>
+    </item>
+    
+    <item>
+      <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
+      <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <description>Excited to start running Garnish against Ruby 2.0.0 I attempted installation tonight to get build failed:
+downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz Installing ruby-2.0.0-p0... BUILD FAILED Inspect or clean up the working tree at /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615 Results logged to /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log Last 10 log lines: installing default gems: /Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 (build_info, cache, doc, gems, specifications) bigdecimal 1.2.0 io-console 0.4.2 json 1.7.7 minitest 4.3.2 psych 2.0.0 rake 0.9.6 rdoc 4.0.0 test-unit 2.0.0.0 The Ruby openssl extension was not compiled.</description>
+    </item>
+    
+    <item>
+      <title>n&#43;1 Problems and Identity Maps</title>
+      <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <description>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the includes method. The includes method being the suggested best practice for the problem now. includes will be mentioned at the bottom of the post.
+Take me to the current best practice.
+How to deal with n+1 issues utilizing identity maps:
+What is the n+1 issue?</description>
+    </item>
+    
+    <item>
+      <title>Expiring Cache Fragments In The Rails Console</title>
+      <link>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
+      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
+      <description>One of the much larger Rails applications I work on makes heavy use of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t auto-expiring at the moment. After doing a deployment I needed to expire these sections manually via the console for my first time. I grabbed the name of the fragment from the view where it was being cached.
+- cache(&#39;all_category_judges&#39;) do ...  I only knew one way to access the cache in the console and attempted clearing the cache fragment from there.</description>
+    </item>
+    
+    <item>
+      <title>Nginx 413 Request Entity Too Large</title>
+      <link>http://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</link>
+      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</guid>
+      <description>Using: nginx version: nginx/1.2.4
+I manage a few Linode instances as client servers but I would far from consider myself a sysadmin. I received an email from a client regarding some uploading issues. After some testing I concluded any combination of files over 1mb would raise Nginx 413 Request Entity Too Large
+I upped the file limit within the virtualhost file by changing the client_max_body_size
+upstream app { server unix:/tmp/app.sock fail_timeout=0; } server { listen 80; location / { proxy_pass http://app; proxy_redirect off; client_max_body_size 6m; } }  This still did not work.</description>
+    </item>
+    
+    <item>
+      <title>Calling a Specific Gem Version In The Console</title>
+      <link>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
+$ rails _3.1.0_ new rollback  You also must already have this version of the gem installed on your system for it to work.</description>
+    </item>
+    
+    <item>
+      <title>HTML Ordered List Offset</title>
+      <link>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</link>
+      <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</guid>
+      <description>This week at the office I&amp;rsquo;ve been on a coding hiatus and just doing a lot of copy placement and markup. The client requested having a numbered list of categories separated by type headers.
+I added markup as such:
+ %ul %li %h2 Video %ol %li Animation %li Documentary %li Music Video %li Narrative %li Poetry/Experimental %li Collaboration %li UNICEF Challenge %li %h2 Print %ol %li Photo Collection/Digital Story/Photo Essay %li Poster/Collage/Campaign  Output:</description>
+    </item>
+    
+    <item>
+      <title>There was a problem with the editor vi</title>
+      <link>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</link>
+      <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</guid>
+      <description>I don&amp;rsquo;t recall the circumstances that lead to the issue but anytime I tried to open vim for git I received:
+&amp;ldquo;There was a problem with the editor vi&amp;rdquo;
+The solution:
+git config --global core.editor /usr/local/bin/vim  </description>
+    </item>
+    
+    <item>
+      <title>Hash Defaults in Ruby</title>
+      <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
+      <description>I was writing a rake task to handle importing data from an older community system and needed to set a default value for anything that the old system didn&amp;rsquo;t have. I was using hashs and thought to myself &amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I found out that hashs do infact support defaults.
+I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default</description>
+    </item>
+    
+    <item>
+      <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
+      <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
+{:cat =&amp;gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
+    </item>
+    
+    <item>
+      <title>Mongoid and has_secure_password</title>
+      <link>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
+      <description>In the apps I&amp;rsquo;ve been working on recently I decided to utilize rails built in authentication &amp;lsquo;has_secure_password&amp;rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&amp;rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp;amp; Mongoid. When trying to use the has_secure_password method I got:
+undefined local variable or method `has_secure_password&#39; for User:Class (NameError)  Solution: You must include include ActiveModel::SecurePassword.</description>
+    </item>
+    
+    <item>
+      <title>Transactions and new_record?</title>
+      <link>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</guid>
+      <description>While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I ran into an odd issue after I had run a few objects through a Transaction. Although the transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted in a return of false as if the record had been saved to the database.
+I also found the same issue recorded here: http://squarewheel.wordpress.com/2008/06/11/new_record/
+Here is example code where the error will happen.</description>
+    </item>
+    
+    <item>
+      <title>Flash[:notice] vs Flash.now[:notice]</title>
+      <link>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
+      <pubDate>Sun, 11 Sep 2011 00:29:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
+      <description>While working with my new employer (in 2011) I noticed a minor but recurring issue in our application. We had been storing flash[:notice] messages in most of our actions but were not using that flash message anywhere. This was resulting in the flash message showing up at in-appropriate times. What I was unaware of was a slightly different call which is flash.now[:notice]. This results in the flash only having a lifespan of the through the next request.</description>
+    </item>
+    
+    <item>
+      <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
+      <link>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <description>TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.
+While writing a Twitter application in Rails I was having an issue saving tweets to the database.
+A quick brief on the application: The app would download tweets from the mention timeline of a particular user. It would only download tweets it hadn&amp;rsquo;t already processed based on the last saved tweets unique id (as set by twitter). All the data from the tweets were making it into the database as expected but every time the application downloaded tweets it would re-download the same tweets.</description>
+    </item>
+    
+    <item>
+      <title>bson keys must be strings or symbols</title>
+      <link>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <description>While setting up a new Rails development environment I ran into the error bson keys must be strings or symbols. After some googling I found the following method to fix it:
+/gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install  /fixed</description>
+    </item>
+    
+    <item>
+      <title>The Ruby Symbol is a Memory Leak</title>
+      <link>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
+      <pubDate>Sat, 04 Dec 2010 00:13:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
+      <description>This is just a quick bit that I learned early in my Ruby career and always found interesting.
+Symbols Are Memory Leaks
+So is this the end of the world?
+No
+Symbols are a unique thing in ruby. It&amp;rsquo;s immutable, constant and unique. You can re-use the same Symbol over and over without allocating extra memory. As opposed to using a String over and over which will allocate memory with each instance.</description>
     </item>
     
   </channel>

@@ -1,64 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Rake on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Rake on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/rake/</link>
+    <description>Recent content in Rake on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jun 2012 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/rake/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Fri, 15 Jun 2012 00:00:00 UTC</updated>
     
     <item>
       <title>Hash Defaults in Ruby</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 UTC</pubDate>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
-      <description>&lt;p&gt;I was writing a rake task to handle importing data from an older
-community system and needed to set a default value for anything that
-the old system didn&amp;rsquo;t have. I was using hashs and thought to myself
-&amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I
-found out that hashs do infact support defaults.&lt;/p&gt;
-
-&lt;p&gt;I encourage you to check out the Ruby Docs
-&lt;a href=&#34;http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default&#34; title=&#34;Ruby Docs: Hash&#34;&gt;http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s Hash defaults at a quick glance:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;)
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:not_a_key&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;         &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;#39;cat&amp;#39;&lt;/span&gt;
-
-h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat&amp;#39;&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:not_a_key&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;         &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;#39;cat&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You can also feed the Hash a block that will execute on lookup&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;h,k&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; k&lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; }     &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                          &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;5&lt;/span&gt;
-
-h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;h,k&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; k&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_s &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39; says meowww&amp;#39;&lt;/span&gt; }  &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;                                        &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;cat says meowww&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Hashs can also take default Procs. Although as per the docs &amp;ldquo;It is not possible to set the default to a Proc that will be executed on each key lookup.&amp;rdquo;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {}
-h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;proc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;, key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; key
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;       &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; #&amp;lt;Proc:0x401b3948@-:6&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;To utiize Procs properly you must use the default_proc method:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;default_proc &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;proc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;, key&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #007020&#34;&gt;hash&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;key&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; key
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;       &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; 4&lt;/span&gt;
-h&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;cat&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;   &lt;span style=&#34;color: #888888&#34;&gt;#=&amp;gt; &amp;quot;catcat&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+      <description>I was writing a rake task to handle importing data from an older community system and needed to set a default value for anything that the old system didn&amp;rsquo;t have. I was using hashs and thought to myself &amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I found out that hashs do infact support defaults.
+I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default</description>
     </item>
     
   </channel>

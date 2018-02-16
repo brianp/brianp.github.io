@@ -1,116 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Sql on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Sql on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/sql/</link>
+    <description>Recent content in Sql on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 06 Mar 2013 02:02:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Wed, 06 Mar 2013 02:02:00 UTC</updated>
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
       <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
-      <pubDate>Wed, 06 Mar 2013 02:02:00 UTC</pubDate>
+      <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
-      <description>
-
-&lt;p&gt;Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the &lt;code&gt;includes&lt;/code&gt; method. The &lt;code&gt;includes&lt;/code&gt; method being the suggested best practice for the problem now. &lt;code&gt;includes&lt;/code&gt; will be mentioned at the bottom of the post.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;#current&#34;&gt;Take me to the current best practice&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;How to deal with n+1 issues utilizing identity maps:&lt;/p&gt;
-
-&lt;h3 id=&#34;what-is-the-n-1-issue&#34;&gt;What is the n+1 issue?&lt;/h3&gt;
-
-&lt;p&gt;The n plus 1 issue occurs when you reference an associated record while looping an array of records. For example (using sql): You load a list of &lt;code&gt;Posts&lt;/code&gt; and loop those posts displaying the &lt;code&gt;User&lt;/code&gt; who created each post. The initial posts would require a single query &lt;code&gt;SELECT * FROM &#39;posts&#39;&lt;/code&gt;.  Then when you loop the posts to display the user using &lt;code&gt;post.user&lt;/code&gt;. The db will be queried again. &lt;code&gt;SELECT * FROM &#39;users&#39; WHERE &#39;user_id&#39; = post.user_id&lt;/code&gt;. This query will happen once for every post you loop. If you have 10 posts you will get 10 extra queries for the users who wrote those posts. This is the definition of the n+1 issue.&lt;/p&gt;
-
-&lt;h3 id=&#34;avoiding-unnecessary-queries&#34;&gt;Avoiding unnecessary queries&lt;/h3&gt;
-
-&lt;p&gt;In my case it was an n+2 issue.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Judge&lt;/span&gt;
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mongoid&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Document&lt;/span&gt;
-  belongs_to &lt;span style=&#34;color: #AA6600&#34;&gt;:user&lt;/span&gt;
-  belongs_to &lt;span style=&#34;color: #AA6600&#34;&gt;:photo&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;as_json&lt;/span&gt;(options&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;{})
-    {
-      &lt;span style=&#34;color: #007020&#34;&gt;id&lt;/span&gt;: _id,
-      &lt;span style=&#34;color: #AA6600&#34;&gt;photo&lt;/span&gt;: photo,
-      &lt;span style=&#34;color: #AA6600&#34;&gt;user&lt;/span&gt;: user
-    }
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;User&lt;/span&gt;
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mongoid&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Document&lt;/span&gt;
-  has_one &lt;span style=&#34;color: #AA6600&#34;&gt;:judge&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Photo&lt;/span&gt;
-  &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Mongoid&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Document&lt;/span&gt;
-  has_one &lt;span style=&#34;color: #AA6600&#34;&gt;:judge&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #888888&#34;&gt;# judges_controller&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;index&lt;/span&gt;
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Judge&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;all
-  respond_with &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This as_json response results in an n+2 query issue from the Judge record. in my case giving the dev server a response time of:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Completed 200 OK in 816ms (Views: 785.2ms)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The key to solving this issue is to load the &lt;code&gt;Users&lt;/code&gt; and the &lt;code&gt;Photos&lt;/code&gt; in a single query instead of 1 by 1 per &lt;code&gt;Judge&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can do this utilizing Mongoids IdentityMap. Mongoid 2 and Mongoid 3 support this feature.&lt;/p&gt;
-
-&lt;p&gt;First turn on the identity map in the mongoid.yml configuration file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;development:
-  host: localhost
-  database: awesome_app
-  identity_map_enabled: true
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now change the controller action to manually load the users and photos. Note: The Mongoid::Relation record will lazily evaluate the query so you must call to_a to actually query the records and have them stored in the IdentityMap.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;index&lt;/span&gt;
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Judge&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;all
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@users&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;color: #AA6600&#34;&gt;:_id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:user_id&lt;/span&gt;))&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-  &lt;span style=&#34;color: #3333BB&#34;&gt;@photos&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Photo&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;where(&lt;span style=&#34;color: #AA6600&#34;&gt;:_id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;in &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:photo_id&lt;/span&gt;))&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-  respond_with &lt;span style=&#34;color: #3333BB&#34;&gt;@judges&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This results in only 3 queries total. 1 for the &lt;code&gt;Judges&lt;/code&gt;, 1 for the &lt;code&gt;Users&lt;/code&gt; and 1 for the &lt;code&gt;Photos&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Completed 200 OK in 559ms (Views: 87.7ms)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;how-does-this-work-what-s-an-identitymap&#34;&gt;How does this work? What&amp;rsquo;s an IdentityMap?&lt;/h3&gt;
-
-&lt;p&gt;An IdentityMap helps to keep track of what objects or records have already been loaded. So if you fetch the first &lt;code&gt;User&lt;/code&gt; record the IdentityMap will store it. Then if you attempt to fetch the same &lt;code&gt;User&lt;/code&gt; again Mongoid queries the IdentityMap for the User before it queries the Database again. This will save 1 query on the database.&lt;/p&gt;
-
-&lt;p&gt;By fetching all of the &lt;code&gt;User&lt;/code&gt; and &lt;code&gt;Photo&lt;/code&gt; records that the &lt;code&gt;Judges&lt;/code&gt; require in manual queries we load the data into the IdentityMap for later use. Then when the Judge requires it&amp;rsquo;s &lt;code&gt;User&lt;/code&gt; and &lt;code&gt;Photo&lt;/code&gt; it checks the IdentityMap and does not need to query the database for them.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#39;current&#39;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;the-includes-method&#34;&gt;The includes method&lt;/h3&gt;
-
-&lt;p&gt;Following the practice from ActiveRecord, Mongoid later included a method for doing this type of call in a single concise method.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Judge&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;all&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;includes(&lt;span style=&#34;color: #AA6600&#34;&gt;:user&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:photo&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This will perform only 3 queries selecting only the users and photos that belong to the returned judges.&lt;/p&gt;
-
-&lt;p&gt;Here are links to the docs for both Mongoid and ActiveRecord:&lt;br /&gt;
-&lt;a href=&#34;http://mongoid.org/en/mongoid/docs/querying.html#query_plus&#34;&gt;Read more about eager loading in
-Mongoid&lt;/a&gt;.&lt;br /&gt;
-&lt;a href=&#34;http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations&#34;&gt;Read more about eager loading in
-ActiveRecord&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the includes method. The includes method being the suggested best practice for the problem now. includes will be mentioned at the bottom of the post.
+Take me to the current best practice.
+How to deal with n+1 issues utilizing identity maps:
+What is the n+1 issue?</description>
     </item>
     
   </channel>

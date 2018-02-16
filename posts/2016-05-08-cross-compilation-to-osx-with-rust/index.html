@@ -1,0 +1,679 @@
+
+
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Cross compilation to OSX with Rust</title>
+    <meta name="author" content="Brian Pearce">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="http://alwayscoding.ca/favicon.png">
+    
+
+    
+    <meta name="description" content="{{/* https://github.com/japaric/rust-cross#cross-compiling-with-cargo https://gist.github.com/sfackler/14d53ddf94e86600b7de https://github.com/tpoechtrager/osxcross https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943 https://static.rust-lang.org/dist/index.html */}}
+It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine.">
+    <meta property="og:description" content="{{/* https://github.com/japaric/rust-cross#cross-compiling-with-cargo https://gist.github.com/sfackler/14d53ddf94e86600b7de https://github.com/tpoechtrager/osxcross https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943 https://static.rust-lang.org/dist/index.html */}}
+It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Cross compilation to OSX with Rust">
+    <meta property="og:url" content="/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+    <meta property="og:site_name" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:description" content="{{/* https://github.com/japaric/rust-cross#cross-compiling-with-cargo https://gist.github.com/sfackler/14d53ddf94e86600b7de https://github.com/tpoechtrager/osxcross https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943 https://static.rust-lang.org/dist/index.html */}}
+It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine.">
+    
+      <meta name="twitter:creator" content="@brian_pearce">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="http://alwayscoding.ca/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://alwayscoding.ca/">{ always: &#39;coding&#39; }</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="http://alwayscoding.ca/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://alwayscoding.ca/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Brian Pearce</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/brianp" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.twitter.com/brian_pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/brian-pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Cross compilation to OSX with Rust
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-05-08T10:06:42Z">
+        
+  May 8, 2016
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>{{/*
+<a href="https://github.com/japaric/rust-cross#cross-compiling-with-cargo">https://github.com/japaric/rust-cross#cross-compiling-with-cargo</a>
+<a href="https://gist.github.com/sfackler/14d53ddf94e86600b7de">https://gist.github.com/sfackler/14d53ddf94e86600b7de</a>
+<a href="https://github.com/tpoechtrager/osxcross">https://github.com/tpoechtrager/osxcross</a>
+<a href="https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943">https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943</a>
+<a href="https://static.rust-lang.org/dist/index.html">https://static.rust-lang.org/dist/index.html</a>
+*/}}</p>
+
+<p>It started with <a href="http://github.com/brianp/muxed">Muxed</a>. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</p>
+
+<p>Overall documentation on the complete process did not seem readily available. So there was a lot of question-asking, googling, and piecing together differents parts of solutions.</p>
+
+<p>Let&rsquo;s meet <code>Rustup</code> and deal with some disambiguation.  The original <code>Rustup</code> was a <a href="https://static.rust-lang.org/rustup.sh">bash script</a> to help install the rust compiler. Since then the name has been re-purposed and now become the <a href="https://github.com/rust-lang-nursery/rustup.rs">Rust toolchain installer</a>. The new <code>Rustup</code> offers us the beginning of support for <a href="https://github.com/rust-lang-nursery/rustup.rs#cross-compilation">cross compilation</a>.</p>
+
+<p><strong>But today we are focusing on a pre Rustup Toolchain cross compilation build process.</strong></p>
+
+<p>Let&rsquo;s layout some assumptions and dependencies before we start:</p>
+
+<p>This guide unfortunately requires two systems to build the first time but a single system to continue cross compiling from. It is possible to do with Unix only, but I could not make it work. Assume all instructions are being executed on the Unix system unless otherwise noted.</p>
+
+<ul>
+<li>Ubuntu 15.10 Wily Werewolf (Inside Vagrant/VirtualBox)</li>
+<li>Mac OSX 10.9.5</li>
+</ul>
+
+<p>Build tools on Ubuntu:</p>
+
+<ul>
+<li>curl</li>
+<li>git</li>
+<li>autotools-dev</li>
+<li>automake</li>
+<li>cmake</li>
+<li>clang</li>
+</ul>
+
+<h3 id="step-1-install-the-stdlib">Step 1. Install the stdlib</h3>
+
+<p>To cross compile you require the compiled <code>stdlib</code> for the architecture type you want to compile to. You will want to get the same <code>stdlib</code> as the version of <code>rustc</code> you are running. If <code>rustc -v</code> outputs <code>1.10</code> then you want <code>stdlib 1.10</code>. Luckily the Rust community makes these readily available for you. Head on over to <a href="https://static.rust-lang.org/dist/index.html">the distribution directoy</a> and find the package you&rsquo;re looking for based on architecture type, and version.</p>
+
+<p>In our case it will be: <code>rust-std-1.10.0-x86_64-apple-darwin</code>.</p>
+
+<p>Now fetch this package on to the unix system, untar it, and install it. Its location does not matter much and is not required to be in your project:</p>
+
+<pre><code class="language-shell">$ wget https://static.rust-lang.org/dist/rust-std-1.10.0-x86_64-apple-darwin.tar.gz
+$ tar -xvxf rust-std-1.10.0-x86_64-apple-darwin
+$ cd rust-std-1.10.0-x86_64-apple-darwin
+$ sudo ./install.sh
+install: installing component 'rust-std-x86_64-apple-darwin'
+
+   std is standing at the ready.
+</code></pre>
+
+<h3 id="step-2-acquire-an-xcode-package">Step 2. Acquire an Xcode Package</h3>
+
+<p><strong>Note:</strong> If you will be performing step 3 on an OSX system, and already have xcode installed, you can skip this step.</p>
+
+<p>Download Xcode. This will require an apple developer login. An active subscription is <strong>not required</strong>.</p>
+
+<p>The version of Xcode required at the time of writing is 7.3. You can find links to all the available versions of Xcode <a href="https://stackoverflow.com/questions/10335747/how-to-download-xcode-4-5-6-7-and-get-the-dmg-file#10335943">here</a>.</p>
+
+<h3 id="step-3-package-the-sdk">Step 3. Package the SDK</h3>
+
+<p>This is the part where you may deviate if desired.</p>
+
+<p><a href="https://github.com/tpoechtrager/osxcross">OSXCross</a> has an entire <a href="https://github.com/tpoechtrager/osxcross#packaging-the-sdk">section</a> on how to package the sdk for different OSX versions, while on different systems. Like I mentioned before, I could not manage sdk extraction on Unix, and ended up having to do this part on OSX.</p>
+
+<p>If you do not already have Xcode installed on your OSX system, install your chosen package.</p>
+
+<p>Clone the OSXCross repo to your OSX system, move into its directory, and call the extraction tool:</p>
+
+<pre><code class="language-shell">$ git clone git@github.com:tpoechtrager/osxcross.git
+$ cd osxcross
+$ ./tools/gen_sdk_package.sh
+</code></pre>
+
+<p>My system output two packages: <code>MacOSX10.10.sdk.tar.xz</code> and <code>MacOSX10.9.sdk.tar.xz</code>.</p>
+
+<p>Copy the desired package to your Unix system. I moved <code>MacOSX10.10.sdk.tar.xz</code> to the homdir on my Unix VM.</p>
+
+<h3 id="step-4-install-osxcross">Step 4. Install OSXCross</h3>
+
+<p>Now we also need OSXCross on the Unix system. And we need to move the <code>MacOSX10.10.sdk.tar.xz</code> package into osxcross&rsquo; <code>tarballs</code> directory.</p>
+
+<pre><code class="language-shell">$ git clone git@github.com:tpoechtrager/osxcross.git
+$ cd osxcross
+$ mv ~/MacOSX10.10.sdk.tar.xz ./tarballs
+</code></pre>
+
+<p>Now we install OSXCross:</p>
+
+<pre><code class="language-shell">$ OSX_VERSION_MIN=10.7 ./build.sh
+
+&gt; All done! Now you can use o32-clang(++) and o64-clang(++) like a normal compiler.
+
+&gt; (more output)…
+</code></pre>
+
+<p>As OSXCross will remind you, we also need to add the linkers to your path:</p>
+
+<pre><code class="language-shell">Do not forget to add
+
+/home/vagrant/osxcross/target/bin
+
+to your PATH variable.
+</code></pre>
+
+<h3 id="step-5-add-the-target-to-cargo">Step 5. Add the target to Cargo</h3>
+
+<p>I read this wrong. <strong>So. Many. Times.</strong> So let&rsquo;s be careful here.</p>
+
+<p>We are going to add the linker in our cargo <em>config</em>. This is the configuration for cargo. <em>Not</em> the Cargo.toml for your project.</p>
+
+<p>The configuration file can be in any project, or subdirectory of the project. Cargo will recursively look for a <code>.cargo/config</code> file.</p>
+
+<p>Add the following:</p>
+
+<pre><code class="language-shell">[target.x86_64-apple-darwin]
+linker = &quot;x86_64-apple-darwin14-clang&quot;
+
+[target.x86_64-unknown-linux-gnu]
+</code></pre>
+
+<p>This tells cargo which linker to use for the defined target.</p>
+
+<p>Not defining a linker for the <code>linux-gnu</code> target sets it to use the default system.</p>
+
+<h3 id="step-6-cross-compile-time">Step 6. Cross Compile Time!</h3>
+
+<p>Assuming you have made it this far you can now cross compile. Head to your project
+root and run cargo with the <code>--target</code> option, where the value matches the target
+in the Cargo config:</p>
+
+<pre><code class="language-shell">$ cargo build --target x86_64-apple-darwin
+</code></pre>
+
+<p>Success! You hopefully just cross compiled your application or library!</p>
+
+<p><img src="http://alwayscoding.ca/images/posts/kermit-dance-osxcross.gif" alt="Kermit the frog doing a happy dance!" title="Kermit the frog doing a happy dance!" /></p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/rustlang/">rustlang</a>
+
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/rust/">rust</a>
+
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/cross-compilation/">cross compilation</a>
+
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/osx/">osx</a>
+
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/unix/">unix</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/2016-09-09-traits-and-threads/" data-tooltip="Traits and Threads Workshop">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/2015-10-01-tips-for-working-with-delayed-job/" data-tooltip="Tips for working with Delayed Job">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alwayscoding.ca/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alwayscoding.ca/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alwayscoding.ca/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Brian Pearce. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/2016-09-09-traits-and-threads/" data-tooltip="Traits and Threads Workshop">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/posts/2015-10-01-tips-for-working-with-delayed-job/" data-tooltip="Tips for working with Delayed Job">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alwayscoding.ca/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alwayscoding.ca/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alwayscoding.ca/posts/2016-05-08-cross-compilation-to-osx-with-rust/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falwayscoding.ca%2Fposts%2F2016-05-08-cross-compilation-to-osx-with-rust%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http%3A%2F%2Falwayscoding.ca%2Fposts%2F2016-05-08-cross-compilation-to-osx-with-rust%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http%3A%2F%2Falwayscoding.ca%2Fposts%2F2016-05-08-cross-compilation-to-osx-with-rust%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Brian Pearce</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Barcelona, Spain
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         0 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('http://alwayscoding.ca/images/side-column-bg-blur.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="http://alwayscoding.ca/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+    
+  </body>
+</html>
+

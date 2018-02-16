@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Terminal on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Terminal on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/terminal/</link>
+    <description>Recent content in Terminal on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 24 Sep 2013 11:30:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Tue, 24 Sep 2013 11:30:00 UTC</updated>
     
     <item>
       <title>Killing all Ruby Processes</title>
       <link>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</link>
-      <pubDate>Tue, 24 Sep 2013 11:30:00 UTC</pubDate>
+      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</guid>
-      <description>&lt;p&gt;I was running some commands that I later found out had left me with many
-orphaned ruby processes. Too many to kill one by one. I needed to just
-get rid of them all and quickly so killing all ruby processes was the
-best way to go.&lt;br /&gt;
-Here is a short list of convenient and inconvenient ways
-to do that:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; each in &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`&lt;/span&gt;ps -eo pid,command | grep ruby | grep -v grep | awk &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;`&lt;/span&gt;; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt; -9 &lt;span style=&#34;color: #996633&#34;&gt;$each&lt;/span&gt;;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;
-killall −9 ruby
-pkill -9 ruby
-pidof ruby | xargs &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt; -9
-ps aux | grep sidekiq | awk &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt; | xargs &lt;span style=&#34;color: #007020&#34;&gt;kill&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The easiest commands and best suggestions were brought to my attention
-by &lt;a href=&#34;https://twitter.com/AlanBailward&#34;&gt;Alan Bailward&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/halkeye&#34;&gt;Gavin
-Mogan&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
+Here is a short list of convenient and inconvenient ways to do that:
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.</description>
     </item>
     
   </channel>

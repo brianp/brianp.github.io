@@ -1,83 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Arrays on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Arrays on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/arrays/</link>
+    <description>Recent content in Arrays on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jun 2013 15:32:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/arrays/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Fri, 07 Jun 2013 15:32:00 UTC</updated>
     
     <item>
       <title>Map with Index</title>
       <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
-      <pubDate>Fri, 07 Jun 2013 15:32:00 UTC</pubDate>
+      <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
-      <description>&lt;p&gt;Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.&lt;/p&gt;
-
-&lt;p&gt;While working on my main contract today I needed to create a new array
-based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just
-use &lt;code&gt;Enumerable::map&lt;/code&gt; right? Almost immediatley I realized I needed
-to make a reference to an array via the loops index. I first
-checked to see if a &lt;code&gt;map_with_index&lt;/code&gt; existed similar to
-&lt;a href=&#34;http://www.ruby-doc.org/core-2.0/Enumerable.html#method-i-each_with_index&#34;&gt;Enumerable::each_with_index&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It doesn&amp;rsquo;t.&lt;/p&gt;
-
-&lt;p&gt;I took a quick read through the docs and realized that &lt;code&gt;each_with_index&lt;/code&gt; actually returns an Enumerable.
-This means I can use &lt;code&gt;each_with_index&lt;/code&gt; and &lt;code&gt;map&lt;/code&gt; to achieve the desired
-effect. Here&amp;rsquo;s an example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# Canada eh?&lt;/span&gt;
-new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map { &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;value,index&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;value&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; is at position &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;index&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; }
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The cat is at position 0&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The dog is at position 1&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The moose is at position 2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;A closer look at the Enumerable returned by &lt;code&gt;each_with_index&lt;/code&gt; shows us
-exactly what each_with_index returns that lets map play so nicely:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;, &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;, &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;From here the array of arrays will get mapped. I had never thought of
-passing multiple values into a &lt;code&gt;map&lt;/code&gt; block but it works wonders. The
-&lt;code&gt;map&lt;/code&gt; block takes each value of the inner array and offers it as a value
-inside the block.&lt;/p&gt;
-
-&lt;p&gt;The actual reason I needed this code was to parse and alter a string
-into keys with multiple possible matches. I plan to write a more in-depth
-post regarding this topic later but until then here&amp;rsquo;s the snippet I used:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;phase &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# Dynamic&lt;/span&gt;
-string &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;awards.about.marquee.title&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #888888&#34;&gt;# A key for a yaml translation&lt;/span&gt;
-
-a &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-possibilities &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;each_with_index&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;v,i&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;
-  b &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;clone
-  b&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;i&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;phase&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;v&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
-  b&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;p2_awards.about.marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.p2_about.marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.about.p2_marquee.title&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;awards.about.marquee.p2_title&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This output the different possibilites where one of the potential keys
-could be prefixed with &amp;lsquo;p2&amp;rsquo;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ruby 1.9&lt;/strong&gt;&lt;br /&gt;
-While writing this post and sifting through documentation I also found
-the
-&lt;a href=&#34;http://ruby-doc.org/core-1.9.3/Enumerator.html#method-i-with_index&#34;&gt;Enumberable#with_index&lt;/a&gt;
-method which essentially does the same thing but can make the syntax
-easier to read:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #AA6600&#34;&gt;:cat&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:dog&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:moose&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-new_arr &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; arr&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;map&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;with_index {&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;value,index&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;value&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; is at position &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;#{&lt;/span&gt;index&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; }
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The cat is at position 0&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The dog is at position 1&amp;quot;&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;The moose is at position 2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;So there we have it: Map with index for ruby 1.8 and 1.9.&lt;/p&gt;
-</description>
+      <description>Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.
+While working on my main contract today I needed to create a new array based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just use Enumerable::map right? Almost immediatley I realized I needed to make a reference to an array via the loops index. I first checked to see if a map_with_index existed similar to Enumerable::each_with_index.
+It doesn&amp;rsquo;t.</description>
     </item>
     
   </channel>

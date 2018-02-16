@@ -1,167 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Pry on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Pry on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/pry/</link>
+    <description>Recent content in Pry on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 13 Mar 2013 01:53:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/pry/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Wed, 13 Mar 2013 01:53:00 UTC</updated>
     
     <item>
       <title>More fun with the Ruby Symbol</title>
       <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
-      <pubDate>Wed, 13 Mar 2013 01:53:00 UTC</pubDate>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
-      <description>&lt;p&gt;So while in the #RubyOnRails IRC channel late at night (never a good
-idea) some silly conversation occured:&lt;/p&gt;
-
-&lt;p&gt;(someone gists some code)&lt;br /&gt;
-sevenseacat: empty array seems the silly thing to have&lt;br /&gt;
-Tarential: sometimes I like to add empty arrays, you know, just in case I need them later&lt;br /&gt;
-Tarential: so they&amp;rsquo;re close at hand&lt;br /&gt;
-tagrudev: little kittens die when you define an unused var&lt;br /&gt;
-brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]&lt;br /&gt;
-Tarential: Now that&amp;rsquo;s thinking.&lt;/p&gt;
-
-&lt;p&gt;Then some time passed and I ended up throwing a
-&lt;a href=&#34;http://http://pastie.org/6469138&#34; title=&#34;pastie&#34;&gt;pastie&lt;/a&gt; back into the
-channel with the following code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;to_a&lt;/span&gt;
-    &lt;span style=&#34;color: #3333BB&#34;&gt;@array&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;(val)
-    &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; val
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-  alias_method &lt;span style=&#34;color: #AA6600&#34;&gt;:previous_inspect&lt;/span&gt;, &lt;span style=&#34;color: #AA6600&#34;&gt;:inspect&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;inspect&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;to_s&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt; 
-      &lt;span style=&#34;color: #007020&#34;&gt;to_a&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;inspect
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt;
-      previous_inspect
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;class
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Symbol&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;to_a
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #AA6600&#34;&gt;:[]&lt;/span&gt;
-&lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Mostly usless but I did find out one interesting piece of information. The &lt;code&gt;Symbol&lt;/code&gt; has
-no public creation interface other then it&amp;rsquo;s standard definition. I&amp;rsquo;m assuming at this point it drops down to the C
-level but I couldn&amp;rsquo;t leave that stone unturned. I put the word out I was
-in search of the Symbol implementation in Ruby. I asked some friends,
-tweeted about it and poked around on IRC.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;REPL in the Pry runtime environment&lt;/strong&gt;&lt;br /&gt;
-&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; (who brings you awesome projects
-like &lt;a href=&#34;https://github.com/pry/pry&#34; title=&#34;pry&#34;&gt;Pry&lt;/a&gt;) ended up giving me a nice
-intro to what happens when you put &lt;code&gt;:cats&lt;/code&gt; into a ruby runtime
-environment.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll keep this brief and in laymans terms. People who know much
-more about this feel free to email me with corrections or improvements.
-Keep in mind this information was explained at a very high level so it
-wouldn&amp;rsquo;t all go over my head.&lt;/p&gt;
-
-&lt;p&gt;At a very basic level the runtime is performing a simple REPL (Read,
-Evaluate, Print, Loop.)&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;read --&amp;gt; eval --&amp;gt; puts #inspect on eval output --&amp;gt; loop&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Read simply reads in your input. In our case &lt;code&gt;$ :cats&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The Eval gets significantly deeper. In the case the value entered is a
-Symbol (or other immediates) it is stored directly in the VALUE pointer.
-&lt;a href=&#34;https://github.com/banister&#34;&gt;@banister&lt;/a&gt; provided me with the following
-gist to show how the Symbol is stored: &lt;a href=&#34;https://gist.github.com/banister/febb1f0580cc42eb4297&#34; title=&#34;Pry Gist&#34;&gt;pry_gist.rb&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;(this is only a small piece of the total evalution process.)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;VALUE
-&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;rb_obj_id&lt;/span&gt;(VALUE obj)
-{
-    &lt;span style=&#34;color: #888888&#34;&gt;/*&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                32-bit VALUE space&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *          MSB ------------------------ LSB&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol  ssssssssssssssssssssssss00001110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        sizeof(RVALUE))&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                    object_id space&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *                                       LSB&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  false   00000000000000000000000000000000&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  true    00000000000000000000000000000010&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  nil     00000000000000000000000000000100&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  undef   00000000000000000000000000000110&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        (S...S = s...s * A + 4)&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;        required&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  where A = sizeof(RVALUE)/4&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  sizeof(RVALUE) is&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  20 if 32-bit, double is 4-byte aligned&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  24 if 32-bit, double is 8-byte aligned&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     *  40 if 64-bit&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;     */&lt;/span&gt;
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (TYPE(obj) &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; T_SYMBOL) {
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (SYM2ID(obj) &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;sizeof&lt;/span&gt;(RVALUE) &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;)) &lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt; FIXNUM_FLAG;
-    }
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (SPECIAL_CONST_P(obj)) {
-        &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; LONG2NUM((SIGNED_VALUE)obj);
-    }
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; (VALUE)((SIGNED_VALUE)obj&lt;span style=&#34;color: #333333&#34;&gt;|&lt;/span&gt;FIXNUM_FLAG);
-}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;He added:
-&lt;blockquote&gt;
-  &lt;p&gt;
-a normal object created via Object.new for example are normally allocated on the heap and they go through a proper initialization process.
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;@banister&lt;/strong&gt;
-&lt;/blockquote&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Then the Print runs a simple &lt;code&gt;#inspect&lt;/code&gt; on the &lt;code&gt;Symbol&lt;/code&gt; and returns &lt;code&gt;=&amp;gt; :cats&lt;/code&gt; to you.&lt;/p&gt;
-
-&lt;p&gt;After that we Loop for more input.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;So where does this leave us?&lt;/strong&gt;&lt;br /&gt;
-I ended up getting a great introduction to some things going on
-in my every day environment that I simply take for granted. It all came
-out of some late night nonsense and exploration and now I feel like new
-doors have opened and I&amp;rsquo;m going to have to go through.&lt;/p&gt;
-
-&lt;p&gt;I encourage you to poke around. We write code all day long but really
-finding out what&amp;rsquo;s going on can be new and exciting. So open up a Ruby class
-and break something!&lt;/p&gt;
-</description>
+      <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
+(someone gists some code)
+sevenseacat: empty array seems the silly thing to have
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later
+Tarential: so they&amp;rsquo;re close at hand
+tagrudev: little kittens die when you define an unused var
+brianpWins: but if you do want to leave empty arrays around.</description>
     </item>
     
   </channel>

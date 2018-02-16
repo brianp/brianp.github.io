@@ -1,39 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Development on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Development on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/development/</link>
+    <description>Recent content in Development on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 10 Sep 2013 12:00:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Tue, 10 Sep 2013 12:00:00 UTC</updated>
     
     <item>
       <title>Meaning in my work</title>
       <link>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 UTC</pubDate>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</guid>
-      <description>&lt;blockquote&gt;
-  &lt;p&gt;
-“If you enjoy what you do you will never work a day in your life.”
-&lt;/p&gt;
-  &lt;footer&gt;&lt;/footer&gt;
-  &lt;strong&gt;&lt;/strong&gt;
-&lt;/blockquote&gt;
-
-
-&lt;p&gt;Just recently I was elated when a client contacted us. We have
-been working on an ongoing project with them for over two years. They
-contacted us just to let us know they had used the project as a
-demo and witness. They used the project to help acquire funding for twenty-five full
-scholarships for youth from all
-over the world to attend any educational insitutue of their choosing.
-My project manager read the email to me and I got goosebumps. A
-project that I worked on will actually be making a major difference in twenty-five
-young peoples lives.&lt;/p&gt;
-</description>
+      <description>“If you enjoy what you do you will never work a day in your life.”      Just recently I was elated when a client contacted us. We have been working on an ongoing project with them for over two years. They contacted us just to let us know they had used the project as a demo and witness. They used the project to help acquire funding for twenty-five full scholarships for youth from all over the world to attend any educational insitutue of their choosing.</description>
     </item>
     
   </channel>

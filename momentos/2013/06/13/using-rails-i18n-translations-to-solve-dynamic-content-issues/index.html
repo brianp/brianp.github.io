@@ -1,130 +1,253 @@
-    <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title> Using Rails I18n translations to solve dynamic content issues &middot; { always: &#39;coding&#39; } </title>
-    
-    <link rel="stylesheet" type="text/css" href="http://alwayscoding.ca//css/uno.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://alwayscoding.ca//css/lightGallery.css" />
-    
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://alwayscoding.ca/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="http://alwayscoding.ca/favicon.ico">
-    
-    <link href="" rel="alternate" type="application/rss+xml" title="{ always: &#39;coding&#39; }" />
-    
-    <script src="http://alwayscoding.ca//js/jquery.min.js"></script>
-    <script src="http://alwayscoding.ca//js/main.min.js">
-    </script>
-</head>
 
-    <body>
-        <div id="scriptHeader">
-    <span class="mobile btn-mobile-menu">
-            <i class="fa fa-bars btn-mobile-menu__icon"></i>
-            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
-    </span>
-    <header class="
-        
-            panel-cover panel-cover--collapsed
-        "  style="background-image: url(/images/side-column-bg.jpg)" >
-    <div class="panel-main">
-        <div class="panel-main__inner panel-inverted">
-            <div class="panel-main__content"> 
-                <a href="http://alwayscoding.ca//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
-                <h1 class="panel-cover__title panel-title">
-                    <a href="http://alwayscoding.ca//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
-                </h1>
-                <hr class="panel-cover__divider" />
-                <p class="panel-cover__description">  Brian Pearce  </p>
-                <hr class="panel-cover__divider panel-cover__divider--secondary" />
-                <div class="navigation-wrapper">
-                    <nav class="cover-navigation cover-navigation--primary">
-                        <ul class="navigation">
-                            <li class="navigation__item"><a href="http://alwayscoding.ca/#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li>
-                            <li class="navigation__item"><a href="http://alwayscoding.ca/posts" title="The blog archive" class="blog-button">Archive</a> </li></br>
-                            
-                            
-                       </ul>
-                    </nav> <nav class="cover-navigation navigation--social">
-    <ul class="navigation"> 
-        
-        <li class="navigation__item">
-            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
-        </li>  
-        
-        <li class="navigation__item">
-            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
-        </li>   
-        
-        <li class="navigation__item">
-            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
-        </li>  </br>  </ul>
-</nav>
- </div>
-            </div>
-        </div>
-        <div class="panel-cover--overlay"></div>
-    </div>
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Using Rails I18n translations to solve dynamic content issues</title>
+    <meta name="author" content="Brian Pearce">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="http://alwayscoding.ca/favicon.png">
+    
+
+    
+    <meta name="description" content="Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
+The Setup This particular section of the application has rotating content.">
+    <meta property="og:description" content="Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
+The Setup This particular section of the application has rotating content.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Using Rails I18n translations to solve dynamic content issues">
+    <meta property="og:url" content="/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+    <meta property="og:site_name" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
+    <meta name="twitter:description" content="Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
+The Setup This particular section of the application has rotating content.">
+    
+      <meta name="twitter:creator" content="@brian_pearce">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="http://alwayscoding.ca/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://alwayscoding.ca/">{ always: &#39;coding&#39; }</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="http://alwayscoding.ca/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
 </header>
-</div>
-<noscript>
-    <style>
-        #scriptHeader {display:none;}
-        .navigation-wrapper{
-            display: block;
-            top: 0;
-        }
-    </style>
 
-    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/side-column-bg.jpg)">
-        <div class="panel-main">
-            <div class="panel-main__inner panel-inverted">
-                <div class="panel-main__content"> 
-                    <a href="http://alwayscoding.ca//" title="link to homepage for { always: &#39;coding&#39; }"> <img src="http://www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=160" width="80" alt="{ always: &#39;coding&#39; } logo" class="panel-cover__logo logo" /> </a> 
-                    <h1 class="panel-cover__title panel-title">
-                        <a href="http://alwayscoding.ca//"  title="link to homepage for { always: &#39;coding&#39; }">{ always: &#39;coding&#39; }</a>
-                    </h1>
-                    <hr class="panel-cover__divider" />
-                    <p class="panel-cover__description">  Brian Pearce  </p>
-                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
-                    <div class="navigation-wrapper">
-                        <nav class="cover-navigation cover-navigation--primary">
-                            <ul class="navigation">
-                                <li class="navigation__item"><a href="http://alwayscoding.ca//#blog" title="link to { always: &#39;coding&#39; } blog" class="blog-button">Blog</a> </li></br>
-                                
-                                
-                           </ul>
-                        </nav> <nav class="cover-navigation navigation--social">
-    <ul class="navigation"> 
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://alwayscoding.ca/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-        <li class="navigation__item">
-            <a href="http://twitter.com/brian_pearce" title="@brian_pearce on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
-        </li>  
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
         
-        <li class="navigation__item">
-            <a href="http://no.linkedin.com/in/brian-pearce/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
-        </li>   
-        
-        <li class="navigation__item">
-            <a href="https://github.com/brianp" title="brianp on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
-        </li>  </br>  </ul>
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/brianp" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.twitter.com/brian_pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/brian-pearce/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://alwayscoding.ca/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
 </nav>
- </div>
-                </div>
-            </div>
-            <div class="panel-cover--overlay"></div>
-        </div>
-    </header>
-</noscript>
 
-        <div class="content-wrapper">
-            <div class="content-wrapper__inner">
-                <div class="post">
-                    <h1>Using Rails I18n translations to solve dynamic content issues</h1>
-                    <span class="post-date">Thu, Jun 13, 2013</span>
-                    
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Using Rails I18n translations to solve dynamic content issues
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2013-06-13T17:33:00Z">
+        
+  June 13, 2013
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
 
 <p>Last week during my main work contract I had been tasked with doing some
 would-be trivial content updates to a section of a client application.
@@ -195,17 +318,19 @@ of the app are now using I18n helpers and had copy stored in the
 YAML files.</p>
 
 <p>Copy stored in YAML translates into a basic key value store.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>en:
+
+<pre><code class="language-yaml">en:
   awards:
     program:
       title: The title to the Awards Program page
-</pre></div>
+</code></pre>
 
 <p>With that in our translation files the copy now becomes accessbile
 using the I18n interface.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(<span style="background-color: #fff0f0">&#39;awards.program.title&#39;</span>)
-<span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&quot;The title to the Awards Program page&quot;</span>
-</pre></div>
+
+<pre><code class="language-ruby">I18n.t('awards.program.title')
+=&gt; &quot;The title to the Awards Program page&quot;
+</code></pre>
 
 <h3 id="a-new-idea">A new Idea</h3>
 
@@ -218,22 +343,24 @@ copy.</p>
 <p>I decided to try something simple. Add the content in the yaml,
 follow it with the phase specific content and offer it a naming
 convention to match the yaml key + phase. Something along the lines of:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>awards:
+
+<pre><code class="language-yaml">awards:
   marquee:
     pane1:
       title: Audience Voting
       title_p5: Voting now closed
       text: An AUDIENCE AWARD...
-</pre></div>
+</code></pre>
 
 <p>I then added a helper method for views:
 <em>note</em>: The <code>@phase</code> variable is being set in a before filter within
 this section of the app.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">pt</span>(string)
-  phase_string <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">#{</span>string<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">_p</span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@phase</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
-  <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(phase_string, <span style="color: #AA6600">:default</span> <span style="color: #333333">=&gt;</span> string<span style="color: #333333">.</span>to_sym)
-<span style="color: #008800; font-weight: bold">end</span>
-</pre></div>
+
+<pre><code class="language-ruby">def pt(string)
+  phase_string = &quot;#{string}_p#{@phase}&quot;
+  I18n.t(phase_string, :default =&gt; string.to_sym)
+end
+</code></pre>
 
 <p>What this does:
 Appends the provided key with the phase number (Lets
@@ -262,7 +389,8 @@ entries for title_p5 and title_p6. That&rsquo;s not very DRY.</p>
 but it should be easier and obvious to manage the content.</p>
 
 <p>Lets look at the YAML for the second problem above:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>awards:
+
+<pre><code class="language-yaml">awards:
   index:
     module4:
       tab1:
@@ -276,15 +404,15 @@ but it should be easier and obvious to manage the content.</p>
         header_p6: Awards Finalists
         text_p6: Winners to be...
 
-<span style="color: #888888"># At best we could DRY it up a little by using YAML anchors (&amp;) and references (*)</span>
+# At best we could DRY it up a little by using YAML anchors (&amp;) and references (*)
     ...
-        title_p5: <span style="color: #997700; font-weight: bold">&amp;voting_closed</span> Voting Now Closed
-        header_p5: <span style="color: #997700; font-weight: bold">&amp;voting_closed_header</span> Awards Finalists
-        text_p5: <span style="color: #997700; font-weight: bold">&amp;voting_closed_text</span> Winners to be...
-        title_p6: <span style="color: #996633">*voting_closed</span>
-        header_p6: <span style="color: #996633">*voting_closed_header</span>
-        text_p6: <span style="color: #996633">*voting_closed_text</span>
-</pre></div>
+        title_p5: &amp;voting_closed Voting Now Closed
+        header_p5: &amp;voting_closed_header Awards Finalists
+        text_p5: &amp;voting_closed_text Winners to be...
+        title_p6: *voting_closed
+        header_p6: *voting_closed_header
+        text_p6: *voting_closed_text
+</code></pre>
 
 <p>We managed to DRY it up a little but it&rsquo;s still hideous. I&rsquo;d have to
 define every single phase specific key even if it&rsquo;s the same content.<br />
@@ -301,7 +429,8 @@ quick.</p>
 
 <p>I redefined the YAML file in a manner I&rsquo;d <i>like</i> to be able to
 manage my content:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>awards:
+
+<pre><code class="language-yaml">awards:
   index:
     module4:
       tab1:
@@ -309,12 +438,12 @@ manage my content:</p>
         p2_title: Phase 2 title
         header: Awards Contest
         text: The Ad...
-      p5_tab1: <span style="color: #997700; font-weight: bold">&amp;voting_closed</span>
+      p5_tab1: &amp;voting_closed
         title: Voting Now Closed
         header: Awards Finalists
         text: Winners to be...
-      p6_tab1: <span style="color: #996633">*voting_closed</span>
-</pre></div>
+      p6_tab1: *voting_closed
+</code></pre>
 
 <p>This idea was going to let me create phase specific content at any
 nesting level. If I only needed a title change in phase 2. Then simply create a
@@ -330,65 +459,69 @@ and anywhere in between.</p>
 
 <p>I knew right away I wasn&rsquo;t going to be writing this in a helper method
 so I created a new class and utilized the class from within the helper:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">pt</span>(string)
-  <span style="color: #007020">p</span> <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">Awards</span><span style="color: #333333">::</span><span style="color: #003366; font-weight: bold">PhaseTranslations</span><span style="color: #333333">.</span>new(string, <span style="color: #3333BB">@phase</span>)
-  <span style="color: #007020">p</span><span style="color: #333333">.</span>translate
-<span style="color: #008800; font-weight: bold">end</span>
-</pre></div>
+
+<pre><code class="language-ruby">def pt(string)
+  p = Awards::PhaseTranslations.new(string, @phase)
+  p.translate
+end
+</code></pre>
 
 <p>I started the class off pretty simple. Just replicating the usage I
 already had. This worked with the original YAML files but clearly
 wouldn&rsquo;t work with the new format.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Awards</span><span style="color: #333333">::</span><span style="color: #003366; font-weight: bold">PhaseTranslations</span>
 
-  <span style="color: #003388; font-weight: bold">attr_accessor</span> <span style="color: #AA6600">:string</span>, <span style="color: #AA6600">:phase</span>
+<pre><code class="language-ruby">class Awards::PhaseTranslations
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(string, phase)
-    <span style="color: #3333BB">@string</span> <span style="color: #333333">=</span> string
-    <span style="color: #3333BB">@phase</span> <span style="color: #333333">=</span> phase
-  <span style="color: #008800; font-weight: bold">end</span>
+  attr_accessor :string, :phase
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_translation</span>(phrase <span style="color: #333333">=</span> <span style="color: #003388; font-weight: bold">nil</span>)
-    phase_string <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;</span><span style="background-color: #eeeeee">#{</span>string<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">_p</span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@phase</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
-    <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(phase_string, <span style="color: #AA6600">:default</span> <span style="color: #333333">=&gt;</span> string<span style="color: #333333">.</span>to_sym)
-  <span style="color: #008800; font-weight: bold">end</span>
+  def initialize(string, phase)
+    @string = string
+    @phase = phase
+  end
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">translate</span>
+  def find_translation(phrase = nil)
+    phase_string = &quot;#{string}_p#{@phase}&quot;
+    I18n.t(phase_string, :default =&gt; string.to_sym)
+  end
+
+  def translate
     find_translation
-  <span style="color: #008800; font-weight: bold">end</span>
-<span style="color: #008800; font-weight: bold">end</span>
-</pre></div>
+  end
+end
+</code></pre>
 
 <p>In order to find phase specific keys anywhere within the nesting, the next
 thing I had to do was find all possible key combinations.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>string <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;awards.index.module4.tab1.title&#39;</span>
-a <span style="color: #333333">=</span> string<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&#39;.&#39;</span>)
-possibilities <span style="color: #333333">=</span> a<span style="color: #333333">.</span>each_with_index<span style="color: #333333">.</span>map <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>v,i<span style="color: #333333">|</span>
-  b <span style="color: #333333">=</span> a<span style="color: #333333">.</span>clone
-  b<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;p</span><span style="background-color: #eeeeee">#{</span>phase<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">_</span><span style="background-color: #eeeeee">#{</span>v<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
-  b<span style="color: #333333">.</span>join(<span style="background-color: #fff0f0">&#39;.&#39;</span>)
-<span style="color: #008800; font-weight: bold">end</span>
-<span style="color: #333333">=&gt;</span> <span style="color: #333333">[</span><span style="background-color: #fff0f0">&quot;p6_awards.index.module4.tab1.title&quot;</span>,
-    <span style="background-color: #fff0f0">&quot;awards.p6_index.module4.tab1.title&quot;</span>,
-    <span style="background-color: #fff0f0">&quot;awards.index.p6_module4.tab1.title&quot;</span>,
-    <span style="background-color: #fff0f0">&quot;awards.index.module4.p6_tab1.title&quot;</span>,
-    <span style="background-color: #fff0f0">&quot;awards.index.module4.tab1.p6_title&quot;</span><span style="color: #333333">]</span>
-</pre></div>
+
+<pre><code class="language-ruby">string = 'awards.index.module4.tab1.title'
+a = string.split('.')
+possibilities = a.each_with_index.map do |v,i|
+  b = a.clone
+  b[i] = &quot;p#{phase}_#{v}&quot;
+  b.join('.')
+end
+=&gt; [&quot;p6_awards.index.module4.tab1.title&quot;,
+    &quot;awards.p6_index.module4.tab1.title&quot;,
+    &quot;awards.index.p6_module4.tab1.title&quot;,
+    &quot;awards.index.module4.p6_tab1.title&quot;,
+    &quot;awards.index.module4.tab1.p6_title&quot;]
+</code></pre>
 
 <p>Great. Next we need to check to see if any of those keys return a value.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_translation</span>(phrase <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>)
-  possibilities<span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>key<span style="color: #333333">|</span>
-    phrase <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(key, <span style="color: #AA6600">:default</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;&#39;</span>)
-    <span style="color: #008800; font-weight: bold">break</span> <span style="color: #008800; font-weight: bold">unless</span> phrase<span style="color: #333333">.</span>blank?
-  <span style="color: #008800; font-weight: bold">end</span>
 
-  <span style="color: #008800; font-weight: bold">if</span> phrase<span style="color: #333333">.</span>blank?
-    phrase <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(string, <span style="color: #AA6600">:default</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;&#39;</span>)
-  <span style="color: #008800; font-weight: bold">end</span>
+<pre><code class="language-ruby">def find_translation(phrase = '')
+  possibilities.each do |key|
+    phrase = I18n.t(key, :default =&gt; '')
+    break unless phrase.blank?
+  end
+
+  if phrase.blank?
+    phrase = I18n.t(string, :default =&gt; '')
+  end
 
   phrase
-<span style="color: #008800; font-weight: bold">end</span>
-</pre></div>
+end
+</code></pre>
 
 <p>This checks to see if the keys return anything. If not returning a
 default blank string. If <code>phrase</code> is still blank after we have checked all
@@ -401,13 +534,15 @@ value and we would short-circuit the loop.</p>
 problematic. If we actually wanted to pass an empty string as phase
 specific content (blanking out a header?) then we would actually end up
 with the default header. With the following YAML as an example.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>awards:
+
+<pre><code class="language-yaml">awards:
   title: Awards Header
-  p2_title: <span style="background-color: #fff0f0">&#39;&#39;</span>
-</pre></div>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>pt(<span style="background-color: #fff0f0">&#39;awards.title&#39;</span>) <span style="color: #888888"># With phase 2</span>
-<span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;Awards Header&#39;</span>
-</pre></div>
+  p2_title: ''
+</code></pre>
+
+<pre><code class="language-ruby">pt('awards.title') # With phase 2
+=&gt; 'Awards Header'
+</code></pre>
 
 <p>This happens becuase we&rsquo;re comparing against blank values and
 considering a blank value a miss. When in this case a blank value is
@@ -416,80 +551,84 @@ exactly what we want returned.</p>
 <p>To fix the problem we stop setting blank values on the initial lookup.
 Lets allow I18n to raise a missing translation exception as that is it&rsquo;s
 normal behaviour without defaults.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_translation</span>(phrase <span style="color: #333333">=</span> <span style="color: #003388; font-weight: bold">nil</span>)
-  extract_possibilities<span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>key<span style="color: #333333">|</span>
-    <span style="color: #008800; font-weight: bold">begin</span>
-      phrase <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(key, <span style="color: #AA6600">:raise</span> <span style="color: #333333">=&gt;</span> <span style="color: #003388; font-weight: bold">true</span>)
-      <span style="color: #008800; font-weight: bold">break</span> <span style="color: #008800; font-weight: bold">unless</span> phrase<span style="color: #333333">.</span>blank?
-    <span style="color: #008800; font-weight: bold">rescue</span>
-      <span style="color: #888888"># Let I18n raise a MissingTranslation exception.</span>
-      <span style="color: #888888"># We&#39;ll blank out the value or find the default after.</span>
-    <span style="color: #008800; font-weight: bold">end</span>
-  <span style="color: #008800; font-weight: bold">end</span>
 
-  <span style="color: #008800; font-weight: bold">if</span> phrase<span style="color: #333333">.</span>nil?
-    phrase <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(string, <span style="color: #AA6600">:default</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;&#39;</span>)
-  <span style="color: #008800; font-weight: bold">end</span>
+<pre><code class="language-ruby">def find_translation(phrase = nil)
+  extract_possibilities.each do |key|
+    begin
+      phrase = I18n.t(key, :raise =&gt; true)
+      break unless phrase.blank?
+    rescue
+      # Let I18n raise a MissingTranslation exception.
+      # We'll blank out the value or find the default after.
+    end
+  end
+
+  if phrase.nil?
+    phrase = I18n.t(string, :default =&gt; '')
+  end
 
   phrase
-<span style="color: #008800; font-weight: bold">end</span>
-</pre></div>
+end
+</code></pre>
 
 <p>This solves our blank title issue. As shown below:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>pt(<span style="background-color: #fff0f0">&#39;awards.title&#39;</span>) <span style="color: #888888"># With phase 2</span>
-<span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
-</pre></div>
+
+<pre><code class="language-ruby">pt('awards.title') # With phase 2
+=&gt; ''
+</code></pre>
 
 <h3 id="wrapping-it-all-up">Wrapping it all up</h3>
 
 <p>That pretty much gives us all the functionality we need at the moment.
 Check out the full class:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Awards</span><span style="color: #333333">::</span><span style="color: #003366; font-weight: bold">PhaseTranslations</span>
 
-  <span style="color: #003388; font-weight: bold">attr_accessor</span> <span style="color: #AA6600">:string</span>, <span style="color: #AA6600">:phase</span>, <span style="color: #AA6600">:possibilities</span>
+<pre><code class="language-ruby">class Awards::PhaseTranslations
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(string, phase)
-    <span style="color: #3333BB">@string</span> <span style="color: #333333">=</span> string
-    <span style="color: #3333BB">@phase</span> <span style="color: #333333">=</span> phase
-  <span style="color: #008800; font-weight: bold">end</span>
+  attr_accessor :string, :phase, :possibilities
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">extract_possibilities</span>
-    a <span style="color: #333333">=</span> string<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&#39;.&#39;</span>)
-    <span style="color: #007020">self</span><span style="color: #333333">.</span>possibilities <span style="color: #333333">=</span> a<span style="color: #333333">.</span>each_with_index<span style="color: #333333">.</span>map <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>v,i<span style="color: #333333">|</span>
-      b <span style="color: #333333">=</span> a<span style="color: #333333">.</span>clone
-      b<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;p</span><span style="background-color: #eeeeee">#{</span>phase<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">_</span><span style="background-color: #eeeeee">#{</span>v<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
-      b<span style="color: #333333">.</span>join(<span style="background-color: #fff0f0">&#39;.&#39;</span>)
-    <span style="color: #008800; font-weight: bold">end</span>
-  <span style="color: #008800; font-weight: bold">end</span>
+  def initialize(string, phase)
+    @string = string
+    @phase = phase
+  end
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_translation</span>(phrase <span style="color: #333333">=</span> <span style="color: #003388; font-weight: bold">nil</span>)
-    extract_possibilities<span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>key<span style="color: #333333">|</span>
-      <span style="color: #008800; font-weight: bold">begin</span>
-        phrase <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(key, <span style="color: #AA6600">:raise</span> <span style="color: #333333">=&gt;</span> <span style="color: #003388; font-weight: bold">true</span>)
-        <span style="color: #008800; font-weight: bold">break</span> <span style="color: #008800; font-weight: bold">unless</span> phrase<span style="color: #333333">.</span>blank?
-      <span style="color: #008800; font-weight: bold">rescue</span>
-        <span style="color: #888888"># Let I18n raise a MissingTranslation exception.</span>
-        <span style="color: #888888"># We&#39;ll blank out the value or find the default after.</span>
-      <span style="color: #008800; font-weight: bold">end</span>
-    <span style="color: #008800; font-weight: bold">end</span>
+  def extract_possibilities
+    a = string.split('.')
+    self.possibilities = a.each_with_index.map do |v,i|
+      b = a.clone
+      b[i] = &quot;p#{phase}_#{v}&quot;
+      b.join('.')
+    end
+  end
 
-    <span style="color: #008800; font-weight: bold">if</span> phrase<span style="color: #333333">.</span>nil?
-      phrase <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">I18n</span><span style="color: #333333">.</span>t(string, <span style="color: #AA6600">:default</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;&#39;</span>)
-    <span style="color: #008800; font-weight: bold">end</span>
+  def find_translation(phrase = nil)
+    extract_possibilities.each do |key|
+      begin
+        phrase = I18n.t(key, :raise =&gt; true)
+        break unless phrase.blank?
+      rescue
+        # Let I18n raise a MissingTranslation exception.
+        # We'll blank out the value or find the default after.
+      end
+    end
+
+    if phrase.nil?
+      phrase = I18n.t(string, :default =&gt; '')
+    end
 
     phrase
-  <span style="color: #008800; font-weight: bold">end</span>
+  end
 
-  <span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">translate</span>
+  def translate
     find_translation
-  <span style="color: #008800; font-weight: bold">end</span>
-<span style="color: #008800; font-weight: bold">end</span>
-</pre></div>
+  end
+end
+</code></pre>
 
 <p>After using translations in this way for a few days the new method
 proved its versatility. Allowing the formatting of the YAML
 files in different but very declarative manners. Just to start:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>awards:
+
+<pre><code class="language-yaml">awards:
   faq:
     entry_header: What is the entry deadline?
     entry_paragraphs:
@@ -497,9 +636,9 @@ files in different but very declarative manners. Just to start:</p>
       - All med...
       - All med...
       - Award w...
-    p5_entry_paragraphs: <span style="color: #997700; font-weight: bold">&amp;entries_closed</span>
+    p5_entry_paragraphs: &amp;entries_closed
       - Submissions are...
-    p6_entry_paragraphs: <span style="color: #996633">*entries_closed</span>
+    p6_entry_paragraphs: *entries_closed
 
   index:
     module4:
@@ -508,27 +647,27 @@ files in different but very declarative manners. Just to start:</p>
         p2_title: Phase 2 title
         header: Awards Contest
         text: The Ad...
-      p5_tab1: <span style="color: #997700; font-weight: bold">&amp;voting_closed</span>
+      p5_tab1: &amp;voting_closed
         title: Voting Now Closed
         header: Awards Finalists
         text: Winners to be...
-      p6_tab1: <span style="color: #996633">*voting_closed</span>
+      p6_tab1: *voting_closed
 
   marquee:
     pane1:
       title: Audience Award Voting
       text: An AUDIENCE AWA...
-    p5_pane1: <span style="color: #997700; font-weight: bold">&amp;voting_closed_marquee</span>
+    p5_pane1: &amp;voting_closed_marquee
       title: Voting now closed
       text: Winners of th...
-    p6_pane1: <span style="color: #996633">*voting_closed_marquee</span>
+    p6_pane1: *voting_closed_marquee
     pane2:
       title: Judges
       text: Meet Ad...
     pane3:
       title: Essentials
       text: The Ad...
-</pre></div>
+</code></pre>
 
 <p>All in all I found the new soltion to be quickly solving all the copy
 update issues we were previously encountering. As we move the content
@@ -540,19 +679,489 @@ felt like I wanted to share the process anyway. If you have any
 suggestions or corrections to make please send me an email
 or find me on <a href="http://www.twitter.com/brian_pearce">twitter</a>.</p>
 
-                </div>
+              
             </div>
-        </div>
-    </body>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/rails/">rails</a>
 
-  ga('create', 'UA-38251543-1', 'auto');
-  ga('send', 'pageview');
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/ruby/">ruby</a>
 
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/i18n/">I18n</a>
+
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/translations/">translations</a>
+
+  <a class="tag tag--primary tag--small" href="http://alwayscoding.ca/tags/yaml/">yaml</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/" data-tooltip="Handling Dates &amp; Timezones in Ruby &amp; Rails">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/" data-tooltip="DataMapper SQL Queries in Rails Console">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Brian Pearce. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/" data-tooltip="Handling Dates &amp; Timezones in Ruby &amp; Rails">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/" data-tooltip="DataMapper SQL Queries in Rails Console">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Falwayscoding.ca%2Fmomentos%2F2013%2F06%2F13%2Fusing-rails-i18n-translations-to-solve-dynamic-content-issues%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http%3A%2F%2Falwayscoding.ca%2Fmomentos%2F2013%2F06%2F13%2Fusing-rails-i18n-translations-to-solve-dynamic-content-issues%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http%3A%2F%2Falwayscoding.ca%2Fmomentos%2F2013%2F06%2F13%2Fusing-rails-i18n-translations-to-solve-dynamic-content-issues%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/c15ec5b29cc5407a01bd17907e41230b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Brian Pearce</h4>
+    
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Barcelona, Spain
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/">
+                <h3 class="media-heading">RustConf 2016 Talks</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
+photo by: @eigenrick
+ 175 new features since 1.0  New features underway
+ Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
+ Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
+ 1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraris 1 in 9 &ldquo;Maturity&rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/">
+                <h3 class="media-heading">Traits and Threads Workshop</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
+All Exercises
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
+ Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/">
+                <h3 class="media-heading">Cross compilation to OSX with Rust</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/">
+                <h3 class="media-heading">Tips for working with Delayed Job</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
+Don&rsquo;t know what a backround runner does or why you would use one?
+I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/">
+                <h3 class="media-heading">Cascadia Ruby 2014 - Day Two</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+T.J. Schuck
+80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
+ John the Ripper password cracker. hashcat. Expensive key schedule blowfish. eksblowfish. BCrypt  BCrypt dollar signs are delimieters, hash on far right. Salt on left. 2(abxy) means bcrypt 10 = cost $ 2a $ 10 $ salt $ hash 12 to 13 range for bcrypt cost.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/">
+                <h3 class="media-heading">Cascadia Ruby 2014 - Day One</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
+John Hyland
+Be Awesome By Being Boring
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+The Science of Success
+ Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/">
+                <h3 class="media-heading">Handling code duplication with Sass @imports in the asset pipeline</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/">
+                <h3 class="media-heading">Cascadia Ruby 2013 - Day Two</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Andy Delcambre Cascadia Ruby 2013: Ruby Systems Programming
+The kernal  Runs in kernal mode. Not your code. Can do anything and everything.  Your Code  Runs in user mode. Math. Access memory.  System calls  Ask the kernal nicely to do things. Api to kenal mode. If it is not in the syscall_table you can not call it.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/">
+                <h3 class="media-heading">Cascadia Ruby 2013 - Day One</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Josh Adams and Robby Clements Ruby Robotics
+Where to start Sphero - $130.00  Bluetooth enabled ball. Drives itself around. Best dog toy ever. Waterproof.  Parrot AR Droid - $150.00  Acts as its own wifi AP. Connect over wifi. UDP packers. Stream video from 2 cameras.  Rolling your own  Beaglebone Black.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/">
+                <h3 class="media-heading">Angular and Liquid expressions in Jekyll</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2013
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I started writing an Angular application to intereact with an API I have produced recently. The Angular app is compiled as a static site with Jekyll. I immediately ran into an issue with Angular. None of my expressions were showing up. I realized it was because Liquid which is included with Jekyll uses the same expression tags as Angular: {{ myVariable }}. This meant the Angular expressions were not making it as raw text into the final template as they were being caught by Liquid.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         34 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('http://alwayscoding.ca/images/side-column-bg-blur.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="http://alwayscoding.ca/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
 </script>
 
+
+  
+    
+  
+
+
+
+    
+  </body>
 </html>
+

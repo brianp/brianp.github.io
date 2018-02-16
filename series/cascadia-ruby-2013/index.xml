@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cascadia Ruby 2013 on { always: &#39;coding&#39; }</title>
+    <link>http://alwayscoding.ca/series/cascadia-ruby-2013/</link>
+    <description>Recent content in Cascadia Ruby 2013 on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Oct 2013 15:22:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://alwayscoding.ca/series/cascadia-ruby-2013/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cascadia Ruby 2013 - Day Two</title>
+      <link>http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/</link>
+      <pubDate>Tue, 22 Oct 2013 15:22:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/10/22/cascadia-ruby-2013-day-two/</guid>
+      <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Andy Delcambre Cascadia Ruby 2013: Ruby Systems Programming
+The kernal  Runs in kernal mode. Not your code. Can do anything and everything.  Your Code  Runs in user mode. Math. Access memory.  System calls  Ask the kernal nicely to do things. Api to kenal mode. If it is not in the syscall_table you can not call it.</description>
+    </item>
+    
+    <item>
+      <title>Cascadia Ruby 2013 - Day One</title>
+      <link>http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/</link>
+      <pubDate>Mon, 21 Oct 2013 15:45:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/momentos/2013/10/21/cascadia-ruby-2013-day-one/</guid>
+      <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2013.
+Josh Adams and Robby Clements Ruby Robotics
+Where to start Sphero - $130.00  Bluetooth enabled ball. Drives itself around. Best dog toy ever. Waterproof.  Parrot AR Droid - $150.00  Acts as its own wifi AP. Connect over wifi. UDP packers. Stream video from 2 cameras.  Rolling your own  Beaglebone Black.</description>
+    </item>
+    
+  </channel>
+</rss>

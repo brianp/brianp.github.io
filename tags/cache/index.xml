@@ -1,48 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Cache on { always: &#39;coding&#39; } </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Cache on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/cache/</link>
+    <description>Recent content in Cache on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 05 Feb 2013 00:14:00 +0000</lastBuildDate>
     
+	<atom:link href="http://alwayscoding.ca/tags/cache/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Tue, 05 Feb 2013 00:14:00 UTC</updated>
     
     <item>
       <title>Expiring Cache Fragments In The Rails Console</title>
       <link>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
-      <pubDate>Tue, 05 Feb 2013 00:14:00 UTC</pubDate>
+      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
-      <description>&lt;p&gt;One of the much larger Rails applications I work on makes heavy use
-of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t
-auto-expiring at the moment. After doing a deployment I needed to expire
-these sections manually via the console for my first time. I grabbed the
-name of the fragment from the view where it was being cached.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt; cache(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;all_category_judges&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
-  &lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I only knew one way to access the cache in the console and attempted clearing
-the cache fragment from there.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ rails c
-&amp;gt; Rails.cache.delete&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;all_category_judges&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
-&amp;gt; nil
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This didn&amp;rsquo;t work. After some reading I found out that Fragment caching
-is stored in a slightly different way and needs to be accessed via the
-controller.&lt;/p&gt;
-
-&lt;p&gt;Given the time I&amp;rsquo;ll do some more investigation on why the caching is
-handled differently.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;ActionController&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #003366; font-weight: bold&#34;&gt;Base&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;new&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;expire_fragment(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;all_category_judges&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #003388; font-weight: bold&#34;&gt;true&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This gave me access to the fragement and allowed me to clear it.&lt;/p&gt;
-</description>
+      <description>One of the much larger Rails applications I work on makes heavy use of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t auto-expiring at the moment. After doing a deployment I needed to expire these sections manually via the console for my first time. I grabbed the name of the fragment from the view where it was being cached.
+- cache(&#39;all_category_judges&#39;) do ...  I only knew one way to access the cache in the console and attempted clearing the cache fragment from there.</description>
     </item>
     
   </channel>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mongodb on { always: &#39;coding&#39; }</title>
+    <title>MongoDB on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/mongodb/</link>
-    <description>Recent content in Mongodb on { always: &#39;coding&#39; }</description>
+    <description>Recent content in MongoDB on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Mar 2013 02:02:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 06 Mar 2013 02:02:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
       <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
@@ -30,7 +26,7 @@ What is the n+1 issue?</description>
       
       <guid>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
       <description>In the apps I&amp;rsquo;ve been working on recently I decided to utilize rails built in authentication &amp;lsquo;has_secure_password&amp;rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&amp;rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp;amp; Mongoid. When trying to use the has_secure_password method I got:
-undefined local variable or method `has_secure_password&#39; for User:Class (NameError)  Solution: You must include include ActiveModel::SecurePassword.</description>
+undefined local variable or method `has_secure_password&amp;#39; for User:Class (NameError) Solution: You must include include ActiveModel::SecurePassword.</description>
     </item>
     
     <item>
@@ -40,7 +36,7 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
       
       <guid>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>While setting up a new Rails development environment I ran into the error bson keys must be strings or symbols. After some googling I found the following method to fix it:
-/gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install  /fixed</description>
+/gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&amp;#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install /fixed</description>
     </item>
     
   </channel>

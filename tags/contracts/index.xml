@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Contracts on { always: &#39;coding&#39; }</title>
+    <title>contracts on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/contracts/</link>
-    <description>Recent content in Contracts on { always: &#39;coding&#39; }</description>
+    <description>Recent content in contracts on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Sep 2013 12:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/contracts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Sep 2013 12:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/contracts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Meaning in my work</title>
       <link>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>

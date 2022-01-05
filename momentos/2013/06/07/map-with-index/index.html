@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Map with Index</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -110,7 +110,7 @@ It doesn&rsquo;t.">
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -251,71 +251,54 @@ It doesn&rsquo;t.">
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <p>Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.</p>
-
 <p>While working on my main contract today I needed to create a new array
 based off mutated values of an existing array. Simple enough I&rsquo;ll just
 use <code>Enumerable::map</code> right? Almost immediatley I realized I needed
 to make a reference to an array via the loops index. I first
 checked to see if a <code>map_with_index</code> existed similar to
 <a href="http://www.ruby-doc.org/core-2.0/Enumerable.html#method-i-each_with_index">Enumerable::each_with_index</a>.</p>
-
 <p>It doesn&rsquo;t.</p>
-
 <p>I took a quick read through the docs and realized that <code>each_with_index</code> actually returns an Enumerable.
 This means I can use <code>each_with_index</code> and <code>map</code> to achieve the desired
 effect. Here&rsquo;s an example:</p>
-
-<pre><code class="language-ruby">arr = [:cat, :dog, :moose] # Canada eh?
-new_arr = arr.each_with_index.map { |value,index| &quot;The #{value} is at position #{index}&quot; }
-=&gt; [&quot;The cat is at position 0&quot;, &quot;The dog is at position 1&quot;, &quot;The moose is at position 2&quot;]
-</code></pre>
-
-<p>A closer look at the Enumerable returned by <code>each_with_index</code> shows us
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">arr <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">:cat</span>, <span style="color:#e6db74">:dog</span>, <span style="color:#e6db74">:moose</span><span style="color:#f92672">]</span> <span style="color:#75715e"># Canada eh?</span>
+new_arr <span style="color:#f92672">=</span> arr<span style="color:#f92672">.</span>each_with_index<span style="color:#f92672">.</span>map { <span style="color:#f92672">|</span>value,index<span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;The </span><span style="color:#e6db74">#{</span>value<span style="color:#e6db74">}</span><span style="color:#e6db74"> is at position </span><span style="color:#e6db74">#{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> }
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;The cat is at position 0&#34;</span>, <span style="color:#e6db74">&#34;The dog is at position 1&#34;</span>, <span style="color:#e6db74">&#34;The moose is at position 2&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>A closer look at the Enumerable returned by <code>each_with_index</code> shows us
 exactly what each_with_index returns that lets map play so nicely:</p>
-
-<pre><code class="language-ruby">arr = [:cat, :dog, :moose]
-arr.each_with_index.to_a
-=&gt; [[:cat, 0], [:dog, 1], [:moose, 2]]
-</code></pre>
-
-<p>From here the array of arrays will get mapped. I had never thought of
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">arr <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">:cat</span>, <span style="color:#e6db74">:dog</span>, <span style="color:#e6db74">:moose</span><span style="color:#f92672">]</span>
+arr<span style="color:#f92672">.</span>each_with_index<span style="color:#f92672">.</span>to_a
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[[</span><span style="color:#e6db74">:cat</span>, <span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">:dog</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">]</span>, <span style="color:#f92672">[</span><span style="color:#e6db74">:moose</span>, <span style="color:#ae81ff">2</span><span style="color:#f92672">]]</span>
+</code></pre></div><p>From here the array of arrays will get mapped. I had never thought of
 passing multiple values into a <code>map</code> block but it works wonders. The
 <code>map</code> block takes each value of the inner array and offers it as a value
 inside the block.</p>
-
 <p>The actual reason I needed this code was to parse and alter a string
 into keys with multiple possible matches. I plan to write a more in-depth
 post regarding this topic later but until then here&rsquo;s the snippet I used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">phase <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># Dynamic</span>
+string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;awards.about.marquee.title&#39;</span> <span style="color:#75715e"># A key for a yaml translation</span>
 
-<pre><code class="language-ruby">phase = 2 # Dynamic
-string = 'awards.about.marquee.title' # A key for a yaml translation
+a <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)
+possibilities <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>each_with_index<span style="color:#f92672">.</span>map <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>v,i<span style="color:#f92672">|</span>
+  b <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>clone
+  b<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p</span><span style="color:#e6db74">#{</span>phase<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">#{</span>v<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  b<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;.&#39;</span>)
+<span style="color:#66d9ef">end</span>
 
-a = string.split('.')
-possibilities = a.each_with_index.map do |v,i|
-  b = a.clone
-  b[i] = &quot;p#{phase}_#{v}&quot;
-  b.join('.')
-end
-
-=&gt; [&quot;p2_awards.about.marquee.title&quot;, &quot;awards.p2_about.marquee.title&quot;, &quot;awards.about.p2_marquee.title&quot;, &quot;awards.about.marquee.p2_title&quot;]
-</code></pre>
-
-<p>This output the different possibilites where one of the potential keys
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;p2_awards.about.marquee.title&#34;</span>, <span style="color:#e6db74">&#34;awards.p2_about.marquee.title&#34;</span>, <span style="color:#e6db74">&#34;awards.about.p2_marquee.title&#34;</span>, <span style="color:#e6db74">&#34;awards.about.marquee.p2_title&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>This output the different possibilites where one of the potential keys
 could be prefixed with &lsquo;p2&rsquo;.</p>
-
-<p><strong>Ruby 1.9</strong><br />
+<p><strong>Ruby 1.9</strong><br>
 While writing this post and sifting through documentation I also found
 the
 <a href="http://ruby-doc.org/core-1.9.3/Enumerator.html#method-i-with_index">Enumberable#with_index</a>
 method which essentially does the same thing but can make the syntax
 easier to read:</p>
-
-<pre><code class="language-ruby">arr = [:cat, :dog, :moose]
-new_arr = arr.map.with_index {|value,index| &quot;The #{value} is at position #{index}&quot; }
-=&gt; [&quot;The cat is at position 0&quot;, &quot;The dog is at position 1&quot;, &quot;The moose is at position 2&quot;]
-</code></pre>
-
-<p>So there we have it: Map with index for ruby 1.8 and 1.9.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">arr <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">:cat</span>, <span style="color:#e6db74">:dog</span>, <span style="color:#e6db74">:moose</span><span style="color:#f92672">]</span>
+new_arr <span style="color:#f92672">=</span> arr<span style="color:#f92672">.</span>map<span style="color:#f92672">.</span>with_index {<span style="color:#f92672">|</span>value,index<span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;The </span><span style="color:#e6db74">#{</span>value<span style="color:#e6db74">}</span><span style="color:#e6db74"> is at position </span><span style="color:#e6db74">#{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> }
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;The cat is at position 0&#34;</span>, <span style="color:#e6db74">&#34;The dog is at position 1&#34;</span>, <span style="color:#e6db74">&#34;The moose is at position 2&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>So there we have it: Map with index for ruby 1.8 and 1.9.</p>
 
               
             </div>
@@ -406,7 +389,7 @@ new_arr = arr.map.with_index {|value,index| &quot;The #{value} is at position #{
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -513,7 +496,7 @@ new_arr = arr.map.with_index {|value,index| &quot;The #{value} is at position #{
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -563,7 +546,6 @@ new_arr = arr.map.with_index {|value,index| &quot;The #{value} is at position #{
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -586,8 +568,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -663,7 +645,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -682,7 +664,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

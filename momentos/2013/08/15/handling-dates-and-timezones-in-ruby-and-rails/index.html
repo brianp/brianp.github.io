@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -110,7 +110,7 @@ Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -250,122 +250,92 @@ Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
-
-<p>I&rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
+              <p>I&rsquo;ve spent almost the last two weeks dealing with Date and Time Zone
 related issues within one of the applications I contract on. This is a just a
 list of notable behaviours I expereinced whilst working with Ruby,
 Rails, Dates &amp; TimeZones.</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg' alt="It's dangerous
-to go alone! Take this." /></p>
-
+<p><!-- raw HTML omitted --></p>
 <p>Note: DST is in effect at the time of writing.</p>
-
 <h2 id="inconsistent-handling-of-dst">Inconsistent Handling of DST</h2>
-
 <p>In the code below we instantiate an <code>ActiveSupport::TimeZone</code> object. I would love to
 think that this instance would know everything about that Time Zone. Its
 offset inside and outside of DST. I would expect the method
 <code>TimeZone#formatted_offset</code> to account for DST and return the offset
 accordingly. It doesn&rsquo;t. It outputs the offset for Standard time only. Ideally I&rsquo;d like to see more concise method
 naming. <code>standard_offset</code> vs <code>daylight_offset</code> or <code>dst_offset</code>.</p>
-
 <p>Alas, after we have the zone object we can pass that zone into a <code>in_time_zone</code> method to calculate a time in a
 particular zone based off an existing time. This method does in fact take
 DST into consideration.</p>
-
-<pre><code class="language-ruby">time = DateTime.now
-zone = ActiveSupport::TimeZone.new(&quot;Pacific Time (US &amp; Canada)&quot;)
-zone.formatted_offset
-=&gt; &quot;-08:00&quot;
-time.in_time_zone(zone).formatted_offset
-=&gt; &quot;-07:00&quot;
-time.in_time_zone(zone)
-=&gt; Wed, 21 Aug 2013 21:05:36 PDT -07:00
-</code></pre>
-
-<p>This can be problematic. Different methods were utilized in
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">time <span style="color:#f92672">=</span> <span style="color:#66d9ef">DateTime</span><span style="color:#f92672">.</span>now
+zone <span style="color:#f92672">=</span> <span style="color:#66d9ef">ActiveSupport</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TimeZone</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;Pacific Time (US &amp; Canada)&#34;</span>)
+zone<span style="color:#f92672">.</span>formatted_offset
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;-08:00&#34;</span>
+time<span style="color:#f92672">.</span>in_time_zone(zone)<span style="color:#f92672">.</span>formatted_offset
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;-07:00&#34;</span>
+time<span style="color:#f92672">.</span>in_time_zone(zone)
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Wed</span>, <span style="color:#ae81ff">21</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">36</span> <span style="color:#66d9ef">PDT</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>:<span style="color:#ae81ff">00</span>
+</code></pre></div><p>This can be problematic. Different methods were utilized in
 different sections of the app in turn DST and Time Zone offsets were being
 calculated differently.</p>
-
 <p>You could do the following to acheive the same
 conversion using the helpful <code>new_offset</code> method and passing in the
 offset but it would result in a Standard time conversion:</p>
-
-<pre><code class="language-ruby">time = DateTime.now
-zone = ActiveSupport::TimeZone.new(&quot;Pacific Time (US &amp; Canada)&quot;)
-zone.formatted_offset
-=&gt; &quot;-08:00&quot;
-time = time.new_offset(zone.formatted_offset)
-=&gt; Wed, 21 Aug 2013 20:05:36 -0800 
-</code></pre>
-
-<p>The above gives you exactly what you ask it for. A time with a specific
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">time <span style="color:#f92672">=</span> <span style="color:#66d9ef">DateTime</span><span style="color:#f92672">.</span>now
+zone <span style="color:#f92672">=</span> <span style="color:#66d9ef">ActiveSupport</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TimeZone</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;Pacific Time (US &amp; Canada)&#34;</span>)
+zone<span style="color:#f92672">.</span>formatted_offset
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;-08:00&#34;</span>
+time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>new_offset(zone<span style="color:#f92672">.</span>formatted_offset)
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Wed</span>, <span style="color:#ae81ff">21</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">20</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">36</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">0800</span> 
+</code></pre></div><p>The above gives you exactly what you ask it for. A time with a specific
 offset. The downside to this is the offset being fetched above is again
 a method that does not take DST into consideration and would throw off
 your result.</p>
-
 <h2 id="converting-to-different-time-formats-to-utilize-certain-methods">Converting to different Time formats to utilize certain methods</h2>
-
 <p>Another issue was the requirement to flip flop between types to
 utilize specific methods. I&rsquo;d have to call <code>to_datetime</code> to utilize
 changing offsets without adjusting the current point in time. Then
 follow it with <code>to_time</code> to pass it into a <code>Timecop</code> method.</p>
-
-<pre><code class="language-ruby">@time = Time.now
-@time_zone_offset = '-03:00' #Atlantic Time (Canada)
-zone = ActiveSupport::TimeZone.new(&quot;Pacific Time (US &amp; Canada)&quot;)
-time = (@time.beginning_of_day - 2.seconds)
-=&gt; Sun, 25 Aug 2013 23:59:58 UTC +00:00
-time.class
-=&gt; Time
-time = time.to_datetime
-=&gt; Sun, 25 Aug 2013 23:59:58 +0000
-time.class
-=&gt; DateTime
-time = time.change(:offset =&gt; @time_zone_offset)
-=&gt; Sun, 25 Aug 2013 23:59:58 -0700
-time = time.in_time_zone(zone).to_time
-=&gt; Mon, 26 Aug 2013 07:59:58 +0000
-time.class
-=&gt; ActiveSupport::TimeWithZone
-</code></pre>
-
-<p>Another annoyance here is the 8th &amp; 12th line:</p>
-
-<pre><code class="language-ruby">time = time.to_datetime
-time = time.change(:offset =&gt; @time_zone_offset)
-</code></pre>
-
-<p>If you don&rsquo;t re-assign time to the new <code>DateTime</code> instance (line #12) the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">@time <span style="color:#f92672">=</span> <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>now
+@time_zone_offset <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;-03:00&#39;</span> <span style="color:#75715e">#Atlantic Time (Canada)</span>
+zone <span style="color:#f92672">=</span> <span style="color:#66d9ef">ActiveSupport</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TimeZone</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;Pacific Time (US &amp; Canada)&#34;</span>)
+time <span style="color:#f92672">=</span> (@time<span style="color:#f92672">.</span>beginning_of_day <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">.</span>seconds)
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Sun</span>, <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">58</span> <span style="color:#66d9ef">UTC</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">00</span>
+time<span style="color:#f92672">.</span>class
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Time</span>
+time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>to_datetime
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Sun</span>, <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">58</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">0000</span>
+time<span style="color:#f92672">.</span>class
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">DateTime</span>
+time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>change(<span style="color:#e6db74">:offset</span> <span style="color:#f92672">=&gt;</span> @time_zone_offset)
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Sun</span>, <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">58</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">0700</span>
+time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>in_time_zone(zone)<span style="color:#f92672">.</span>to_time
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Mon</span>, <span style="color:#ae81ff">26</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">07</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">58</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">0000</span>
+time<span style="color:#f92672">.</span>class
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">ActiveSupport</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TimeWithZone</span>
+</code></pre></div><p>Another annoyance here is the 8th &amp; 12th line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>to_datetime
+time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>change(<span style="color:#e6db74">:offset</span> <span style="color:#f92672">=&gt;</span> @time_zone_offset)
+</code></pre></div><p>If you don&rsquo;t re-assign time to the new <code>DateTime</code> instance (line #12) the
 <code>Time</code> instance will not throw an error when calling the <code>change</code>
 method. It also won&rsquo;t do anything else including producing the desired result.
 Which will leave you pulling hair while wondering why you&rsquo;re not landing
 in the time with the zone you want.</p>
-
-<pre><code class="language-ruby">time.to_datetime
-time.class
-=&gt; ActiveSupport::TimeWithZone #oops forgot to re-assign
-time = time.change(:offset =&gt; @time_zone_offset)
-=&gt; Sun, 25 Aug 2013 23:59:58 +0000
-</code></pre>
-
-<p>There we have it. No error and no time zone adjustment.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">time<span style="color:#f92672">.</span>to_datetime
+time<span style="color:#f92672">.</span>class
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">ActiveSupport</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TimeWithZone</span> <span style="color:#75715e">#oops forgot to re-assign</span>
+time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>change(<span style="color:#e6db74">:offset</span> <span style="color:#f92672">=&gt;</span> @time_zone_offset)
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Sun</span>, <span style="color:#ae81ff">25</span> <span style="color:#66d9ef">Aug</span> <span style="color:#ae81ff">2013</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">59</span>:<span style="color:#ae81ff">58</span> <span style="color:#f92672">+</span><span style="color:#ae81ff">0000</span>
+</code></pre></div><p>There we have it. No error and no time zone adjustment.</p>
 <p>This is because the Rails <code>Time</code> class adds a change method but it only
 responds to a hash with the following keys: <code>:year, :month, :day, :hour, :min, :sec, :usec</code>.</p>
-
 <p>Aside Rant:
 <code>Time</code> has a date. If it was just time then it should
 have no date. Much like <code>Date</code> has no time. If <code>Time</code> has a date what
 separates it from <code>DateTime</code> or <code>TimeWithZone</code>? If <code>TimeWithZone</code> has a
 date shouldn&rsquo;t it be <code>DateTimeWithZone</code>. For that matter <code>DateTime</code> already
 has a zone so why have a second <code>DateTimeWithZone</code> class for the same thing? (I actually
-ended up looking into this more. <a href='#timevsdatetime'>See below: The State of Time vs DateTime</a>)</p>
-
-<h2 id="storing-in-utc-isn-t-a-be-all-end-all-solution">Storing in UTC isn&rsquo;t a be all end all solution</h2>
-
+ended up looking into this more. <!-- raw HTML omitted -->See below: The State of Time vs DateTime<!-- raw HTML omitted -->)</p>
+<h2 id="storing-in-utc-isnt-a-be-all-end-all-solution">Storing in UTC isn&rsquo;t a be all end all solution</h2>
 <p>Anytime I mentioned I was working with Time Zones people just said
 &ldquo;Store it in UTC&rdquo;. As if that was the solution to all woes. The problem
 here is that the dates and times being stored (in UTC) were not being
@@ -377,7 +347,6 @@ as <code>2013-08-25 00:00:00 UTC</code> and is not the same as
 comparisons to the stored dates you could end up with inaccurate results when just comparing
 against string values. If the desired offset was high or low enough the UTC
 date could actually be a different day then what&rsquo;s expected.</p>
-
 <p>The times were not being
 converted on their way into the database as the timezone field was independent of each
 particular time or date fields in related records. If the user changed the
@@ -387,115 +356,93 @@ more specifics but our current method was the most desired way to
 handle the process as we dind&rsquo;t want to constantly be re-caluclating
 times in the databse if a user switched the zone. It&rsquo;s just that some steps were missed in our
 comparing of the non adjusted dates.</p>
-
 <h2 id="testing-time-zone-differences">Testing Time Zone differences</h2>
-
 <p>As the Dependecy Injection (DPI) band wagon rolled around using tools like
 <a href="https://github.com/travisjeffery/timecop">Timecop</a> became
 &ldquo;unnessecary.&rdquo; I did my best to keep DPI in mind while working with Time
 related methods. Which made unit testing them significantly easier. Here&rsquo;s a quick
 run down on why DPI helps with time related methods:</p>
-
 <p>Consider the following code without DPI.</p>
-
-<pre><code class="language-ruby"># app/models/milestone.rb
-def self.effective_or_nearest
-  date = DateTime.now
-  milestone = effective_on(date)
-  milestone = date &lt; first.start_date ? first : last if milestone.nil?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># app/models/milestone.rb</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">effective_or_nearest</span>
+  date <span style="color:#f92672">=</span> <span style="color:#66d9ef">DateTime</span><span style="color:#f92672">.</span>now
+  milestone <span style="color:#f92672">=</span> effective_on(date)
+  milestone <span style="color:#f92672">=</span> date <span style="color:#f92672">&lt;</span> first<span style="color:#f92672">.</span>start_date ? first : last <span style="color:#66d9ef">if</span> milestone<span style="color:#f92672">.</span>nil?
   milestone
-end
-</code></pre>
-
-<p>The code above checks to see if we&rsquo;re within a milestone date range
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>The code above checks to see if we&rsquo;re within a milestone date range
 currently. If we&rsquo;re before or after the range then assign the closest
 milestone (first or last.)</p>
-
 <p>The problem here is trying to test that the last milestone would get
 returned in the event we are past the milestone range because
 DateTime.now in this case is before the milestone end times.
 Instead we can just use DPI and feed in whatever date we
 want. We can also assign it a smart default as the current time.</p>
-
-<pre><code class="language-ruby"># app/models/milestone.rb
-def self.effective_or_nearest(date = DateTime.now)
-  milestone = effective_on(date)
-  milestone = date &lt; first.start_date ? first : last if milestone.nil?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># app/models/milestone.rb</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">effective_or_nearest</span>(date <span style="color:#f92672">=</span> <span style="color:#66d9ef">DateTime</span><span style="color:#f92672">.</span>now)
+  milestone <span style="color:#f92672">=</span> effective_on(date)
+  milestone <span style="color:#f92672">=</span> date <span style="color:#f92672">&lt;</span> first<span style="color:#f92672">.</span>start_date ? first : last <span style="color:#66d9ef">if</span> milestone<span style="color:#f92672">.</span>nil?
   milestone
-end
-</code></pre>
-
-<p>Now that we can control the comparitor date we can pass in anything
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Now that we can control the comparitor date we can pass in anything
 we&rsquo;de like while testing:</p>
-
-<pre><code class="language-ruby"># spec/models/milestone_spec.rb
-it &quot;assigns the last milestone as the date is after the requirement&quot; do
-  date = 18.days.from_now
-  milestone = Milestone.effective_or_nearest(date)
-  milestone.should equal Milestone.last
-end
-=&gt; true
-</code></pre>
-
-<p>Keeping DPI in mind while writing your code can definietly make writing
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># spec/models/milestone_spec.rb</span>
+it <span style="color:#e6db74">&#34;assigns the last milestone as the date is after the requirement&#34;</span> <span style="color:#66d9ef">do</span>
+  date <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span><span style="color:#f92672">.</span>days<span style="color:#f92672">.</span>from_now
+  milestone <span style="color:#f92672">=</span> <span style="color:#66d9ef">Milestone</span><span style="color:#f92672">.</span>effective_or_nearest(date)
+  milestone<span style="color:#f92672">.</span>should equal <span style="color:#66d9ef">Milestone</span><span style="color:#f92672">.</span>last
+<span style="color:#66d9ef">end</span>
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><p>Keeping DPI in mind while writing your code can definietly make writing
 your tests easier. This is is just a single benefeit to DPI. I encourage
 you to check out other examples.</p>
-
 <p>This doesn&rsquo;t mean that I don&rsquo;t feel there&rsquo;s a place for
 <a href="https://github.com/travisjeffery/timecop">Timecop</a> in my life. The unit
 tests ran quick and I was happy with them. The area was sensitive though
 and I wanted to really ensure we always got the results we wanted. I
 wanted to write some full stack tests that
 started manipulating data as a user from other time zones.</p>
-
 <p>In this case I had the user registering for an activity that was
 setup in the Atlantic time zone (Atlantic Time (Canada)). The
 start and end times for milestones would be based off the AST timezone.
 This test let me move the context of the user exactly 2 seconds before the end of the first milestone
 in AST. Which would be +4 hours PST. Register the user at that time and
 ensure I recieve the desired results.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">zoned_time</span>(date_time)
+  zone <span style="color:#f92672">=</span> <span style="color:#66d9ef">ActiveSupport</span><span style="color:#f92672">::</span><span style="color:#66d9ef">TimeZone</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;Pacific Time (US &amp; Canada)&#34;</span>)
+  time <span style="color:#f92672">=</span> date_time<span style="color:#f92672">.</span>to_datetime
+  time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>change(<span style="color:#e6db74">:offset</span> <span style="color:#f92672">=&gt;</span> event<span style="color:#f92672">.</span>time_zone_offset)
+  time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>in_time_zone(zone)<span style="color:#f92672">.</span>to_time
+<span style="color:#66d9ef">end</span>
 
-<pre><code class="language-ruby">def zoned_time(date_time)
-  zone = ActiveSupport::TimeZone.new(&quot;Pacific Time (US &amp; Canada)&quot;)
-  time = date_time.to_datetime
-  time = time.change(:offset =&gt; event.time_zone_offset)
-  time = time.in_time_zone(zone).to_time
-end
+it <span style="color:#e6db74">&#34;assigns the first milestone&#34;</span> <span style="color:#66d9ef">do</span>
+  time <span style="color:#f92672">=</span> <span style="color:#66d9ef">Milestone</span><span style="color:#f92672">.</span>first<span style="color:#f92672">.</span>start_date
+  time <span style="color:#f92672">=</span> zoned_time(time<span style="color:#f92672">.</span>beginning_of_day <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">.</span>seconds)
+  <span style="color:#66d9ef">Timecop</span><span style="color:#f92672">.</span>travel(@time) <span style="color:#66d9ef">do</span>
+    visit <span style="color:#e6db74">&#39;/register&#39;</span>
+    signup <span style="color:#75715e">#fills out a form and submits</span>
+  <span style="color:#66d9ef">end</span>
 
-it &quot;assigns the first milestone&quot; do
-  time = Milestone.first.start_date
-  time = zoned_time(time.beginning_of_day - 2.seconds)
-  Timecop.travel(@time) do
-    visit '/register'
-    signup #fills out a form and submits
-  end
-
-  User.last.milestone.should eq Milestone.first
-end
-</code></pre>
-
-<p>Using <a href="https://github.com/travisjeffery/timecop">Timecop</a> like this
+  <span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>last<span style="color:#f92672">.</span>milestone<span style="color:#f92672">.</span>should eq <span style="color:#66d9ef">Milestone</span><span style="color:#f92672">.</span>first
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>Using <a href="https://github.com/travisjeffery/timecop">Timecop</a> like this
 helped ensure users in different time zones would
 have all time related constraints met properly. This was more satisfying
 then just createing a time and injecting it directly into my method.
 Using DPI left me less wiggle room in creating circumstanes to reveal
 other possible scenarios under which the time constraints might be
 calculated improperly under different zones.</p>
-
-<h2 id="some-notes-on-the-different-ruby-rails-date-time-classes">Some notes on the different Ruby/Rails Date &amp; Time classes.</h2>
-
+<h2 id="some-notes-on-the-different-rubyrails-date--time-classes">Some notes on the different Ruby/Rails Date &amp; Time classes.</h2>
 <p>A quick map of where different Date and Time classes and modules live:</p>
-
 <ul>
 <li>Ruby
-
 <ul>
 <li><a href="http://www.ruby-doc.org/core-1.9.3/Date.html">Date 1.9.3</a></li>
 <li><a href="http://www.ruby-doc.org/core-1.9.3/Time.html">Time 1.9.3</a> -
 <a href="http://www.ruby-doc.org/core-2.0/Time.html">2.0</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Ruby Standard Library
-
 <ul>
 <li><a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html">Date 1.9.3</a> -
 <a href="http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Date.html">2.0</a></li>
@@ -503,39 +450,37 @@ calculated improperly under different zones.</p>
 <a href="http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/Time.html">2.0</a></li>
 <li><a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html">DateTime 1.9.3</a> -
 <a href="http://www.ruby-doc.org/stdlib-2.0/libdoc/date/rdoc/DateTime.html">2.0</a></li>
-</ul></li>
+</ul>
+</li>
 <li>Rails
-
 <ul>
 <li><a href="http://api.rubyonrails.org/classes/Date.html">Date</a></li>
 <li><a href="http://api.rubyonrails.org/classes/Time.html">Time</a></li>
 <li><a href="http://api.rubyonrails.org/classes/DateTime.html">DateTime</a></li>
 <li><a href="http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
 <li><a href="http://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
-<li>TZInfo (included gem)</li>
+<li>TZInfo (included gem)
+<ul>
 <li><a href="http://tzinfo.rubyforge.org/doc/TZInfo/Timezone.html">TZInfo::Timezone</a></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <p>The rails <code>Date</code> and <code>Time</code> classes bring lots of the fancy niceties
 that we like to use. Methods such as <code>from_now</code> in lines like
 <code>2.days.from_now</code>. They extend this functionality to the base ruby
 classes for use anywhere.</p>
-
 <p><code>TZInfo</code> is a ruby library used to &ldquo;provide daylight savings aware
 transformations between times in different timezones.&rdquo;
 <code>ActiveSupport::TimeZone</code> and <code>ActiveSupport::TimeWithZone</code> are
 essentially wrappers for TZInfo interaction.</p>
-
 <h3 id="why-would-i-use-datetime-over-the-time-class">Why would I use <code>DateTime</code> over the <code>Time</code> class?</h3>
-
 <p><a href="http://stackoverflow.com/questions/10957717/what-is-the-point-of-the-datetime-class">This Stackoverflow Question</a> seems to sum up the original reason for it:
 {% blockquote %}
 DateTime had an advantage over Time on 32 bit machines in Rubies &lt; 1.9.2 - Time was a victim of the Y2K38 problem and limited to a 32 bit range. This problem is solved either on 64 bit machines and/or in recent Ruby versions. You still may need to use DateTime if for example 1.8 compatibility is a must or you rely on using methods from its API which often deviates from that of Time.
 {% endblockquote %}</p>
-
-<h3 id="span-id-timevsdatetime-the-state-of-time-vs-datetime-a"><span id='timevsdatetime'>The state of Time vs DateTime</a></h3>
-
+<h3 id="span-idtimevsdatetimethe-state-of-time-vs-datetimea"><!-- raw HTML omitted -->The state of Time vs DateTime<!-- raw HTML omitted --></h3>
 <p>After reading through <a href="http://danilenko.org/2012/7/6/rails_timezones/">this additional blog
 post</a> the differences
 between <code>Time</code> and <code>DateTime</code> seem to be getting smaller since Ruby 1.9.2 hit and you could really pick
@@ -544,9 +489,7 @@ different time zones at any one time so the suggested practice there
 doesn&rsquo;t really solve our internal issues. It seems like a decent
 practice to pickup though. That way if your app does become Time Zone dependent
 at some point you&rsquo;ve already taken away a lot of headache.</p>
-
 <h2 id="reflection">Reflection</h2>
-
 <p>Overall I wish there were less public facing Date &amp; Time related entities. I
 don&rsquo;t doubt all of these classes serve a purpose but I don&rsquo;t think they
 should all have a public interface and I don&rsquo;t want to have anything
@@ -653,7 +596,7 @@ to be seeing more usage.</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -760,7 +703,7 @@ to be seeing more usage.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -810,7 +753,6 @@ to be seeing more usage.</p>
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -833,8 +775,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -910,7 +852,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -929,7 +871,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

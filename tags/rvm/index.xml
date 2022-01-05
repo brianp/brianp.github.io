@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rvm on { always: &#39;coding&#39; }</title>
+    <title>RVM on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/rvm/</link>
-    <description>Recent content in Rvm on { always: &#39;coding&#39; }</description>
+    <description>Recent content in RVM on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Feb 2011 00:16:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/rvm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 09 Feb 2011 00:16:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/rvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bson keys must be strings or symbols</title>
       <link>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
@@ -18,7 +14,7 @@
       
       <guid>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>While setting up a new Rails development environment I ran into the error bson keys must be strings or symbols. After some googling I found the following method to fix it:
-/gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install  /fixed</description>
+/gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&amp;#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install /fixed</description>
     </item>
     
   </channel>

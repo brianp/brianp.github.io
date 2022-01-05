@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rake on { always: &#39;coding&#39; }</title>
+    <title>rake on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/rake/</link>
-    <description>Recent content in Rake on { always: &#39;coding&#39; }</description>
+    <description>Recent content in rake on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jun 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/rake/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Jun 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/rake/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hash Defaults in Ruby</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>

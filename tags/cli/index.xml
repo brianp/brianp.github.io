@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cli on { always: &#39;coding&#39; }</title>
+    <title>cli on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/cli/</link>
-    <description>Recent content in Cli on { always: &#39;coding&#39; }</description>
+    <description>Recent content in cli on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2013 11:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/cli/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Sep 2013 11:30:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Killing all Ruby Processes</title>
       <link>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</link>
@@ -19,7 +15,7 @@
       <guid>http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</guid>
       <description>I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
 Here is a short list of convenient and inconvenient ways to do that:
-for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.</description>
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &amp;#39;{print $1}&amp;#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &amp;#39;{print $2}&amp;#39; | xargs kill The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.</description>
     </item>
     
   </channel>

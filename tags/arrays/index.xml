@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arrays on { always: &#39;coding&#39; }</title>
+    <title>arrays on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/arrays/</link>
-    <description>Recent content in Arrays on { always: &#39;coding&#39; }</description>
+    <description>Recent content in arrays on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Jun 2013 15:32:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/arrays/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 07 Jun 2013 15:32:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/arrays/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Map with Index</title>
       <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>

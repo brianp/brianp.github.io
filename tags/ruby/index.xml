@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ruby on { always: &#39;coding&#39; }</title>
+    <title>ruby on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/ruby/</link>
-    <description>Recent content in Ruby on { always: &#39;coding&#39; }</description>
+    <description>Recent content in ruby on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tips for working with Delayed Job</title>
       <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
@@ -28,7 +24,8 @@ I will not delve into why you need one but you can check out a summary here: Bac
       <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
-      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</description>
+      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</description>
     </item>
     
     <item>
@@ -119,7 +116,7 @@ What is the n+1 issue?</description>
       
       <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
-$ rails _3.1.0_ new rollback  You also must already have this version of the gem installed on your system for it to work.</description>
+$ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.</description>
     </item>
     
     <item>
@@ -139,7 +136,7 @@ I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Ha
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
-{:cat =&amp;gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+{:cat =&amp;gt; &amp;#39;meow&amp;#39;} # 1.8 {cat: &amp;#39;meow&amp;#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
     </item>
     

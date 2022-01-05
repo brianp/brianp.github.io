@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on { always: &#39;coding&#39; }</title>
@@ -6,112 +6,27 @@
     <description>Recent content in Tags on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Jun 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 10 Sep 2016 10:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Activerecord</title>
-      <link>http://alwayscoding.ca/tags/activerecord/</link>
-      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      <title>rust</title>
+      <link>http://alwayscoding.ca/tags/rust/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/activerecord/</guid>
+      <guid>http://alwayscoding.ca/tags/rust/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Angularjs</title>
-      <link>http://alwayscoding.ca/tags/angularjs/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      <title>rustlang</title>
+      <link>http://alwayscoding.ca/tags/rustlang/</link>
+      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/angularjs/</guid>
+      <guid>http://alwayscoding.ca/tags/rustlang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Apple</title>
-      <link>http://alwayscoding.ca/tags/apple/</link>
-      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/apple/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arrays</title>
-      <link>http://alwayscoding.ca/tags/arrays/</link>
-      <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/arrays/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Asset Pipeline</title>
-      <link>http://alwayscoding.ca/tags/asset-pipeline/</link>
-      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/asset-pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Background Tasks</title>
-      <link>http://alwayscoding.ca/tags/background-tasks/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/background-tasks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bson</title>
-      <link>http://alwayscoding.ca/tags/bson/</link>
-      <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/bson/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cache</title>
-      <link>http://alwayscoding.ca/tags/cache/</link>
-      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/cache/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Caching</title>
-      <link>http://alwayscoding.ca/tags/caching/</link>
-      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/caching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cli</title>
-      <link>http://alwayscoding.ca/tags/cli/</link>
-      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coffeescript</title>
-      <link>http://alwayscoding.ca/tags/coffeescript/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/coffeescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Concurreny</title>
+      <title>concurreny</title>
       <link>http://alwayscoding.ca/tags/concurreny/</link>
       <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
       
@@ -120,142 +35,7 @@
     </item>
     
     <item>
-      <title>Console</title>
-      <link>http://alwayscoding.ca/tags/console/</link>
-      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/console/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contracts</title>
-      <link>http://alwayscoding.ca/tags/contracts/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/contracts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cross Compilation</title>
-      <link>http://alwayscoding.ca/tags/cross-compilation/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/cross-compilation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Css</title>
-      <link>http://alwayscoding.ca/tags/css/</link>
-      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>http://alwayscoding.ca/tags/database/</link>
-      <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datamapper</title>
-      <link>http://alwayscoding.ca/tags/datamapper/</link>
-      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/datamapper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dates</title>
-      <link>http://alwayscoding.ca/tags/dates/</link>
-      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/dates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datetime</title>
-      <link>http://alwayscoding.ca/tags/datetime/</link>
-      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/datetime/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Delayed Job</title>
-      <link>http://alwayscoding.ca/tags/delayed-job/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/delayed-job/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deploy</title>
-      <link>http://alwayscoding.ca/tags/deploy/</link>
-      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/deploy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>http://alwayscoding.ca/tags/development/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Exceptions</title>
-      <link>http://alwayscoding.ca/tags/exceptions/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/exceptions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Frontend</title>
-      <link>http://alwayscoding.ca/tags/frontend/</link>
-      <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/frontend/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Garnish</title>
-      <link>http://alwayscoding.ca/tags/garnish/</link>
-      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/garnish/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gems</title>
-      <link>http://alwayscoding.ca/tags/gems/</link>
-      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/gems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Generics</title>
+      <title>generics</title>
       <link>http://alwayscoding.ca/tags/generics/</link>
       <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
       
@@ -264,34 +44,214 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>http://alwayscoding.ca/tags/git/</link>
-      <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
+      <title>threads</title>
+      <link>http://alwayscoding.ca/tags/threads/</link>
+      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/git/</guid>
+      <guid>http://alwayscoding.ca/tags/threads/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Haml</title>
-      <link>http://alwayscoding.ca/tags/haml/</link>
-      <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
+      <title>traits</title>
+      <link>http://alwayscoding.ca/tags/traits/</link>
+      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/haml/</guid>
+      <guid>http://alwayscoding.ca/tags/traits/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hash</title>
-      <link>http://alwayscoding.ca/tags/hash/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
+      <title>cross compilation</title>
+      <link>http://alwayscoding.ca/tags/cross-compilation/</link>
+      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/hash/</guid>
+      <guid>http://alwayscoding.ca/tags/cross-compilation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Home</title>
+      <title>osx</title>
+      <link>http://alwayscoding.ca/tags/osx/</link>
+      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unix</title>
+      <link>http://alwayscoding.ca/tags/unix/</link>
+      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>background tasks</title>
+      <link>http://alwayscoding.ca/tags/background-tasks/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/background-tasks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>delayed job</title>
+      <link>http://alwayscoding.ca/tags/delayed-job/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/delayed-job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exceptions</title>
+      <link>http://alwayscoding.ca/tags/exceptions/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/exceptions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>queues</title>
+      <link>http://alwayscoding.ca/tags/queues/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/queues/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rails</title>
+      <link>http://alwayscoding.ca/tags/rails/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>http://alwayscoding.ca/tags/ruby/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asset pipeline</title>
+      <link>http://alwayscoding.ca/tags/asset-pipeline/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/asset-pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>http://alwayscoding.ca/tags/css/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>imports</title>
+      <link>http://alwayscoding.ca/tags/imports/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/imports/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sass</title>
+      <link>http://alwayscoding.ca/tags/sass/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/sass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>angularjs</title>
+      <link>http://alwayscoding.ca/tags/angularjs/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/angularjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coffeescript</title>
+      <link>http://alwayscoding.ca/tags/coffeescript/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/coffeescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>http://alwayscoding.ca/tags/javascript/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>http://alwayscoding.ca/tags/jekyll/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>liquid</title>
+      <link>http://alwayscoding.ca/tags/liquid/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/liquid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>http://alwayscoding.ca/tags/cli/</link>
+      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>http://alwayscoding.ca/tags/terminal/</link>
+      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apple</title>
+      <link>http://alwayscoding.ca/tags/apple/</link>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>home</title>
       <link>http://alwayscoding.ca/tags/home/</link>
       <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
       
@@ -300,20 +260,110 @@
     </item>
     
     <item>
-      <title>Homebrew</title>
-      <link>http://alwayscoding.ca/tags/homebrew/</link>
-      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
+      <title>laptop</title>
+      <link>http://alwayscoding.ca/tags/laptop/</link>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/homebrew/</guid>
+      <guid>http://alwayscoding.ca/tags/laptop/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Html</title>
+      <title>macbook air</title>
+      <link>http://alwayscoding.ca/tags/macbook-air/</link>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/macbook-air/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>contracts</title>
+      <link>http://alwayscoding.ca/tags/contracts/</link>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/contracts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>http://alwayscoding.ca/tags/development/</link>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>http://alwayscoding.ca/tags/work/</link>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/work/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>frontend</title>
+      <link>http://alwayscoding.ca/tags/frontend/</link>
+      <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
       <link>http://alwayscoding.ca/tags/html/</link>
       <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markup</title>
+      <link>http://alwayscoding.ca/tags/markup/</link>
+      <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/markup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dates</title>
+      <link>http://alwayscoding.ca/tags/dates/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/dates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datetime</title>
+      <link>http://alwayscoding.ca/tags/datetime/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/datetime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>times</title>
+      <link>http://alwayscoding.ca/tags/times/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/times/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>timezone</title>
+      <link>http://alwayscoding.ca/tags/timezone/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/timezone/</guid>
       <description></description>
     </item>
     
@@ -327,52 +377,88 @@
     </item>
     
     <item>
-      <title>Imports</title>
-      <link>http://alwayscoding.ca/tags/imports/</link>
-      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
+      <title>translations</title>
+      <link>http://alwayscoding.ca/tags/translations/</link>
+      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/imports/</guid>
+      <guid>http://alwayscoding.ca/tags/translations/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Javascript</title>
-      <link>http://alwayscoding.ca/tags/javascript/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      <title>yaml</title>
+      <link>http://alwayscoding.ca/tags/yaml/</link>
+      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/javascript/</guid>
+      <guid>http://alwayscoding.ca/tags/yaml/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Jekyll</title>
-      <link>http://alwayscoding.ca/tags/jekyll/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      <title>console</title>
+      <link>http://alwayscoding.ca/tags/console/</link>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/jekyll/</guid>
+      <guid>http://alwayscoding.ca/tags/console/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Laptop</title>
-      <link>http://alwayscoding.ca/tags/laptop/</link>
-      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
+      <title>datamapper</title>
+      <link>http://alwayscoding.ca/tags/datamapper/</link>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/laptop/</guid>
+      <guid>http://alwayscoding.ca/tags/datamapper/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Liquid</title>
-      <link>http://alwayscoding.ca/tags/liquid/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      <title>arrays</title>
+      <link>http://alwayscoding.ca/tags/arrays/</link>
+      <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/liquid/</guid>
+      <guid>http://alwayscoding.ca/tags/arrays/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mac Osx</title>
+      <title>pry</title>
+      <link>http://alwayscoding.ca/tags/pry/</link>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/pry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>symbol</title>
+      <link>http://alwayscoding.ca/tags/symbol/</link>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/symbol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>garnish</title>
+      <link>http://alwayscoding.ca/tags/garnish/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/garnish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homebrew</title>
+      <link>http://alwayscoding.ca/tags/homebrew/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/homebrew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mac osx</title>
       <link>http://alwayscoding.ca/tags/mac-osx/</link>
       <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
       
@@ -381,25 +467,25 @@
     </item>
     
     <item>
-      <title>Macbook Air</title>
-      <link>http://alwayscoding.ca/tags/macbook-air/</link>
-      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
+      <title>openssl</title>
+      <link>http://alwayscoding.ca/tags/openssl/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/macbook-air/</guid>
+      <guid>http://alwayscoding.ca/tags/openssl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Markup</title>
-      <link>http://alwayscoding.ca/tags/markup/</link>
-      <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
+      <title>database</title>
+      <link>http://alwayscoding.ca/tags/database/</link>
+      <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/markup/</guid>
+      <guid>http://alwayscoding.ca/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mongodb</title>
+      <title>MongoDB</title>
       <link>http://alwayscoding.ca/tags/mongodb/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
@@ -417,133 +503,7 @@
     </item>
     
     <item>
-      <title>Nginx</title>
-      <link>http://alwayscoding.ca/tags/nginx/</link>
-      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Openssl</title>
-      <link>http://alwayscoding.ca/tags/openssl/</link>
-      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/openssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Osx</title>
-      <link>http://alwayscoding.ca/tags/osx/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/osx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pry</title>
-      <link>http://alwayscoding.ca/tags/pry/</link>
-      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/pry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Queues</title>
-      <link>http://alwayscoding.ca/tags/queues/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/queues/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rails</title>
-      <link>http://alwayscoding.ca/tags/rails/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rake</title>
-      <link>http://alwayscoding.ca/tags/rake/</link>
-      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/rake/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby</title>
-      <link>http://alwayscoding.ca/tags/ruby/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/ruby/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rubygems</title>
-      <link>http://alwayscoding.ca/tags/rubygems/</link>
-      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/rubygems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>http://alwayscoding.ca/tags/rust/</link>
-      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rustlang</title>
-      <link>http://alwayscoding.ca/tags/rustlang/</link>
-      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/rustlang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rvm</title>
-      <link>http://alwayscoding.ca/tags/rvm/</link>
-      <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/rvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sass</title>
-      <link>http://alwayscoding.ca/tags/sass/</link>
-      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/sass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Server</title>
-      <link>http://alwayscoding.ca/tags/server/</link>
-      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sql</title>
+      <title>sql</title>
       <link>http://alwayscoding.ca/tags/sql/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
@@ -552,16 +512,52 @@
     </item>
     
     <item>
-      <title>Symbol</title>
-      <link>http://alwayscoding.ca/tags/symbol/</link>
-      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
+      <title>cache</title>
+      <link>http://alwayscoding.ca/tags/cache/</link>
+      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/symbol/</guid>
+      <guid>http://alwayscoding.ca/tags/cache/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sysadmin</title>
+      <title>caching</title>
+      <link>http://alwayscoding.ca/tags/caching/</link>
+      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/caching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deploy</title>
+      <link>http://alwayscoding.ca/tags/deploy/</link>
+      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/deploy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>http://alwayscoding.ca/tags/nginx/</link>
+      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>http://alwayscoding.ca/tags/server/</link>
+      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sysadmin</title>
       <link>http://alwayscoding.ca/tags/sysadmin/</link>
       <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
       
@@ -570,79 +566,43 @@
     </item>
     
     <item>
-      <title>Terminal</title>
-      <link>http://alwayscoding.ca/tags/terminal/</link>
-      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
+      <title>gems</title>
+      <link>http://alwayscoding.ca/tags/gems/</link>
+      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/terminal/</guid>
+      <guid>http://alwayscoding.ca/tags/gems/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Threads</title>
-      <link>http://alwayscoding.ca/tags/threads/</link>
-      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
+      <title>rubygems</title>
+      <link>http://alwayscoding.ca/tags/rubygems/</link>
+      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/threads/</guid>
+      <guid>http://alwayscoding.ca/tags/rubygems/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Times</title>
-      <link>http://alwayscoding.ca/tags/times/</link>
-      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      <title>haml</title>
+      <link>http://alwayscoding.ca/tags/haml/</link>
+      <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/times/</guid>
+      <guid>http://alwayscoding.ca/tags/haml/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Timezone</title>
-      <link>http://alwayscoding.ca/tags/timezone/</link>
-      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      <title>git</title>
+      <link>http://alwayscoding.ca/tags/git/</link>
+      <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/timezone/</guid>
+      <guid>http://alwayscoding.ca/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Traits</title>
-      <link>http://alwayscoding.ca/tags/traits/</link>
-      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/traits/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Translations</title>
-      <link>http://alwayscoding.ca/tags/translations/</link>
-      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/translations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Twitter</title>
-      <link>http://alwayscoding.ca/tags/twitter/</link>
-      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/twitter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unix</title>
-      <link>http://alwayscoding.ca/tags/unix/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/unix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vi</title>
+      <title>vi</title>
       <link>http://alwayscoding.ca/tags/vi/</link>
       <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
       
@@ -651,7 +611,7 @@
     </item>
     
     <item>
-      <title>Vim</title>
+      <title>vim</title>
       <link>http://alwayscoding.ca/tags/vim/</link>
       <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
       
@@ -660,20 +620,56 @@
     </item>
     
     <item>
-      <title>Work</title>
-      <link>http://alwayscoding.ca/tags/work/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
+      <title>hash</title>
+      <link>http://alwayscoding.ca/tags/hash/</link>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/work/</guid>
+      <guid>http://alwayscoding.ca/tags/hash/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Yaml</title>
-      <link>http://alwayscoding.ca/tags/yaml/</link>
-      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
+      <title>rake</title>
+      <link>http://alwayscoding.ca/tags/rake/</link>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/tags/yaml/</guid>
+      <guid>http://alwayscoding.ca/tags/rake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>activerecord</title>
+      <link>http://alwayscoding.ca/tags/activerecord/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/activerecord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>twitter</title>
+      <link>http://alwayscoding.ca/tags/twitter/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BSON</title>
+      <link>http://alwayscoding.ca/tags/bson/</link>
+      <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/bson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RVM</title>
+      <link>http://alwayscoding.ca/tags/rvm/</link>
+      <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/rvm/</guid>
       <description></description>
     </item>
     

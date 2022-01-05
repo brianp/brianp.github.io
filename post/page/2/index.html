@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Posts</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -102,7 +102,7 @@
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -419,7 +419,7 @@ Where to start Sphero - $130.00  Bluetooth enabled ball. Drives itself around. B
     <div class="postShorten-excerpt" itemprop="articleBody">
       I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
 Here is a short list of convenient and inconvenient ways to do that:
-for each in `ps -eo pid,command | grep ruby | grep -v grep | awk '{print $1}' `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk '{print $2}' | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.
       <p>
         <a href="http://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -465,8 +465,7 @@ for each in `ps -eo pid,command | grep ruby | grep -v grep | awk '{print $1}' `;
 
     </div>
     <div class="postShorten-excerpt" itemprop="articleBody">
-      As soon as the MacBook Air (Mid 2013) started shipping; reports began flooding in about intermittant wifi connectivity problems.[1] The day after it was released I ordered it. I can&rsquo;t say I experinced the same issues everyone else was claiming to run into. Apple denied the issue at first (as they always do) but later released a software update for the issue.[2]
-Not soon after the software update I began experiencing the wifi connectivity issues.
+      As soon as the MacBook Air (Mid 2013) started shipping; reports began flooding in about intermittant wifi connectivity problems.[1]The day after it was released I ordered it. I can&rsquo;t say I experinced the same issues everyone else was claiming to run into. Apple denied the issue at first (as they always do) but later released a software update for the issue.[2]Not soon after the software update I began experiencing the wifi connectivity issues.
       <p>
         <a href="http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -560,7 +559,7 @@ Not soon after the software update I began experiencing the wifi connectivity is
     <div class="postShorten-excerpt" itemprop="articleBody">
       Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
 When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
-&lt;a href=&quot;#productList&quot;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&quot;productList&quot;&gt;&lt;/a&gt; &lt;ul class=&quot;productList&quot;&gt;…&lt;/a&gt;  Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.
+&lt;a href=&#34;#productList&#34;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&#34;productList&#34;&gt;&lt;/a&gt; &lt;ul class=&#34;productList&#34;&gt;…&lt;/a&gt; Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.
       <p>
         <a href="http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/" class="postShorten-excerpt_link link">Continue reading</a>
         
@@ -600,7 +599,7 @@ When adding anchors on a page for the purpose of in-page links my typical method
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -617,7 +616,7 @@ When adding anchors on a page for the purpose of in-page links my typical method
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -667,7 +666,6 @@ When adding anchors on a page for the purpose of in-page links my typical method
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -690,8 +688,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -767,7 +765,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -786,7 +784,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

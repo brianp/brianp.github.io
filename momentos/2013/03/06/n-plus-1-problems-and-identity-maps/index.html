@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>n&#43;1 Problems and Identity Maps</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -113,7 +113,7 @@ What is the n&#43;1 issue?">
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -253,103 +253,71 @@ What is the n&#43;1 issue?">
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
-
-<p>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the <code>includes</code> method. The <code>includes</code> method being the suggested best practice for the problem now. <code>includes</code> will be mentioned at the bottom of the post.</p>
-
+              <p>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the <code>includes</code> method. The <code>includes</code> method being the suggested best practice for the problem now. <code>includes</code> will be mentioned at the bottom of the post.</p>
 <p><a href="#current">Take me to the current best practice</a>.</p>
-
 <p>How to deal with n+1 issues utilizing identity maps:</p>
-
-<h3 id="what-is-the-n-1-issue">What is the n+1 issue?</h3>
-
+<h3 id="what-is-the-n1-issue">What is the n+1 issue?</h3>
 <p>The n plus 1 issue occurs when you reference an associated record while looping an array of records. For example (using sql): You load a list of <code>Posts</code> and loop those posts displaying the <code>User</code> who created each post. The initial posts would require a single query <code>SELECT * FROM 'posts'</code>.  Then when you loop the posts to display the user using <code>post.user</code>. The db will be queried again. <code>SELECT * FROM 'users' WHERE 'user_id' = post.user_id</code>. This query will happen once for every post you loop. If you have 10 posts you will get 10 extra queries for the users who wrote those posts. This is the definition of the n+1 issue.</p>
-
 <h3 id="avoiding-unnecessary-queries">Avoiding unnecessary queries</h3>
-
 <p>In my case it was an n+2 issue.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Judge</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Mongoid</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Document</span>
+  belongs_to <span style="color:#e6db74">:user</span>
+  belongs_to <span style="color:#e6db74">:photo</span>
 
-<pre><code class="language-ruby">class Judge
-  include Mongoid::Document
-  belongs_to :user
-  belongs_to :photo
-
-  def as_json(options={})
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">as_json</span>(options<span style="color:#f92672">=</span>{})
     {
       id: _id,
-      photo: photo,
-      user: user
+      <span style="color:#e6db74">photo</span>: photo,
+      <span style="color:#e6db74">user</span>: user
     }
-  end
-end
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-class User
-  include Mongoid::Document
-  has_one :judge
-end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Mongoid</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Document</span>
+  has_one <span style="color:#e6db74">:judge</span>
+<span style="color:#66d9ef">end</span>
 
-class Photo
-  include Mongoid::Document
-  has_one :judge
-end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Photo</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Mongoid</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Document</span>
+  has_one <span style="color:#e6db74">:judge</span>
+<span style="color:#66d9ef">end</span>
 
-# judges_controller
-def index
-  @judges = Judge.all
+<span style="color:#75715e"># judges_controller</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>
+  @judges <span style="color:#f92672">=</span> <span style="color:#66d9ef">Judge</span><span style="color:#f92672">.</span>all
   respond_with @judges
-end
-</code></pre>
-
-<p>This as_json response results in an n+2 query issue from the Judge record. in my case giving the dev server a response time of:</p>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>This as_json response results in an n+2 query issue from the Judge record. in my case giving the dev server a response time of:</p>
 <p><code>Completed 200 OK in 816ms (Views: 785.2ms)</code></p>
-
 <p>The key to solving this issue is to load the <code>Users</code> and the <code>Photos</code> in a single query instead of 1 by 1 per <code>Judge</code>.</p>
-
 <p>You can do this utilizing Mongoids IdentityMap. Mongoid 2 and Mongoid 3 support this feature.</p>
-
 <p>First turn on the identity map in the mongoid.yml configuration file:</p>
-
-<pre><code class="language-yaml">development:
-  host: localhost
-  database: awesome_app
-  identity_map_enabled: true
-</code></pre>
-
-<p>Now change the controller action to manually load the users and photos. Note: The Mongoid::Relation record will lazily evaluate the query so you must call to_a to actually query the records and have them stored in the IdentityMap.</p>
-
-<pre><code class="language-ruby">def index
-  @judges = Judge.all
-  @users = User.where(:_id.in =&gt; @judges.map(&amp;:user_id)).to_a
-  @photos = Photo.where(:_id.in =&gt; @judges.map(&amp;:photo_id)).to_a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">development</span>:
+  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">localhost</span>
+  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">awesome_app</span>
+  <span style="color:#f92672">identity_map_enabled</span>: <span style="color:#66d9ef">true</span>
+</code></pre></div><p>Now change the controller action to manually load the users and photos. Note: The Mongoid::Relation record will lazily evaluate the query so you must call to_a to actually query the records and have them stored in the IdentityMap.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>
+  @judges <span style="color:#f92672">=</span> <span style="color:#66d9ef">Judge</span><span style="color:#f92672">.</span>all
+  @users <span style="color:#f92672">=</span> <span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:_id</span><span style="color:#f92672">.</span>in <span style="color:#f92672">=&gt;</span> @judges<span style="color:#f92672">.</span>map(<span style="color:#f92672">&amp;</span><span style="color:#e6db74">:user_id</span>))<span style="color:#f92672">.</span>to_a
+  @photos <span style="color:#f92672">=</span> <span style="color:#66d9ef">Photo</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:_id</span><span style="color:#f92672">.</span>in <span style="color:#f92672">=&gt;</span> @judges<span style="color:#f92672">.</span>map(<span style="color:#f92672">&amp;</span><span style="color:#e6db74">:photo_id</span>))<span style="color:#f92672">.</span>to_a
   respond_with @judges
-end
-</code></pre>
-
-<p>This results in only 3 queries total. 1 for the <code>Judges</code>, 1 for the <code>Users</code> and 1 for the <code>Photos</code>.</p>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>This results in only 3 queries total. 1 for the <code>Judges</code>, 1 for the <code>Users</code> and 1 for the <code>Photos</code>.</p>
 <p><code>Completed 200 OK in 559ms (Views: 87.7ms)</code></p>
-
-<h3 id="how-does-this-work-what-s-an-identitymap">How does this work? What&rsquo;s an IdentityMap?</h3>
-
+<h3 id="how-does-this-work-whats-an-identitymap">How does this work? What&rsquo;s an IdentityMap?</h3>
 <p>An IdentityMap helps to keep track of what objects or records have already been loaded. So if you fetch the first <code>User</code> record the IdentityMap will store it. Then if you attempt to fetch the same <code>User</code> again Mongoid queries the IdentityMap for the User before it queries the Database again. This will save 1 query on the database.</p>
-
 <p>By fetching all of the <code>User</code> and <code>Photo</code> records that the <code>Judges</code> require in manual queries we load the data into the IdentityMap for later use. Then when the Judge requires it&rsquo;s <code>User</code> and <code>Photo</code> it checks the IdentityMap and does not need to query the database for them.</p>
-
-<p><a name='current'></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="the-includes-method">The includes method</h3>
-
 <p>Following the practice from ActiveRecord, Mongoid later included a method for doing this type of call in a single concise method.</p>
-
-<pre><code class="language-ruby">Judge.all.includes(:user, :photo)
-</code></pre>
-
-<p>This will perform only 3 queries selecting only the users and photos that belong to the returned judges.</p>
-
-<p>Here are links to the docs for both Mongoid and ActiveRecord:<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Judge</span><span style="color:#f92672">.</span>all<span style="color:#f92672">.</span>includes(<span style="color:#e6db74">:user</span>, <span style="color:#e6db74">:photo</span>)
+</code></pre></div><p>This will perform only 3 queries selecting only the users and photos that belong to the returned judges.</p>
+<p>Here are links to the docs for both Mongoid and ActiveRecord:<br>
 <a href="http://mongoid.org/en/mongoid/docs/querying.html#query_plus">Read more about eager loading in
-Mongoid</a>.<br />
+Mongoid</a>. <br>
 <a href="http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations">Read more about eager loading in
 ActiveRecord</a>.</p>
 
@@ -450,7 +418,7 @@ ActiveRecord</a>.</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -557,7 +525,7 @@ ActiveRecord</a>.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -607,7 +575,6 @@ ActiveRecord</a>.</p>
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -630,8 +597,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -707,7 +674,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -726,7 +693,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Angular and Liquid expressions in Jekyll</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -104,7 +104,7 @@
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -247,51 +247,34 @@
               <p>I started writing an Angular application to intereact with an API I have
 produced recently. The Angular app is compiled as a static site
 with Jekyll. I immediately ran into an issue with Angular.
- None of my expressions were showing up. I
+None of my expressions were showing up. I
 realized it was because Liquid which is included with Jekyll uses the
 same expression tags as Angular: <code>{{ myVariable }}</code>. This meant the
 Angular expressions were not making it as raw text into the final template
 as they were being caught by Liquid.</p>
-
 <p>I started by looking to see if there was an easy way to deactivate Liquid
 inside Jekyll as I had no intention of using it. Without monkey patching the rendering process
 it seemed like I was stuck with the Liquid processing.</p>
-
 <p>All is not lost though. A quick search returned an option to change the
 expression symbols for Angular:</p>
-
 <p>Coffeescript:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-coffeescript" data-lang="coffeescript">@myApp = <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;myApp&#39;</span>, [])
 
-<pre><code class="language-coffeescript">@myApp = angular.module('myApp', [])
-
-@myApp.config ['$interpolateProvider', ($interpolateProvider)-&gt;
-  $interpolateProvider.startSymbol('{(').endSymbol(')}')
+<span style="color:#a6e22e">@myApp</span>.<span style="color:#a6e22e">config</span> [<span style="color:#e6db74">&#39;$interpolateProvider&#39;</span>, <span style="color:#a6e22e">($interpolateProvider)-&gt;</span>
+  <span style="color:#a6e22e">$interpolateProvider</span>.<span style="color:#a6e22e">startSymbol</span>(<span style="color:#e6db74">&#39;{(&#39;</span>).<span style="color:#a6e22e">endSymbol</span>(<span style="color:#e6db74">&#39;)}&#39;</span>)
 ]
-</code></pre>
+</code></pre></div><p>Javascript:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myapp</span>;
+<span style="color:#a6e22e">myApp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;myApp&#39;</span>, []);
 
-<p>Javascript:</p>
-
-<pre><code class="language-javascript">var myapp;
-myApp = angular.module('myApp', []);
-
-myApp.config([
-  '$interpolateProvider', function($interpolateProvider) {
-    return $interpolateProvider.startSymbol('{(').endSymbol(')}');
+<span style="color:#a6e22e">myApp</span>.<span style="color:#a6e22e">config</span>([
+  <span style="color:#e6db74">&#39;$interpolateProvider&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$interpolateProvider</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$interpolateProvider</span>.<span style="color:#a6e22e">startSymbol</span>(<span style="color:#e6db74">&#39;{(&#39;</span>).<span style="color:#a6e22e">endSymbol</span>(<span style="color:#e6db74">&#39;)}&#39;</span>);
   }
 ]);
-</code></pre>
-
-<p>This allowed me to now use <code>{( myVariable )}</code> for Anuglar expressions and it
+</code></pre></div><p>This allowed me to now use <code>{( myVariable )}</code> for Anuglar expressions and it
 does not get caught in the liquid filters.</p>
-
-<aside>
-**Aside:** While writing Liquid examples in Octopress; 
-`{{ myVariable }}`
-actually gets caught in the Liquid filter as an expression. I had to use 
-the Liquid `raw` & `endraw` tags to be able to show the expression above. 
-Also note in newer versions of Jekyll and Liquid `raw` has been
-deprecated in favour of the `verbatim` tag.
-</aside>
+<!-- raw HTML omitted -->
 
               
             </div>
@@ -386,7 +369,7 @@ deprecated in favour of the `verbatim` tag.
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -493,7 +476,7 @@ deprecated in favour of the `verbatim` tag.
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -543,7 +526,6 @@ deprecated in favour of the `verbatim` tag.
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -566,8 +548,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -643,7 +625,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -662,7 +644,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

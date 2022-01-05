@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -31,10 +31,10 @@
 
     
     <meta name="description" content="At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &ldquo;Hashrocket&rdquo; and moving to a familiar JavaScript Object Notation.
-{:cat =&gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+{:cat =&gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&rsquo;ll be seeing the demise of the 1.">
     <meta property="og:description" content="At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &ldquo;Hashrocket&rdquo; and moving to a familiar JavaScript Object Notation.
-{:cat =&gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+{:cat =&gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&rsquo;ll be seeing the demise of the 1.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Ruby Hash Syntax: Hashrocket vs JSON-Style">
@@ -43,7 +43,7 @@ Do these updates to the syntax mean that we&rsquo;ll be seeing the demise of the
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
     <meta name="twitter:description" content="At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &ldquo;Hashrocket&rdquo; and moving to a familiar JavaScript Object Notation.
-{:cat =&gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+{:cat =&gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&rsquo;ll be seeing the demise of the 1.">
     
       <meta name="twitter:creator" content="@brian_pearce">
@@ -110,7 +110,7 @@ Do these updates to the syntax mean that we&rsquo;ll be seeing the demise of the
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -250,55 +250,41 @@ Do these updates to the syntax mean that we&rsquo;ll be seeing the demise of the
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
-
-<p>At a first glance the 1.9 ruby hash syntax looks like a simple change.
+              <p>At a first glance the 1.9 ruby hash syntax looks like a simple change.
 No longer using the infamous &ldquo;Hashrocket&rdquo; and moving to a familiar
 JavaScript Object Notation.</p>
-
-<pre><code class="language-ruby">{:cat =&gt; 'meow'} # 1.8
-{cat: 'meow'} # 1.9
-</code></pre>
-
-<p>On an average day I write equally as much JavaScript as I do Ruby so the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">{<span style="color:#e6db74">:cat</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>} <span style="color:#75715e"># 1.8</span>
+{<span style="color:#e6db74">cat</span>: <span style="color:#e6db74">&#39;meow&#39;</span>} <span style="color:#75715e"># 1.9</span>
+</code></pre></div><p>On an average day I write equally as much JavaScript as I do Ruby so the
 new 1.9 syntax is an easy swtich for me.</p>
-
 <p>Do these updates to the syntax mean that we&rsquo;ll be seeing
 the demise of the 1.8 syntax anytime soon? Definitely not.</p>
-
 <p>The syntax change isn&rsquo;t that simple. There are certain things you simply
 can not do with the new 1.9 syntax.</p>
-
 <h2 id="keys-do-not-have-to-be-symbols-or-strings">Keys do not have to be symbols or strings</h2>
-
 <p>You can actually use any object in the language as a key in a hash. The
 most common are Symbols and Strings. Less used are Classes, Objects,
 Floats or pretty much anything that is an object in Ruby. Which is
 pretty much everything.</p>
-
 <p>The catch here is the 1.9 syntax only supports symbols as keys. So if
 you need to use any kind of hyphanated string or special object as a key
 you will need to use the hashrocket syntax. Some examples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">{<span style="color:#e6db74">&#39;cats-meow&#39;</span>: <span style="color:#e6db74">&#39;meow&#39;</span>}
+<span style="color:#f92672">=&gt;</span> syntax error, unexpected <span style="color:#e6db74">&#39;}&#39;</span>, expecting $end
+{<span style="color:#e6db74">:&#39;cats-meow&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>}
+<span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:&#39;cats-meow&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>}
 
-<pre><code class="language-ruby">{'cats-meow': 'meow'}
-=&gt; syntax error, unexpected '}', expecting $end
-{:'cats-meow' =&gt; 'meow'}
-=&gt; {:'cats-meow' =&gt; 'meow'}
+{<span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>}
+<span style="color:#f92672">=&gt;</span> {<span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;meow&#34;</span>}
 
-{1.2 =&gt; 'meow'}
-=&gt; {1.2=&gt;&quot;meow&quot;}
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>; <span style="color:#66d9ef">end</span>
+c <span style="color:#f92672">=</span> <span style="color:#66d9ef">Cat</span><span style="color:#f92672">.</span>new
+{c <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>}
+<span style="color:#f92672">=&gt;</span> {<span style="color:#75715e">#&lt;Cat:0x007fd5512f41c0&gt;=&gt;&#34;meow&#34;}</span>
 
-class Cat; end
-c = Cat.new
-{c =&gt; 'meow'}
-=&gt; {#&lt;Cat:0x007fd5512f41c0&gt;=&gt;&quot;meow&quot;}
-
-{String =&gt; 'a string'}
-=&gt; {String=&gt;&quot;a string&quot;}
-</code></pre>
-
-<h2 id="two-different-symbols">Two different Symbols</h2>
-
+{String <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;a string&#39;</span>}
+<span style="color:#f92672">=&gt;</span> {String<span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;a string&#34;</span>}
+</code></pre></div><h2 id="two-different-symbols">Two different Symbols</h2>
 <p>Another catch is that the 1.9 syntax is the only place in ruby where a symbol is
 represented differently. A symbol is normally preppended with a
 colon. ex. <code>:mysymbol</code>. Only in the 1.9 hash syntax is the symbol
@@ -306,42 +292,28 @@ represented without the preppended colon and then following the JSObject
 Notation has a colon at the end of the symbol defining the key value
 relationship. The inconsistent use of Symbols like this could lead to
 confusion for people new to the language.</p>
-
 <h2 id="mixing-the-syntax">Mixing the syntax</h2>
-
 <p>You can also mix the JSON and Hashrocket syntax. Although for the sanity if your
 fellow developers please do not.</p>
-
-<pre><code class="language-ruby">{cat: 'meow', :dog =&gt; 'bark'}
-=&gt; {:cat=&gt;&quot;meow&quot;, :dog=&gt;&quot;bark&quot;}
-</code></pre>
-
-<p>The 1.9 syntax can also look extremely weird when passing Symbols as
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">{<span style="color:#e6db74">cat</span>: <span style="color:#e6db74">&#39;meow&#39;</span>, <span style="color:#e6db74">:dog</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;bark&#39;</span>}
+<span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:cat</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;meow&#34;</span>, <span style="color:#e6db74">:dog</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;bark&#34;</span>}
+</code></pre></div><p>The 1.9 syntax can also look extremely weird when passing Symbols as
 values:</p>
-
-<pre><code class="language-ruby">{cat: :meow, dog: :bark, owl: :hoot}
-=&gt; {:cat=&gt;:meow, :dog=&gt;:bark, :owl=&gt;:hoot}
-</code></pre>
-
-<h2 id="keys-are-now-unordered">Keys are now unordered</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">{<span style="color:#e6db74">cat</span>: <span style="color:#e6db74">:meow</span>, <span style="color:#e6db74">dog</span>: <span style="color:#e6db74">:bark</span>, <span style="color:#e6db74">owl</span>: <span style="color:#e6db74">:hoot</span>}
+<span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:cat</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">:meow</span>, <span style="color:#e6db74">:dog</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">:bark</span>, <span style="color:#e6db74">:owl</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">:hoot</span>}
+</code></pre></div><h2 id="keys-are-now-unordered">Keys are now unordered</h2>
 <p>Aside from the syntax change; ruby 1.9 also treats the ordering of the
 key/values differently. In ruby 1.9 the keys are no longer ordered.
 Although after some playing around I found my 1.8.7 REE install was not exactly
 ordering the hash as I was expecting.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">{<span style="color:#e6db74">:dog</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;bark&#39;</span>, <span style="color:#e6db74">:owl</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;hoot&#39;</span>, <span style="color:#e6db74">:cat</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>} <span style="color:#75715e"># 1.9</span>
+<span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:dog</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;bark&#34;</span>, <span style="color:#e6db74">:owl</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;hoot&#34;</span>, <span style="color:#e6db74">:cat</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;meow&#34;</span>}
 
-<pre><code class="language-ruby">{:dog =&gt; 'bark', :owl =&gt; 'hoot', :cat =&gt; 'meow'} # 1.9
-=&gt; {:dog=&gt;&quot;bark&quot;, :owl=&gt;&quot;hoot&quot;, :cat=&gt;&quot;meow&quot;}
-
-{:dog =&gt; 'bark', :owl =&gt; 'hoot', :cat =&gt; 'meow'} # 1.8.7
-=&gt; {:owl=&gt;&quot;hoot&quot;, :cat=&gt;&quot;meow&quot;, :dog=&gt;&quot;bark&quot;}
-</code></pre>
-
-<h2 id="which-one-should-i-use">Which one should I use?</h2>
-
+{<span style="color:#e6db74">:dog</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;bark&#39;</span>, <span style="color:#e6db74">:owl</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;hoot&#39;</span>, <span style="color:#e6db74">:cat</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;meow&#39;</span>} <span style="color:#75715e"># 1.8.7</span>
+<span style="color:#f92672">=&gt;</span> {<span style="color:#e6db74">:owl</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;hoot&#34;</span>, <span style="color:#e6db74">:cat</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;meow&#34;</span>, <span style="color:#e6db74">:dog</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;bark&#34;</span>}
+</code></pre></div><h2 id="which-one-should-i-use">Which one should I use?</h2>
 <p>The <a href="https://github.com/styleguide/ruby">Github Ruby Styleguide</a>
 suggests just to use the hashrocket syntax 100% of the time.</p>
-
 <p>It really is a personal/team preference on the syntax choice. I think
 consistency is the most important thing. As long as you are doing it the
 same throughout your code.</p>
@@ -437,7 +409,7 @@ same throughout your code.</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -544,7 +516,7 @@ same throughout your code.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -594,7 +566,6 @@ same throughout your code.</p>
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -617,8 +588,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -694,7 +665,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -713,7 +684,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

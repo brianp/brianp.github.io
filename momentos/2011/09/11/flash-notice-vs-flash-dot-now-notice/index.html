@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Flash[:notice] vs Flash.now[:notice]</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -104,7 +104,7 @@
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -252,21 +252,16 @@ I was unaware of was a slightly different call which is
 flash.now[:notice]. This results in the flash only having a lifespan of
 the through the next request. It will not persist if the user clicks a link and
 follows through to another action.</p>
-
 <p>I found this quick post mentioning the differences.
-<a href="http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html">
-<a href="http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html">http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html</a></a>
+<!-- raw HTML omitted -->
+<a href="http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html">http://www.gatezero.org/blog/2008/10/7/rails-flashnow.html</a><!-- raw HTML omitted -->
 It also links to the following post giving a much more in depth
 explanation.
-<a
-href="http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/">
-<a href="http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/">http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/</a></a></p>
-
-<p>The long and short for when do use which call is: (Quoted from <a
-href="http://www.gatezero.org">Tim Harding</a>)
+<!-- raw HTML omitted -->
+<a href="http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/">http://www.rubysavedmylife.com/2007/12/15/flashnotice-vs-flashnownotice/</a><!-- raw HTML omitted --></p>
+<p>The long and short for when do use which call is: (Quoted from <!-- raw HTML omitted -->Tim Harding<!-- raw HTML omitted -->)
 <code>flash[:notice]</code> when redirecting
 <code>flash.now[:notice]</code> when rendering</p>
-
 <p>If you&rsquo;re redirecting to a new action you want to flash. if you&rsquo;re
 rendering in the current action you want to flash.now.</p>
 
@@ -357,7 +352,7 @@ rendering in the current action you want to flash.now.</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -464,7 +459,7 @@ rendering in the current action you want to flash.now.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -514,7 +509,6 @@ rendering in the current action you want to flash.now.</p>
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -537,8 +531,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -614,7 +608,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -633,7 +627,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

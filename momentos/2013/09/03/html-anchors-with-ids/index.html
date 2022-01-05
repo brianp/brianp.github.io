@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>HTML Anchors with ids</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -32,10 +32,10 @@
     
     <meta name="description" content="Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
 When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
-&lt;a href=&quot;#productList&quot;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&quot;productList&quot;&gt;&lt;/a&gt; &lt;ul class=&quot;productList&quot;&gt;…&lt;/a&gt;  Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.">
+&lt;a href=&#34;#productList&#34;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&#34;productList&#34;&gt;&lt;/a&gt; &lt;ul class=&#34;productList&#34;&gt;…&lt;/a&gt; Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.">
     <meta property="og:description" content="Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
 When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
-&lt;a href=&quot;#productList&quot;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&quot;productList&quot;&gt;&lt;/a&gt; &lt;ul class=&quot;productList&quot;&gt;…&lt;/a&gt;  Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.">
+&lt;a href=&#34;#productList&#34;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&#34;productList&#34;&gt;&lt;/a&gt; &lt;ul class=&#34;productList&#34;&gt;…&lt;/a&gt; Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="HTML Anchors with ids">
     <meta property="og:url" content="/momentos/2013/09/03/html-anchors-with-ids/">
@@ -44,7 +44,7 @@ When adding anchors on a page for the purpose of in-page links my typical method
     <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
     <meta name="twitter:description" content="Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
 When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
-&lt;a href=&quot;#productList&quot;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&quot;productList&quot;&gt;&lt;/a&gt; &lt;ul class=&quot;productList&quot;&gt;…&lt;/a&gt;  Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.">
+&lt;a href=&#34;#productList&#34;&gt;View more products&lt;/a&gt; Some page content… &lt;a name=&#34;productList&#34;&gt;&lt;/a&gt; &lt;ul class=&#34;productList&#34;&gt;…&lt;/a&gt; Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&rsquo;s no need to add an additional anchor with a name.">
     
       <meta name="twitter:creator" content="@brian_pearce">
     
@@ -110,7 +110,7 @@ When adding anchors on a page for the purpose of in-page links my typical method
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -251,28 +251,21 @@ When adding anchors on a page for the purpose of in-page links my typical method
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <p>Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.</p>
-
 <p>When adding anchors on a page for the purpose of in-page links my typical method for years
 has been to add a link with the anchor name in the <code>href</code> and an anchor tag with a
 <code>name</code> attribute.</p>
-
-<pre><code class="language-html">&lt;a href=&quot;#productList&quot;&gt;View more products&lt;/a&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#productList&#34;</span>&gt;View more products&lt;/<span style="color:#f92672">a</span>&gt;
 Some page content…
-&lt;a name=&quot;productList&quot;&gt;&lt;/a&gt;
-&lt;ul class=&quot;productList&quot;&gt;…&lt;/a&gt;
-</code></pre>
-
-<p>Just the other day <a href="http://www.twitter.com/ry5n">@ry5n</a> informed me that a link that corresponds to an elements <code>id</code> will work just the
+&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productList&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productList&#34;</span>&gt;…&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>Just the other day <a href="http://www.twitter.com/ry5n">@ry5n</a> informed me that a link that corresponds to an elements <code>id</code> will work just the
 same and there&rsquo;s no need to add an additional anchor with a <code>name</code>. This
 allows you to use any element as the anchor. I find this avoids
 additional un-nessecary markup and overall is more convenient.</p>
-
-<pre><code class="language-html">&lt;a href=&quot;#productList&quot;&gt;View more products&lt;/a&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#productList&#34;</span>&gt;View more products&lt;/<span style="color:#f92672">a</span>&gt;
 Some page content…
-&lt;ul id=&quot;productList&quot;&gt;…&lt;/a&gt;
-</code></pre>
-
-<p>According to <a href="http://www.w3.org/TR/html401/struct/links.html#anchors-with-id">the
+&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;productList&#34;</span>&gt;…&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>According to <a href="http://www.w3.org/TR/html401/struct/links.html#anchors-with-id">the
 docs</a>:
 <blockquote>
   <p>
@@ -377,7 +370,7 @@ The id and name attributes share the same name space. This means that they canno
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -484,7 +477,7 @@ The id and name attributes share the same name space. This means that they canno
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -534,7 +527,6 @@ The id and name attributes share the same name space. This means that they canno
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -557,8 +549,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -634,7 +626,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -653,7 +645,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

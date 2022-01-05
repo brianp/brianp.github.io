@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hash on { always: &#39;coding&#39; }</title>
+    <title>hash on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/hash/</link>
-    <description>Recent content in Hash on { always: &#39;coding&#39; }</description>
+    <description>Recent content in hash on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jun 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/hash/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Jun 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/hash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hash Defaults in Ruby</title>
       <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
@@ -28,7 +24,7 @@ I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Ha
       
       <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
-{:cat =&amp;gt; &#39;meow&#39;} # 1.8 {cat: &#39;meow&#39;} # 1.9  On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
+{:cat =&amp;gt; &amp;#39;meow&amp;#39;} # 1.8 {cat: &amp;#39;meow&amp;#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
     </item>
     

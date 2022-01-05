@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Tips for working with Delayed Job</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -110,7 +110,7 @@ I will not delve into why you need one but you can check out a summary here: Bac
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -252,114 +252,83 @@ I will not delve into why you need one but you can check out a summary here: Bac
             <div class="main-content-wrap">
               
 
-
-
-
 <p><a href="https://github.com/collectiveidea/delayed_job/">DelayedJob</a> has always been a
 great “hit the ground running” background task runner for ruby. It is simple to
 setup, easy to use and can more than carry its own weight in tasks.</p>
-
-<p><em>Don&rsquo;t know what a backround runner does or why you would use one?</em><br />
+<p><em>Don&rsquo;t know what a backround runner does or why you would use one?</em><br>
 I will not delve into why you need one but you can check out a summary
 here: <a href="https://4loc.wordpress.com/2010/03/10/background-jobs-in-ruby-on-rails/">Background Jobs in Ruby on Rails</a>.</p>
-
 <p>You can sometimes run into some serious trouble trying to debug
 DelayedJobs. Not only do they run the task behind the scenes but
 frequently hide the errors and exceptions back there as well. You will often not see
 exceptions in your logs and most exception notifiers will not catch issues
 that occur in a background task. So how can we debug issues with delayed
 job?</p>
-
 <p>If you are using SQL you probably had to setup or run a migration for a
 delayed job table. Just like any of your other ActiveRecord models
 DelayedJob has a model you can access. This is your link to the job that
 gets stored in the queue. This makes it easy for you to access the job
 from the console and inspect its attributes.</p>
-
 <p>The model is <code>Delayed::Job</code>.</p>
-
 <p>In the console you can browse the currently queued jobs:</p>
-
-<pre><code class="language-ruby">Delayed::Job.count
-=&gt; 1
-job = Delayed::Job.new
-=&gt; #&lt;Delayed::Job id: 1, queue: nil, last_error: nil, failed_at: nil, priority: 0, attempts: 0, updated_at: nil, locked_by: nil, run_at: nil, handler: nil, _type: nil, locked_at: nil, created_at: nil&gt;
-</code></pre>
-
-<h2 id="finding-failed-jobs">Finding Failed Jobs</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Delayed</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Job</span><span style="color:#f92672">.</span>count
+<span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>
+job <span style="color:#f92672">=</span> <span style="color:#66d9ef">Delayed</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Job</span><span style="color:#f92672">.</span>new
+<span style="color:#f92672">=&gt;</span> <span style="color:#75715e">#&lt;Delayed::Job id: 1, queue: nil, last_error: nil, failed_at: nil, priority: 0, attempts: 0, updated_at: nil, locked_by: nil, run_at: nil, handler: nil, _type: nil, locked_at: nil, created_at: nil&gt;</span>
+</code></pre></div><h2 id="finding-failed-jobs">Finding Failed Jobs</h2>
 <p>This is a good start but the default in DelayedJob is for failed jobs to
 be removed from the database. Let us change that option. Create the
 following file:
 <code>config/initializers/delayed_job.rb</code>.</p>
-
-<pre><code class="language-ruby">Delayed::Worker.destroy_failed_jobs = false
-</code></pre>
-
-<p>We set this option so failed jobs will not be purged from the database.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Delayed</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Worker</span><span style="color:#f92672">.</span>destroy_failed_jobs <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</code></pre></div><p>We set this option so failed jobs will not be purged from the database.
 Now that we have a record of our failed jobs we can access those jobs in
 the console. The jobs have a <code>last_error</code> attribute which contains a
 stacktrace from the error.</p>
-
-<pre><code class="language-ruby">job = Delayed::Job.where('last_eror IS NOT NULL')
-=&gt; #&lt;Delayed::Job id: 51ea79408d53620bd200026c, failed_at: Thu Sep 05 19:50:16 UTC 2013, locked_by: nil, created_at: Sat Jul 20 11:49:20 UTC 2013, handler: handler_ommited, updated_at: Thu Sep 05 19:50:16 UTC 2013, priority: 0, _type: nil, run_at: Fri Aug 09 21:35:56 UTC 2013, queue: nil, locked_at: nil, attempts: 25, last_error: &quot;undefined method `notifiable' for Stacktrace…&quot;&gt;
-job.last_error
-=&gt; &quot;undefined method `notifiable' for  
-Stacktrace…&quot;
-</code></pre>
-
-<p>Excellent! Being able to get a stacktrace from the last error can help
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">job <span style="color:#f92672">=</span> <span style="color:#66d9ef">Delayed</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Job</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#39;last_eror IS NOT NULL&#39;</span>)
+<span style="color:#f92672">=&gt;</span> <span style="color:#75715e">#&lt;Delayed::Job id: 51ea79408d53620bd200026c, failed_at: Thu Sep 05 19:50:16 UTC 2013, locked_by: nil, created_at: Sat Jul 20 11:49:20 UTC 2013, handler: handler_ommited, updated_at: Thu Sep 05 19:50:16 UTC 2013, priority: 0, _type: nil, run_at: Fri Aug 09 21:35:56 UTC 2013, queue: nil, locked_at: nil, attempts: 25, last_error: &#34;undefined method `notifiable&#39; for Stacktrace…&#34;&gt;</span>
+job<span style="color:#f92672">.</span>last_error
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;undefined method `notifiable&#39; for  
+</span><span style="color:#e6db74">Stacktrace…&#34;</span>
+</code></pre></div><p>Excellent! Being able to get a stacktrace from the last error can help
 point you in the right direction.</p>
-
 <h2 id="loading-the-handler">Loading the Handler</h2>
-
 <p>The “Handler” in DelayedJob is the object that <code>#perform</code> was called on
 to execute the job. At the time the job is entered into the queue the
 handler is serialized to be reconstructed later. While debugging you may
 want access to this handler. You can convert the serailized state of the
 object back to its original form by calling <code>YAML::load</code> and passing in
 the serialized object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">job <span style="color:#f92672">=</span> <span style="color:#66d9ef">Delayed</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Job</span><span style="color:#f92672">.</span>last
 
-<pre><code class="language-ruby">job = Delayed::Job.last
+job<span style="color:#f92672">.</span>handler
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;--- !ruby/object:NotificationObserver::Notifier
+</span><span style="color:#e6db74"></span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">resource_class: !ruby/class Comment</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">resource_id:
+</span><span style="color:#e6db74">!ruby/object:BSON::ObjectId </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  data: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 82</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 67</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 70</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 67</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">- 183</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 112</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 32</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 225</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 252</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 0</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 0</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  - 1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
 
-job.handler
-=&gt; &quot;--- !ruby/object:NotificationObserver::Notifier
-\nresource_class: !ruby/class Comment\nresource_id:
-!ruby/object:BSON::ObjectId \n  data: \n  - 82\n  - 67\n  - 70\n  - 67\n
-- 183\n  - 112\n  - 32\n  - 225\n  - 252\n  - 0\n  - 0\n  - 1\n&quot;
+notifier <span style="color:#f92672">=</span> <span style="color:#66d9ef">YAML</span><span style="color:#f92672">.</span>load(job<span style="color:#f92672">.</span>handler)
+<span style="color:#f92672">=&gt;</span> <span style="color:#75715e">#&lt;NotificationObserver::Notifier:0x1363a7230 @resource_class=Comment, @resource_id=BSON::ObjectId(&#39;52434643b77020e1fc000001&#39;)&gt;</span>
 
-notifier = YAML.load(job.handler)
-=&gt; #&lt;NotificationObserver::Notifier:0x1363a7230 @resource_class=Comment, @resource_id=BSON::ObjectId('52434643b77020e1fc000001')&gt;
-
-notifier.class
-=&gt; NotificationObserver::Notifier
-</code></pre>
-
-<h2 id="working-with-jobs-locally">Working with jobs locally</h2>
-
+notifier<span style="color:#f92672">.</span>class
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">NotificationObserver</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Notifier</span>
+</code></pre></div><h2 id="working-with-jobs-locally">Working with jobs locally</h2>
 <p>I find while working with DelayedJob locally my needs can vary. For
 example:</p>
-
 <p>Sometimes I would prefer the task just not run in the
 background. That way I can see the task perform and get an immediate
 response. Other times I might need the task to run in the background as expected so I can
 develop and test polling methods or execution of code that runs upfront
 while the background task is still processing.</p>
-
 <p>If your case is the latter then you can run delayed jobs locally and
 require no additional changes. If your case is the prior and you want to run the code upfront then DelayedJob
 has a configurable option that will help.</p>
-
 <p>In an initializer you can define the parameter <code>Delayed::Worker#delay_jobs</code> to tell DelayedJob <em>not</em>
 to run a task in the background and to execute the job code immediately.
 This will allow you to use any of your regular debugging methods whether
 it is using the ruby debugger, pry, or a series or puts statements.</p>
-
-<pre><code class="language-ruby">Delayed::Worker.delay_jobs = false
-</code></pre>
-
-<h2 id="common-problem">Common problem</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Delayed</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Worker</span><span style="color:#f92672">.</span>delay_jobs <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</code></pre></div><h2 id="common-problem">Common problem</h2>
 <p>The most common problem I see and am asked to help diagnose are issues
 serializing the handler. Passing complex objects to DelayedJob is not
 recommended. YAML does its best to serialize all ruby objects but
@@ -368,7 +337,6 @@ complex object. If it is a persisted, record pass in only the id and load
 the record from within the job. If you need to save state it could be a
 good place to create a middle man with the stated attributes and simply
 pass the middle man into the job.</p>
-
 <p>Have other tips for debugging DelayedJob? I would enjoy hearing about
 them. Send me an email or a note to
 <a href="http://www.twitter.com/brian_pearce">@brian_pearce</a> on twitter.</p>
@@ -470,7 +438,7 @@ them. Send me an email or a note to
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -577,7 +545,7 @@ them. Send me an email or a note to
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -627,7 +595,6 @@ them. Send me an email or a note to
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -650,8 +617,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -727,7 +694,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -746,7 +713,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

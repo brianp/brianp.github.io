@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Imports on { always: &#39;coding&#39; }</title>
+    <title>imports on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/imports/</link>
-    <description>Recent content in Imports on { always: &#39;coding&#39; }</description>
+    <description>Recent content in imports on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2014 15:08:38 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/imports/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 25 Feb 2014 15:08:38 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/imports/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
       <link>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
       <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
-      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</description>
+      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</description>
     </item>
     
   </channel>

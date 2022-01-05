@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Generics on { always: &#39;coding&#39; }</title>
+    <title>generics on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/generics/</link>
-    <description>Recent content in Generics on { always: &#39;coding&#39; }</description>
+    <description>Recent content in generics on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Sep 2016 10:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/generics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 09 Sep 2016 10:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/generics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Traits and Threads Workshop</title>
       <link>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</link>
@@ -19,8 +15,8 @@
       <guid>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</guid>
       <description>These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;amp;self.items == &amp;amp;(self.items) where the borrow (&amp;amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</description>
+ Methods are function that accept self &amp;amp;self.items == &amp;amp;(self.items) where the borrow (&amp;amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</description>
     </item>
     
   </channel>

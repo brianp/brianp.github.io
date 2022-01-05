@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>I18n on { always: &#39;coding&#39; }</title>
@@ -6,11 +6,7 @@
     <description>Recent content in I18n on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Jun 2013 17:33:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/i18n/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 13 Jun 2013 17:33:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/i18n/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
       <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>

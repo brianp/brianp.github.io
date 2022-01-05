@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Conf on { always: &#39;coding&#39; }</title>
+    <title>conf on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/categories/conf/</link>
-    <description>Recent content in Conf on { always: &#39;coding&#39; }</description>
+    <description>Recent content in conf on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Sep 2016 10:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/categories/conf/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 10 Sep 2016 10:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/categories/conf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RustConf 2016 Talks</title>
       <link>http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</link>
@@ -18,7 +14,6 @@
       
       <guid>http://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</guid>
       <description>Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -33,8 +28,8 @@ photo by: @eigenrick
       <guid>http://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</guid>
       <description>These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;amp;self.items == &amp;amp;(self.items) where the borrow (&amp;amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</description>
+ Methods are function that accept self &amp;amp;self.items == &amp;amp;(self.items) where the borrow (&amp;amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</description>
     </item>
     
     <item>
@@ -58,7 +53,7 @@ T.J. Schuck
       <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</description>
     </item>

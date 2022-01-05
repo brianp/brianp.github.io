@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>More fun with the Ruby Symbol</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -122,7 +122,7 @@ brianpWins: but if you do want to leave empty arrays around.">
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -264,154 +264,135 @@ brianpWins: but if you do want to leave empty arrays around.">
             <div class="main-content-wrap">
               <p>So while in the #RubyOnRails IRC channel late at night (never a good
 idea) some silly conversation occured:</p>
-
-<p>(someone gists some code)<br />
-sevenseacat: empty array seems the silly thing to have<br />
-Tarential: sometimes I like to add empty arrays, you know, just in case I need them later<br />
-Tarential: so they&rsquo;re close at hand<br />
-tagrudev: little kittens die when you define an unused var<br />
-brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]<br />
+<p>(someone gists some code)<br>
+sevenseacat: empty array seems the silly thing to have<br>
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later<br>
+Tarential: so they&rsquo;re close at hand<br>
+tagrudev: little kittens die when you define an unused var<br>
+brianpWins: but if you do want to leave empty arrays around. Make them a symbol so it only allocates once =)  :[]<br>
 Tarential: Now that&rsquo;s thinking.</p>
-
 <p>Then some time passed and I ended up throwing a
 <a href="http://http://pastie.org/6469138" title="pastie">pastie</a> back into the
 channel with the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Symbol</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">to_a</span>
+    @array <span style="color:#f92672">||=</span> <span style="color:#f92672">[]</span>
+  <span style="color:#66d9ef">end</span>
 
-<pre><code class="language-ruby">class Symbol
-  def to_a
-    @array ||= []
-  end
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">&lt;&lt;</span>(val)
+    to_a <span style="color:#f92672">&lt;&lt;</span> val
+  <span style="color:#66d9ef">end</span>
 
-  def &lt;&lt;(val)
-    to_a &lt;&lt; val
-  end
-
-  alias_method :previous_inspect, :inspect
-  def inspect
-    if to_a &amp;&amp; to_s == &quot;[]&quot; 
-      to_a.inspect
-    else
+  alias_method <span style="color:#e6db74">:previous_inspect</span>, <span style="color:#e6db74">:inspect</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inspect</span>
+    <span style="color:#66d9ef">if</span> to_a <span style="color:#f92672">&amp;&amp;</span> to_s <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;[]&#34;</span> 
+      to_a<span style="color:#f92672">.</span>inspect
+    <span style="color:#66d9ef">else</span>
       previous_inspect
-    end
-  end
-end
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-:[]
-=&gt; []
+<span style="color:#e6db74">:[]</span>
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[]</span>
 
-:[] &lt;&lt; 1 &lt;&lt; 2 &lt;&lt; 3 &lt;&lt; 4
-=&gt; [1, 2, 3, 4]
+<span style="color:#e6db74">:[]</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">4</span>
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span>
 
-:[].class
-=&gt; Symbol
+<span style="color:#e6db74">:[]</span><span style="color:#f92672">.</span>class
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Symbol</span>
 
-:[].to_a
-=&gt; [1, 2, 3, 4]
+<span style="color:#e6db74">:[]</span><span style="color:#f92672">.</span>to_a
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span>
 
-:[]
-=&gt; [1, 2, 3, 4]
-</code></pre>
-
-<p>Mostly usless but I did find out one interesting piece of information. The <code>Symbol</code> has
+<span style="color:#e6db74">:[]</span>
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span><span style="color:#f92672">]</span>
+</code></pre></div><p>Mostly usless but I did find out one interesting piece of information. The <code>Symbol</code> has
 no public creation interface other then it&rsquo;s standard definition. I&rsquo;m assuming at this point it drops down to the C
 level but I couldn&rsquo;t leave that stone unturned. I put the word out I was
 in search of the Symbol implementation in Ruby. I asked some friends,
 tweeted about it and poked around on IRC.</p>
-
-<p><strong>REPL in the Pry runtime environment</strong><br />
+<p><strong>REPL in the Pry runtime environment</strong><br>
 <a href="https://github.com/banister">@banister</a> (who brings you awesome projects
 like <a href="https://github.com/pry/pry" title="pry">Pry</a>) ended up giving me a nice
 intro to what happens when you put <code>:cats</code> into a ruby runtime
 environment.</p>
-
 <p>I&rsquo;ll keep this brief and in laymans terms. People who know much
 more about this feel free to email me with corrections or improvements.
 Keep in mind this information was explained at a very high level so it
 wouldn&rsquo;t all go over my head.</p>
-
 <p>At a very basic level the runtime is performing a simple REPL (Read,
 Evaluate, Print, Loop.)</p>
-
 <p><code>read --&gt; eval --&gt; puts #inspect on eval output --&gt; loop</code></p>
-
 <p>The Read simply reads in your input. In our case <code>$ :cats</code></p>
-
 <p>The Eval gets significantly deeper. In the case the value entered is a
 Symbol (or other immediates) it is stored directly in the VALUE pointer.
 <a href="https://github.com/banister">@banister</a> provided me with the following
 gist to show how the Symbol is stored: <a href="https://gist.github.com/banister/febb1f0580cc42eb4297" title="Pry Gist">pry_gist.rb</a></p>
-
 <p>(this is only a small piece of the total evalution process.)</p>
-
-<pre><code class="language-c">VALUE
-rb_obj_id(VALUE obj)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">VALUE
+<span style="color:#a6e22e">rb_obj_id</span>(VALUE obj)
 {
-    /*
-     *                32-bit VALUE space
-     *          MSB ------------------------ LSB
-     *  false   00000000000000000000000000000000
-     *  true    00000000000000000000000000000010
-     *  nil     00000000000000000000000000000100
-     *  undef   00000000000000000000000000000110
-     *  symbol  ssssssssssssssssssssssss00001110
-     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod
-        sizeof(RVALUE))
-     *  fixnum  fffffffffffffffffffffffffffffff1
-     *
-     *                    object_id space
-     *                                       LSB
-     *  false   00000000000000000000000000000000
-     *  true    00000000000000000000000000000010
-     *  nil     00000000000000000000000000000100
-     *  undef   00000000000000000000000000000110
-     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4
-        (S...S = s...s * A + 4)
-     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0
-     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if
-        required
-     *
-     *  where A = sizeof(RVALUE)/4
-     *
-     *  sizeof(RVALUE) is
-     *  20 if 32-bit, double is 4-byte aligned
-     *  24 if 32-bit, double is 8-byte aligned
-     *  40 if 64-bit
-     */
-    if (TYPE(obj) == T_SYMBOL) {
-        return (SYM2ID(obj) * sizeof(RVALUE) + (4 &lt;&lt; 2)) | FIXNUM_FLAG;
+    <span style="color:#75715e">/*
+</span><span style="color:#75715e">     *                32-bit VALUE space
+</span><span style="color:#75715e">     *          MSB ------------------------ LSB
+</span><span style="color:#75715e">     *  false   00000000000000000000000000000000
+</span><span style="color:#75715e">     *  true    00000000000000000000000000000010
+</span><span style="color:#75715e">     *  nil     00000000000000000000000000000100
+</span><span style="color:#75715e">     *  undef   00000000000000000000000000000110
+</span><span style="color:#75715e">     *  symbol  ssssssssssssssssssssssss00001110
+</span><span style="color:#75715e">     *  object  oooooooooooooooooooooooooooooo00        = 0 (mod
+</span><span style="color:#75715e">        sizeof(RVALUE))
+</span><span style="color:#75715e">     *  fixnum  fffffffffffffffffffffffffffffff1
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     *                    object_id space
+</span><span style="color:#75715e">     *                                       LSB
+</span><span style="color:#75715e">     *  false   00000000000000000000000000000000
+</span><span style="color:#75715e">     *  true    00000000000000000000000000000010
+</span><span style="color:#75715e">     *  nil     00000000000000000000000000000100
+</span><span style="color:#75715e">     *  undef   00000000000000000000000000000110
+</span><span style="color:#75715e">     *  symbol   000SSSSSSSSSSSSSSSSSSSSSSSSSSS0        S...S % A = 4
+</span><span style="color:#75715e">        (S...S = s...s * A + 4)
+</span><span style="color:#75715e">     *  object   oooooooooooooooooooooooooooooo0        o...o % A = 0
+</span><span style="color:#75715e">     *  fixnum  fffffffffffffffffffffffffffffff1        bignum if
+</span><span style="color:#75715e">        required
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     *  where A = sizeof(RVALUE)/4
+</span><span style="color:#75715e">     *
+</span><span style="color:#75715e">     *  sizeof(RVALUE) is
+</span><span style="color:#75715e">     *  20 if 32-bit, double is 4-byte aligned
+</span><span style="color:#75715e">     *  24 if 32-bit, double is 8-byte aligned
+</span><span style="color:#75715e">     *  40 if 64-bit
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">if</span> (TYPE(obj) <span style="color:#f92672">==</span> T_SYMBOL) {
+        <span style="color:#66d9ef">return</span> (SYM2ID(obj) <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(RVALUE) <span style="color:#f92672">+</span> (<span style="color:#ae81ff">4</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>)) <span style="color:#f92672">|</span> FIXNUM_FLAG;
     }
-    if (SPECIAL_CONST_P(obj)) {
-        return LONG2NUM((SIGNED_VALUE)obj);
+    <span style="color:#66d9ef">if</span> (SPECIAL_CONST_P(obj)) {
+        <span style="color:#66d9ef">return</span> LONG2NUM((SIGNED_VALUE)obj);
     }
-    return (VALUE)((SIGNED_VALUE)obj|FIXNUM_FLAG);
+    <span style="color:#66d9ef">return</span> (VALUE)((SIGNED_VALUE)obj<span style="color:#f92672">|</span>FIXNUM_FLAG);
 }
-</code></pre>
-
-<p>He added:
+</code></pre></div><p>He added:
 <blockquote>
   <p>
 a normal object created via Object.new for example are normally allocated on the heap and they go through a proper initialization process.
 </p>
   <footer>
-    <strong>error: cannot access named params by position</strong>
+    <strong></strong>
     
       
-        <cite>error: cannot access named params by position</cite>
+        <cite></cite>
       
     
   </footer>
 </blockquote></p>
-
 <p>Then the Print runs a simple <code>#inspect</code> on the <code>Symbol</code> and returns <code>=&gt; :cats</code> to you.</p>
-
 <p>After that we Loop for more input.</p>
-
-<p><strong>So where does this leave us?</strong><br />
+<p><strong>So where does this leave us?</strong><br>
 I ended up getting a great introduction to some things going on
 in my every day environment that I simply take for granted. It all came
 out of some late night nonsense and exploration and now I feel like new
 doors have opened and I&rsquo;m going to have to go through.</p>
-
 <p>I encourage you to poke around. We write code all day long but really
 finding out what&rsquo;s going on can be new and exciting. So open up a Ruby class
 and break something!</p>
@@ -509,7 +490,7 @@ and break something!</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -616,7 +597,7 @@ and break something!</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -666,7 +647,6 @@ and break something!</p>
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -689,8 +669,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -766,7 +746,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -785,7 +765,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

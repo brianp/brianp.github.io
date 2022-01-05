@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Exceptions on { always: &#39;coding&#39; }</title>
+    <title>exceptions on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/exceptions/</link>
-    <description>Recent content in Exceptions on { always: &#39;coding&#39; }</description>
+    <description>Recent content in exceptions on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/exceptions/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/exceptions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tips for working with Delayed Job</title>
       <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sysadmin on { always: &#39;coding&#39; }</title>
+    <title>sysadmin on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/sysadmin/</link>
-    <description>Recent content in Sysadmin on { always: &#39;coding&#39; }</description>
+    <description>Recent content in sysadmin on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Feb 2013 10:24:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 02 Feb 2013 10:24:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 413 Request Entity Too Large</title>
       <link>http://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</link>
@@ -20,7 +16,7 @@
       <description>Using: nginx version: nginx/1.2.4
 I manage a few Linode instances as client servers but I would far from consider myself a sysadmin. I received an email from a client regarding some uploading issues. After some testing I concluded any combination of files over 1mb would raise Nginx 413 Request Entity Too Large
 I upped the file limit within the virtualhost file by changing the client_max_body_size
-upstream app { server unix:/tmp/app.sock fail_timeout=0; } server { listen 80; location / { proxy_pass http://app; proxy_redirect off; client_max_body_size 6m; } }  This still did not work.</description>
+upstream app { server unix:/tmp/app.sock fail_timeout=0; } server { listen 80; location / { proxy_pass http://app; proxy_redirect off; client_max_body_size 6m; } } This still did not work.</description>
     </item>
     
   </channel>

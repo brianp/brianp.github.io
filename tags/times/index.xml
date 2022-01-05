@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Times on { always: &#39;coding&#39; }</title>
+    <title>times on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/times/</link>
-    <description>Recent content in Times on { always: &#39;coding&#39; }</description>
+    <description>Recent content in times on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Aug 2013 11:21:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/times/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 15 Aug 2013 11:21:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/times/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
       <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>

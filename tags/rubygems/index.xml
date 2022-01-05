@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rubygems on { always: &#39;coding&#39; }</title>
+    <title>rubygems on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/rubygems/</link>
-    <description>Recent content in Rubygems on { always: &#39;coding&#39; }</description>
+    <description>Recent content in rubygems on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Feb 2013 16:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/rubygems/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 01 Feb 2013 16:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/rubygems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
       <link>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
@@ -18,7 +14,7 @@
       
       <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
-$ rails _3.1.0_ new rollback  You also must already have this version of the gem installed on your system for it to work.</description>
+$ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.</description>
     </item>
     
   </channel>

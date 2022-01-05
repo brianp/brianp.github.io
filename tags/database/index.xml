@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Database on { always: &#39;coding&#39; }</title>
+    <title>database on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/database/</link>
-    <description>Recent content in Database on { always: &#39;coding&#39; }</description>
+    <description>Recent content in database on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Mar 2013 02:02:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/database/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 06 Mar 2013 02:02:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
       <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>

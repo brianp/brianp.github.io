@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Liquid on { always: &#39;coding&#39; }</title>
+    <title>liquid on { always: &#39;coding&#39; }</title>
     <link>http://alwayscoding.ca/tags/liquid/</link>
-    <description>Recent content in Liquid on { always: &#39;coding&#39; }</description>
+    <description>Recent content in liquid on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2013 19:54:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://alwayscoding.ca/tags/liquid/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 09 Oct 2013 19:54:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/liquid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular and Liquid expressions in Jekyll</title>
       <link>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>

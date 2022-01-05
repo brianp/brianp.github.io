@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Killing all Ruby Processes</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -32,10 +32,10 @@
     
     <meta name="description" content="I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
 Here is a short list of convenient and inconvenient ways to do that:
-for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.">
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.">
     <meta property="og:description" content="I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
 Here is a short list of convenient and inconvenient ways to do that:
-for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.">
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Killing all Ruby Processes">
     <meta property="og:url" content="/momentos/2013/09/24/killing-all-ruby-processes/">
@@ -44,7 +44,7 @@ for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}
     <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
     <meta name="twitter:description" content="I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
 Here is a short list of convenient and inconvenient ways to do that:
-for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill  The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.">
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}&#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &#39;{print $2}&#39; | xargs kill The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.">
     
       <meta name="twitter:creator" content="@brian_pearce">
     
@@ -110,7 +110,7 @@ for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -253,18 +253,15 @@ for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &#39;{print $1}
               <p>I was running some commands that I later found out had left me with many
 orphaned ruby processes. Too many to kill one by one. I needed to just
 get rid of them all and quickly so killing all ruby processes was the
-best way to go.<br />
+best way to go.<br>
 Here is a short list of convenient and inconvenient ways
 to do that:</p>
-
-<pre><code class="language-bash">for each in `ps -eo pid,command | grep ruby | grep -v grep | awk '{print $1}' `; do kill -9 $each;done
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> each in <span style="color:#e6db74">`</span>ps -eo pid,command | grep ruby | grep -v grep | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span> <span style="color:#e6db74">`</span>; <span style="color:#66d9ef">do</span> kill -9 $each;<span style="color:#66d9ef">done</span>
 killall −9 ruby
 pkill -9 ruby
 pidof ruby | xargs kill -9
-ps aux | grep sidekiq | awk '{print $2}' | xargs kill
-</code></pre>
-
-<p>The easiest commands and best suggestions were brought to my attention
+ps aux | grep sidekiq | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> | xargs kill
+</code></pre></div><p>The easiest commands and best suggestions were brought to my attention
 by <a href="https://twitter.com/AlanBailward">Alan Bailward</a> and <a href="https://twitter.com/halkeye">Gavin
 Mogan</a>.</p>
 
@@ -355,7 +352,7 @@ Mogan</a>.</p>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -462,7 +459,7 @@ Mogan</a>.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -512,7 +509,6 @@ Mogan</a>.</p>
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -535,8 +531,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -612,7 +608,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -631,7 +627,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Mongoid and has_secure_password</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -31,9 +31,9 @@
 
     
     <meta name="description" content="In the apps I&rsquo;ve been working on recently I decided to utilize rails built in authentication &lsquo;has_secure_password&rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp; Mongoid. When trying to use the has_secure_password method I got:
-undefined local variable or method `has_secure_password&#39; for User:Class (NameError)  Solution: You must include include ActiveModel::SecurePassword.">
+undefined local variable or method `has_secure_password&#39; for User:Class (NameError) Solution: You must include include ActiveModel::SecurePassword.">
     <meta property="og:description" content="In the apps I&rsquo;ve been working on recently I decided to utilize rails built in authentication &lsquo;has_secure_password&rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp; Mongoid. When trying to use the has_secure_password method I got:
-undefined local variable or method `has_secure_password&#39; for User:Class (NameError)  Solution: You must include include ActiveModel::SecurePassword.">
+undefined local variable or method `has_secure_password&#39; for User:Class (NameError) Solution: You must include include ActiveModel::SecurePassword.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Mongoid and has_secure_password">
     <meta property="og:url" content="/momentos/2012/06/05/mongoid-and-has-secure-password/">
@@ -41,7 +41,7 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
     <meta name="twitter:description" content="In the apps I&rsquo;ve been working on recently I decided to utilize rails built in authentication &lsquo;has_secure_password&rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp; Mongoid. When trying to use the has_secure_password method I got:
-undefined local variable or method `has_secure_password&#39; for User:Class (NameError)  Solution: You must include include ActiveModel::SecurePassword.">
+undefined local variable or method `has_secure_password&#39; for User:Class (NameError) Solution: You must include include ActiveModel::SecurePassword.">
     
       <meta name="twitter:creator" content="@brian_pearce">
     
@@ -107,7 +107,7 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -248,11 +248,8 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <p>In the apps I&rsquo;ve been working on recently I decided to utilize rails built in authentication &lsquo;has_secure_password&rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp; Mongoid. When trying to use the has_secure_password method I got:</p>
-
-<pre><code class="language-ruby">  undefined local variable or method `has_secure_password' for User:Class (NameError)
-</code></pre>
-
-<p>Solution: You must include <code>include ActiveModel::SecurePassword</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">  undefined local variable <span style="color:#f92672">or</span> method <span style="color:#e6db74">`has_secure_password&#39; for User:Class (NameError)
+</span></code></pre></div><p>Solution: You must include <code>include ActiveModel::SecurePassword</code>.</p>
 
               
             </div>
@@ -345,7 +342,7 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -452,7 +449,7 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -502,7 +499,6 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -525,8 +521,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -602,7 +598,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -621,7 +617,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

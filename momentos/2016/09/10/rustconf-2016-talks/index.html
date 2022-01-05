@@ -21,7 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.36 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.91.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>RustConf 2016 Talks</title>
     <meta name="author" content="Brian Pearce">
     <meta name="keywords" content="">
@@ -31,13 +31,11 @@
 
     
     <meta name="description" content="Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
  1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraris 1 in 9 &ldquo;Maturity&rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.">
     <meta property="og:description" content="Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -49,7 +47,6 @@ photo by: @eigenrick
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{ always: &#39;coding&#39; }">
     <meta name="twitter:description" content="Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -119,7 +116,7 @@ photo by: @eigenrick
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -269,39 +266,27 @@ photo by: @eigenrick
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
-
-<h2 id="opening-keynote">Opening Keynote</h2>
-
+              <h2 id="opening-keynote">Opening Keynote</h2>
 <p>by Aaron Turon and Niko Matsakis</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/keynote.jpg' alt='Aaron Turon and Nika Matsakis' />
-photo by: <a href="https://twitter.com/eigenrick">@eigenrick</a></p>
-
+<!-- raw HTML omitted -->
 <ul>
 <li>175 new features since 1.0</li>
 </ul>
-
 <p>New features underway</p>
-
 <ul>
 <li>Specialization</li>
 <li>impl Trait</li>
 <li>The <code>?</code> operator</li>
 <li>Macro 1.1 offers custom derive</li>
 </ul>
-
 <p>Compiler internals redesigned</p>
-
 <ul>
 <li>Mir in orbit</li>
 <li>Dynamic drop flags</li>
 <li>Incremental comp</li>
 <li>Error messages</li>
 </ul>
-
 <p>Challenges in the Rust survey</p>
-
 <ul>
 <li>1 in 4 Learning curve (First 3 weeks is rough)</li>
 <li>1 in 7 More libraris</li>
@@ -309,121 +294,73 @@ photo by: <a href="https://twitter.com/eigenrick">@eigenrick</a></p>
 <li>1 in 19 IDEs</li>
 <li>1 in 20 Compiler Perf</li>
 </ul>
-
 <p>Speed and reliability are core values of rust, but for 2017, productivity should as well.</p>
-
 <p>Potential areas for new/improved libs</p>
-
 <p>Rust on the server</p>
-
 <ul>
 <li>Futures for async I/O</li>
 <li>Tokio for protocols</li>
 <li>Middleware ecosystem</li>
 </ul>
-
 <p>Parallelism &amp; Concurrency</p>
-
 <ul>
 <li>Deliver on Rust&rsquo;s potential</li>
 </ul>
-
 <p>Serialization</p>
-
 <ul>
 <li>Stable serde</li>
 </ul>
-
 <p>Rust numerics/ML</p>
-
 <ul>
 <li>Establish foundations?</li>
 </ul>
-
 <p><code>serde</code> is pronounced <code>serdy</code> not <code>serd</code>.</p>
-
 <p><strong>Discoverability</strong></p>
-
 <p>A tricky balance:</p>
-
-<p>Make it easy to find the &ldquo;best&rdquo;<br />
-… but allow newcomers to take root<br />
+<p>Make it easy to find the &ldquo;best&rdquo;<br>
+… but allow newcomers to take root<br>
 … but incentivize the right things</p>
-
 <p><strong>Tools</strong></p>
-
 <ul>
-<li>rustup
-
-<ul>
+<li>rustup</li>
 <li>NDK support</li>
 <li>Emscripten/wasm</li>
-</ul></li>
-<li>cargo
-
-<ul>
+<li>cargo</li>
 <li>Private/shared</li>
 <li>Build system integration</li>
-</ul></li>
-<li>rustfmt
-
-<ul>
+<li>rustfmt</li>
 <li>Strike team for the format</li>
 <li>The bike shed of bike sheds</li>
-</ul></li>
 </ul>
-
 <p><a href="https://github.com/phildawes/racer">Racer</a> for code completion in editors.</p>
-
-<hr />
-
+<hr>
 <h2 id="the-illustrated-adventure-survival-guide">The Illustrated Adventure Survival Guide</h2>
-
 <p>by Liz Baillie</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/survivalguide.jpg' alt='Adventure Survival Guide' />
-photo by <a href="https://twitter.com/QEDunham">@QEDunham</a></p>
-
+<!-- raw HTML omitted -->
 <ul>
 <li>Classes vs Traits</li>
 <li>Error handling</li>
 <li>Stack &amp; Heap</li>
 </ul>
-
-<hr />
-
+<hr>
 <h2 id="integrating-rust-and-vlc">Integrating Rust and VLC</h2>
-
 <p>by Geoffroy Couprie</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/vlc.jpg' alt='Integrating Rust and VLC' />
-photo by <a href="https://twitter.com/eigenrick">@nathanaeljones</a></p>
-
+<!-- raw HTML omitted -->
 <p>VLC has <code>C</code> code and is now using <code>Rust</code> to replace the <code>C</code> code.</p>
-
 <p>Autotools with Rust.</p>
-
-<hr />
-
+<hr>
 <h2 id="the-rustplay-classifier">The RustPlay Classifier</h2>
-
 <p>by Suchin Gururangan and Colin O&rsquo;Brien</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/rustplay.jpg' alt='The RustPlay Classifier' /></p>
-
+<!-- raw HTML omitted -->
 <p>Technical Debt in Data Science</p>
-
 <ul>
 <li>Siloed teams</li>
 <li>Pipeline junkgles</li>
 <li>Unscalable Experiments</li>
 <li>…and all the normal engineering tech debt</li>
 </ul>
-
 <p>“A mature system might end up being (at most) 5% learning code.”</p>
-
 <p>Service oriented Machine Learning</p>
-
 <ul>
 <li>Data Collection</li>
 <li>Data Inventory</li>
@@ -431,36 +368,21 @@ photo by <a href="https://twitter.com/eigenrick">@nathanaeljones</a></p>
 <li>Model Generation</li>
 <li>Prediction</li>
 </ul>
-
-<p><a href="https://github.com/tailhook/vagga">Vagga: a containerization tool without daemons</a><br />
+<p><a href="https://github.com/tailhook/vagga">Vagga: a containerization tool without daemons</a><br>
 <a href="https://github.com/nikomatsakis/rayon">Rayon: A data parallelism library for Rust</a></p>
-
-<hr />
-
+<hr>
 <h2 id="using-generics-effectively">Using Generics Effectively</h2>
-
 <p>by Without Boats</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/generics.jpg' alt='Using Generics Effectively' /></p>
-
+<!-- raw HTML omitted -->
 <p>How will I know when it&rsquo;s a good idea to use a <code>Trait</code> or an <code>Enum</code>?</p>
-
 <p><a href="https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199/ref=sr_1_1?ie=UTF8&amp;qid=1473543382&amp;sr=8-1&amp;keywords=a+pattern+language">A Pattern Language Book</a></p>
-
 <p>“Design patterns are a sign your language itsn&rsquo;t powerful enough.”</p>
-
 <p>Patterns don&rsquo;t have to be template of classes.</p>
-
-<hr />
-
+<hr>
 <h2 id="back-to-the-futures">Back to the Futures</h2>
-
 <p>by Alex Crichton</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/futures.jpg' alt='Back to the Futures' /></p>
-
+<!-- raw HTML omitted -->
 <p>What&rsquo;s a Future?</p>
-
 <ul>
 <li>DB query</li>
 <li>RPC Request</li>
@@ -468,179 +390,115 @@ photo by <a href="https://twitter.com/eigenrick">@nathanaeljones</a></p>
 <li>CPU Intensive Work</li>
 <li>Socket Readiness</li>
 </ul>
-
 <p>The fastest server</p>
-
 <ul>
 <li>mio is state of the art</li>
 <li>Primarily using state machines</li>
 <li>Avoids unnecessary allocation/synchronization</li>
 <li>Futures must &ldquo;compile down&rdquo; to the same code</li>
 </ul>
-
 <p>Zero-cost futures</p>
-
 <ul>
 <li>No allocations in combinators</li>
 <li>No synchronization in combinators</li>
 <li>One dynamic dispatch per event</li>
 <li>One allocation per connection</li>
 </ul>
-
 <p><a href="https://github.com/tokio-rs/tokio">Tokio: Asynchronous I/O for Rust</a></p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/futures2.jpg' alt='Back to the Futures' /></p>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h2 id="a-modern-editor-in-rust">A Modern Editor in Rust</h2>
-
 <p>by Raph Levien</p>
-
 <p><a href="https://github.com/google/xi-editor">The Xi Editor: A modern editor with a backend written in Rust</a></p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/editor.jpg' alt='A Modern Editor in Rust' /></p>
-
+<!-- raw HTML omitted -->
 <p>Main goal: performance</p>
-
 <p>How to make a fast editor:</p>
-
 <ul>
 <li>Use a fast language</li>
 <li>Exploit multicore parallelism</li>
-<li>Use advanced algorithms and data structures
-
-<ul>
+<li>Use advanced algorithms and data structures</li>
 <li>Ropes</li>
 <li>Minimal incremental algorithms</li>
-</ul></li>
-<li>Asynchrony
-
-<ul>
+<li>Asynchrony</li>
 <li>Don&rsquo;t block slow operations</li>
-</ul></li>
 </ul>
-
 <p>Operation Transformation</p>
-
 <ul>
 <li>Request to plugin is async</li>
 <li>User may edit while plugin is thinking</li>
 <li>Transform results from plugin</li>
 </ul>
-
 <p>Xi-rope internals</p>
-
 <ul>
 <li>Rope is a specialization of a generic tree</li>
 <li>Parametrized on <code>Leaf</code> and <code>NodeInfo</code></li>
-<li>3 different specializations of generic tree
-
-<ul>
+<li>3 different specializations of generic tree</li>
 <li><code>Rope</code> (Leaf = String)</li>
 <li><code>Line breaks</code> (Lead = vec of line breaks offsets)</li>
 <li><code>Rich text spans</code> (Leaf = vec of spans; interval)</li>
-</ul></li>
 </ul>
-
 <p>Xi-rpc today</p>
-
 <ul>
-<li>JSON-RPC
-
-<ul>
+<li>JSON-RPC</li>
 <li>Why?</li>
 <li>JSON implementations are fast</li>
 <li>An easy dep to satisfy</li>
-</ul></li>
-<li>Threaded design
-
-<ul>
+<li>Threaded design</li>
 <li>Separate thread blocking on input</li>
 <li>Inter-thread communication with channels</li>
 <li><code>Arc&lt;Mutex&lt;&gt;&gt;</code> to acquire state.</li>
-</ul></li>
 </ul>
-
-<hr />
-
+<hr>
 <h2 id="rfc-in-order-to-form-a-more-perfect-union">RFC: In Order to Form a More Perfect union</h2>
-
 <p>by Josh Triplett</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/rfc.jpg' alt='RFCs' /></p>
-
-<p>Linux Kernal Virtual Machine<br />
+<!-- raw HTML omitted -->
+<p>Linux Kernal Virtual Machine<br>
 /dev/kvm</p>
-
 <p>Floppy drive, vm security issue.</p>
-
 <p>Unions</p>
-
 <ul>
 <li>Multi storage variables</li>
 <li>Different types</li>
 <li>Overlapping types</li>
 </ul>
-
 <p>Rust RFC</p>
-
 <ul>
 <li>Community process</li>
 <li>Lightweight but not to light</li>
 <li>Shepard</li>
 <li>Rust team makes approval decisions</li>
 </ul>
-
 <p><code>#[repr(C)] struct</code></p>
-
 <p><code>Crater</code> takes a proposed change to the language, loads the entire cargo env
 base, and checks for breakage.</p>
-
 <p>Improvements through the RFC process by way of multiple person interaction.</p>
-
-<hr />
-
-<h2 id="closing-keynote-systems-programming-with-rust">Closing Keynote - Systems Programming with Rust</h2>
-
+<hr>
+<h2 id="closing-keynote---systems-programming-with-rust">Closing Keynote - Systems Programming with Rust</h2>
 <p>by Julia Evans</p>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/systems1.jpg' alt='Systems Programming' />
-photo by <a href="https://twitter.com/TedMielczarek">@TedMielczarek</a></p>
-
+<!-- raw HTML omitted -->
 <p>Rules of programming experiments</p>
-
 <ul>
 <li>it doesn&rsquo;t have to be good</li>
 <li>it doesn&rsquo;t have to work</li>
 <li>you have to learn something</li>
 </ul>
-
-<p><img src='http://alwayscoding.ca/images/posts/rustconf2016/systems.jpg' alt='Systems Programming' />
-photo by <a href="https://twitter.com/_lizbaillie">_lizbaillie</a></p>
-
+<!-- raw HTML omitted -->
 <p>libdrawf</p>
-
 <ul>
 <li>no idea how it works</li>
 <li>terrible API</li>
 <li>slow</li>
 <li>linker problems</li>
 </ul>
-
 <p><a href="https://github.com/gimli-rs/gimli">Gimli: A lazy, zero-copy parser for the DWARF debugging format</a></p>
-
-<hr />
-
+<hr>
 <h2 id="rustconf-2016-conclusion">RustConf 2016 Conclusion</h2>
-
 <p>The year the <code>Rust</code> conferences started! The overall vibe was excellent. Everyone
 was just excited to be there. For me personally the hallway track was very
 different then the conferences I&rsquo;m used to. I&rsquo;m used to hallway chat about apps
 and gems and web development. The general chatter here was system performance
 which is out of my normal space. So I learned a lot. As well as sat in on conversations
 I considered a little over my head.</p>
-
 <p>The workshops on Friday were great as well. I participated in the Intermediate
 workshop. Although I really wish I could have grabbed some pieces of both the
 intermediate and advanced. I have a pretty good grasp on lifetimes, but do
@@ -738,7 +596,7 @@ workshop and was not disapointed. <a href="http://alwayscoding.ca/momentos/2016/
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 Brian Pearce. All Rights Reserved
+    &copy; 2022 Brian Pearce. All Rights Reserved
   </span>
 </footer>
 
@@ -845,7 +703,7 @@ workshop and was not disapointed. <a href="http://alwayscoding.ca/momentos/2016/
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br />Rubiest, Rustacean, and Gopher</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">
@@ -895,7 +753,6 @@ workshop and was not disapointed. <a href="http://alwayscoding.ca/momentos/2016/
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather">Opening Keynote by Aaron Turon and Niko Matsakis
-photo by: @eigenrick
  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
@@ -918,8 +775,8 @@ photo by: @eigenrick
               </span>
               <div class="media-content hide-xs font-merryweather">These are raw notes taken at RustConf during the “Traits and Threads” workshop put on by Aaron Turon
 All Exercises
- Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog  Abstraction: The Plan
- Generics Traits  As Interfaces For Code Resuse For Perator Overloading  Trait Objects  Traits are rusts interfaces.</div>
+ Methods are function that accept self &amp;self.items == &amp;(self.items) where the borrow (&amp;) is for the item, not for self. Structs have no default value, requires creating all values. mut as mute not like a mixed breed dog   Abstraction: The Plan
+ Generics Traits As Interfaces For Code Resuse For Perator Overloading Trait Objects   Traits are rusts interfaces.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -995,7 +852,7 @@ T.J. Schuck
               <div class="media-content hide-xs font-merryweather">Note: This post is an un-contexualized, un-edited, &amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring
- “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.  Davy Stevenson
+ “standard is better then better” Nobody know how it works yet. Docker apis changed. No standard uusage pattern. Security wild card. Protocol Buffer version of your performance critical endpoints. SRV Records.   Davy Stevenson
 The Science of Success
  Jarvis March (Gift wrapping Algorithm.) Monotone Algorithm.</div>
             </div>
@@ -1014,7 +871,8 @@ The Science of Success
                   Feb 2, 2014
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.  error: cannot access named params by position error: cannot access named params by position   I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.</div>
+              <div class="media-content hide-xs font-merryweather">I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>

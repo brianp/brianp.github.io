@@ -6,7 +6,52 @@
     <description>Recent content in Tags on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Sep 2016 10:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>http://alwayscoding.ca/tags/git/</link>
+      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>http://alwayscoding.ca/tags/github/</link>
+      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gpg</title>
+      <link>http://alwayscoding.ca/tags/gpg/</link>
+      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gpg2</title>
+      <link>http://alwayscoding.ca/tags/gpg2/</link>
+      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/gpg2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>osx</title>
+      <link>http://alwayscoding.ca/tags/osx/</link>
+      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
+      
+      <guid>http://alwayscoding.ca/tags/osx/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>rust</title>
       <link>http://alwayscoding.ca/tags/rust/</link>
@@ -67,15 +112,6 @@
       <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/tags/cross-compilation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>osx</title>
-      <link>http://alwayscoding.ca/tags/osx/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/osx/</guid>
       <description></description>
     </item>
     
@@ -274,33 +310,6 @@
       <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/tags/macbook-air/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>contracts</title>
-      <link>http://alwayscoding.ca/tags/contracts/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/contracts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>http://alwayscoding.ca/tags/development/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>work</title>
-      <link>http://alwayscoding.ca/tags/work/</link>
-      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/work/</guid>
       <description></description>
     </item>
     
@@ -589,15 +598,6 @@
       <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
       
       <guid>http://alwayscoding.ca/tags/haml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>http://alwayscoding.ca/tags/git/</link>
-      <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
-      
-      <guid>http://alwayscoding.ca/tags/git/</guid>
       <description></description>
     </item>
     

@@ -3,15 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://alwayscoding.ca/categories/</loc>
-    <lastmod>2016-09-10T10:00:00+00:00</lastmod>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
-    <loc>http://alwayscoding.ca/categories/conf/</loc>
-    <lastmod>2016-09-10T10:00:00+00:00</lastmod>
+    <loc>http://alwayscoding.ca/categories/cli/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
-    <loc>http://alwayscoding.ca/categories/conferences/</loc>
-    <lastmod>2016-09-10T10:00:00+00:00</lastmod>
+    <loc>http://alwayscoding.ca/tags/git/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/tags/github/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/tags/gpg/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/tags/gpg2/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/tags/osx/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/post/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/tags/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/categories/conferences/</loc>
     <lastmod>2016-09-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/tags/rust/</loc>
@@ -30,12 +54,6 @@
     <lastmod>2016-09-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/series/</loc>
-    <lastmod>2016-09-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://alwayscoding.ca/tags/</loc>
-    <lastmod>2016-09-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://alwayscoding.ca/</loc>
     <lastmod>2016-09-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/tags/concurreny/</loc>
@@ -62,7 +80,7 @@
     <loc>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</loc>
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
-    <loc>http://alwayscoding.ca/tags/osx/</loc>
+    <loc>http://alwayscoding.ca/categories/rust/</loc>
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/tags/unix/</loc>
@@ -81,6 +99,9 @@
     <lastmod>2015-10-01T09:12:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/tags/rails/</loc>
+    <lastmod>2015-10-01T09:12:00+00:00</lastmod>
+  </url><url>
+    <loc>http://alwayscoding.ca/categories/rails/</loc>
     <lastmod>2015-10-01T09:12:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/tags/ruby/</loc>
@@ -134,6 +155,9 @@
     <loc>http://alwayscoding.ca/tags/coffeescript/</loc>
     <lastmod>2013-10-09T19:54:00+00:00</lastmod>
   </url><url>
+    <loc>http://alwayscoding.ca/categories/development/</loc>
+    <lastmod>2013-10-09T19:54:00+00:00</lastmod>
+  </url><url>
     <loc>http://alwayscoding.ca/tags/javascript/</loc>
     <lastmod>2013-10-09T19:54:00+00:00</lastmod>
   </url><url>
@@ -167,16 +191,7 @@
     <loc>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</loc>
     <lastmod>2013-09-17T20:20:00+00:00</lastmod>
   </url><url>
-    <loc>http://alwayscoding.ca/tags/contracts/</loc>
-    <lastmod>2013-09-10T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://alwayscoding.ca/tags/development/</loc>
-    <lastmod>2013-09-10T12:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</loc>
-    <lastmod>2013-09-10T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://alwayscoding.ca/tags/work/</loc>
     <lastmod>2013-09-10T12:00:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/tags/frontend/</loc>
@@ -310,9 +325,6 @@
   </url><url>
     <loc>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</loc>
     <lastmod>2013-01-31T12:38:00+00:00</lastmod>
-  </url><url>
-    <loc>http://alwayscoding.ca/tags/git/</loc>
-    <lastmod>2012-06-21T15:45:00+00:00</lastmod>
   </url><url>
     <loc>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</loc>
     <lastmod>2012-06-21T15:45:00+00:00</lastmod>

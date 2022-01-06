@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>apple on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/apple/</link>
+    <link>https://alwayscoding.ca/tags/apple/</link>
     <description>Recent content in apple on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Sep 2013 20:20:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/apple/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Sep 2013 20:20:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/apple/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacBook Air (Mid 2013) Wifi Issues</title>
-      <link>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
+      <link>https://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
       <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
       <description>As soon as the MacBook Air (Mid 2013) started shipping; reports began flooding in about intermittant wifi connectivity problems.[1]The day after it was released I ordered it. I can&amp;rsquo;t say I experinced the same issues everyone else was claiming to run into. Apple denied the issue at first (as they always do) but later released a software update for the issue.[2]Not soon after the software update I began experiencing the wifi connectivity issues.</description>
     </item>
     

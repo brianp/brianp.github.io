@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>deploy on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/deploy/</link>
+    <link>https://alwayscoding.ca/tags/deploy/</link>
     <description>Recent content in deploy on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Feb 2013 10:24:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/deploy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Feb 2013 10:24:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/deploy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 413 Request Entity Too Large</title>
-      <link>http://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</link>
+      <link>https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</link>
       <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</guid>
       <description>Using: nginx version: nginx/1.2.4
 I manage a few Linode instances as client servers but I would far from consider myself a sysadmin. I received an email from a client regarding some uploading issues. After some testing I concluded any combination of files over 1mb would raise Nginx 413 Request Entity Too Large
 I upped the file limit within the virtualhost file by changing the client_max_body_size

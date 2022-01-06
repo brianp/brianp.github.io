@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yaml on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/yaml/</link>
+    <link>https://alwayscoding.ca/tags/yaml/</link>
     <description>Recent content in yaml on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Jun 2013 17:33:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jun 2013 17:33:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
 The Setup This particular section of the application has rotating content.</description>
     </item>

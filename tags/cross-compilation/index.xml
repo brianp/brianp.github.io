@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cross compilation on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/cross-compilation/</link>
+    <link>https://alwayscoding.ca/tags/cross-compilation/</link>
     <description>Recent content in cross compilation on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 May 2016 10:06:42 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/cross-compilation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 May 2016 10:06:42 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/cross-compilation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cross compilation to OSX with Rust</title>
-      <link>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</link>
+      <link>https://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</link>
       <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</guid>
+      <guid>https://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</guid>
       <description>It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</description>
     </item>
     

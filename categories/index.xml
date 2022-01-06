@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/categories/</link>
+    <link>https://alwayscoding.ca/categories/</link>
     <description>Recent content in Categories on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cli</title>
-      <link>http://alwayscoding.ca/categories/cli/</link>
+      <link>https://alwayscoding.ca/categories/cli/</link>
       <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/categories/cli/</guid>
+      <guid>https://alwayscoding.ca/categories/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>conferences</title>
-      <link>http://alwayscoding.ca/categories/conferences/</link>
+      <link>https://alwayscoding.ca/categories/conferences/</link>
       <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/categories/conferences/</guid>
+      <guid>https://alwayscoding.ca/categories/conferences/</guid>
       <description></description>
     </item>
     
     <item>
       <title>workshops</title>
-      <link>http://alwayscoding.ca/categories/workshops/</link>
+      <link>https://alwayscoding.ca/categories/workshops/</link>
       <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/categories/workshops/</guid>
+      <guid>https://alwayscoding.ca/categories/workshops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rust</title>
-      <link>http://alwayscoding.ca/categories/rust/</link>
+      <link>https://alwayscoding.ca/categories/rust/</link>
       <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/categories/rust/</guid>
+      <guid>https://alwayscoding.ca/categories/rust/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rails</title>
-      <link>http://alwayscoding.ca/categories/rails/</link>
+      <link>https://alwayscoding.ca/categories/rails/</link>
       <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/categories/rails/</guid>
+      <guid>https://alwayscoding.ca/categories/rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>http://alwayscoding.ca/categories/development/</link>
+      <link>https://alwayscoding.ca/categories/development/</link>
       <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/categories/development/</guid>
+      <guid>https://alwayscoding.ca/categories/development/</guid>
       <description></description>
     </item>
     

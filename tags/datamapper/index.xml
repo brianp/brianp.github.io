@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>datamapper on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/datamapper/</link>
+    <link>https://alwayscoding.ca/tags/datamapper/</link>
     <description>Recent content in datamapper on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Jun 2013 13:37:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/datamapper/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jun 2013 13:37:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/datamapper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
 DataMapper::Logger.new($stdout, :debug)
 Enter that at anytime while running in rails c and you should start seeing the output immediatley.

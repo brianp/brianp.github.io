@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>twitter on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/twitter/</link>
+    <link>https://alwayscoding.ca/tags/twitter/</link>
     <description>Recent content in twitter on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Feb 2011 00:00:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
-      <link>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <link>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
       <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
       <description>TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.
 While writing a Twitter application in Rails I was having an issue saving tweets to the database.
 A quick brief on the application: The app would download tweets from the mention timeline of a particular user. It would only download tweets it hadn&amp;rsquo;t already processed based on the last saved tweets unique id (as set by twitter). All the data from the tweets were making it into the database as expected but every time the application downloaded tweets it would re-download the same tweets.</description>

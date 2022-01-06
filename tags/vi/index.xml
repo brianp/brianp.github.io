@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vi on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/vi/</link>
+    <link>https://alwayscoding.ca/tags/vi/</link>
     <description>Recent content in vi on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jun 2012 15:45:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/vi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jun 2012 15:45:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/vi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>There was a problem with the editor vi</title>
-      <link>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</link>
+      <link>https://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</link>
       <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</guid>
+      <guid>https://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</guid>
       <description>I don&amp;rsquo;t recall the circumstances that lead to the issue but anytime I tried to open vim for git I received:
 &amp;ldquo;There was a problem with the editor vi&amp;rdquo;
 The solution:

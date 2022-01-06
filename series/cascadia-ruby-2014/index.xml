@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cascadia ruby 2014 on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/series/cascadia-ruby-2014/</link>
+    <link>https://alwayscoding.ca/series/cascadia-ruby-2014/</link>
     <description>Recent content in cascadia ruby 2014 on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Aug 2014 09:30:59 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/series/cascadia-ruby-2014/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Aug 2014 09:30:59 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/series/cascadia-ruby-2014/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cascadia Ruby 2014 - Day Two</title>
-      <link>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</link>
+      <link>https://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</link>
       <pubDate>Tue, 12 Aug 2014 09:30:59 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</guid>
+      <guid>https://alwayscoding.ca/momentos/2014/08/12/cascadia-ruby-2014-day-two/</guid>
       <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 T.J. Schuck
 80,000 Plaintext Passwords: An Open Source Love Story in Three Acts
@@ -21,10 +21,10 @@ T.J. Schuck
     
     <item>
       <title>Cascadia Ruby 2014 - Day One</title>
-      <link>http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</link>
+      <link>https://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</link>
       <pubDate>Mon, 11 Aug 2014 09:26:37 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</guid>
+      <guid>https://alwayscoding.ca/momentos/2014/08/11/cascadia-ruby-2014-day-one/</guid>
       <description>Note: This post is an un-contexualized, un-edited, &amp;amp; un-proofed bunch of notes taken during Cascadia Ruby 2014.
 John Hyland
 Be Awesome By Being Boring

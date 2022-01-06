@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BSON on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/bson/</link>
+    <link>https://alwayscoding.ca/tags/bson/</link>
     <description>Recent content in BSON on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Feb 2011 00:16:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/bson/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2011 00:16:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/bson/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>bson keys must be strings or symbols</title>
-      <link>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <link>https://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
       <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>While setting up a new Rails development environment I ran into the error bson keys must be strings or symbols. After some googling I found the following method to fix it:
 /gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&amp;#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install /fixed</description>
     </item>

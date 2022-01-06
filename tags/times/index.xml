@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>times on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/times/</link>
+    <link>https://alwayscoding.ca/tags/times/</link>
     <description>Recent content in times on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Aug 2013 11:21:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/times/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Aug 2013 11:21:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/times/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
-      <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone related issues within one of the applications I contract on. This is a just a list of notable behaviours I expereinced whilst working with Ruby, Rails, Dates &amp;amp; TimeZones.
 Note: DST is in effect at the time of writing.
 Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::TimeZone object. I would love to think that this instance would know everything about that Time Zone.</description>

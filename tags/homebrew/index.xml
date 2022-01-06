@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>homebrew on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/homebrew/</link>
+    <link>https://alwayscoding.ca/tags/homebrew/</link>
     <description>Recent content in homebrew on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Mar 2013 00:42:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Mar 2013 00:42:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
       <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
       <description>Excited to start running Garnish against Ruby 2.0.0 I attempted installation tonight to get build failed:
 downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz Installing ruby-2.0.0-p0... BUILD FAILED Inspect or clean up the working tree at /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615 Results logged to /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log Last 10 log lines: installing default gems: /Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 (build_info, cache, doc, gems, specifications) bigdecimal 1.2.0 io-console 0.4.2 json 1.7.7 minitest 4.3.2 psych 2.0.0 rake 0.9.6 rdoc 4.0.0 test-unit 2.0.0.0 The Ruby openssl extension was not compiled.</description>
     </item>

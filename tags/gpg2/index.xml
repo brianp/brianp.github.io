@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gpg2 on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/gpg2/</link>
+    <link>https://alwayscoding.ca/tags/gpg2/</link>
     <description>Recent content in gpg2 on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/gpg2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/gpg2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gpg failed to sign the data</title>
-      <link>http://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</link>
+      <link>https://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</link>
       <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</guid>
+      <guid>https://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</guid>
       <description>I get this terminal error about every three to six months:
 error: gpg failed to sign the data fatal: failed to write commit object When I see it I think &amp;ldquo;I really should have written down the problem last time&amp;rdquo;. So here we are, ready and willing to document.
  The issue for me is that I set short expiration times for my gpg keys.

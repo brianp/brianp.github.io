@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>html on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/html/</link>
+    <link>https://alwayscoding.ca/tags/html/</link>
     <description>Recent content in html on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Sep 2013 10:42:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Sep 2013 10:42:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML Anchors with ids</title>
-      <link>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</link>
+      <link>https://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</link>
       <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</guid>
       <description>Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
 When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
 &amp;lt;a href=&amp;#34;#productList&amp;#34;&amp;gt;View more products&amp;lt;/a&amp;gt; Some page content… &amp;lt;a name=&amp;#34;productList&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;ul class=&amp;#34;productList&amp;#34;&amp;gt;…&amp;lt;/a&amp;gt; Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&amp;rsquo;s no need to add an additional anchor with a name.</description>
@@ -20,10 +20,10 @@ When adding anchors on a page for the purpose of in-page links my typical method
     
     <item>
       <title>HTML Ordered List Offset</title>
-      <link>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</link>
+      <link>https://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</link>
       <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</guid>
       <description>This week at the office I&amp;rsquo;ve been on a coding hiatus and just doing a lot of copy placement and markup. The client requested having a numbered list of categories separated by type headers.
 I added markup as such:
  %ul %li %h2 Video %ol %li Animation %li Documentary %li Music Video %li Narrative %li Poetry/Experimental %li Collaboration %li UNICEF Challenge %li %h2 Print %ol %li Photo Collection/Digital Story/Photo Essay %li Poster/Collage/Campaign Output:</description>

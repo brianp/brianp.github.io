@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pry on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/pry/</link>
+    <link>https://alwayscoding.ca/tags/pry/</link>
     <description>Recent content in pry on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Mar 2013 01:53:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/pry/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Mar 2013 01:53:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/pry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
 (someone gists some code)
 sevenseacat: empty array seems the silly thing to have

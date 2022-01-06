@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jekyll on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/jekyll/</link>
+    <link>https://alwayscoding.ca/tags/jekyll/</link>
     <description>Recent content in jekyll on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2013 19:54:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2013 19:54:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular and Liquid expressions in Jekyll</title>
-      <link>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <link>https://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
       <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
       <description>I started writing an Angular application to intereact with an API I have produced recently. The Angular app is compiled as a static site with Jekyll. I immediately ran into an issue with Angular. None of my expressions were showing up. I realized it was because Liquid which is included with Jekyll uses the same expression tags as Angular: {{ myVariable }}. This meant the Angular expressions were not making it as raw text into the final template as they were being caught by Liquid.</description>
     </item>
     

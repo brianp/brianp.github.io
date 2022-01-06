@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>development on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/categories/development/</link>
+    <link>https://alwayscoding.ca/categories/development/</link>
     <description>Recent content in development on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2013 19:54:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Oct 2013 19:54:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular and Liquid expressions in Jekyll</title>
-      <link>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <link>https://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
       <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
       <description>I started writing an Angular application to intereact with an API I have produced recently. The Angular app is compiled as a static site with Jekyll. I immediately ran into an issue with Angular. None of my expressions were showing up. I realized it was because Liquid which is included with Jekyll uses the same expression tags as Angular: {{ myVariable }}. This meant the Angular expressions were not making it as raw text into the final template as they were being caught by Liquid.</description>
     </item>
     
     <item>
       <title>Meaning in my work</title>
-      <link>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>
+      <link>https://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>
       <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</guid>
       <description>“If you enjoy what you do you will never work a day in your life.”      Just recently I was elated when a client contacted us. We have been working on an ongoing project with them for over two years. They contacted us just to let us know they had used the project as a demo and witness. They used the project to help acquire funding for twenty-five full scholarships for youth from all over the world to attend any educational insitutue of their choosing.</description>
     </item>
     
     <item>
       <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
-      <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone related issues within one of the applications I contract on. This is a just a list of notable behaviours I expereinced whilst working with Ruby, Rails, Dates &amp;amp; TimeZones.
 Note: DST is in effect at the time of writing.
 Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::TimeZone object. I would love to think that this instance would know everything about that Time Zone.</description>
@@ -38,20 +38,20 @@ Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
 The Setup This particular section of the application has rotating content.</description>
     </item>
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
 DataMapper::Logger.new($stdout, :debug)
 Enter that at anytime while running in rails c and you should start seeing the output immediatley.
@@ -60,10 +60,10 @@ Note If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of
     
     <item>
       <title>Map with Index</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
       <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
       <description>Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.
 While working on my main contract today I needed to create a new array based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just use Enumerable::map right? Almost immediatley I realized I needed to make a reference to an array via the loops index. I first checked to see if a map_with_index existed similar to Enumerable::each_with_index.
 It doesn&amp;rsquo;t.</description>
@@ -71,20 +71,20 @@ It doesn&amp;rsquo;t.</description>
     
     <item>
       <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
       <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
       <description>Excited to start running Garnish against Ruby 2.0.0 I attempted installation tonight to get build failed:
 downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz Installing ruby-2.0.0-p0... BUILD FAILED Inspect or clean up the working tree at /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615 Results logged to /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log Last 10 log lines: installing default gems: /Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 (build_info, cache, doc, gems, specifications) bigdecimal 1.2.0 io-console 0.4.2 json 1.7.7 minitest 4.3.2 psych 2.0.0 rake 0.9.6 rdoc 4.0.0 test-unit 2.0.0.0 The Ruby openssl extension was not compiled.</description>
     </item>
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
       <description>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the includes method. The includes method being the suggested best practice for the problem now. includes will be mentioned at the bottom of the post.
 Take me to the current best practice.
 How to deal with n+1 issues utilizing identity maps:
@@ -93,39 +93,39 @@ What is the n+1 issue?</description>
     
     <item>
       <title>Expiring Cache Fragments In The Rails Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
       <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
       <description>One of the much larger Rails applications I work on makes heavy use of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t auto-expiring at the moment. After doing a deployment I needed to expire these sections manually via the console for my first time. I grabbed the name of the fragment from the view where it was being cached.
 - cache(&amp;#39;all_category_judges&amp;#39;) do ... I only knew one way to access the cache in the console and attempted clearing the cache fragment from there.</description>
     </item>
     
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
       <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
 $ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.</description>
     </item>
     
     <item>
       <title>Flash[:notice] vs Flash.now[:notice]</title>
-      <link>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
+      <link>https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
       <pubDate>Sun, 11 Sep 2011 00:29:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
       <description>While working with my new employer (in 2011) I noticed a minor but recurring issue in our application. We had been storing flash[:notice] messages in most of our actions but were not using that flash message anywhere. This was resulting in the flash message showing up at in-appropriate times. What I was unaware of was a slightly different call which is flash.now[:notice]. This results in the flash only having a lifespan of the through the next request.</description>
     </item>
     
     <item>
       <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
-      <link>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <link>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
       <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
       <description>TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.
 While writing a Twitter application in Rails I was having an issue saving tweets to the database.
 A quick brief on the application: The app would download tweets from the mention timeline of a particular user. It would only download tweets it hadn&amp;rsquo;t already processed based on the last saved tweets unique id (as set by twitter). All the data from the tweets were making it into the database as expected but every time the application downloaded tweets it would re-download the same tweets.</description>

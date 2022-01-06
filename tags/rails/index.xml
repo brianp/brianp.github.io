@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rails on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/rails/</link>
+    <link>https://alwayscoding.ca/tags/rails/</link>
     <description>Recent content in rails on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/rails/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tips for working with Delayed Job</title>
-      <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
+      <link>https://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
       <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
+      <guid>https://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
       <description>DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
 Don&amp;rsquo;t know what a backround runner does or why you would use one?
 I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</description>
@@ -20,20 +20,20 @@ I will not delve into why you need one but you can check out a summary here: Bac
     
     <item>
       <title>Handling code duplication with Sass @imports in the asset pipeline</title>
-      <link>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <link>https://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
       <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <guid>https://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
       <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
 Head on over to the Inside Unbounce blog to check out the full post.</description>
     </item>
     
     <item>
       <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
-      <link>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <link>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
       <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
       <description>I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone related issues within one of the applications I contract on. This is a just a list of notable behaviours I expereinced whilst working with Ruby, Rails, Dates &amp;amp; TimeZones.
 Note: DST is in effect at the time of writing.
 Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::TimeZone object. I would love to think that this instance would know everything about that Time Zone.</description>
@@ -41,20 +41,20 @@ Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::
     
     <item>
       <title>Using Rails I18n translations to solve dynamic content issues</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
       <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
       <description>Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
 The Setup This particular section of the application has rotating content.</description>
     </item>
     
     <item>
       <title>DataMapper SQL Queries in Rails Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
       <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
       <description>A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
 DataMapper::Logger.new($stdout, :debug)
 Enter that at anytime while running in rails c and you should start seeing the output immediatley.
@@ -63,10 +63,10 @@ Note If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of
     
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
 (someone gists some code)
 sevenseacat: empty array seems the silly thing to have
@@ -78,10 +78,10 @@ brianpWins: but if you do want to leave empty arrays around.</description>
     
     <item>
       <title>n&#43;1 Problems and Identity Maps</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
       <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
       <description>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the includes method. The includes method being the suggested best practice for the problem now. includes will be mentioned at the bottom of the post.
 Take me to the current best practice.
 How to deal with n+1 issues utilizing identity maps:
@@ -90,40 +90,40 @@ What is the n+1 issue?</description>
     
     <item>
       <title>Expiring Cache Fragments In The Rails Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
       <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
       <description>One of the much larger Rails applications I work on makes heavy use of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t auto-expiring at the moment. After doing a deployment I needed to expire these sections manually via the console for my first time. I grabbed the name of the fragment from the view where it was being cached.
 - cache(&amp;#39;all_category_judges&amp;#39;) do ... I only knew one way to access the cache in the console and attempted clearing the cache fragment from there.</description>
     </item>
     
     <item>
       <title>Calling a Specific Gem Version In The Console</title>
-      <link>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <link>https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
       <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
       <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
 $ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.</description>
     </item>
     
     <item>
       <title>Hash Defaults in Ruby</title>
-      <link>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
+      <link>https://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
+      <guid>https://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
       <description>I was writing a rake task to handle importing data from an older community system and needed to set a default value for anything that the old system didn&amp;rsquo;t have. I was using hashs and thought to myself &amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I found out that hashs do infact support defaults.
 I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default</description>
     </item>
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
-      <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <link>https://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <guid>https://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
 {:cat =&amp;gt; &amp;#39;meow&amp;#39;} # 1.8 {cat: &amp;#39;meow&amp;#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
@@ -131,20 +131,20 @@ Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of
     
     <item>
       <title>Mongoid and has_secure_password</title>
-      <link>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
+      <link>https://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
+      <guid>https://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
       <description>In the apps I&amp;rsquo;ve been working on recently I decided to utilize rails built in authentication &amp;lsquo;has_secure_password&amp;rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&amp;rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp;amp; Mongoid. When trying to use the has_secure_password method I got:
 undefined local variable or method `has_secure_password&amp;#39; for User:Class (NameError) Solution: You must include include ActiveModel::SecurePassword.</description>
     </item>
     
     <item>
       <title>Transactions and new_record?</title>
-      <link>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</link>
+      <link>https://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</guid>
+      <guid>https://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</guid>
       <description>While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I ran into an odd issue after I had run a few objects through a Transaction. Although the transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted in a return of false as if the record had been saved to the database.
 I also found the same issue recorded here: http://squarewheel.wordpress.com/2008/06/11/new_record/
 Here is example code where the error will happen.</description>
@@ -152,19 +152,19 @@ Here is example code where the error will happen.</description>
     
     <item>
       <title>Flash[:notice] vs Flash.now[:notice]</title>
-      <link>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
+      <link>https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
       <pubDate>Sun, 11 Sep 2011 00:29:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
       <description>While working with my new employer (in 2011) I noticed a minor but recurring issue in our application. We had been storing flash[:notice] messages in most of our actions but were not using that flash message anywhere. This was resulting in the flash message showing up at in-appropriate times. What I was unaware of was a slightly different call which is flash.now[:notice]. This results in the flash only having a lifespan of the through the next request.</description>
     </item>
     
     <item>
       <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
-      <link>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <link>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
       <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
       <description>TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.
 While writing a Twitter application in Rails I was having an issue saving tweets to the database.
 A quick brief on the application: The app would download tweets from the mention timeline of a particular user. It would only download tweets it hadn&amp;rsquo;t already processed based on the last saved tweets unique id (as set by twitter). All the data from the tweets were making it into the database as expected but every time the application downloaded tweets it would re-download the same tweets.</description>
@@ -172,20 +172,20 @@ A quick brief on the application: The app would download tweets from the mention
     
     <item>
       <title>bson keys must be strings or symbols</title>
-      <link>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <link>https://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
       <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <guid>https://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
       <description>While setting up a new Rails development environment I ran into the error bson keys must be strings or symbols. After some googling I found the following method to fix it:
 /gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&amp;#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install /fixed</description>
     </item>
     
     <item>
       <title>The Ruby Symbol is a Memory Leak</title>
-      <link>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
+      <link>https://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
       <pubDate>Sat, 04 Dec 2010 00:13:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
+      <guid>https://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
       <description>This is just a quick bit that I learned early in my Ruby career and always found interesting.
 Symbols Are Memory Leaks
 So is this the end of the world?

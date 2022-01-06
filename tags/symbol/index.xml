@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>symbol on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/symbol/</link>
+    <link>https://alwayscoding.ca/tags/symbol/</link>
     <description>Recent content in symbol on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Mar 2013 01:53:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/symbol/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Mar 2013 01:53:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/symbol/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>More fun with the Ruby Symbol</title>
-      <link>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <link>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
       <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <guid>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
       <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
 (someone gists some code)
 sevenseacat: empty array seems the silly thing to have
@@ -24,10 +24,10 @@ brianpWins: but if you do want to leave empty arrays around.</description>
     
     <item>
       <title>Ruby Hash Syntax: Hashrocket vs JSON-Style</title>
-      <link>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
+      <link>https://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</link>
       <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
+      <guid>https://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/</guid>
       <description>At a first glance the 1.9 ruby hash syntax looks like a simple change. No longer using the infamous &amp;ldquo;Hashrocket&amp;rdquo; and moving to a familiar JavaScript Object Notation.
 {:cat =&amp;gt; &amp;#39;meow&amp;#39;} # 1.8 {cat: &amp;#39;meow&amp;#39;} # 1.9 On an average day I write equally as much JavaScript as I do Ruby so the new 1.9 syntax is an easy swtich for me.
 Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of the 1.</description>
@@ -35,10 +35,10 @@ Do these updates to the syntax mean that we&amp;rsquo;ll be seeing the demise of
     
     <item>
       <title>The Ruby Symbol is a Memory Leak</title>
-      <link>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
+      <link>https://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</link>
       <pubDate>Sat, 04 Dec 2010 00:13:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
+      <guid>https://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</guid>
       <description>This is just a quick bit that I learned early in my Ruby career and always found interesting.
 Symbols Are Memory Leaks
 So is this the end of the world?

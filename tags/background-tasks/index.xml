@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>background tasks on { always: &#39;coding&#39; }</title>
-    <link>http://alwayscoding.ca/tags/background-tasks/</link>
+    <link>https://alwayscoding.ca/tags/background-tasks/</link>
     <description>Recent content in background tasks on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate><atom:link href="http://alwayscoding.ca/tags/background-tasks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Oct 2015 09:12:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/background-tasks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tips for working with Delayed Job</title>
-      <link>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
+      <link>https://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
       <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
       
-      <guid>http://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
+      <guid>https://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
       <description>DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
 Don&amp;rsquo;t know what a backround runner does or why you would use one?
 I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</description>

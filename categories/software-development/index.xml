@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software development on { always: &#39;coding&#39; }</title>
+    <link>https://alwayscoding.ca/categories/software-development/</link>
+    <description>Recent content in software development on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 May 2016 10:06:42 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cross compilation to OSX with Rust</title>
+      <link>https://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</link>
+      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</guid>
+      <description>It started with Muxed. I was excited to get a working first build, but despite my development machine being a MacBook Air, I develop most in VM&amp;rsquo;s using vagrant. My native builds were all linux based. It would be easy enough to move the code to an OSX machine and compile there but I do not like build tools on my native machine. And that would simply be too easy.</description>
+    </item>
+    
+    <item>
+      <title>Tips for working with Delayed Job</title>
+      <link>https://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</link>
+      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2015/10/01/tips-for-working-with-delayed-job/</guid>
+      <description>DelayedJob has always been a great “hit the ground running” background task runner for ruby. It is simple to setup, easy to use and can more than carry its own weight in tasks.
+Don&amp;rsquo;t know what a backround runner does or why you would use one?
+I will not delve into why you need one but you can check out a summary here: Background Jobs in Ruby on Rails.</description>
+    </item>
+    
+    <item>
+      <title>Handling code duplication with Sass @imports in the asset pipeline</title>
+      <link>https://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</link>
+      <pubDate>Tue, 25 Feb 2014 15:08:38 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</guid>
+      <description>I have used the asset pipeline heavily since its release in Rails 3.1.0 over two years ago. Only recently did I run in to a handful of gotchas when it came to dealing with stylesheet compilations using Sass.      I guest wrote a post about my experience using SASS in the asset pipeline at Unbounce.
+Head on over to the Inside Unbounce blog to check out the full post.</description>
+    </item>
+    
+    <item>
+      <title>Angular and Liquid expressions in Jekyll</title>
+      <link>https://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</link>
+      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/10/09/angular-and-liquid-expressions-in-jekyll/</guid>
+      <description>I started writing an Angular application to intereact with an API I have produced recently. The Angular app is compiled as a static site with Jekyll. I immediately ran into an issue with Angular. None of my expressions were showing up. I realized it was because Liquid which is included with Jekyll uses the same expression tags as Angular: {{ myVariable }}. This meant the Angular expressions were not making it as raw text into the final template as they were being caught by Liquid.</description>
+    </item>
+    
+    <item>
+      <title>Meaning in my work</title>
+      <link>https://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</link>
+      <pubDate>Tue, 10 Sep 2013 12:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/09/10/meaning-in-my-work/</guid>
+      <description>“If you enjoy what you do you will never work a day in your life.”      Just recently I was elated when a client contacted us. We have been working on an ongoing project with them for over two years. They contacted us just to let us know they had used the project as a demo and witness. They used the project to help acquire funding for twenty-five full scholarships for youth from all over the world to attend any educational insitutue of their choosing.</description>
+    </item>
+    
+    <item>
+      <title>HTML Anchors with ids</title>
+      <link>https://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</link>
+      <pubDate>Tue, 03 Sep 2013 10:42:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</guid>
+      <description>Despite being in the HTML 4.01 spec since 1999 I picked up another small frontend tip recently.
+When adding anchors on a page for the purpose of in-page links my typical method for years has been to add a link with the anchor name in the href and an anchor tag with a name attribute.
+&amp;lt;a href=&amp;#34;#productList&amp;#34;&amp;gt;View more products&amp;lt;/a&amp;gt; Some page content… &amp;lt;a name=&amp;#34;productList&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;ul class=&amp;#34;productList&amp;#34;&amp;gt;…&amp;lt;/a&amp;gt; Just the other day @ry5n informed me that a link that corresponds to an elements id will work just the same and there&amp;rsquo;s no need to add an additional anchor with a name.</description>
+    </item>
+    
+    <item>
+      <title>Handling Dates &amp; Timezones in Ruby &amp; Rails</title>
+      <link>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</link>
+      <pubDate>Thu, 15 Aug 2013 11:21:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</guid>
+      <description>I&amp;rsquo;ve spent almost the last two weeks dealing with Date and Time Zone related issues within one of the applications I contract on. This is a just a list of notable behaviours I expereinced whilst working with Ruby, Rails, Dates &amp;amp; TimeZones.
+Note: DST is in effect at the time of writing.
+Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::TimeZone object. I would love to think that this instance would know everything about that Time Zone.</description>
+    </item>
+    
+    <item>
+      <title>Using Rails I18n translations to solve dynamic content issues</title>
+      <link>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</link>
+      <pubDate>Thu, 13 Jun 2013 17:33:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/06/13/using-rails-i18n-translations-to-solve-dynamic-content-issues/</guid>
+      <description>Last week during my main work contract I had been tasked with doing some would-be trivial content updates to a section of a client application. Content updates would normally involve hopping into a view changing some images or text and re-deploying. This particular section though is a little more complex then that and way more complex then it should be.
+The Setup This particular section of the application has rotating content.</description>
+    </item>
+    
+    <item>
+      <title>DataMapper SQL Queries in Rails Console</title>
+      <link>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</link>
+      <pubDate>Sun, 09 Jun 2013 13:37:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/</guid>
+      <description>A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&amp;rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
+DataMapper::Logger.new($stdout, :debug)
+Enter that at anytime while running in rails c and you should start seeing the output immediatley.
+Note If you don&amp;rsquo;t see the output potentially it&amp;rsquo;s because of DM&amp;rsquo;s identiity map.</description>
+    </item>
+    
+    <item>
+      <title>Map with Index</title>
+      <link>https://alwayscoding.ca/momentos/2013/06/07/map-with-index/</link>
+      <pubDate>Fri, 07 Jun 2013 15:32:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/06/07/map-with-index/</guid>
+      <description>Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.
+While working on my main contract today I needed to create a new array based off mutated values of an existing array. Simple enough I&amp;rsquo;ll just use Enumerable::map right? Almost immediatley I realized I needed to make a reference to an array via the loops index. I first checked to see if a map_with_index existed similar to Enumerable::each_with_index.
+It doesn&amp;rsquo;t.</description>
+    </item>
+    
+    <item>
+      <title>More fun with the Ruby Symbol</title>
+      <link>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</link>
+      <pubDate>Wed, 13 Mar 2013 01:53:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/</guid>
+      <description>So while in the #RubyOnRails IRC channel late at night (never a good idea) some silly conversation occured:
+(someone gists some code)
+sevenseacat: empty array seems the silly thing to have
+Tarential: sometimes I like to add empty arrays, you know, just in case I need them later
+Tarential: so they&amp;rsquo;re close at hand
+tagrudev: little kittens die when you define an unused var
+brianpWins: but if you do want to leave empty arrays around.</description>
+    </item>
+    
+    <item>
+      <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
+      <link>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <description>Excited to start running Garnish against Ruby 2.0.0 I attempted installation tonight to get build failed:
+downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz Installing ruby-2.0.0-p0... BUILD FAILED Inspect or clean up the working tree at /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615 Results logged to /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log Last 10 log lines: installing default gems: /Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 (build_info, cache, doc, gems, specifications) bigdecimal 1.2.0 io-console 0.4.2 json 1.7.7 minitest 4.3.2 psych 2.0.0 rake 0.9.6 rdoc 4.0.0 test-unit 2.0.0.0 The Ruby openssl extension was not compiled.</description>
+    </item>
+    
+    <item>
+      <title>n&#43;1 Problems and Identity Maps</title>
+      <link>https://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</link>
+      <pubDate>Wed, 06 Mar 2013 02:02:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/03/06/n-plus-1-problems-and-identity-maps/</guid>
+      <description>Forward: This post is mainly copypasta from an answer I wrote on StackOverflow. It also takes into account the version of Mongoid being used predates the includes method. The includes method being the suggested best practice for the problem now. includes will be mentioned at the bottom of the post.
+Take me to the current best practice.
+How to deal with n+1 issues utilizing identity maps:
+What is the n+1 issue?</description>
+    </item>
+    
+    <item>
+      <title>Expiring Cache Fragments In The Rails Console</title>
+      <link>https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</link>
+      <pubDate>Tue, 05 Feb 2013 00:14:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/</guid>
+      <description>One of the much larger Rails applications I work on makes heavy use of caching for obvious reasons. In some locations the cache isn&amp;rsquo;t auto-expiring at the moment. After doing a deployment I needed to expire these sections manually via the console for my first time. I grabbed the name of the fragment from the view where it was being cached.
+- cache(&amp;#39;all_category_judges&amp;#39;) do ... I only knew one way to access the cache in the console and attempted clearing the cache fragment from there.</description>
+    </item>
+    
+    <item>
+      <title>Calling a Specific Gem Version In The Console</title>
+      <link>https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</link>
+      <pubDate>Fri, 01 Feb 2013 16:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/</guid>
+      <description>Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
+$ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.</description>
+    </item>
+    
+    <item>
+      <title>HTML Ordered List Offset</title>
+      <link>https://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</link>
+      <pubDate>Thu, 31 Jan 2013 12:38:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/</guid>
+      <description>This week at the office I&amp;rsquo;ve been on a coding hiatus and just doing a lot of copy placement and markup. The client requested having a numbered list of categories separated by type headers.
+I added markup as such:
+ %ul %li %h2 Video %ol %li Animation %li Documentary %li Music Video %li Narrative %li Poetry/Experimental %li Collaboration %li UNICEF Challenge %li %h2 Print %ol %li Photo Collection/Digital Story/Photo Essay %li Poster/Collage/Campaign Output:</description>
+    </item>
+    
+    <item>
+      <title>Hash Defaults in Ruby</title>
+      <link>https://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</link>
+      <pubDate>Fri, 15 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2012/06/15/hash-defaults-in-ruby/</guid>
+      <description>I was writing a rake task to handle importing data from an older community system and needed to set a default value for anything that the old system didn&amp;rsquo;t have. I was using hashs and thought to myself &amp;ldquo;It would be sweet if hashs had defaults.&amp;rdquo; After a quick doc check I found out that hashs do infact support defaults.
+I encourage you to check out the Ruby Docs http://www.ruby-doc.org/core-1.9.3/Hash.html#method-i-default</description>
+    </item>
+    
+    <item>
+      <title>Mongoid and has_secure_password</title>
+      <link>https://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/</guid>
+      <description>In the apps I&amp;rsquo;ve been working on recently I decided to utilize rails built in authentication &amp;lsquo;has_secure_password&amp;rsquo; which began shipping with Rails 3.1. Has_secure_password is simple to use and doesn&amp;rsquo;t bring in any extra bulk. With some of these projects I also decided to use MongoDB &amp;amp; Mongoid. When trying to use the has_secure_password method I got:
+undefined local variable or method `has_secure_password&amp;#39; for User:Class (NameError) Solution: You must include include ActiveModel::SecurePassword.</description>
+    </item>
+    
+    <item>
+      <title>Transactions and new_record?</title>
+      <link>https://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/</guid>
+      <description>While working with the ActiveRecord method &amp;lsquo;new_record?&amp;rsquo; and Transactions I ran into an odd issue after I had run a few objects through a Transaction. Although the transaction had rolled back and thus not saving the record, running &amp;lsquo;object_instance.new_record?&amp;rsquo; resulted in a return of false as if the record had been saved to the database.
+I also found the same issue recorded here: http://squarewheel.wordpress.com/2008/06/11/new_record/
+Here is example code where the error will happen.</description>
+    </item>
+    
+    <item>
+      <title>Flash[:notice] vs Flash.now[:notice]</title>
+      <link>https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</link>
+      <pubDate>Sun, 11 Sep 2011 00:29:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/</guid>
+      <description>While working with my new employer (in 2011) I noticed a minor but recurring issue in our application. We had been storing flash[:notice] messages in most of our actions but were not using that flash message anywhere. This was resulting in the flash message showing up at in-appropriate times. What I was unaware of was a slightly different call which is flash.now[:notice]. This results in the flash only having a lifespan of the through the next request.</description>
+    </item>
+    
+    <item>
+      <title>Saving Unique Twitter ID&#39;s &amp;amp; MySQL Integers</title>
+      <link>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</link>
+      <pubDate>Sat, 12 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2011/02/12/saving-unique-twitter-ids-and-mysql-integers/</guid>
+      <description>TLDR; Don&amp;rsquo;t store Tweet ID&amp;rsquo;s as INT. Use BIGINT.
+While writing a Twitter application in Rails I was having an issue saving tweets to the database.
+A quick brief on the application: The app would download tweets from the mention timeline of a particular user. It would only download tweets it hadn&amp;rsquo;t already processed based on the last saved tweets unique id (as set by twitter). All the data from the tweets were making it into the database as expected but every time the application downloaded tweets it would re-download the same tweets.</description>
+    </item>
+    
+    <item>
+      <title>bson keys must be strings or symbols</title>
+      <link>https://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</link>
+      <pubDate>Wed, 09 Feb 2011 00:16:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2011/02/09/bson-keys-must-be-strings-or-symbols/</guid>
+      <description>While setting up a new Rails development environment I ran into the error bson keys must be strings or symbols. After some googling I found the following method to fix it:
+/gems/bson-1.2.0/lib/bson/bson_c.rb:24:in `serialize&amp;#39;: keys must be strings or symbols (TypeError) rvm gemset empty bundle install /fixed</description>
+    </item>
+    
+  </channel>
+</rss>

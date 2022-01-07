@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on { always: &#39;coding&#39; }</title>
+    <link>https://alwayscoding.ca/tags/markdown/</link>
+    <description>Recent content in markdown on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Dec 2021 10:24:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raw HTML in Hugo Markdown</title>
+      <link>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</link>
+      <pubDate>Sun, 19 Dec 2021 10:24:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</guid>
+      <description>I finally decided to run some updates on the ol&#39; blog and noticed some posts had missing content after the update. At a glance all the missing content seemingly used raw HTML tags.
+A quick look to the rendered source found comment tags in all the previous HTML locations:
+&amp;lt;!-- raw HTML omitted --&amp;gt; It turns out somewhere along the line (Hugo v0.6.0) the markdown rendering engine was changed to Goldmark.</description>
+    </item>
+    
+  </channel>
+</rss>

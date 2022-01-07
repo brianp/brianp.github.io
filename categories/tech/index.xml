@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech on { always: &#39;coding&#39; }</title>
+    <link>https://alwayscoding.ca/categories/tech/</link>
+    <description>Recent content in tech on { always: &#39;coding&#39; }</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gpg failed to sign the data</title>
+      <link>https://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</link>
+      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</guid>
+      <description>I get this terminal error about every three to six months:
+error: gpg failed to sign the data fatal: failed to write commit object When I see it I think &amp;ldquo;I really should have written down the problem last time&amp;rdquo;. So here we are, ready and willing to document.
+ The issue for me is that I set short expiration times for my gpg keys.
+ To verify my key is expired I run: $ gpg -K --keyid-format SHORT and get results like below:</description>
+    </item>
+    
+    <item>
+      <title>Raw HTML in Hugo Markdown</title>
+      <link>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</link>
+      <pubDate>Sun, 19 Dec 2021 10:24:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</guid>
+      <description>I finally decided to run some updates on the ol&#39; blog and noticed some posts had missing content after the update. At a glance all the missing content seemingly used raw HTML tags.
+A quick look to the rendered source found comment tags in all the previous HTML locations:
+&amp;lt;!-- raw HTML omitted --&amp;gt; It turns out somewhere along the line (Hugo v0.6.0) the markdown rendering engine was changed to Goldmark.</description>
+    </item>
+    
+    <item>
+      <title>Killing all Ruby Processes</title>
+      <link>https://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</link>
+      <pubDate>Tue, 24 Sep 2013 11:30:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/09/24/killing-all-ruby-processes/</guid>
+      <description>I was running some commands that I later found out had left me with many orphaned ruby processes. Too many to kill one by one. I needed to just get rid of them all and quickly so killing all ruby processes was the best way to go.
+Here is a short list of convenient and inconvenient ways to do that:
+for each in `ps -eo pid,command | grep ruby | grep -v grep | awk &amp;#39;{print $1}&amp;#39; `; do kill -9 $each;done killall −9 ruby pkill -9 ruby pidof ruby | xargs kill -9 ps aux | grep sidekiq | awk &amp;#39;{print $2}&amp;#39; | xargs kill The easiest commands and best suggestions were brought to my attention by Alan Bailward and Gavin Mogan.</description>
+    </item>
+    
+    <item>
+      <title>MacBook Air (Mid 2013) Wifi Issues</title>
+      <link>https://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</link>
+      <pubDate>Tue, 17 Sep 2013 20:20:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/09/17/macbook-air-mid-2013-wifi-issues/</guid>
+      <description>As soon as the MacBook Air (Mid 2013) started shipping; reports began flooding in about intermittant wifi connectivity problems.[1] The day after it was released I ordered it. I can&amp;rsquo;t say I experinced the same issues everyone else was claiming to run into. Apple denied the issue at first (as they always do) but later released a software update for the issue.[2]
+Not soon after the software update I began experiencing the wifi connectivity issues.</description>
+    </item>
+    
+    <item>
+      <title>Installing Ruby 2.0.0 on MacOSX - Build Failed</title>
+      <link>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</link>
+      <pubDate>Tue, 12 Mar 2013 00:42:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</guid>
+      <description>Excited to start running Garnish against Ruby 2.0.0 I attempted installation tonight to get build failed:
+downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz Installing ruby-2.0.0-p0... BUILD FAILED Inspect or clean up the working tree at /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615 Results logged to /var/folders/td/0z79ghbs125193ngl8y0j8180000gn/T/ruby-build.20130312001656.54615.log Last 10 log lines: installing default gems: /Users/brianp/.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0 (build_info, cache, doc, gems, specifications) bigdecimal 1.2.0 io-console 0.4.2 json 1.7.7 minitest 4.3.2 psych 2.0.0 rake 0.9.6 rdoc 4.0.0 test-unit 2.0.0.0 The Ruby openssl extension was not compiled.</description>
+    </item>
+    
+    <item>
+      <title>Nginx 413 Request Entity Too Large</title>
+      <link>https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</link>
+      <pubDate>Sat, 02 Feb 2013 10:24:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/</guid>
+      <description>Using: nginx version: nginx/1.2.4
+I manage a few Linode instances as client servers but I would far from consider myself a sysadmin. I received an email from a client regarding some uploading issues. After some testing I concluded any combination of files over 1mb would raise Nginx 413 Request Entity Too Large
+I upped the file limit within the virtualhost file by changing the client_max_body_size
+upstream app { server unix:/tmp/app.sock fail_timeout=0; } server { listen 80; location / { proxy_pass http://app; proxy_redirect off; client_max_body_size 6m; } } This still did not work.</description>
+    </item>
+    
+    <item>
+      <title>There was a problem with the editor vi</title>
+      <link>https://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</link>
+      <pubDate>Thu, 21 Jun 2012 15:45:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2012/06/21/there-was-a-problem-with-the-editor-vi/</guid>
+      <description>I don&amp;rsquo;t recall the circumstances that lead to the issue but anytime I tried to open vim for git I received:
+&amp;ldquo;There was a problem with the editor vi&amp;rdquo;
+The solution:
+git config --global core.editor /usr/local/bin/vim </description>
+    </item>
+    
+  </channel>
+</rss>

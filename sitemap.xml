@@ -5,22 +5,13 @@
     <loc>https://alwayscoding.ca/categories/</loc>
     <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/categories/cli/</loc>
-    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/git/</loc>
-    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/tags/github/</loc>
     <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/gpg/</loc>
     <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</loc>
-    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/tags/gpg2/</loc>
     <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/osx/</loc>
@@ -32,8 +23,35 @@
     <loc>https://alwayscoding.ca/tags/</loc>
     <lastmod>2022-01-05T18:18:00+00:00</lastmod>
   </url><url>
+    <loc>https://alwayscoding.ca/categories/tech/</loc>
+    <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
     <loc>https://alwayscoding.ca/</loc>
     <lastmod>2022-01-05T18:18:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/html/</loc>
+    <lastmod>2021-12-19T10:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/hugo/</loc>
+    <lastmod>2021-12-19T10:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/markdown/</loc>
+    <lastmod>2021-12-19T10:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</loc>
+    <lastmod>2021-12-19T10:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/cycling/</loc>
+    <lastmod>2020-11-24T23:06:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/2020/11/24/cycling-new-years-resolution-complete/</loc>
+    <lastmod>2020-11-24T23:06:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/new-years/</loc>
+    <lastmod>2020-11-24T23:06:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/categories/personal/</loc>
+    <lastmod>2020-11-24T23:06:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/categories/conferences/</loc>
     <lastmod>2016-09-10T10:00:00+00:00</lastmod>
@@ -71,16 +89,13 @@
     <loc>https://alwayscoding.ca/momentos/2016/09/09/traits-and-threads-workshop/</loc>
     <lastmod>2016-09-09T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/categories/workshops/</loc>
-    <lastmod>2016-09-09T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/cross-compilation/</loc>
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</loc>
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/categories/rust/</loc>
+    <loc>https://alwayscoding.ca/categories/software-development/</loc>
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/unix/</loc>
@@ -99,9 +114,6 @@
     <lastmod>2015-10-01T09:12:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/rails/</loc>
-    <lastmod>2015-10-01T09:12:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/categories/rails/</loc>
     <lastmod>2015-10-01T09:12:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/ruby/</loc>
@@ -131,9 +143,6 @@
     <loc>https://alwayscoding.ca/momentos/2014/02/25/handling-code-duplication-with-sass-at-imports-in-the-asset-pipeline/</loc>
     <lastmod>2014-02-25T15:08:38+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/imports/</loc>
-    <lastmod>2014-02-25T15:08:38+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/sass/</loc>
     <lastmod>2014-02-25T15:08:38+00:00</lastmod>
   </url><url>
@@ -153,9 +162,6 @@
     <lastmod>2013-10-09T19:54:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/coffeescript/</loc>
-    <lastmod>2013-10-09T19:54:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/categories/development/</loc>
     <lastmod>2013-10-09T19:54:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/javascript/</loc>
@@ -179,9 +185,6 @@
     <loc>https://alwayscoding.ca/tags/apple/</loc>
     <lastmod>2013-09-17T20:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/home/</loc>
-    <lastmod>2013-09-17T20:20:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/laptop/</loc>
     <lastmod>2013-09-17T20:20:00+00:00</lastmod>
   </url><url>
@@ -197,25 +200,16 @@
     <loc>https://alwayscoding.ca/tags/frontend/</loc>
     <lastmod>2013-09-03T10:42:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/html/</loc>
-    <lastmod>2013-09-03T10:42:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/momentos/2013/09/03/html-anchors-with-ids/</loc>
     <lastmod>2013-09-03T10:42:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/markup/</loc>
     <lastmod>2013-09-03T10:42:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/dates/</loc>
-    <lastmod>2013-08-15T11:21:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/datetime/</loc>
     <lastmod>2013-08-15T11:21:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2013/08/15/handling-dates-and-timezones-in-ruby-and-rails/</loc>
-    <lastmod>2013-08-15T11:21:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/tags/times/</loc>
     <lastmod>2013-08-15T11:21:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/timezone/</loc>
@@ -257,16 +251,10 @@
     <loc>https://alwayscoding.ca/tags/symbol/</loc>
     <lastmod>2013-03-13T01:53:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/garnish/</loc>
-    <lastmod>2013-03-12T00:42:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/homebrew/</loc>
     <lastmod>2013-03-12T00:42:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2013/03/12/installing-ruby-2-dot-0-0-on-macosx-build-failed/</loc>
-    <lastmod>2013-03-12T00:42:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/tags/mac-osx/</loc>
     <lastmod>2013-03-12T00:42:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/openssl/</loc>
@@ -286,6 +274,12 @@
   </url><url>
     <loc>https://alwayscoding.ca/tags/sql/</loc>
     <lastmod>2013-03-06T02:02:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/meetup/</loc>
+    <lastmod>2013-02-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/2013/02/06/why-i-drive-100km-to-abbotsford-from-vancouver-for-a-meetup/</loc>
+    <lastmod>2013-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/cache/</loc>
     <lastmod>2013-02-05T00:14:00+00:00</lastmod>

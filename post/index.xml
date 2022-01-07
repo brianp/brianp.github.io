@@ -20,6 +20,27 @@ error: gpg failed to sign the data fatal: failed to write commit object When I s
     </item>
     
     <item>
+      <title>Raw HTML in Hugo Markdown</title>
+      <link>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</link>
+      <pubDate>Sun, 19 Dec 2021 10:24:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2021/12/19/raw-html-in-hugo-markdown/</guid>
+      <description>I finally decided to run some updates on the ol&#39; blog and noticed some posts had missing content after the update. At a glance all the missing content seemingly used raw HTML tags.
+A quick look to the rendered source found comment tags in all the previous HTML locations:
+&amp;lt;!-- raw HTML omitted --&amp;gt; It turns out somewhere along the line (Hugo v0.6.0) the markdown rendering engine was changed to Goldmark.</description>
+    </item>
+    
+    <item>
+      <title>Cycling New Years Resolution Complete!</title>
+      <link>https://alwayscoding.ca/momentos/2020/11/24/cycling-new-years-resolution-complete/</link>
+      <pubDate>Tue, 24 Nov 2020 23:06:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2020/11/24/cycling-new-years-resolution-complete/</guid>
+      <description>I&#39;ve missed my cycling goals two years in a row. Should I tone back my expectations or is that under-aiming?  @brian_pearce https://twitter.com/brian_pearce/status/561380088168468481   Only 5 years later. I decided to have the same goal &amp;amp; New Years resolution for 2020. Complete 10,000km of cycling and tonight I completed it a month early!
+Highlights Despite the Pandemic kicking off I made good use of our 12 week real lockdown in Barcelona.</description>
+    </item>
+    
+    <item>
       <title>RustConf 2016 Talks</title>
       <link>https://alwayscoding.ca/momentos/2016/09/10/rustconf-2016-talks/</link>
       <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
@@ -29,7 +50,7 @@ error: gpg failed to sign the data fatal: failed to write commit object When I s
 photo by: [@eigenrick](https://twitter.com/eigenrick)  175 new features since 1.0  New features underway
  Specialization impl Trait The ? operator Macro 1.1 offers custom derive  Compiler internals redesigned
  Mir in orbit Dynamic drop flags Incremental comp Error messages  Challenges in the Rust survey
- 1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraris 1 in 9 &amp;ldquo;Maturity&amp;rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.</description>
+ 1 in 4 Learning curve (First 3 weeks is rough) 1 in 7 More libraries 1 in 9 &amp;ldquo;Maturity&amp;rdquo; 1 in 19 IDEs 1 in 20 Compiler Perf  Speed and reliability are core values of rust, but for 2017, productivity should as well.</description>
     </item>
     
     <item>
@@ -251,6 +272,15 @@ downloading ruby-2.0.0-p0.tar.gz... -&amp;gt; http://ftp.ruby-lang.org/pub/ruby/
 Take me to the current best practice.
 How to deal with n+1 issues utilizing identity maps:
 What is the n+1 issue?</description>
+    </item>
+    
+    <item>
+      <title>Why I Drive 100km to Abbotsford from Vancouver for a Meetup</title>
+      <link>https://alwayscoding.ca/momentos/2013/02/06/why-i-drive-100km-to-abbotsford-from-vancouver-for-a-meetup/</link>
+      <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2013/02/06/why-i-drive-100km-to-abbotsford-from-vancouver-for-a-meetup/</guid>
+      <description>In 2009 I attended Wordcamp Vancouver and actually met a handful of people I still talk to, tweet to and hang out with on a semi-regular basis. At the Wordcamp after party I was talking with @curtismchale and he mentioned although he didn&amp;rsquo;t do much ruby development he got together with the Fraser Valley Ruby Brigade on Wednesday nights in Abbotsford. He also mentioned they hang out on irc frequently and I should pop into the channel and say Hi.</description>
     </item>
     
     <item>

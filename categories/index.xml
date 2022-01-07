@@ -8,11 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cli</title>
-      <link>https://alwayscoding.ca/categories/cli/</link>
+      <title>tech</title>
+      <link>https://alwayscoding.ca/categories/tech/</link>
       <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
       
-      <guid>https://alwayscoding.ca/categories/cli/</guid>
+      <guid>https://alwayscoding.ca/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>personal</title>
+      <link>https://alwayscoding.ca/categories/personal/</link>
+      <pubDate>Tue, 24 Nov 2020 23:06:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/categories/personal/</guid>
       <description></description>
     </item>
     
@@ -26,38 +35,11 @@
     </item>
     
     <item>
-      <title>workshops</title>
-      <link>https://alwayscoding.ca/categories/workshops/</link>
-      <pubDate>Fri, 09 Sep 2016 10:00:00 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/categories/workshops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rust</title>
-      <link>https://alwayscoding.ca/categories/rust/</link>
+      <title>software development</title>
+      <link>https://alwayscoding.ca/categories/software-development/</link>
       <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
       
-      <guid>https://alwayscoding.ca/categories/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rails</title>
-      <link>https://alwayscoding.ca/categories/rails/</link>
-      <pubDate>Thu, 01 Oct 2015 09:12:00 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/categories/rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>https://alwayscoding.ca/categories/development/</link>
-      <pubDate>Wed, 09 Oct 2013 19:54:00 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/categories/development/</guid>
+      <guid>https://alwayscoding.ca/categories/software-development/</guid>
       <description></description>
     </item>
     

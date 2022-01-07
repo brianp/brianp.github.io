@@ -161,7 +161,7 @@ What is the n&#43;1 issue?">
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br /> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -368,7 +368,7 @@ What is the n&#43;1 issue?">
 <h3 id="how-does-this-work-whats-an-identitymap">How does this work? What&rsquo;s an IdentityMap?</h3>
 <p>An IdentityMap helps to keep track of what objects or records have already been loaded. So if you fetch the first <code>User</code> record the IdentityMap will store it. Then if you attempt to fetch the same <code>User</code> again Mongoid queries the IdentityMap for the User before it queries the Database again. This will save 1 query on the database.</p>
 <p>By fetching all of the <code>User</code> and <code>Photo</code> records that the <code>Judges</code> require in manual queries we load the data into the IdentityMap for later use. Then when the Judge requires it&rsquo;s <code>User</code> and <code>Photo</code> it checks the IdentityMap and does not need to query the database for them.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name='current'></a></p>
 <h3 id="the-includes-method">The includes method</h3>
 <p>Following the practice from ActiveRecord, Mongoid later included a method for doing this type of call in a single concise method.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Judge</span><span style="color:#f92672">.</span>all<span style="color:#f92672">.</span>includes(<span style="color:#e6db74">:user</span>, <span style="color:#e6db74">:photo</span>)
@@ -589,7 +589,7 @@ ActiveRecord</a>.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br /> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">

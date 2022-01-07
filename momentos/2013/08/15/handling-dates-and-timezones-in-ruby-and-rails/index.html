@@ -157,7 +157,7 @@ Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::
         </a>
         <h4 class="sidebar-profile-name">Brian Pearce</h4>
         
-          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</h5>
+          <h5 class="sidebar-profile-bio">Software Developer, Endurance Cyclist,<br /> Rubiest, and Rustacean</h5>
         
       </div>
     
@@ -311,7 +311,8 @@ Inconsistent Handling of DST In the code below we instantiate an ActiveSupport::
 related issues within one of the applications I contract on. This is a just a
 list of notable behaviours I expereinced whilst working with Ruby,
 Rails, Dates &amp; TimeZones.</p>
-<p><!-- raw HTML omitted --></p>
+<p><img src='https://alwayscoding.ca/images/posts/2013-08-15-dangerous.jpg' alt="It's dangerous
+to go alone! Take this." /></p>
 <p>Note: DST is in effect at the time of writing.</p>
 <h2 id="inconsistent-handling-of-dst">Inconsistent Handling of DST</h2>
 <p>In the code below we instantiate an <code>ActiveSupport::TimeZone</code> object. I would love to
@@ -391,7 +392,7 @@ have no date. Much like <code>Date</code> has no time. If <code>Time</code> has 
 separates it from <code>DateTime</code> or <code>TimeWithZone</code>? If <code>TimeWithZone</code> has a
 date shouldn&rsquo;t it be <code>DateTimeWithZone</code>. For that matter <code>DateTime</code> already
 has a zone so why have a second <code>DateTimeWithZone</code> class for the same thing? (I actually
-ended up looking into this more. <!-- raw HTML omitted -->See below: The State of Time vs DateTime<!-- raw HTML omitted -->)</p>
+ended up looking into this more. <a href='#timevsdatetime'>See below: The State of Time vs DateTime</a>)</p>
 <h2 id="storing-in-utc-isnt-a-be-all-end-all-solution">Storing in UTC isn&rsquo;t a be all end all solution</h2>
 <p>Anytime I mentioned I was working with Time Zones people just said
 &ldquo;Store it in UTC&rdquo;. As if that was the solution to all woes. The problem
@@ -537,7 +538,7 @@ essentially wrappers for TZInfo interaction.</p>
 {% blockquote %}
 DateTime had an advantage over Time on 32 bit machines in Rubies &lt; 1.9.2 - Time was a victim of the Y2K38 problem and limited to a 32 bit range. This problem is solved either on 64 bit machines and/or in recent Ruby versions. You still may need to use DateTime if for example 1.8 compatibility is a must or you rely on using methods from its API which often deviates from that of Time.
 {% endblockquote %}</p>
-<h3 id="span-idtimevsdatetimethe-state-of-time-vs-datetimea"><!-- raw HTML omitted -->The state of Time vs DateTime<!-- raw HTML omitted --></h3>
+<h3 id="span-idtimevsdatetimethe-state-of-time-vs-datetimea"><span id='timevsdatetime'>The state of Time vs DateTime</a></h3>
 <p>After reading through <a href="http://danilenko.org/2012/7/6/rails_timezones/">this additional blog
 post</a> the differences
 between <code>Time</code> and <code>DateTime</code> seem to be getting smaller since Ruby 1.9.2 hit and you could really pick
@@ -766,7 +767,7 @@ to be seeing more usage.</p>
     
     <h4 id="about-card-name">Brian Pearce</h4>
     
-      <div id="about-card-bio">Software Developer, Endurance Cyclist,<!-- raw HTML omitted --> Rubiest, and Rustacean</div>
+      <div id="about-card-bio">Software Developer, Endurance Cyclist,<br /> Rubiest, and Rustacean</div>
     
     
       <div id="about-card-job">

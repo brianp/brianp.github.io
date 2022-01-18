@@ -1,0 +1,6 @@
+
+brianp@MacBook-Pro dradis-pro(develop *$%)$ gem install mysql2 -v '0.5.3' -- --with-opt-dir="$(brew --prefix openssl@1.1)" --with-ldflags=\"-L$(brew --cellar zstd)/1.5.0/lib\"
+Building native extensions with: '--with-opt-dir=/usr/local/opt/openssl@1.1 --with-ldflags="-L/usr/local/Cellar/zstd/1.5.0/lib"'
+This could take a while...
+Successfully installed mysql2-0.5.3
+1 gem installed

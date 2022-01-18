@@ -6,7 +6,16 @@
     <description>Recent content in Tags on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 12:01:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>career</title>
+      <link>https://alwayscoding.ca/tags/career/</link>
+      <pubDate>Wed, 19 Jan 2022 12:01:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/tags/career/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>git</title>
       <link>https://alwayscoding.ca/tags/git/</link>
@@ -82,7 +91,7 @@
     <item>
       <title>rust</title>
       <link>https://alwayscoding.ca/tags/rust/</link>
-      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
       
       <guid>https://alwayscoding.ca/tags/rust/</guid>
       <description></description>
@@ -91,7 +100,7 @@
     <item>
       <title>rustlang</title>
       <link>https://alwayscoding.ca/tags/rustlang/</link>
-      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
       
       <guid>https://alwayscoding.ca/tags/rustlang/</guid>
       <description></description>

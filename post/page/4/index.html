@@ -258,6 +258,131 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/" aria-label="Open the post: DataMapper SQL Queries in Rails Console">
+      
+          DataMapper SQL Queries in Rails Console
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2013-06-09T13:37:00Z">
+        
+  June 9, 2013
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://alwayscoding.ca/categories/software-development">software development</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        A quick note on logging SQL queries in DataMapper 1.2 so you can see exactly what&rsquo;s going on behind the scenes. Seeing the query can be beneficial in debugging when getting unexpected results or trying to increase query performance.
+DataMapper::Logger.new($stdout, :debug)
+Enter that at anytime while running in rails c and you should start seeing the output immediatley.
+Note If you don&rsquo;t see the output potentially it&rsquo;s because of DM&rsquo;s identiity map.
+      
+      <p>
+        
+          <a href="https://alwayscoding.ca/momentos/2013/06/09/datamapper-sql-queries-in-rails-console/" class="postShorten-excerpt_link link" aria-label="Open the post: DataMapper SQL Queries in Rails Console">Continue reading</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/06/07/map-with-index/" aria-label="Open the post: Map with Index">
+      
+          Map with Index
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2013-06-07T15:32:00Z">
+        
+  June 7, 2013
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://alwayscoding.ca/categories/software-development">software development</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Notes: Working with ruby 1.8.7 but 1.9 solution presented at bottom.
+While working on my main contract today I needed to create a new array based off mutated values of an existing array. Simple enough I&rsquo;ll just use Enumerable::map right? Almost immediatley I realized I needed to make a reference to an array via the loops index. I first checked to see if a map_with_index existed similar to Enumerable::each_with_index.
+It doesn&rsquo;t.
+      
+      <p>
+        
+          <a href="https://alwayscoding.ca/momentos/2013/06/07/map-with-index/" class="postShorten-excerpt_link link" aria-label="Open the post: Map with Index">Continue reading</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/03/13/more-fun-with-the-ruby-symbol/" aria-label="Open the post: More fun with the Ruby Symbol">
       
           More fun with the Ruby Symbol
@@ -544,130 +669,6 @@ What is the n+1 issue?
       <p>
         
           <a href="https://alwayscoding.ca/momentos/2013/02/05/expiring-cache-fragments-in-the-rails-console/" class="postShorten-excerpt_link link" aria-label="Open the post: Expiring Cache Fragments In The Rails Console">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/" aria-label="Open the post: Nginx 413 Request Entity Too Large">
-      
-          Nginx 413 Request Entity Too Large
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2013-02-02T10:24:00Z">
-        
-  February 2, 2013
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://alwayscoding.ca/categories/tech">tech</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        Using: nginx version: nginx/1.2.4
-I manage a few Linode instances as client servers but I would far from consider myself a sysadmin. I received an email from a client regarding some uploading issues. After some testing I concluded any combination of files over 1mb would raise Nginx 413 Request Entity Too Large
-I upped the file limit within the virtualhost file by changing the client_max_body_size
-upstream app { server unix:/tmp/app.sock fail_timeout=0; } server { listen 80; location / { proxy_pass http://app; proxy_redirect off; client_max_body_size 6m; } } This still did not work.
-      
-      <p>
-        
-          <a href="https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/" class="postShorten-excerpt_link link" aria-label="Open the post: Nginx 413 Request Entity Too Large">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/" aria-label="Open the post: Calling a Specific Gem Version In The Console">
-      
-          Calling a Specific Gem Version In The Console
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2013-02-01T16:00:00Z">
-        
-  February 1, 2013
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://alwayscoding.ca/categories/software-development">software development</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
-$ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.
-      
-      <p>
-        
-          <a href="https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/" class="postShorten-excerpt_link link" aria-label="Open the post: Calling a Specific Gem Version In The Console">Continue reading</a>
         
         
       </p>

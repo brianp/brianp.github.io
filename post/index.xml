@@ -6,7 +6,16 @@
     <description>Recent content in Posts on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 12:01:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Your career is fine without working for big companies</title>
+      <link>https://alwayscoding.ca/momentos/2022/01/19/your-career-is-fine-without-working-for-big-companies/</link>
+      <pubDate>Wed, 19 Jan 2022 12:01:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2022/01/19/your-career-is-fine-without-working-for-big-companies/</guid>
+      <description>I&amp;rsquo;ve thought about this numerous times over the course of my career and it is something I want to share. This is for the junior and intermediate developers out there who spend time visiting conferences, reading blogs, listening to podcasts, and doing their best to hone their craft. The developers who week after week take in content from industry influencers talking about the big projects they&amp;rsquo;ve worked on at BigCompany. Maybe you have thought about what it would feel like to work on similar big projects and experience growth in the industry like them.</description>
+    </item>
+    
     <item>
       <title>gpg failed to sign the data</title>
       <link>https://alwayscoding.ca/momentos/2022/01/05/gpg-failed-to-sign-the-data/</link>
@@ -38,6 +47,16 @@ A quick look to the rendered source found comment tags in all the previous HTML 
       <guid>https://alwayscoding.ca/momentos/2020/11/24/cycling-new-years-resolution-complete/</guid>
       <description>I&#39;ve missed my cycling goals two years in a row. Should I tone back my expectations or is that under-aiming?  @brian_pearce https://twitter.com/brian_pearce/status/561380088168468481   Only 5 years later. I decided to have the same goal &amp;amp; New Years resolution for 2020. Complete 10,000km of cycling and tonight I completed it a month early!
 Highlights Despite the Pandemic kicking off I made good use of our 12 week real lockdown in Barcelona.</description>
+    </item>
+    
+    <item>
+      <title>RustFest 2016 - Learning to Love the Unfamiliar</title>
+      <link>https://alwayscoding.ca/momentos/2016/11/16/rustfest-2016-learning-to-love-the-unfamiliar/</link>
+      <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2016/11/16/rustfest-2016-learning-to-love-the-unfamiliar/</guid>
+      <description>Coming from Ruby, JS, Python or another language? Exploring new languages can be toilsome. Rust is no different. You’ll find new idioms and features that could be unfamiliar to navigate. You might even detest them at first; comparing it to how you’d prefer it in your favourite language.
+We will learn to navigate your transition into the Rust landscape. Introduce practices that might not make sense at first. See comparisons of how you may have done things, and how we can improve those practices with Rust.</description>
     </item>
     
     <item>

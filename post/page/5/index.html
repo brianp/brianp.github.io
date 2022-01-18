@@ -258,6 +258,130 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/" aria-label="Open the post: Nginx 413 Request Entity Too Large">
+      
+          Nginx 413 Request Entity Too Large
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2013-02-02T10:24:00Z">
+        
+  February 2, 2013
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://alwayscoding.ca/categories/tech">tech</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Using: nginx version: nginx/1.2.4
+I manage a few Linode instances as client servers but I would far from consider myself a sysadmin. I received an email from a client regarding some uploading issues. After some testing I concluded any combination of files over 1mb would raise Nginx 413 Request Entity Too Large
+I upped the file limit within the virtualhost file by changing the client_max_body_size
+upstream app { server unix:/tmp/app.sock fail_timeout=0; } server { listen 80; location / { proxy_pass http://app; proxy_redirect off; client_max_body_size 6m; } } This still did not work.
+      
+      <p>
+        
+          <a href="https://alwayscoding.ca/momentos/2013/02/02/nginx-413-request-entity-too-large/" class="postShorten-excerpt_link link" aria-label="Open the post: Nginx 413 Request Entity Too Large">Continue reading</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/" aria-label="Open the post: Calling a Specific Gem Version In The Console">
+      
+          Calling a Specific Gem Version In The Console
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2013-02-01T16:00:00Z">
+        
+  February 1, 2013
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://alwayscoding.ca/categories/software-development">software development</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Today I was trying to generate a Rails 3.1.0 project (for testing purposes). I simply called rails new rollback which generated a rails 3.2.11 project and proceeded to change the gemfile version to 3.1.0. This resulted in numerous application errors. The simple solution was to generate the project with the Rails version 3.1.0. To do this call the gem with the version number as such:
+$ rails _3.1.0_ new rollback You also must already have this version of the gem installed on your system for it to work.
+      
+      <p>
+        
+          <a href="https://alwayscoding.ca/momentos/2013/02/01/calling-a-specific-gem-version-in-the-console/" class="postShorten-excerpt_link link" aria-label="Open the post: Calling a Specific Gem Version In The Console">Continue reading</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2013/01/31/html-ordered-list-offset/" aria-label="Open the post: HTML Ordered List Offset">
       
           HTML Ordered List Offset
@@ -532,128 +656,6 @@ undefined local variable or method `has_secure_password&#39; for User:Class (Nam
       <p>
         
           <a href="https://alwayscoding.ca/momentos/2012/06/05/mongoid-and-has-secure-password/" class="postShorten-excerpt_link link" aria-label="Open the post: Mongoid and has_secure_password">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/" aria-label="Open the post: Transactions and new_record?">
-      
-          Transactions and new_record?
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2012-06-05T00:00:00Z">
-        
-  June 5, 2012
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://alwayscoding.ca/categories/software-development">software development</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        While working with the ActiveRecord method &lsquo;new_record?&rsquo; and Transactions I ran into an odd issue after I had run a few objects through a Transaction. Although the transaction had rolled back and thus not saving the record, running &lsquo;object_instance.new_record?&rsquo; resulted in a return of false as if the record had been saved to the database.
-I also found the same issue recorded here: http://squarewheel.wordpress.com/2008/06/11/new_record/
-Here is example code where the error will happen.
-      
-      <p>
-        
-          <a href="https://alwayscoding.ca/momentos/2012/06/05/transactions-and-new-record/" class="postShorten-excerpt_link link" aria-label="Open the post: Transactions and new_record?">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/" aria-label="Open the post: Flash[:notice] vs Flash.now[:notice]">
-      
-          Flash[:notice] vs Flash.now[:notice]
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2011-09-11T00:29:00Z">
-        
-  September 11, 2011
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://alwayscoding.ca/categories/software-development">software development</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        While working with my new employer (in 2011) I noticed a minor but recurring issue in our application. We had been storing flash[:notice] messages in most of our actions but were not using that flash message anywhere. This was resulting in the flash message showing up at in-appropriate times. What I was unaware of was a slightly different call which is flash.now[:notice]. This results in the flash only having a lifespan of the through the next request.
-      
-      <p>
-        
-          <a href="https://alwayscoding.ca/momentos/2011/09/11/flash-notice-vs-flash-dot-now-notice/" class="postShorten-excerpt_link link" aria-label="Open the post: Flash[:notice] vs Flash.now[:notice]">Continue reading</a>
         
         
       </p>

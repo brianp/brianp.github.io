@@ -6,29 +6,29 @@
     <description>Recent content in Categories on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jan 2022 18:18:00 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>tech</title>
-      <link>https://alwayscoding.ca/categories/tech/</link>
-      <pubDate>Wed, 05 Jan 2022 18:18:00 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/categories/tech/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 19 Jan 2022 12:01:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>personal</title>
       <link>https://alwayscoding.ca/categories/personal/</link>
-      <pubDate>Tue, 24 Nov 2020 23:06:00 +0000</pubDate>
+      <pubDate>Wed, 19 Jan 2022 12:01:22 +0000</pubDate>
       
       <guid>https://alwayscoding.ca/categories/personal/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>tech</title>
+      <link>https://alwayscoding.ca/categories/tech/</link>
+      <pubDate>Wed, 19 Jan 2022 12:01:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/categories/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>conferences</title>
       <link>https://alwayscoding.ca/categories/conferences/</link>
-      <pubDate>Sat, 10 Sep 2016 10:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
       
       <guid>https://alwayscoding.ca/categories/conferences/</guid>
       <description></description>

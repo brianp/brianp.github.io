@@ -6,7 +6,16 @@
     <description>Recent content in Posts on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jan 2022 12:01:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 17:13:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tokio-compat and Cargo&#39;s multiple version support feature</title>
+      <link>https://alwayscoding.ca/momentos/2022/01/27/tokio-compat-and-cargos-multiple-version-support-feature/</link>
+      <pubDate>Thu, 27 Jan 2022 17:13:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/momentos/2022/01/27/tokio-compat-and-cargos-multiple-version-support-feature/</guid>
+      <description>This week I decided that my Pocket to Buffer via IFTTT setup wasn&amp;rsquo;t cutting it anymore. Predominantly because I use a trial account of buffer and I can only queue ten items at a time. The developer in me screamed &amp;ldquo;you can build it yourself.&amp;rdquo; Although normally I would lean away from the idea I haven&amp;rsquo;t had much time to write Rust lately and decided it would be nice to throw together a few crates and get the job done.</description>
+    </item>
+    
     <item>
       <title>Your career is fine without working for big companies</title>
       <link>https://alwayscoding.ca/momentos/2022/01/19/your-career-is-fine-without-working-for-big-companies/</link>

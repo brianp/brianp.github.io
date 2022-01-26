@@ -6,7 +6,43 @@
     <description>Recent content in Tags on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jan 2022 12:01:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 17:13:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cargo</title>
+      <link>https://alwayscoding.ca/tags/cargo/</link>
+      <pubDate>Thu, 27 Jan 2022 17:13:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/tags/cargo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://alwayscoding.ca/tags/rust/</link>
+      <pubDate>Thu, 27 Jan 2022 17:13:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rustlang</title>
+      <link>https://alwayscoding.ca/tags/rustlang/</link>
+      <pubDate>Thu, 27 Jan 2022 17:13:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/tags/rustlang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tokio-rs</title>
+      <link>https://alwayscoding.ca/tags/tokio-rs/</link>
+      <pubDate>Thu, 27 Jan 2022 17:13:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/tags/tokio-rs/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>career</title>
       <link>https://alwayscoding.ca/tags/career/</link>
@@ -85,24 +121,6 @@
       <pubDate>Tue, 24 Nov 2020 23:06:00 +0000</pubDate>
       
       <guid>https://alwayscoding.ca/tags/new-years/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rust</title>
-      <link>https://alwayscoding.ca/tags/rust/</link>
-      <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rustlang</title>
-      <link>https://alwayscoding.ca/tags/rustlang/</link>
-      <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/tags/rustlang/</guid>
       <description></description>
     </item>
     

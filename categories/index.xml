@@ -6,7 +6,16 @@
     <description>Recent content in Categories on { always: &#39;coding&#39; }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jan 2022 12:01:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 17:13:22 +0000</lastBuildDate><atom:link href="https://alwayscoding.ca/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>software development</title>
+      <link>https://alwayscoding.ca/categories/software-development/</link>
+      <pubDate>Thu, 27 Jan 2022 17:13:22 +0000</pubDate>
+      
+      <guid>https://alwayscoding.ca/categories/software-development/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>personal</title>
       <link>https://alwayscoding.ca/categories/personal/</link>
@@ -31,15 +40,6 @@
       <pubDate>Wed, 16 Nov 2016 11:00:00 +0000</pubDate>
       
       <guid>https://alwayscoding.ca/categories/conferences/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>software development</title>
-      <link>https://alwayscoding.ca/categories/software-development/</link>
-      <pubDate>Sun, 08 May 2016 10:06:42 +0000</pubDate>
-      
-      <guid>https://alwayscoding.ca/categories/software-development/</guid>
       <description></description>
     </item>
     

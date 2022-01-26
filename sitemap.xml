@@ -2,28 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://alwayscoding.ca/tags/cargo/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/categories/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/post/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/rust/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/rustlang/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/categories/software-development/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/2022/01/27/tokio-compat-and-cargos-multiple-version-support-feature/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/tokio-rs/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/</loc>
+    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+  </url><url>
     <loc>https://alwayscoding.ca/tags/career/</loc>
     <lastmod>2022-01-19T12:01:22+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/categories/</loc>
-    <lastmod>2022-01-19T12:01:22+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/categories/personal/</loc>
-    <lastmod>2022-01-19T12:01:22+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/post/</loc>
-    <lastmod>2022-01-19T12:01:22+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/tags/</loc>
     <lastmod>2022-01-19T12:01:22+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/categories/tech/</loc>
     <lastmod>2022-01-19T12:01:22+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2022/01/19/your-career-is-fine-without-working-for-big-companies/</loc>
-    <lastmod>2022-01-19T12:01:22+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/</loc>
     <lastmod>2022-01-19T12:01:22+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/git/</loc>
@@ -62,13 +80,7 @@
     <loc>https://alwayscoding.ca/categories/conferences/</loc>
     <lastmod>2016-11-16T11:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/rust/</loc>
-    <lastmod>2016-11-16T11:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/momentos/2016/11/16/rustfest-2016-learning-to-love-the-unfamiliar/</loc>
-    <lastmod>2016-11-16T11:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/tags/rustlang/</loc>
     <lastmod>2016-11-16T11:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/series/rustconf/</loc>
@@ -102,9 +114,6 @@
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2016/05/08/cross-compilation-to-osx-with-rust/</loc>
-    <lastmod>2016-05-08T10:06:42+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/categories/software-development/</loc>
     <lastmod>2016-05-08T10:06:42+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/unix/</loc>

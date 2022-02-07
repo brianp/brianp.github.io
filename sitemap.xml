@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://alwayscoding.ca/tags/cargo/</loc>
-    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+    <loc>https://alwayscoding.ca/tags/baby/</loc>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/categories/</loc>
-    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/2022/02/07/making-life-easier-or-at-least-better-five-month-baby-recap/</loc>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/categories/personal/</loc>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/post/</loc>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/</loc>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/</loc>
+    <lastmod>2022-02-07T07:45:15+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/tags/cargo/</loc>
     <lastmod>2022-01-27T17:13:22+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/rust/</loc>
@@ -20,22 +35,13 @@
     <loc>https://alwayscoding.ca/categories/software-development/</loc>
     <lastmod>2022-01-27T17:13:22+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/tags/</loc>
-    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/momentos/2022/01/27/tokio-compat-and-cargos-multiple-version-support-feature/</loc>
     <lastmod>2022-01-27T17:13:22+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/tags/tokio-rs/</loc>
     <lastmod>2022-01-27T17:13:22+00:00</lastmod>
   </url><url>
-    <loc>https://alwayscoding.ca/</loc>
-    <lastmod>2022-01-27T17:13:22+00:00</lastmod>
-  </url><url>
     <loc>https://alwayscoding.ca/tags/career/</loc>
-    <lastmod>2022-01-19T12:01:22+00:00</lastmod>
-  </url><url>
-    <loc>https://alwayscoding.ca/categories/personal/</loc>
     <lastmod>2022-01-19T12:01:22+00:00</lastmod>
   </url><url>
     <loc>https://alwayscoding.ca/categories/tech/</loc>
@@ -388,6 +394,16 @@
   </url><url>
     <loc>https://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/</loc>
     <lastmod>2010-12-04T00:13:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/1/01/01/</loc>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/1/01/01/</loc>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/1/01/01/</loc>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/1/01/01/</loc>
+  </url><url>
+    <loc>https://alwayscoding.ca/momentos/1/01/01/</loc>
   </url><url>
     <loc>https://alwayscoding.ca/archives/</loc>
   </url>
